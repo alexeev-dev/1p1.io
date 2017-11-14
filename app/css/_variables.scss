@@ -8,6 +8,8 @@ $brand: #4489ff;
 $font-light_1: #79879e;
 $font-light_2: #4b5769;
 $font-light_3: #B2B2B2;
+$font-light_4: #9d9d9d;
+$font-light_5: #89a1b3;
 
 // BG
 $bg-gray: #F1F3F7;
@@ -139,14 +141,14 @@ $shadow-half : rgba(0, 0, 0, 0.05);
 .absoluteXY {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 /* FLEX-boxes */
-.row-center-strech {display: flex; justify-content: center; align-items: strech;}
-.row-between-strech {display: flex; justify-content: space-between; align-items: strech;}
+.row-center-strech {display: flex; justify-content: center; align-items: stretch;}
+.row-between-strech {display: flex; justify-content: space-between; align-items: stretch;}
 .row-between-center {display: flex; justify-content: space-between; align-items: center;}
 .row-start-center {display: flex; justify-content: flex-start; align-items: center;}
 .row-end-center {display: flex; justify-content: flex-end; align-items: center;}
 .row-center-center {display: flex; justify-content: center; align-items: center;} // посередине по ширине – КНОПОЧКИ
 .column-center-center {display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;} // посередине по высоте – ИКОНКИ
-.column-between-strech {display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: strech;}
+.column-between-strech {display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: stretch;}
 /***********************************************************/
 
 

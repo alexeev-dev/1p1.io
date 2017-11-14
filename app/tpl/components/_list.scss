@@ -61,7 +61,116 @@ article {
 			section {padding: $size-base;}
 		}
 		// превью проекта – 
-		&-project {}
+		&-project {
+			@extend .row-between-strech; padding: 20px 80px 20px 100px;
+			@extend .box-filled-dark-1; background: $bg-gray;
+			.gray & {
+				background: $white;
+			}
+			section {
+				width: 100%; padding: 30px 40px 100px 0; position: relative;
+				h3 {
+					margin-bottom: 25px;
+				}
+				p {
+					@extend .text-default; line-height: 22px;
+				}
+				a {
+					position: absolute; left: 0; bottom: 45px;
+				}
+			}
+			footer {
+				text-align: right;
+				width: 290px; flex-shrink: 0; padding: 20px 0 105px 40px; position: relative;
+				border-left: 1px solid $border;
+
+				.progress {
+					&_bar {
+						position: relative; height: 3px; width: 100%; margin: 10px 0;
+						background: #c0d1dd;
+						&-fill {
+							position: absolute; left: 0; top: 0; height: 3px;
+							background: $brand;
+						}
+					}
+				}
+				p {
+					font-family: $title;
+					margin-bottom: 0;
+				}
+				span {
+					color: $font-light_5; font-size: 12px; font-family: $text;
+				}
+				div {
+					&.price {
+						margin-bottom: 40px;
+						p {
+							font-size: 34px; line-height: 38px;
+						}
+						span {
+							font-size: 14px; line-height: 18px;
+						}
+					}
+					&.term {
+						margin-top: 16px;
+						& > * {
+							font-size: 12px;
+						}
+						p {
+							font-family: $text;
+						}
+						span {
+
+						}
+					}
+				}
+				ul {
+					@extend .row-end-center;
+					li {
+						width: 50%; margin-bottom: 0;
+						p {
+							font-size: 18px; line-height: 22px;
+						}
+					}
+				}
+				& > a {
+					position: absolute; right: 0; bottom: 45px;
+				}
+			}
+		}
+	}
+}
+
+// FIGURE
+figure {
+	&.preview {
+		&-funds {
+			text-align: center;
+			@extend .column-center-center; height: 270px; padding: 20px 20px;
+			@extend .box-filled-light-3;
+			&:hover {
+				figcaption {
+					p {
+						text-decoration: underline;
+					}
+				}
+			}
+			img {
+				max-height: 80px; margin-bottom: 25px; align-self: center;
+			}
+			figcaption {
+				& > * {
+					@extend .title-thin-main; font-size: 14px; line-height: 20px;
+				}
+				p {
+					margin-bottom: 15px;
+				}
+				span {
+					color: $font-light_4;
+					display: block;
+				}
+			}
+		}
 	}
 }
 
@@ -71,7 +180,7 @@ ul.list {
 
 	&-three {
 		& > li { a {display: block;}
-			width: calc(33.333% - 20px); margin: 10px;
+			width: calc(33.33333% - 20px); margin: 10px;
 			@include respond-to(md) {width: calc(50% - 20px);}
 			@include respond-to(xs) {width: 100%;}
 		}
@@ -80,7 +189,7 @@ ul.list {
 	&-four {
 		& > li { a {display: block;}
 			width: calc(25% - 20px); margin: 10px;
-			@include respond-to(lg) {width: calc(33.333% - 20px);}
+			@include respond-to(lg) {width: calc(33.33333% - 20px);}
 			@include respond-to(md) {width: calc(50% - 20px);}
 			@include respond-to(xs) {width: 100%;}
 		}
@@ -98,5 +207,27 @@ ul.list {
 
 	&-filters {
 
+	}
+
+	&-funds {
+		@extend .list-four;
+		li figure {@extend .preview-funds;}
+		li a {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&-projects {
+		li {
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			article {
+				@extend .preview-project;
+			}
+		}
 	}
 }  
