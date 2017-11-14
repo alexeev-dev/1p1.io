@@ -1,0 +1,53 @@
+    <header class="header js-header active">
+        <a href="{{ path('homepage') }}" class="logo"></a> 
+        <nav class="menu">
+            <ul>
+                <li><a href="{{ path('market_home') }}"><i class="icon-search"></i><span>Найти вещь</span></a></li>
+                <li><a href="{{ path('market_add') }}"><i class="icon-plus"></i><span>Продать</span></a></li>
+                {#% if is_granted("ROLE_USER") %}
+                    <li><a href="{{ path('fos_user_profile_show') }}"><span>Мой кабинет</span></a></li>
+                {% else %}
+                    <li><a href="{{ path('fos_user_security_login') }}"><span>Войти</span></a></li>
+                {% endif %#}
+            </ul>
+            <a href="#" class="burger js-menu-open">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </nav>
+    </header>
+    <nav class="menu-open">
+        <ul>
+            <!--li class="languages">
+                <a href="#">Ru</a>
+                <a href="#">Eng</a>
+            </li-->
+            <li class="login">
+                {#% if is_granted("ROLE_USER") %}
+                    <a href="{{ path('fos_user_profile_show') }}">Мой кабинет</a>
+                        {% if user_service.isAdmin is defined and user_service.isAdmin %}
+                            <a href="{{ path('sonata_admin_dashboard') }}">Админка</a>
+                        {% endif %}
+                    <a href="{{ logout_path() }}">Выйти</a></li>
+                {% else %}
+                    <a href="{{ path('fos_user_registration_register') }}">Регистрация</a>
+                    <a href="{{ path('fos_user_security_login') }}">Войти</a>
+                {% endif %#}
+            </li>
+            <li><a href="{{ path('market_home') }}">Купить</a></li>
+            <li><a href="{{ path('market_add') }}">Продать</a></li>
+            <li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
+            <li><a href="{{ path('funds') }}">Фонды</a></li>
+            <li><a href="/news">Новости</a></li>
+            <li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
+            {#<li><a href="#">Поиск по сайту</a></li>#}
+        </ul>
+        <a href="#" class="menu-close"></a>
+    </nav>
+
+
+
+
+
+

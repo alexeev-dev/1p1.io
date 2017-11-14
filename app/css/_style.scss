@@ -1,0 +1,8 @@
+.app {
+	padding-top: $header-height;
+
+	.wrapper {
+		&.gray {background: $bg-gray;}
+	}
+}
+

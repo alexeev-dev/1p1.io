@@ -1,0 +1,98 @@
+.btn-white {
+	//@include font-type($title, 16px, 16px, 0); color: #000;
+	padding: 21px 23px 22px 27px;
+	background: #fff;  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); border-radius: 100px;
+
+	i {font-weight: 600; margin-left: 12px;}
+}
+
+.btn {
+	display: inline-flex;
+	border: none; outline: none; vertical-align: baseline; color: $white; @extend .title-bold-primary; 
+	margin: 0; padding: $size-base $size-l/2; 
+	background: $brand; border: solid 1px $brand; border-radius: $size-xl;
+	&-primary, &-secondary, &-empty {@extend .btn;}
+
+	&-primary {}
+	&-secondary {color: $brand; background: $white; border: solid 1px $brand;}
+	&-empty {}
+
+	&:hover {
+		color: #4489ff;
+		background: #fff;
+	}
+
+	&.shadow {
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	}
+
+	&.white {
+		// @include font-type($title, 16px, 20px, 0.5px); color: $brand;
+		background: #fff;
+		&:hover {
+			color: #fff; 
+			background: $brand;
+		}
+	}
+
+	&-reserve {
+		display: flex; align-items: center;
+
+		// @include font-type($title, 16px, 80px, 0);
+		height: 80px; 
+		background: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); border-radius: 40px;
+		transition: .4s all ease;
+
+		&:hover {
+			background: #f4f7fb;
+		}
+	}
+}
+
+
+// DONATION BUTTON – http://prntscr.com/gg1z7v
+/*********************************************/
+/* 
+	<a href="#" class="donation"><p>Пожертвовать вещь фонду</p><i class="icon icon-plus-add"></i></a> 
+*/
+
+.donation {
+	color: #000;
+	display: flex; align-items: center;
+
+	p {@include font-type($title, 16px, 1, 0);}
+	i {margin-left: 15px;}
+}
+
+// SHOW MORE BUTTON – http://prntscr.com/gg2b1b
+/**********************************************/
+/* 
+	<a href="#" class="show_more">
+		<span>Показать еще</span>
+		<em><i class="icon icon-view-more"></i></em>
+	</a> 
+*/
+
+.show_more {
+	text-align: center; color: rgba(0, 0, 0, 0.7); 
+	display: block; margin: 30px 0;
+	
+	span {
+		display: block; margin-bottom: 10px;
+	}
+	em {
+		text-align: left;
+		display: block; width: 33px; height: 33px; position: relative; padding: 11px 0 0 11px; margin: 0 auto;
+		border: 1px solid #4489ff; border-radius: 50%;
+		
+		i {vertical-align: top;}
+	}
+	.ladda-label {
+		position: relative;
+	}
+	.ladda-spinner {
+		width: 10px; margin: 0 auto; position: absolute; bottom: 0; left: 50%;
+		@include respond-to(md) {bottom: -20px;}
+	}
+	
+}

@@ -1,0 +1,103 @@
+// LISTS
+ul.list {
+	display: flex; flex-flow: row wrap; &-three, &-four {@extend .list;}
+
+	&-three {
+		& > li { a {display: block;}
+			width: calc(33% - 20px); margin: 10px;
+			@include respond-to(md) {width: calc(50% - 20px);}
+			@include respond-to(xs) {width: 100%;}
+		}
+	}
+
+	&-four {
+		& > li { a {display: block;}
+			width: calc(25% - 20px); margin: 10px;
+			@include respond-to(lg) {width: calc(33% - 20px);}
+			@include respond-to(md) {width: calc(50% - 20px);}
+			@include respond-to(xs) {width: 100%;}
+		}
+	}
+
+	&-products {
+		@extend .list-four;
+		li article {@extend .preview-product;}
+	}
+
+	&-news {
+		@extend .list-three;
+		li article {@extend .preview-news;}
+	}
+
+	&-filters {
+
+	}
+}  
+
+
+// ARTICLES
+article {
+
+	&.preview {
+		background: $white;
+		header, footer {figure {img {max-width: 100%;}}}
+		section {
+			h2, h2 a, 
+			h3, h3 a {@extend .title-bold-primary; margin: $size-base 0;}
+			h3 {font-size: 22px; line-height: 30px;}
+			span {&.date {@extend .title-thin-primary;}}
+		}
+		&:hover {box-shadow: 0 0 $size-s $size-s rgba(0, 0, 0, 0.03); z-index: 2;}
+		
+		&-product, &-news, &-project {@extend .preview;}
+		// превью товара в списке – http://prntscr.com/h1uwdh
+		&-product {
+			header {
+				figure {
+					position: relative;
+					figcaption {
+						width: 100%; height: 100%; position: absolute; top: 0; left: 0; 
+						background: rgba(255,255,255, 0.85); opacity: 0; transition: .4s all ease;
+						span {
+							&.favorites {
+								@extend .row-center-center;
+								color: $white; @extend .title-bold-primary; text-align: center;
+								width: 100%; height: 100%; @extend .absoluteXY;
+								background: url(../img/svg/heart.svg) center center no-repeat;
+							}
+						}
+					}
+					&:hover {figcaption {opacity: 1;}}
+				}
+			}
+			section {
+				padding: 0 $size-base;
+				ul {
+					@extend .row-start-center; 
+					&.posted, &.tags {
+						li, li a, li span {color: $black; @extend .title-thin-main;}
+							li a, li span {@extend .box-filled-dark-1; padding: 0 $size-xs;}
+					}
+					&.posted {li {margin-right: $size-s;}} 
+					&.tags {li {margin-right: $size-xs;} margin-left: -$size-xs;}
+					&.posted, &.tags {&:last-child {margin-right: 0;}}
+				}
+			}
+			footer {
+				@extend .row-between-center; padding: $size-base; a {color: $black;}
+				figure {
+					@extend .row-center-center;
+					img {max-width: $size-m;}
+					figcaption {@extend .title-bold-secondary; @extend .doted; width: 100px; height: $size-base; margin-left: $size-s;}
+				}
+				.price {@extend .title-bold-primary; margin-bottom: 0;}
+			}
+		}
+		// превью новости – http://prntscr.com/h8z3p4
+		&-news {
+			section {padding: $size-base;}
+		}
+		// превью проекта – 
+		&-project {}
+	}
+}

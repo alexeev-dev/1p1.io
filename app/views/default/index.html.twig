@@ -1,0 +1,396 @@
+{% extends '../../tpl/base.html.twig' %}
+
+{% block header_class %}{% endblock %}
+
+{% block app_class %}{% endblock %}
+{% block preloder_class %}index{% endblock %}
+
+{% block header %}
+    {% include '../../views/landings/parts/header.html.twig' %}
+{% endblock header %}
+
+{% block breadcrumbs %}{% endblock  %}
+
+{% block body %}
+    <div class="container">
+        <h1>Этот заголовок всегда большой</h1>
+        <p class="basis">это наш базовый стиль шрифтов -p- 16-24    @extend .basis;</p>
+        <hr>
+        <span class="title-thin-primary">стиль информеров -span- 10/10  @extend .title-thin-primary;</span>
+        <hr>
+        <span class="title-thin-secondary">стиль информеров -span-  9/9  @extend .title-thin-secondary;</span>
+        <hr>
+        <span class="title-thin-main">Стиль Информеров -span-  12/16   @extend .title-thin-main;</span>
+        <hr>
+        <span class="title-bold-primary">Стиль Функциональных элементов  16/24  -span- @extend .title-bold-primary;</span>
+        <hr>
+        <span class="title-bold-secondary">Стиль функциональных Элементов  12/16   -span- @extend .title-bold-secondary;</span>
+        <hr>
+        <span class="text-default">Это часто встречающеся описание –--  16/24   @extend .text-default;</span>
+        <hr><hr><hr>
+        <a class="btn-primary" href="http://www.childrenshospice.ru" target="_blank">childrenshospice.ru</a>
+        <a class="btn-secondary" href="http://www.childrenshospice.ru" target="_blank">childrenshospice.ru</a>
+    </div>
+
+    <div class="intro">
+        <section class="js-slides">
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Покупайте и продавайте<br>
+                        вещи, помогая людям</h1>
+                        <p>Благотворительность доступная каждому</p>
+                        <a href="{{ path('page', {'slug': 'about'}) }}">Подробнее о проекте <i class="fa fa-angle-right"></i></a>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Публикуйте вещи которые<br>
+                            вы хотели бы посвятить<br>
+                            добрым делам</h1>
+                        <ul>
+                            <li><a href="{{ path('market_add') }}">Продать <i class="fa fa-angle-right"></i></a></li>
+{#
+                            <li><a href="#">Узнать все о продаже <i class="fa fa-angle-right"></i></a></li>
+#}                          
+                        </ul>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Находите и покупайте<br>
+                        вещи которые вам<br>
+                        нравятся</h1>
+                        <ul>
+                            <li><a href="{{ path('market_home') }}">Купить <i class="fa fa-angle-right"></i></a></li>
+{#
+                            <li><a href="#">Узнать все о покупке <i class="fa fa-angle-right"></i></a></li>
+#}                          
+                        </ul>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Деньги с каждой покупки<br>
+                        перечисляются людям которым<br>
+                        вы хотите помочь</h1>
+                        <ul>
+                            <li><a href="{{ path('market_add') }}">Продать <i class="fa fa-angle-right"></i></a></li>
+                            <li><a href="{{ path('market_home') }}">Купить <i class="fa fa-angle-right"></i></a></li>
+{#
+                            <li><a href="#">Сделать прямое пожертвование <i class="fa fa-angle-right"></i></a></li>
+#}                            
+                        </ul>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+        </section>
+        <nav>
+            <ul>
+                <li class="decoration"></li>
+                <li class="hovered"><a href="#"><span>Идея</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><span>Продать</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><span>Купить</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><span>Помочь</span><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>  
+    </div>
+
+    <div class="counter">
+        <div class="container">
+            <ul class="list-promotion">
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                50
+                            </p>
+                        </section>
+                        <p>
+                            Звёздных<br>
+                            товаров
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                40
+                                <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                            </p>
+                        </section>
+                        <p>
+                            Программ<br>
+                            различных фондов
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                20
+                            </p>
+                        </section>
+                        <p>
+                            Фондов<br>
+                            присоединились
+                        </p>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="news">
+                <article class="news-block_single">
+                    <a href="{{ path('market_home')~'?individual=1' }}">
+                        <section>
+                            <h2>
+                                Частные<br>
+                                обьявления 
+                                <i class="fa fa-angle-right"></i>
+                            </h2>
+                            <p>
+                                >90% стоимости вещи переводится<br>
+                                людям нуждающимся в помощи
+                            </p>
+                        </section>
+                        <figure><img src="{{ asset('img/news/news-dd.jpg') }}" alt=""></figure>
+                    </a>
+                </article>
+
+                <article class="news-block_several">
+                    <header>
+                        <a href="{{ path('market_home')~'?company=1' }}">
+                            <section>
+                                <h2>
+                                    Новые вещи<br>
+                                    от добрых брендов 
+                                    <i class="fa fa-angle-right"></i>
+                                </h2>
+                                <p>Компании жертвуют часть стоимости товаров</p>
+                            </section>
+                            <figure><img src="{{ asset('img/index/news2.png') }}" alt=""></figure>
+                        </a>
+                    </header>
+                    <footer>
+                        <a href="{{ path('landing_delisdobrom') }}">
+                            <section>
+                                <h2>
+                                    Аукционы 
+                                    <i class="fa fa-angle-right"></i>   
+                                </h2>
+                                <p>
+                                    Уникальные вещи<br>
+                                    с благотворительным<br>
+                                    процентом
+                                </p>
+                            </section>
+                            <figure><img src="{{ asset('img/index/news3.png') }}" alt=""></figure>
+                        </a>
+                        <a href="{{ path('market_category', {'url': 'celebrities'}) }}">
+                            <div class="gradient-vert"></div>
+                            <section>
+                                <h2>
+                                    Звезды 
+                                    <i class="fa fa-angle-right"></i>
+                                </h2>
+                                <p>
+                                    Обьявления от Звезд<br>
+                                    благотворителей
+                                </p>
+                            </section>
+                            <figure><img src="{{ asset('img/index/news4.png') }}" alt=""></figure>
+                        </a>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="main-category">
+                
+                <article class="main-category-block first">
+                    <a href="/kids">
+                        <section>
+                            <h2>Детям <i class="fa fa-angle-right"></i></h2>
+                            <p>{#235 объявлений#}</p>
+                        </section>
+                        <figure><img src="{{ asset('images/plate-babies.jpg') }}" alt=""></figure>
+                    </a>
+                </article>
+
+                <article class="main-category-block second">
+                    <a href="{{ path('user_charityshop') }}">
+                        <section>
+                            <!-- <h2>Charity Shop <i class="fa fa-angle-right"></i></h2> -->
+                            <h2>&nbsp;</h2>
+                            <p>{#235 объявлений#}</p>
+                        </section>
+                        <figure><img src="{{ asset('images/charity.jpg') }}" alt=""></figure>
+                    </a>
+                </article>
+                <a href="{{ path('market_home') }}" class="btn-white">Все категории <i class="fa fa-angle-right"></i></a>
+                
+            </div>
+        </div>
+    </div>  
+
+    {#% include 'AppBundle::landings/parts/filter.html.twig' %#}
+
+    <div class="home_product">
+        <div class="container">
+            <div class="main-products">
+                
+                {#% include 'AppBundle::landings/parts/products.html.twig' %#}
+                <a href="{{ path('market_home') }}" class="btn-white">Еще <i class="fa fa-angle-right"></i></a>
+                
+            </div>
+        </div>  
+    </div>
+
+    <div class="home_testimonials">
+        <div class="container">
+            <section class="carousel">
+                <div class="carousel-wrap owl-carousel js-carousel">
+                    <div class="carousel-item">
+                        <figure>
+                            <img src="{{ asset('images/avatars/patash.png') }}" alt="">
+                            <figcaption>Максим <br> Поташев <span>Телеведущий</span></figcaption>
+                        </figure>
+
+                        <section>
+                            <p>Интересно то, что такая помощь доступна каждому и это именно тот вариант, когда вы помогаете по мере своих возможностей. Здорово то, что на продажу можно выставить практически все что угодно: будь то пальто, купленное не по размеру или билет на мероприятие. Помогать стало легко, и это - здорово!</p>
+                        </section>
+                    </div>
+                    <div class="carousel-item">
+                        <figure>
+                            <img src="{{ asset('images/avatars/fedor.png') }}" alt="">
+                            <figcaption>Евгений<br> Федоров <span>Музыкант</span></figcaption>
+                        </figure>
+
+                        <section>
+                            <p>Наша музыка и наши стихи – это все, что мы можем дать миру, это наши маленькие кусочки радости. Фонд AdVita наши большие друзья, а с друзьями всегда веселее! А если рядом еще и «Летающие звери», то веселее втройне!</p>
+                        </section>
+                    </div>
+                    <div class="carousel-item">
+                        <figure>
+                            <img src="{{ asset('images/avatars/makar.png') }}" alt="">
+                            <figcaption>Андрей <br> Макаревич <span>Музыкант</span></figcaption>
+                        </figure>
+
+                        <section>
+                            <p>Нам нравится идея «легкой» благотворительности в принципе. Это замечательно, прежде всего тем, что ты можешь помогать без «отрыва от производства». Самое ценное, что есть у музыканта, это его песни. В них мы вложили свою душу, свои мысли и чувства. И это именно то, чем мы хотим поделиться с людьми.</p>
+                        </section>
+                    </div>
+                    <div class="carousel-item">
+                        <figure>
+                            <img src="{{ asset('images/avatars/jash.png') }}" alt="">
+                            <figcaption>Алексей<br> Яшин <span>Музыкант</span></figcaption>
+                        </figure>
+
+                        <section>
+                            <p>Для нас это первый опыт подобного участия, но мы сделаем все возможное, чтобы это стало нашей доброй традицией. Здорово, что у площадки нет привязки к конкретному городу и находясь в гастрольном туре, мы можем помогать Фонду борьбы с лейкемией из разных городов нашей страны. И это круто!</p>
+                        </section>
+                    </div>
+                    <div class="carousel-item">
+                        <figure>
+                            <img src="{{ asset('images/avatars/ben.png') }}" alt="">
+                            <figcaption>Света <br> Бень <span>Режиссер</span></figcaption>
+                        </figure>
+
+                        <section>
+                            <p>Новым лотом для благотворительной платформы «Один+Один» стал диск с песнями для детей и взрослых «Музыка – все!» На диске – мой автограф, а еще обладателя сборника будет ждать маленький загадочный сюрприз. Какой? Пока секрет, но вам точно понравится!</p>
+                        </section>
+                    </div>
+                    <div class="carousel-item">
+                        <figure>
+                            <img src="{{ asset('images/avatars/safon.png') }}" alt="">
+                            <figcaption>Миша <br> Сафронов <span>Режиссер</span></figcaption>
+                        </figure>
+
+                        <section>
+                            <p>Мне, как одному из авторов проекта «Летающие звери», очень приятно выложить на благотворительную продажу интересную и полезную книгу «Легкий слон». Перед премьерой мы будем регулярно обновлять наши лоты, связанные со спектаклем. А печатная история про Прабу уже ждет своего обладателя на «Один+Один».</p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="home_news">
+        <div class="container">
+            <section class="doings">
+                <div class="doings-wr">
+                    <a href="{{ path('page', {'slug': 'delis-dobrom-moskva'}) }}" class="doings-item">
+                        <figure>
+                            <img src="{{ asset('img/doings/News-DD.jpg') }}">
+                        </figure>
+                        <section>
+                            <h4>Делись добром, Москва!</h4>
+                            <p>Благотворительная ивент платформа «Делись добром, Москва!» организует праздничные мероприятия и акции в пользу благотворительных организаций, привлекая к благотворительной деятельности новые массовые аудитории.</p>
+                            <span class="date">11 ноября 2017</span>
+                        </section>
+                    </a>
+                    <a href="{{ path('page', {'slug': 'forum-donorov'}) }}" class="doings-item">
+                        <figure>
+                            <img src="{{ asset('img/doings/News-Forum.jpg') }}">
+                        </figure>
+                        <section>
+                            <h4>Основатели «Один+Один» Михаил Палей и Андрей Вишняков приняли участие в XV Ежегодной конференции Форума Доноров</h4>
+                            <p>Конференция была посвящена вопросам защиты и укрепления доверия между благотворительным сектором и обществом, а также внутри сообщества.</p>
+                            <span class="date">26 октября 2017</span>
+                        </section>
+                    </a>
+                    <a href="{{ path('page', {'slug': 'servis-dnia-na-the-village'}) }}" class="doings-item">
+                        <figure>
+                            <img src="{{ asset('img/doings/News-Village.jpg') }}">
+                        </figure>
+                        <section>
+                            <h4>«Один+Один» стал «сервисом дня» на The Village</h4>
+                            <p>«Один+Один» получил признание со стороны прессы и стал «сервисом дня» на The Village.</p>
+                            <span class="date">30 августа 2017</span>
+                        </section>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block partners %}
+    {% include '../../views/landings/parts/partners.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
+{% endblock %}

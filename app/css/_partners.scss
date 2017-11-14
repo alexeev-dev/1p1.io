@@ -1,0 +1,15 @@
+//PARTNERS - http://prntscr.com/h2caw6
+.partners {
+	padding: 65px 0 54px 0;
+	border-top: 1px solid #e7edf2; background: white;
+
+	ul {li a img {filter: grayscale(100%); width: 140px !important; margin: 0 auto; opacity: 0.7;}}
+	
+	.owl-carousel {padding: 0 15px;}
+	.owl-prev, .owl-next {
+		position: absolute; top: 50%; transform: translateY(-50%);
+		i {font-size: 20px;}
+	}
+	.owl-prev {left: 0;}
+	.owl-next {right: 0;}
+}

@@ -1,0 +1,231 @@
+{% extends '../tpl/base.html.twig' %}
+
+{% block header %}
+    {% include 'landings/parts/header.html.twig' %}
+{% endblock header %}
+{% block breadcrumbs %}{% endblock %}
+{% block body %}
+<style>
+    dl {display: flex; align-items: center;}
+    dl div {margin-right: 42px;;}
+    dl dt p {margin-bottom: 0;}
+    dl dd span {width: 42px; height: 42px; display: inline-block; margin-left: 21px; border-radius: 50%;}
+</style>
+    <div class="container">
+        <br>
+        <h1>Заголовок h1 всегда такой большой <br>и неизменный</h1>
+        <a href="#">это базовая ссылка</a>
+        <p class="text-default">это наш базовый стиль шрифтов -p- 16-24   @extend .text-default; <a href="#">и ссылки внутри</a></p>
+        <br>
+        <h1>Пропорции</h1>
+        <p>5px &mdash; 10px &mdash; 15px &mdash; 30px &mdash; 40px &mdash; 40/2px &mdash; 60px &mdash; 80px</p>
+        <h1>Цветова палитра</h1>
+        <dl>
+            <dt><p>Бренд</p></dt>
+            <dd><span style="background: #4489ff;"></span></dd>
+        </dl>
+        <dl>
+            <dt><p>Оттенки текста</p></dt>
+            <dd><span style="background: #79879e;"></span><span style="background: #4b5769;"></span><span style="background: #B2B2B2;"></span></dd>
+        </dl>
+        <dl>
+            <dt><p>Оттенки фона</p></dt>
+            <dd><span style="background: #F1F3F7;"></span></dd>
+        </dl>
+        <dl>
+            <dt><p>UI – selected, border, arrows</p></dt>
+            <dd><span style="background: #EBEEF3;"></span><span style="background: #DFE0E2;"></span><span style="background: #AFABA1;"></span></dd>
+        </dl>
+        <br>
+        <h1>Стили фона и компонентов</h1>
+    </div>
+    <div class="wrapper gray">
+        <br><br>
+        <div class="container">
+            <dl>
+                <div class="box-filled-light-1" style="width: 250px; height: 150px;"></div>
+                <div class="box-filled-light-2" style="width: 250px; height: 150px;"></div>
+                <div class="box-filled-light-3" style="width: 250px; height: 150px;"></div>
+            </dl>
+        </div>
+    </div>
+    <div class="wrapper">
+        <br><br>
+        <div class="container">
+            <dl>
+                <div class="box-filled-dark-1" style="width: 250px; height: 150px;"></div>
+            </dl>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Заголовки информеров (лэйбы)</h1>
+        <span class="title-thin-primary">стиль информеров -span- 10/10  @extend .title-thin-primary;</span>
+        <br><br>
+        <span class="title-thin-secondary">стиль информеров -span-  9/9  @extend .title-thin-secondary;</span>
+        <br><br>
+        <span class="title-thin-main">Стиль Информеров -span-  12/16   @extend .title-thin-main;</span>
+        <br><br>
+        <h1>Заголовки функциональные (табы, ссылки)</h1>
+        <span class="title-bold-primary">Стиль Функциональных элементов  16/24  -span- @extend .title-bold-primary;</span>
+        <br><br>
+        <span class="title-bold-secondary">Стиль функциональных Элементов  12/16   -span- @extend .title-bold-secondary;</span>
+        <br><br>
+        <h1>Кнопочки + пожертвовать фонду/человеку и управление страницей</h1>
+        <a class="btn-primary" href="http://www.childrenshospice.ru" target="_blank">childrenshospice.ru</a>
+        <a class="btn-secondary" href="http://www.childrenshospice.ru" target="_blank">childrenshospice.ru</a>
+        <br><br>
+        <h1>Формы</h1>
+        <br><br>
+        <h1>&mdash; модуль SELECT</h1>
+        {% include '../tpl/components/select.html' %}
+        <br><br><br><br>
+        <h1>&mdash; модуль CONTENT</h1>
+    </div>
+    <div class="content">
+        <div class="container">
+            <figure>
+                <img src="../../assets/img/news/news-dd.jpg"/>
+                <figcaption>Благотворительная ивент платформа «Делись добром, Москва!» организует праздничные мероприятия и акции в пользу благотворительных организаций, привлекая к благотворительной деятельности новые массовые аудитории.</figcaption>
+            </figure>
+            <h2>О проекте</h2>
+            <ul class="ul-1">
+                <li>Старт проекта - 27 ноября 2016 года;</li>
+                <li>С ноября, 2016 проведено 4 мероприятия;</li>
+                <li>Общий сбор составил более 6 млн руб.</li>
+                <li>100% сборов перечислено в Детский хоспис “Дом с маяком”;</li>
+                <li>Июнь 2017 г. премия за лучший городской проект в сфере благотворительности в рамках Moscow Urban Forum 2017</li>
+                <li>Мероприятия посетило более 5 тысяч человек, из них 80% впервые принимали участие в благотворительном мероприятии</li>
+            </ul>
+            <h2>Уникальность проекта</h2>
+            <ul class="ul-1">
+                <li>Первая благотворительная ивент платформа в России</li>
+                <li>Команда проекта работает полностью на волонтерских основах</li>
+                <li>Праздничный формат мероприятий (барахолки, розыгрыши) позволяет привлечь массовую аудиторию</li>
+                <li>Философия win-win - удовлетворение встречных интересов посетители и партнеров-участников</li>
+                <li>Отказ от эмоциональных манипуляций</li>
+            </ul>
+
+            {% include '../tpl/components/share.html' %}
+
+            <h3>Предстоящее мероприятие</h3>
+            <address>
+                <strong>Барахолка – 3. Мода на благотворительность </strong><br>
+                Дата: <em>19 ноября 2017 (воскресенье)</em><br>
+                Название: <strong>Благотворительная Барахолка-3 «Делись добром, Москва» в поддержку детского хосписа «Дом с маяком» (childrenshospice.ru)</strong><br>
+                Продолжительность: <em>8 часов (с 12:00 до 20:00)</em><br>
+                Площадка: <strong>конференц-этаж отеля «Балчуг Кемпински Москва» (<a href="http://www.kempinski.com/moscow" target="_blank">www.kempinski.com/moscow</a>)</strong>
+            </address>
+            <h3>Формат: </h3>
+            <ul class="ul-2">
+                <li>модная одежда и аксессуары от российских дизайнеров</li>
+                <li>стильные предметы интерьера от иностранных дизайнеров</li>
+                <li>конкурс стилистов</li>
+                <li>консультации дизайнеров интерьера</li>
+                <li>бьюти-маркет и мастер-классы от визажистов</li>
+                <li>фотостудия</li>
+                <li>детская комната и детский театр</li>
+                <li>студия кофе и открытый бар с шампанским</li>
+            </ul>
+
+            <br><br>
+
+            <h2>О Детском хосписе “Дом с маяком”</h2>
+            <ul class="ul-1">
+                <li>Детский хоспис «Дом с маяком» - частное медицинское благотворительное учреждение учреждение для детей, чьи болезни признаны неизлечимыми. </li>
+                <li>Детский хоспис — это 500 детей и 160 сотрудников. </li>
+                <li>Название «Дом с маяком» обусловлено тем, что, когда в семье неизлечимо болен ребенок, это похоже на шторм: земля уходит из - под ног, и вокруг темнота. </li>
+                <li>Маяк подаёт сигнал — на свете есть место, где помогут справиться с невзгодами, там дружат и играют с детьми, радуются каждому дню. </li>
+                <li>«Дом с маяком»» не занимается лечением основного заболевания или реабилитацией, но лечит симптомы и создает условия, чтобы ребенок и вся семья могли жить максимально полной, активной, нормальной жизнью. </li>
+            </ul>
+            <p class="title">Детский хоспис «Дом с маяком» создан при поддержке Фонда помощи хосписам «Вера» и фонда «Подари жизнь».</p>
+            <br>
+        </div>
+    </div>
+    <div class="container">
+        <br><br><br><br>
+        <h1>&mdash; модуль LIST</h1>
+        <br>
+    </div>
+    <div class="wrapper gray">
+        <br><br>
+        <div class="container">
+            <ul class="list-products">
+                <li>
+                    {% include '../tpl/components/list-product.html' %}
+                </li>
+                <li>
+                    {% include '../tpl/components/list-product.html' %}
+                </li>
+                <li>
+                    {% include '../tpl/components/list-product.html' %}
+                </li>
+                <li>
+                    {% include '../tpl/components/list-product.html' %}
+                </li>
+            </ul>
+            <ul class="list-news">
+                <li>
+                    {% include '../tpl/components/list-news.html' %}
+                </li>
+                <li>
+                    {% include '../tpl/components/list-news.html' %}
+                </li>
+                <li>
+                    {% include '../tpl/components/list-news.html' %}
+                </li>
+            </ul>
+
+            <a href="#" class="show_more">
+                <span>Показать еще</span>
+                <em><i class="icon icon-view-more"></i></em>
+            </a>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <figure>
+                <figcaption>
+                    <p>Просто и безопасно</p>
+                    <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
+                </figcaption>
+                <img src="{{ asset('img/logo/blockchain.png') }}">
+            </figure>
+            <address>
+                <ul>
+                    <li>
+                        <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo/logo-blue.svg') }}"></a>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a href="{{ path('contacts') }}">Обратная связь</a></li>
+                            <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
+                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <ul>
+                            <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
+                            <li><small>2017 &copy; ООО “ТБП”</small></li>
+                        </ul>
+                    </li>
+                    <li>
+                        {% include '../tpl/components/share.html' %}
+                    </li>
+                </ul>
+            </address>
+    
+        </div>
+    </footer>
+{% endblock %}

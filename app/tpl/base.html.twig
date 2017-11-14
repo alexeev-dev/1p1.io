@@ -1,0 +1,249 @@
+<!DOCTYPE html> 
+<html lang="ru">
+{% set baseUrl = app.request.getScheme ~ '://' ~ app.request.getHttpHost ~ app.request.getBasePath %}
+{% set siteTitle = "Один+Один — Торговая благотворительная площадка" %}
+
+{% set appRoute = '' %}
+{% if app.request is defined %}
+    {% set appRoute = app.request.attributes.get('_route') %}
+{% endif %}
+
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
+    <!-- SEO -->
+   {% block meta_description %}
+       <meta name="Description" content="">
+   {% endblock meta_description %}
+    <meta name="Author" content="Один+Один">
+    <meta name="Robots" content="index,follow">
+
+    <!-- CONFIG -->
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- CSS -->
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/main.css') ~ codeRevisionPostfix }}">
+        <link rel="stylesheet" href="{{ asset('css/print.css') ~ codeRevisionPostfix }}" media="print">
+
+    {% endblock %}
+    {# todo Всплывающие уведомления пока оставляем. Позже рассмотрим этот вопрос #}
+    <link href="{{ asset('assets/vendors/pnotify/dist/pnotify.css') ~ codeRevisionPostfix }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendors/pnotify/dist/pnotify.buttons.css') ~ codeRevisionPostfix }}" rel="stylesheet">
+
+    <title>{% block title %}{% if pageTitle is defined %}{{ pageTitle ~ ' | ' ~ siteTitle }}{% else %}{{ siteTitle }}{% endif %}{% endblock %}</title>
+
+    {#% include 'verifications.html.twig' %#}
+
+    {#% include 'head_extra.html.twig' %#}
+</head>
+
+<body class="on-load">
+
+    {#% include 'metrika.html.twig' %#}
+
+    <!--[if lt IE 10]>
+    <p class="browsehappy">Вы используете <strong>УСТАРЕВШИЙ Internet Explorer</strong> браузер. Пожалуйста, <a href="http://browsehappy.com/">обновите ваш Браузер</a> чтобы увидеть больше возможностей на сайтах!</p>
+    <![endif]-->
+
+    <!-- Preloader  -->
+    <div class="preloader {% block preloder_class %}{% endblock %}"></div>
+
+    <!-- Application -->
+    <div class="app {% block app_class %}{% endblock %}">
+
+        {% block header %}
+            <header class="header {% block header_class %} js-header active{% endblock %}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="{{ path('homepage') }}" class="logo"><img src="{{ asset('images/logo-blue.svg') }}"></a>
+                            <nav class="menu-top">
+                                <a href="#" class="burger js-open_menu-top">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                                <ul>
+                                    <li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
+                                    <li><a href="{{ path('funds') }}">Фонды</a></li>
+                                    <li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
+
+                                    {#% if is_granted("ROLE_USER") %}
+                                        <li><a href="{{ path('fos_user_profile_show') }}">Мой кабинет</a></li>
+                                            {% if user_service.isAdmin is defined and user_service.isAdmin %}
+                                                <li><a href="{{ path('sonata_admin_dashboard') }}">Админка</a></li>
+                                            {% endif %}
+                                        <li><a href="{{ logout_path() }}">Выйти</a></li>
+                                    {% else %}
+                                        <li><a href="{{ path('fos_user_security_login') }}">Войти</a></li>
+                                    {% endif %#}
+
+                                    <li class="active3"><a href="{{ path('market_add') }}">Подать объявление</a></li>
+                                    <li class="active3"><a href="{{ path('market_home') }}">Вещи</a></li>
+                                </ul>
+                            </nav>
+                            
+                        </div>
+                    </div>
+                </div>
+            </header>
+        {% endblock %}
+
+        {% block breadcrumbs %}
+            <section class="wr bg_white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+            
+                            <!-- Breadcrumbs -->
+                            <nav class="breadcrumbs">
+
+                                <ul class="navigation">
+                                    {% block breadcrumbs_list %}
+                                        <li><a href="{{ path('homepage') }}">Главная</a></li>
+                                    {% endblock  %}
+                                </ul>
+                                {% block social_share %}
+                                    <ul class="share">
+                                        <li>Поделиться:</li>
+                                        <li><a class="vk" data-social="vkontakte" href="#"><i class="fa fa-vk"></i></a></li>
+                                        <li><a class="ok" data-social="odnoklassniki" href="#"><i class="fa fa-odnoklassniki"></i></a></li>
+                                        <li><a class="fb" data-social="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a class="tw" data-social="twitter" href="#"><i class="fa fa-twitter fa-lg tw"></i></a></li>
+                                        <li><a class="gp" href="#" data-social="googleplus"><i class="fa fa-google-plus fa-lg google"></i></a></li>
+                                    </ul>
+                                {% endblock  %}
+
+                            </nav>
+            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock  %}
+
+        {% block body %}{% endblock %}
+        
+        {% block partners %}{% endblock %}
+        
+        {% block footer %}
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+            
+                            <ul class="footer-info">
+                                <li>
+                                    <p>Просто и безопасно</p>
+                                    <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
+                                </li>
+                                <li class="logo">
+                                    <img src="{{ asset('img/footer-grey.png') }}">
+                                </li>
+                            </ul>
+            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="footer-contacts">
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('homepage') }}"><img src="{{ asset('images/logo-blue.svg') }}"></a>
+                                    </li>
+            
+                                    <li>
+                                        <ul>
+                                            <li><a href="{{ path('contacts') }}">Обратная связь</a></li>
+                                            <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
+                                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+            
+                                <ul>
+                                    <li>
+                                        <ul>
+                                            <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
+                                            <li><small>2017 &copy; ООО “ТБП”</small></li>
+                                        </ul>
+                                    </li>
+            
+                                    <li>
+                                        <ul class="soc">
+                                            <li><a href="https://t.me/oneplus1ru" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+                                            <li><a href="http://vk.com/club147946456" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://ok.ru/group/54493224042613" target="_blank"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.facebook.com/oneplus1.ru/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li><a href="https://www.instagram.com/oneplus1.ru/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        {% endblock %}
+    </div>
+
+    {% block popup %}{% endblock %}
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('js/libs.min.js') ~ codeRevisionPostfix }}"></script>
+        <script type="text/javascript" src="{{ asset('js/main.js') ~ codeRevisionPostfix }}"></script>
+
+        {# todo Уведомления пока оставляем. Пересмотрим этот вопрос позже #}
+        <!-- PNotify -->
+        <script src="{{ asset('assets/vendors/pnotify/dist/pnotify.js') ~ codeRevisionPostfix }}"></script>
+        <script src="{{ asset('assets/vendors/pnotify/dist/pnotify.buttons.js') ~ codeRevisionPostfix }}"></script>
+
+        <script>
+            $(document).ready(function () {
+                {% for type, messages in app.session.flashBag.all() %}
+                    {% if type == 'success' %}
+                       {% set title = 'Успех' %}
+                    {% elseif type == 'info' %}
+                        {% set title = 'Информация' %}
+                    {% elseif type == 'danger' %}
+                        {% set title = 'Ошибка' %}
+                        {% set type = 'error' %}
+                    {% elseif type == 'warning' %}
+                        {% set title = 'Внимание' %}
+                    {% else %}
+                        {% set title = 'Информация' %}
+                        {% set type = 'info' %}
+                    {% endif %}
+
+                    {% for message in messages %}
+                        new PNotify({
+                            title: '{{ title }}',
+                            text: '{{ message }}',
+                            type: '{{ type }}',
+                            styling: 'bootstrap3'
+                        });
+                    {% endfor %}
+                {% endfor %}
+            });
+        </script>
+    {% endblock javascripts %}
+    <script type="text/javascript" src="{{ asset('js/goodshare.min.js') ~ codeRevisionPostfix }}"></script>
+
+</body>
+
+</html>

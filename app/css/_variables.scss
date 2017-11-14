@@ -1,0 +1,215 @@
+/***********************/
+/******** Colors *******/
+/***********************/
+// BASE
+$brand: #4489ff;
+
+// FONT
+$font-light_1: #79879e;
+$font-light_2: #4b5769;
+$font-light_3: #B2B2B2;
+
+// BG
+$bg-gray: #F1F3F7;
+
+// UI
+$selected: #EBEEF3;
+$border: #DFE0E2;
+$arrows: #AFABA1;
+
+// colors
+$white: white;
+$black: black;
+
+
+/***********************/
+/******** Fonts ********/
+/***********************/
+// BASE
+$title: Cormac-Book, sans-serif;
+$text: 'HelveticaLight', sans-serif;
+$HelveticaR: 'HelveticaRegular', sans-serif; //400
+
+// Helvetica
+$HelveticaT: 'HelveticaThin', sans-serif; //100
+$HelveticaM: 'HelveticaMedium', sans-serif; //500
+$HelveticaBld: 'HelveticaBold', sans-serif; //600
+$HelveticaH: 'HelveticaHeavy', sans-serif; //700
+$HelveticaB: 'HelveticaBlack', sans-serif; //900
+
+//Helvetica Neue
+$HelveticaNeue: 'HelveticaNeueThin', sans-serif;
+$HelveticaNM: 'helveticaneuemedium', sans-serif;
+$HelveticaNL: 'helveticaneuecyrlight', sans-serif;
+
+
+/*****************************/
+/******** Proportions ********/
+/* 5, 10, 15, 30, 40, 60, 80 */
+/*****************************/
+$size-xs: 5px;
+$size-s: 10px;
+$size-base: 15px;
+$size-m: 30px;
+$size-l: 40px;
+$size-xl: 60px;
+$size-xxl: 80px;
+
+
+/*********************** TEXT STYLES ***********************/
+
+.title {
+	&-thin {
+		font-family: $text; letter-spacing: 0.7px; &-primary, &-secondary, &-main {@extend .title-thin;}
+		&-primary {color: $font-light_1; font-size: 10px; line-height: 10px; text-transform: uppercase;}
+		&-secondary {color: $font-light_2; font-size: 9px; line-height: 9px; text-transform: uppercase;}
+		
+		&-main {font-family: $HelveticaR; font-size: 12px; line-height: 16px; letter-spacing: 0.4px;}
+	}
+	&-bold {
+		font-family: $title; letter-spacing: 0; &-primary, &-secondary {@extend .title-bold;}
+		&-primary {font-size: 16px; line-height: 24px;}
+		&-secondary {font-size: 12px; line-height: 16px;}
+	}
+}
+.text {
+	&-default {font-family: $text; font-size: 16px; line-height: 24px; letter-spacing: 0.8px;}
+}
+
+// titles & texts
+h1, h2, h3, h4, h5, h6, p, blockquote, address {color: $black; a {color: $black;}}
+
+h1 {font-family: $title; font-size: 34px; line-height: 42px; letter-spacing: 0; margin: $size-base 0;}
+a {@extend .text-default; font-family: $title; color: $brand; figcaption, p, span, h2, h3, h4, h5, h6, blockquote, address {color: $black;}}
+p {@extend .text-default; font-family: $text; margin-bottom: $size-base;}
+
+blockquote {font-family: $text; font-size: 19px; line-height: 28px; letter-spacing: 0.4px;}
+address {}
+/***********************************************************/
+/************************ CONTAINER ************************/
+
+.container {
+	position: relative; margin: 0 auto; width: 1180px;
+	@include respond-to(lg) {width: 980px;}
+	@include respond-to(md) {width: 760px;}
+	@include respond-to(sm) {width: 100%;}
+
+	&:before {content: ''; display: table;}
+	&:after {content: ''; display: table; clear: both;}
+}
+/***********************************************************/
+/*********************** BOX STYLES ***********************/
+
+$shadow-full : rgba(0, 0, 0, 0.1);
+$shadow-half : rgba(0, 0, 0, 0.05);
+
+.box {
+	&-wrapper {
+		padding: $size-m 0; &-listed {@extend .box-wrapper;}
+		&-listed {}
+	}
+	&-item {}
+
+	&-filled {
+		transition: all .3s ease; &-light, &-dark {@extend .box-filled;}
+		
+		&-light {
+			background: $white; &-1, &-2, &-3 {@extend .box-filled-light;}
+
+			&-1 {border-radius: $size-xl; box-shadow: 0 $size-xs $size-m $shadow-full;}
+			&-2 {&:hover {box-shadow: 0 0 $size-s $size-s $shadow-full; z-index: 2;}}
+			&-3 {
+				border-radius: $size-xs; box-shadow: 0 0 $size-s 0 $shadow-half; 
+				&:hover {box-shadow: 0 0 $size-s 0 $shadow-full;}
+			}
+		}
+		&-dark {
+			background: $bg-gray; &-1, &-2, &-3 {@extend .box-filled-dark;}
+
+			&-1 {border-radius: $size-s;}
+		}
+	}
+}
+/**********************************************************/
+/************************ ALIGMENTS ************************/
+
+/* ABSOLUTE-position */
+.absoluteX {position: absolute; left: 50%; transform: translateX(-50%);}
+.absoluteY {position: absolute; top: 50%; transform: translateY(-50%);}
+.absoluteXY {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+/* FLEX-boxes */
+.row-center-strech {display: flex; justify-content: center; align-items: strech;}
+.row-between-strech {display: flex; justify-content: space-between; align-items: strech;}
+.row-between-center {display: flex; justify-content: space-between; align-items: center;}
+.row-start-center {display: flex; justify-content: flex-start; align-items: center;}
+.row-end-center {display: flex; justify-content: flex-end; align-items: center;}
+.row-center-center {display: flex; justify-content: center; align-items: center;} // посередине по ширине – КНОПОЧКИ
+.column-center-center {display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;} // посередине по высоте – ИКОНКИ
+.column-between-strech {display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: strech;}
+/***********************************************************/
+
+
+/////////////////////////////////////////////////////////////
+// CONTENT typography ///////////////////////////////////////
+/////////////////////////////////////////////////////////////
+.content {
+
+	// fiugres
+	figure {
+		max-width: 600px; margin-bottom: $size-m;
+		img {max-width: 100%;}
+		figcaption {@extend .title-thin-primary; line-height: 14px; margin: $size-s 0;}
+	}
+
+	// headers
+	h2, h3, h4, h5, h6 {@extend .title-bold-primary;}
+	h2 {font-size: 24px; line-height: 30px; margin-bottom: $size-s;}
+	h3 {margin-bottom: $size-base;}
+	h4, h5, h6 {}
+
+	// address
+	address {
+		background: $bg-gray; font-size: 14px; line-height: 24px; padding: $size-m;
+	}
+
+	// paragraphs
+	p {&.title {@extend .title-bold-primary; padding: $size-s $size-m;}}
+
+	// lists
+	ul {
+		&.ul {
+			margin-bottom: $size-m;
+			li {
+				@extend .text-default; 
+				margin-bottom: $size-xs; padding-left: $size-m;
+				position: relative;
+
+				&:before {
+					content: ''; 
+					width: $size-base; height: $size-base;
+					@extend .absoluteY; left: $size-xs;
+				}
+			}
+			
+			&-1, &-2 {@extend .ul;}
+			&-1 {li {&:before {background: url('../img/svg/checked.svg') center center no-repeat;}}}
+			&-2 {li {&:before {background: url('../img/svg/plus.svg') center center no-repeat;}}}
+		}
+	}
+}
+
+// cutting text by 3 dots
+.doted {
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// clear
+.clear {
+	&:after, &:before {
+		content: '';
+		display: table; width: 100%; clear: both;
+	}
+}

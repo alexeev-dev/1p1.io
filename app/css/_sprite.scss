@@ -1,0 +1,215 @@
+.icon {
+    font-size: 10px;
+    &:before {
+      content:' ';
+      vertical-align:middle;
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-repeat: no-repeat;
+      background-size: 13.7em 29.3em;
+
+      .no-svg & {
+        background-image: url("../img/sprite.png");
+      }
+    }
+}
+
+
+
+
+.icon.angle_down {
+  &:before {
+      background-position: 0em 0em;
+      width: 1em;
+      height: 0.8em;
+    }
+  }
+
+  @mixin icon-angle_down(){
+    @extend .angle_down;
+  }
+
+
+.icon.checked {
+  &:before {
+      background-position: 0em -0.8em;
+      width: 1.1em;
+      height: 0.9em;
+    }
+  }
+
+  @mixin icon-checked(){
+    @extend .checked;
+  }
+
+
+.icon.heart {
+  &:before {
+      background-position: 0em -1.7em;
+      width: 7.8em;
+      height: 6.8em;
+    }
+  }
+
+  @mixin icon-heart(){
+    @extend .heart;
+  }
+
+
+.icon.logo-blue {
+  &:before {
+      background-position: 0em -8.5em;
+      width: 10.6em;
+      height: 2.8em;
+    }
+  }
+
+  @mixin icon-logo-blue(){
+    @extend .logo-blue;
+  }
+
+
+.icon.logo-white {
+  &:before {
+      background-position: 0em -11.3em;
+      width: 10.6em;
+      height: 2.8em;
+    }
+  }
+
+  @mixin icon-logo-white(){
+    @extend .logo-white;
+  }
+
+
+.icon.logo_gray {
+  &:before {
+      background-position: 0em -14.1em;
+      width: 13.7em;
+      height: 3.6em;
+    }
+  }
+
+  @mixin icon-logo_gray(){
+    @extend .logo_gray;
+  }
+
+
+.icon.message {
+  &:before {
+      background-position: 0em -17.7em;
+      width: 1.3em;
+      height: 1.3em;
+    }
+  }
+
+  @mixin icon-message(){
+    @extend .message;
+  }
+
+
+.icon.pin {
+  &:before {
+      background-position: 0em -19em;
+      width: 1.1em;
+      height: 1.3em;
+    }
+  }
+
+  @mixin icon-pin(){
+    @extend .pin;
+  }
+
+
+.icon.plus {
+  &:before {
+      background-position: 0em -20.3em;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+
+  @mixin icon-plus(){
+    @extend .plus;
+  }
+
+
+.icon.plus-black {
+  &:before {
+      background-position: 0em -21.5em;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+
+  @mixin icon-plus-black(){
+    @extend .plus-black;
+  }
+
+
+.icon.plus-white {
+  &:before {
+      background-position: 0em -22.7em;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+
+  @mixin icon-plus-white(){
+    @extend .plus-white;
+  }
+
+
+.icon.search-black {
+  &:before {
+      background-position: 0em -23.9em;
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  @mixin icon-search-black(){
+    @extend .search-black;
+  }
+
+
+.icon.search-white {
+  &:before {
+      background-position: 0em -25.4em;
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  @mixin icon-search-white(){
+    @extend .search-white;
+  }
+
+
+.icon.seen {
+  &:before {
+      background-position: 0em -26.9em;
+      width: 1.4em;
+      height: 1.1em;
+    }
+  }
+
+  @mixin icon-seen(){
+    @extend .seen;
+  }
+
+
+.icon.time {
+  &:before {
+      background-position: 0em -28em;
+      width: 1.3em;
+      height: 1.3em;
+    }
+  }
+
+  @mixin icon-time(){
+    @extend .time;
+  }
+
+
+

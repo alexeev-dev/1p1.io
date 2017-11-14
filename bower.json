@@ -1,0 +1,32 @@
+{
+  "name": "1p1.io",
+  "description": "Awesome version",
+  "main": "",
+  "authors": [
+    "Alexeev"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.2.4",
+    "jquery.easing": "^1.3.1",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery-touchswipe": "^1.6.18",
+    
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0",
+    
+    "select2": "^4.0.5",
+    "dropzone": "^5.1.1",
+    "owl.carousel": "^2.2.1",
+    "bPopup": "bpopup#^0.11.0",
+    "jRange": "*"
+  }
+}

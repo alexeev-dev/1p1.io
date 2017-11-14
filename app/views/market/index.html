@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html> 
+	//= ../../tpl/base/head.html
+	<body class="on-load">
+		//= ../../tpl/base/counter.html
+
+		<!-- PAGE -->
+		<div class="app market">
+			//= ../../tpl/base/header.html
+
+			<div class="filters">
+				<div class="container">
+					<ul>
+						<li>
+							<input type="checkbox" id="private-ads" checked>
+							<label for="private-ads">Частные объявления</label>
+						</li>
+
+						<li>
+							<input type="checkbox" id="from-shop" checked>
+							<label for="from-shop">От магазинов</label>
+						</li>
+						<li>
+							<input type="checkbox" id="auction" checked>
+							<label for="auction">Аукционы</label>
+						</li>
+						<li>
+							<input type="checkbox" id="stars" checked>
+							<label for="stars">От звезд</label>
+						</li>
+					</ul>
+					<section>
+						//= ../../tpl/components/select.html
+						<button class="reset">Сбросить все параметры</button>
+					</section>
+				</div>
+			</div>
+			<div class="search">
+				<div class="container">
+					<form>
+						<input type="search" placeholder="Найти вещь">
+						<button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i> Искать</button>
+					</form>
+				</div>
+			</div>	
+			<div class="categories">
+				<div class="container">
+					<ul>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+					</ul>
+					<div class="range">
+						<input type="hidden" value="100000" class="js-range-slider">
+						<span class="left-rub"></span>
+						<span class="right-rub"></span>
+					</div>
+				</div>
+			</div>	
+			<div class="categories">
+				<div class="container">
+					<ul>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+						<li>
+							//= ../../tpl/components/select.html
+						</li>
+					</ul>
+				</div>
+			</div>	
+
+			<!-- Catalog -->
+			<div class="wrapper gray">
+				<div class="container">
+					<ul class="list-products">
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+						<li>
+							//= ../../tpl/components/list-product.html
+						</li>
+					</ul>
+
+					<a href="#" class="show_more">
+						<span>Показать еще</span>
+						<em><i class="icon icon-view-more"></i></em>
+					</a>
+				</div>
+			</div>
+
+			//= ../../tpl/base/footer.html
+		</div>
+		//= ../../tpl/components/popup.html
+		//= ../../tpl/base/scripts.html
+	</body>
+</html>
