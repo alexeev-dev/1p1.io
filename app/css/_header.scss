@@ -4,9 +4,10 @@ $header-height: 65px;
 
 // HEADER
 .header {
-	@extend .row-between-strech; @extend .white-shadow;
+	@extend .row-between-strech;
 	height: $header-height; width: 100%; padding: 0 $size-xl;
 	position: fixed; top: 0; left: 0; z-index: 5;
+	@extend .white-shadow;
 	// transition: all 0.3s ease-out;
 	// transform: translateY(-100%); &.active {transform: translateY(0);}
 
