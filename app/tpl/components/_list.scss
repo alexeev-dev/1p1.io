@@ -1,40 +1,3 @@
-// LISTS
-ul.list {
-	display: flex; flex-flow: row wrap; &-three, &-four {@extend .list;}
-
-	&-three {
-		& > li { a {display: block;}
-			width: calc(33% - 20px); margin: 10px;
-			@include respond-to(md) {width: calc(50% - 20px);}
-			@include respond-to(xs) {width: 100%;}
-		}
-	}
-
-	&-four {
-		& > li { a {display: block;}
-			width: calc(25% - 20px); margin: 10px;
-			@include respond-to(lg) {width: calc(33% - 20px);}
-			@include respond-to(md) {width: calc(50% - 20px);}
-			@include respond-to(xs) {width: 100%;}
-		}
-	}
-
-	&-products {
-		@extend .list-four;
-		li article {@extend .preview-product;}
-	}
-
-	&-news {
-		@extend .list-three;
-		li article {@extend .preview-news;}
-	}
-
-	&-filters {
-
-	}
-}  
-
-
 // ARTICLES
 article {
 
@@ -101,3 +64,39 @@ article {
 		&-project {}
 	}
 }
+
+// LISTS
+ul.list {
+	display: flex; flex-flow: row wrap; &-three, &-four {@extend .list;}
+
+	&-three {
+		& > li { a {display: block;}
+			width: calc(33.333% - 20px); margin: 10px;
+			@include respond-to(md) {width: calc(50% - 20px);}
+			@include respond-to(xs) {width: 100%;}
+		}
+	}
+
+	&-four {
+		& > li { a {display: block;}
+			width: calc(25% - 20px); margin: 10px;
+			@include respond-to(lg) {width: calc(33.333% - 20px);}
+			@include respond-to(md) {width: calc(50% - 20px);}
+			@include respond-to(xs) {width: 100%;}
+		}
+	}
+
+	&-products {
+		@extend .list-four;
+		li article {@extend .preview-product;}
+	}
+
+	&-news {
+		@extend .list-three;
+		li article {@extend .preview-news;}
+	}
+
+	&-filters {
+
+	}
+}  
