@@ -190,7 +190,7 @@
 				}
 				h1 + ul {margin-top: 86px; @include respond-to(sm) {margin-bottom: 42px;}}
 				p {
-					@include font-type($title, 26px, 32px, 0px); 
+					color: #fff; @include font-type($title, 26px, 32px, 0px); 
 					margin-bottom: 86px;
 					@include respond-to(sm) {font-size: 20px; line-height: 26px; margin-bottom: 42px;}
 					@include respond-to(xs) {margin-left: -10px;}
@@ -233,7 +233,7 @@
 				@include respond-to(sm) {position: static; padding-top: 60px; padding-left: 40px;}
 
 				p {
-					@include font-type($text, 26px, 26px, 0px); text-transform: uppercase; font-weight: bold;
+					color: #fff; @include font-type($text, 26px, 26px, 0px); text-transform: uppercase; font-weight: bold;
 					position: relative;
 					span {
 						position: absolute; top: -22px; left: -26px; 
@@ -286,7 +286,7 @@
 				}
 				&:last-child { width: 22.6%; a {padding-right: 0 !important; i {display: none;}}}
 
-				&.hovered {a, i {color: white;}}
+				&.hovered {a span, a, i {color: white;}}
 				&.decoration {
 					height: 100%;
 					position: absolute; top: 0; bottom: 0;
@@ -432,6 +432,20 @@
 				}
 			}
 		}
+	}
+
+	.fashion & {
+		section {
+			background: url('../img/index/fashion-header.png') no-repeat right center; background-size: cover;
+			@media (max-width: 360px) {background: url('../img/index/fashion-header.png') no-repeat -890px center;}
+		}
+		nav > ul li {
+			&.decoration {background: #000; color: #fff;}
+			&.hovered {a, i {color: white;}}
+			a, i {color: #000;}
+			@include respond-to(sm) {&.hovered {a {background: #000;}}}
+		}
+		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
 	}
 }
 
@@ -924,7 +938,7 @@
 					figure {
 						height: 299px; overflow: hidden;
 						img {
-							max-width: 100%;
+							max-width: 100%; height: 100%;
 							@include respond-to(sm) {width: 100%;}
 						}
 					}

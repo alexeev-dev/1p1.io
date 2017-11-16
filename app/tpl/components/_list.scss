@@ -12,7 +12,7 @@ article {
 		}
 		&:hover {box-shadow: 0 0 $size-s $size-s rgba(0, 0, 0, 0.03); z-index: 2;}
 		
-		&-product, &-news, &-project {@extend .preview;}
+		&-product, &-news, &-project, &-showroom {@extend .preview;}
 		// превью товара в списке – http://prntscr.com/h1uwdh
 		&-product {
 			header {
@@ -203,6 +203,19 @@ ul.list {
 	&-news {
 		@extend .list-three;
 		li article {@extend .preview-news;}
+	}
+
+	// ---- Новый список - http://prntscr.com/hb9uju --- //
+	&-showroom {
+		@extend .list-three;
+		li article {
+			@extend .preview-news;
+			figcaption {
+				padding: 20px 30px;
+				h4 {font-family: $title; font-size: 16px; text-transform: none;}
+				p {text-transform: none; font-family: $HelveticaNL; font-size: 12px;}
+			}
+		}
 	}
 
 	&-filters {
