@@ -69,10 +69,13 @@ $size-xxl: 80px;
 		&-main {font-family: $HelveticaR; font-size: 12px; line-height: 16px; letter-spacing: 0.4px;}
 	}
 	&-bold {
-		font-family: $title; letter-spacing: 0; &-primary, &-secondary {@extend .title-bold;}
+		font-family: $title; letter-spacing: 0; &-primary, &-secondary, &-big  {@extend .title-bold;}
+		&-big {font-size: 44px; line-height: 52px;}
 		&-primary {font-size: 16px; line-height: 24px;}
 		&-secondary {font-size: 12px; line-height: 16px;}
+
 	}
+	&-center {text-align: center;}
 }
 .text {
 	&-default {font-family: $text; font-size: 16px; line-height: 24px; letter-spacing: 0.8px;}

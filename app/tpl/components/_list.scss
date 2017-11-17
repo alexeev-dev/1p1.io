@@ -176,7 +176,7 @@ figure {
 
 // LISTS
 ul.list {
-	display: flex; flex-flow: row wrap; &-three, &-four {@extend .list;}
+	display: flex; flex-flow: row wrap; &-three, &-four {@extend .list; margin: 0 -10px;}
 
 	&-three {
 		& > li { a {display: block;}

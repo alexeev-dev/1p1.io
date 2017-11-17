@@ -27,8 +27,8 @@
 	}
 
 	&.white {
-		// @include font-type($title, 16px, 20px, 0.5px); color: $brand;
-		background: #fff;
+		@include font-type($title, 16px, 20px, 0.5px); color: #000;
+		background: #fff; border-color: #fff; cursor: pointer;
 		&:hover {
 			color: #fff; 
 			background: $brand;
