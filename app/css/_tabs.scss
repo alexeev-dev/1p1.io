@@ -1,6 +1,22 @@
 .tabs {
 	// табы переключения закладок на странице пользователя, фонда либо организации
 	&-personal {
+		
+		a.js-toggle-menu {
+			@include font-type($text, 18px, 22px, -1px); color: #000;
+			position: relative; width: 100%; padding-bottom: 20px; margin-bottom: 25px;
+			border-bottom: 3px solid #eff3f5;
+			
+			// hide-show
+			display: none; @include respond-to(md) {display: block;}
+
+			i {
+				color: #4489ff; position: absolute; right: 0; top: 7px;
+				&.active {transform: rotate(180deg);}
+			}
+			
+		}
+
 		ul {
 			@extend .row-between-center; width: 100%;
 			li {
@@ -52,6 +68,71 @@
 						color: $font_light-2; text-decoration: none;
 						background: $white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 					}
+				}
+			}
+		}
+	}
+
+	&-funds {
+		&_menu {
+			position: relative; padding-bottom: 1px;
+
+			&:after {
+				content: '';
+				position: absolute; bottom:0; left:50%; height: 1px; width: 100%; transform: translateX(-50%);
+				background: #d9e4ea;
+				@include respond-to(md) {display: none;}
+			}
+
+			& > a {
+				align-items: center; justify-content: space-between;
+				@include font-type($title, 22px, 24px, -0.5px); color: #000; letter-spacing: 0.5px;
+				display: none; width: 100%; padding: 20px 10px;
+				border-bottom: 1px solid #d9e4ea;
+
+				&:hover {cursor: pointer;}
+
+				@include respond-to(md) {display: flex;}
+
+				i {
+					font-size: 20px;
+					color: #4489ff; font-weight: 600;
+					display: block; float: right;
+				}
+			}
+
+			& > ul {
+				display: flex; justify-content: space-around;
+				padding-top: 25px;
+
+				@include respond-to(md) {
+					flex-direction: column; padding-top: 0;
+					@include slide_me();
+				}
+
+				li {
+					text-align: center;
+					@include respond-to(md) {text-align: left;}
+
+					a {
+						@include font-type($title, 14px, 19px, -0.5px); color: #4a4a4a;
+						display: block; padding-bottom: 15px;
+						border-bottom: 2px solid transparent; transition: all .2s;
+
+						&:hover {border-bottom: 2px solid #4489ff; cursor: pointer;}
+
+						@include respond-to(md) {font-size: 18px; padding: 20px 10px; border-bottom: 1px solid #d9e4ea;}
+
+						span {
+							display: inline-block; letter-spacing: 0.6px;
+							&.icon-buy-wrapp {
+								display: block; height: 35px; margin: 0 auto 13px auto;
+								@include respond-to(md) {display: none;}
+							}
+						}
+					}
+
+					&.active {a {border-bottom-color: #4489ff; &:hover {cursor: default;}}}
 				}
 			}
 		}

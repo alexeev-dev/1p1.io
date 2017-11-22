@@ -120,6 +120,12 @@ form, input, select, textarea, button, a, fieldset {
 	}
 }
 
+// sliding
+@mixin slide_me() {
+	overflow: hidden; max-height: 0;
+	&.active {max-height: 1000px;}
+}
+
 // Cormac
 @include font-face('cormac-book', cormac-book);
 @include font-face('cormac-extralight', cormac-extralight);
@@ -142,4 +148,8 @@ form, input, select, textarea, button, a, fieldset {
 // ICONs
 .icon {display: inline-block;}
 
-
+// preloader
+.preloader {
+	display: block; width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99999;
+	background: #3f86ff url(../img/preloader.gif) center center no-repeat;
+}

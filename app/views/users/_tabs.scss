@@ -1,0 +1,66 @@
+// TABS – http://prntscr.com/ggiqj8
+.tabs {
+
+	&-book {
+		ul {
+			display: flex;
+			@include respond-to(md) {flex-direction: column;}
+		}
+	}
+
+	//TABS-company - http://prntscr.com/gtkuci
+	&-company {
+		a.js-toggle-menu {
+			@include font-type($text, 18px, 22px, -1px); color: #000;
+			position: relative; width: 100%; padding-bottom: 20px; margin-bottom: 25px;
+			border-bottom: 3px solid #eff3f5;
+			
+			// hide-show
+			display: none; @include respond-to(md) {display: block;}
+
+			i {
+				color: #726e64; position: absolute; right: 0; top: 7px;
+				&.active {transform: rotate(180deg);}
+			}
+			
+		}
+
+		ul {
+			display: flex; justify-content: center;
+			transition: max-height 0.7s linear;
+			@include respond-to(md) {
+				flex-direction: column;
+				border-bottom: none; @include slide_me();
+			}
+
+			li {
+				text-align: center;
+				width: 183px;
+				@include respond-to(md) {margin-bottom: 10px; width: 100%; &:last-child {margin-bottom: 0; padding-bottom: 3px;}}
+
+				&.active {
+					a {
+						&:after {width: 100%;}
+					}
+				}
+				a {
+					@include font-type ($text, 16px, 22px, 0); color: #726e64;
+					display: inline-block; padding-bottom: 20px; position: relative;
+					@include respond-to(md) {width: 100%;}
+
+					&:after {
+						content: ''; 
+						display: block; height: 3px; width: 0%; position: absolute; left: 50%; bottom: 0; 
+						background: #726e64; transform: translateX(-50%); 
+						transition: width 0.3s ease-in-out;
+					} 
+
+					&:hover {
+						&:after {width: 100%;}
+
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.p-tb {
+	padding: 30px 0;
+}
+//контент в твиговском шаблоне - http://prntscr.com/h0urms
+.desc-about {p {font-size: 16px; letter-spacing: 0.5px;}}
+
+//кнопка пожертвований - http://prntscr.com/h0v0y1
+.donation-wr {
+	padding-top: 30px;
+	.donation {
+		justify-content: end;
+		transition: .4s all ease;
+		&:hover {
+			color: $link-color;
+		}
+	}
+}
+
+// LISTS
+.founds {
+
+	& > a {i {transform: rotate(0deg); transition: .3s ease-in-out;}
+			&.active {i {transform: rotate(-180deg);}
+		}	
+	}
+
+	& > ul {transition: max-height .3s cubic-bezier(.42,.6,.61,.42);}
+}
