@@ -45,24 +45,7 @@
 		}
 	}
 
-	//Секция со списком людей - http://prntscr.com/hbm7rz
-	.list-people {
-		display: flex; flex-flow: column wrap; align-content: space-around;
-		max-height: 830px;
-		li {
-			width: 20%; margin-bottom: 33px;
-			figure {
-				display: flex; align-items: center;
-				margin-bottom: 0;
-				img {flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; overflow: hidden; }
-				figcaption {
-					@extend .title-bold-primary; 
-					color: #000; text-transform: none; font-size: 18px; letter-spacing: 0.4px;
-					margin-left: 20px;
-				}
-			}
-		}
-	}
+	
 
 	&.pet, &.children {
 		header.header {
@@ -192,6 +175,25 @@
 		}
 	}
 
+
+	//Секция со списком людей - http://prntscr.com/hbm7rz
+	.list-people {
+		display: flex; flex-flow: column wrap; align-content: space-around;
+		max-height: 830px;
+		li {
+			width: 20%; margin-bottom: 33px;
+			figure {
+				display: flex; align-items: center;
+				margin-bottom: 0;
+				img {flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; overflow: hidden; }
+				figcaption {
+					@extend .title-bold-primary; 
+					color: #000; text-transform: none; font-size: 18px; letter-spacing: 0.4px;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
 
 }
 ////////////////////////////////////////////////////

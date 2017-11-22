@@ -1,0 +1,680 @@
+{% extends '../../tpl/base.html.twig' %}
+
+{% block header_class %}{% endblock %}
+
+{% block app_class %}index{% endblock %}
+{% block preloder_class %}{% endblock %}
+
+{% block header %}
+    {% include 'parts/header.html.twig' %}
+{% endblock header %}
+
+{% block breadcrumbs %}{% endblock  %}
+
+{% block body %}
+    <div class="intro">
+        <section class="js-slides">
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Покупайте и продавайте <br> 
+                        вещи, помогая людям</h1>
+                        <p>Благотворительность доступная каждому</p>
+                        <a href="{{ path('page', {'slug': 'about'}) }}">Подробнее о проекте <i class="fa fa-angle-right"></i></a>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Публикуйте вещи которые<br>
+                            вы хотели бы посвятить<br>
+                        добрым делам</h1>
+                        <ul>
+                            <li><a href="{{ path('market_add') }}">Продать <i class="fa fa-angle-right"></i></a></li>
+                            {#
+                            <li><a href="#">Узнать все о продаже <i class="fa fa-angle-right"></i></a></li>
+                            #}                          
+                        </ul>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Находите и покупайте<br>
+                            вещи которые вам<br>
+                        нравятся</h1>
+                        <ul>
+                            <li><a href="{{ path('market_home') }}">Купить <i class="fa fa-angle-right"></i></a></li>
+                            {#
+                            <li><a href="#">Узнать все о покупке <i class="fa fa-angle-right"></i></a></li>
+                            #}                          
+                        </ul>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+            <article>
+                <div class="container">
+                    <header>
+                        <h1>Деньги с каждой покупки<br>
+                            перечисляются людям которым<br>
+                        вы хотите помочь</h1>
+                        <ul>
+                            <li><a href="{{ path('market_add') }}">Продать <i class="fa fa-angle-right"></i></a></li>
+                            <li><a href="{{ path('market_home') }}">Купить <i class="fa fa-angle-right"></i></a></li>
+                            {#
+                            <li><a href="#">Сделать прямое пожертвование <i class="fa fa-angle-right"></i></a></li>
+                            #}                            
+                        </ul>
+                    </header>
+                    <footer>
+                        <p><span><i class="icon icon-shield"></i>Надежность</span>BLOCKCHAIN</p>
+                    </footer>
+                </div>
+            </article>
+        </section>
+        <nav>
+            <ul>
+                <li class="decoration"></li>
+                <li class="hovered"><a href="#"><span>Идея</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><span>Продать</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><span>Купить</span><i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#"><span>Помочь</span><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>  
+    </div>
+
+    <div class="counter">
+        <div class="container">
+            <ul class="list-promotion">
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                43
+                                <span>000 000</span>
+                            </p>
+                        </section>
+                        <p>
+                            Звёздных<br>
+                            товаров
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                86
+                                <span>000</span>
+                                
+                            </p>
+                        </section>
+                        <p>
+                            Программ<br>
+                            различных фондов
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                48
+                                <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+                            </p>
+                        </section>
+                        <p>
+                            Фондов<br>
+                            присоединились
+                        </p>
+                    </article>
+                </li>
+                <li>
+                    <article class="promotion">
+                        <section>
+                            <p>
+                                <i class="fa fa-angle-right"></i>
+                                22
+                                 <span>000</span>
+                            </p>
+                        </section>
+                        <p>
+                            Фондов<br>
+                            присоединились
+                        </p>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="news">
+                <article class="news-block_single">
+                    <a href="{{ path('market_home')~'?individual=1' }}">
+                        <section>
+                            <h2>
+                                Верхняя<br>
+                                одкжда 
+                                <i class="fa fa-angle-right"></i>
+                            </h2>
+                        </section>
+                        <figure><img src="{{ asset('img/news/fashion1.png') }}" alt=""></figure>
+                    </a>
+                </article>
+
+                <article class="news-block_several">
+                    <header>
+                        <a href="{{ path('market_home')~'?company=1' }}">
+                            <section>
+                                <h2>
+                                   Аксессуары 
+                                    <i class="fa fa-angle-right"></i>
+                                </h2>
+                            </section>
+                            <figure><img src="{{ asset('img/news/fashion2.png') }}" alt=""></figure>
+                        </a>
+                    </header>
+                    <footer>
+                        <a href="{{ path('landing_delisdobrom') }}">
+                            <section>
+                                <h2>
+                                    Обувь
+                                    <i class="fa fa-angle-right"></i>   
+                                </h2>
+                            </section>
+                            <figure><img src="{{ asset('img/news/fashion3.png') }}" alt=""></figure>
+                        </a>
+                        <a href="{{ path('market_category', {'url': 'celebrities'}) }}">
+                            <div class="gradient-vert"></div>
+                            <section>
+                                <h2>
+                                    Звезды 
+                                    <i class="fa fa-angle-right"></i>
+                                </h2>
+                                <p>
+                                    Обьявления от Звезд<br>
+                                    благотворителей
+                                </p>
+                            </section>
+                            <figure><img src="{{ asset('img/news/fashion4.png') }}" alt=""></figure>
+                        </a>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="main-products">
+                <!--<a class="btn black show_all">Все <i class="fa fa-angle-right"></i></a>-->
+                <h2>Российские дизайнеры</h2>
+                <ul class="list-products">
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="main-products">
+                <h2>От известных брендов</h2>
+                <!--<a class="btn black show_all">Все <i class="fa fa-angle-right"></i></a>-->
+                <ul class="list-products">
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/list-product.html' %}
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="content">
+         <div class="wrapper gray">
+            <div class="container carousel">
+                <h2>Шоурумы</h2>
+                <ul class="list-showroom">
+                    <li>
+                         <article>
+                          <a href="#">
+                            <figure>
+                              <img src="assets/img/news/fashion5.png" alt="">
+                              <figcaption>
+                                <h4>Moroseyka</h4>
+                                <p>м. Кропоткинская</p>
+                              </figcaption>
+                            </figure>
+                          </a>
+                        </article>
+                    </li>
+                    <li>
+                         <article>
+                          <a href="#">
+                            <figure>
+                              <img src="assets/img/news/fashion6.png" alt="">
+                              <figcaption>
+                                <h4>Moroseyka</h4>
+                                <p>м. Кропоткинская</p>
+                              </figcaption>
+                            </figure>
+                          </a>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                          <a href="#">
+                            <figure>
+                              <img src="assets/img/news/fashion7.png" alt="">
+                              <figcaption>
+                                <h4>Moroseyka</h4>
+                                <p>м. Кропоткинская</p>
+                              </figcaption>
+                            </figure>
+                          </a>
+                        </article>
+                    </li>`
+                </ul>
+                <ul class="navigation">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul> 
+            </div>            
+        </div>
+    </div>
+
+    <div class="container">
+        <h3 class="title-bold-primary title-center">Новости и события</h3>
+        <ul class="list-news">
+            <li>
+                {% include '../../tpl/components/list-news.html' %}
+            </li>
+            <li>
+                {% include '../../tpl/components/list-news.html' %}
+            </li>
+            <li>
+                {% include '../../tpl/components/list-news.html' %}
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+         <div class="wrapper gray">
+            <div class="container">
+                <section class="joined carousel">
+                    <h3 class="title-bold-primary title-center">Бренды и магазины</h3>
+                    <ul>
+                        <li><a href="#"><img src="assets/img/brends/zara.png"></a></li>
+                        <li><a href="#"><img src="assets/img/brends/topman.png"></a></li>
+                        <li><a href="#"><img src="assets/img/brends/zara.png"></a></li>
+                        <li><a href="#"><img src="assets/img/brends/topman.png"></a></li>     
+                    </ul>
+
+                    <ul class="navigation">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul> 
+                </section>
+            </div>   
+         </div>
+    </div> 
+
+     <div class="content">
+        <div class="container">
+            <h2 class="title-center"><span class="title-bold-big">Дизайнеры</span></h2>
+            <ul class="list-people">
+                <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                 <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/abakunceva.png">
+                            <figcaption>Alla Ufimceva</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/kokorin.png">
+                            <figcaption>7II</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+                  <li>
+                    <a href="#">
+                        <figure>
+                            <img src="assets/img/celebrities/gagarina.png">
+                            <figcaption>Ashe</figcaption>
+                        </figure>
+                     </a>
+                 </li>
+            </ul>
+        </div>  
+     </div>  
+
+     <div class="content">
+        <div class="join" style="background: url(assets/img/index/join-bg-fashion.png) no-repeat; background-size: cover;">
+            <header>
+                <h4>Присоединиться</h4>
+                <p>Если вы создаете одежду, <br>
+                и хотите помогать людям, у нас есть<br>
+                для вас предложение.</p>
+            </header>
+
+            <form class="form">
+                <span class="wr-input">
+                    <input type="text" id="sub" required="required">
+                    <label for="sub">Ваш e-mail</label>
+                </span>
+                <button type="submit" class="btn shadow white">Отправить заявку</button>
+            </form>
+        </div>
+     </div> 
+
+     <div class="content">
+         <div class="wrapper gray">
+            <div class="container">
+                <section class="joined carousel">
+                    <h3 class="title-bold-primary title-center">Фонды поддерживающие дизайнеров</h3>
+                    <ul>
+                        <li><a href="#"><img src="assets/img/brends/zara.png"></a></li>
+                        <li><a href="#"><img src="assets/img/brends/topman.png"></a></li>
+                        <li><a href="#"><img src="assets/img/brends/zara.png"></a></li>
+                        <li><a href="#"><img src="assets/img/brends/topman.png"></a></li>     
+                    </ul>
+
+                    <ul class="navigation">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul> 
+                </section>
+            </div>   
+         </div>
+    </div> 
+
+    <div class="subscription">
+        <div class="container">
+            <h2>Будьте в курсе самых  важных<br> новостей One <sup>+1</sup></h2>
+            <form class="form">
+                <span class="wr-input">
+                    <input type="text" id="sub" required="required">
+                    <label for="sub">Ваш e-mail</label>
+                </span>
+                <button type="submit" class="btn shadow">Подписаться</button>
+            </form>
+        </div>
+    </div>  
+{% endblock %}
+
+{% block partners %}
+    {% include 'parts/partners.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <figure>
+                <figcaption>
+                    <p>Просто и безопасно</p>
+                    <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
+                </figcaption>
+                <img src="{{ asset('img/logo/blockchain.png') }}">
+            </figure>
+            <address>
+                <ul>
+                    <li>
+                        <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo/logo-blue.svg') }}"></a>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a href="{{ path('contacts') }}">Обратная связь</a></li>
+                            <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
+                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <ul>
+                            <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
+                            <li><small>2017 &copy; ООО “ТБП”</small></li>
+                        </ul>
+                    </li>
+                    <li>
+                        {% include '../../tpl/components/share.html' %}
+                    </li>
+                </ul>
+            </address>
+    
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
+{% endblock %}
