@@ -45,6 +45,25 @@
 		}
 	}
 
+	//Секция со списком людей - http://prntscr.com/hbm7rz
+	.list-people {
+		display: flex; flex-flow: column wrap; align-content: space-around;
+		max-height: 830px;
+		li {
+			width: 20%; margin-bottom: 33px;
+			figure {
+				display: flex; align-items: center;
+				margin-bottom: 0;
+				img {flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; overflow: hidden; }
+				figcaption {
+					@extend .title-bold-primary; 
+					color: #000; text-transform: none; font-size: 18px; letter-spacing: 0.4px;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+
 	&.pet, &.children {
 		header.header {
 			.logo-block {
@@ -154,6 +173,26 @@
 			}  
 		}
 	}
+
+	&.fashion, &.art {
+		//меняем цвет кнопок в карусели - http://prntscr.com/hbp9r5
+		.carousel .navigation li {
+			&.active, &:hover {
+				background: #414141;
+			}
+		}
+
+		//меняем цвет кнопки в подписке - http://prntscr.com/hbp1il
+		.subscription .form .btn {
+			justify-content: center;
+			background: #000; border-color: #000;
+			&:hover {
+				background: #fff; color: #000;
+			}
+		}
+	}
+
+
 }
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
@@ -190,7 +229,7 @@
 				}
 				h1 + ul {margin-top: 86px; @include respond-to(sm) {margin-bottom: 42px;}}
 				p {
-					@include font-type($title, 26px, 32px, 0px); 
+					color: #fff; @include font-type($title, 26px, 32px, 0px); 
 					margin-bottom: 86px;
 					@include respond-to(sm) {font-size: 20px; line-height: 26px; margin-bottom: 42px;}
 					@include respond-to(xs) {margin-left: -10px;}
@@ -233,7 +272,7 @@
 				@include respond-to(sm) {position: static; padding-top: 60px; padding-left: 40px;}
 
 				p {
-					@include font-type($text, 26px, 26px, 0px); text-transform: uppercase; font-weight: bold;
+					color: #fff; @include font-type($text, 26px, 26px, 0px); text-transform: uppercase; font-weight: bold;
 					position: relative;
 					span {
 						position: absolute; top: -22px; left: -26px; 
@@ -286,7 +325,7 @@
 				}
 				&:last-child { width: 22.6%; a {padding-right: 0 !important; i {display: none;}}}
 
-				&.hovered {a, i {color: white;}}
+				&.hovered {a span, a, i {color: white;}}
 				&.decoration {
 					height: 100%;
 					position: absolute; top: 0; bottom: 0;
@@ -431,6 +470,32 @@
 					}
 				}
 			}
+		}
+	}
+
+	.fashion &, .art & {
+		section {
+			height: 705px;
+			article {
+				header {
+					h1 {font-size: 84px; line-height: 79px; letter-spacing: -0.2px; margin-bottom: 31px;}
+					p {font-size: 44px; line-height: 1;}
+				}
+			}
+		}
+		nav > ul li {
+			&.decoration {background: #000; color: #fff;}
+			&.hovered {a, i {color: white;}}
+			a, i {color: #000;}
+			@include respond-to(sm) {&.hovered {a {background: #000;}}}
+		}
+		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
+	}
+
+	.fashion & {
+		section {
+			background: url('../img/index/fashion-header.png') no-repeat right center; background-size: cover;
+			@media (max-width: 360px) {background: url('../img/index/fashion-header.png') no-repeat -890px center;}
 		}
 	}
 }
@@ -760,7 +825,6 @@
 //http://prntscr.com/h4c80l
 .joined {
 	padding-bottom: 40px; position: relative;
-
 	h2 {
 		@include font-type($title, 16px, 1, 0); color: #7690a4; text-align: center;
 		padding-top: 11px; margin-bottom: 50px;
@@ -772,11 +836,11 @@
 			// &:last-child {margin-right: 0;}
 			padding: 10px;
 			a {
+				display: inline-block;
+				background: #fff;
+				transition: all .4s ease;
 				&:hover {
-					img {box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);}
-				}
-				img {
-					transition: all .4s ease;
+					box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 				}
 			}
 		}
@@ -924,12 +988,37 @@
 					figure {
 						height: 299px; overflow: hidden;
 						img {
-							max-width: 100%;
+							max-width: 100%; height: 100%;
 							@include respond-to(sm) {width: 100%;}
 						}
 					}
 				}
 			}
+		}
+	}
+}
+
+//Блок "Присоединиться" - http://prntscr.com/hbojdz 
+.join {
+	height: 600px; width: 100%; padding-top: 94px;
+	header {
+		text-align: center;
+		margin-bottom: 30px; padding-left: 22px;
+		h4, p {color: #fff;}
+		h4 {
+			font-size: 44px; letter-spacing: 1.1px; line-height: 52px;
+			margin-bottom: 50px;
+		}
+		p {font-size: 28px; line-height: 40px; letter-spacing: 1.1px;}
+	}
+	.form {
+		display: flex; flex-direction: column; align-items: center;
+		width: 560px;
+		.wr-input, input {width: 100%;}
+		input {color: #000; background: #fff;}
+		label {color: #000;}
+		.btn {
+			&:hover {background: #000; color: #fff;}
 		}
 	}
 }
@@ -1012,7 +1101,8 @@
 		margin-top: 7px; padding-left: 6px	;
 
 		li,  .owl-dot {
-			width: 19px; height: 8px; margin: 0 5px;
+			flex-shrink: 0;
+			width: 19px; height: 8px; margin: 0 5px; padding: 0;
 			background: #d9deea; border-radius: 10px; cursor: pointer;
 
 			&.active {background: #4489ff; &:hover {cursor: default;}}
