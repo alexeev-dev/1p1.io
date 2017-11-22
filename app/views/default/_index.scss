@@ -1,6 +1,34 @@
-////////////////////////////////////////////////////}
 ////////////////////////////////////////////////////
-//СТИЛИ ДЛЯ ЛЕГДИНГОВ "ПИТОМЦЫ" и "ДЕТИ"
+////////////////////////////////////////////////////
+
+////---ОБЩИЕ СТИЛИ ДЛЯ БЛОКОВ---////
+
+//Отступы между блоками и фон
+.wrapper {
+	padding: 60px 0; background: white;
+	&.grey {
+		background: #F1F3F7;
+		& .title-little {color: #000;}
+	}
+}
+
+//Заголовок по левой стороне - http://prntscr.com/hdq1b1
+.title {
+	&-big {
+		@include font-type($title, 34px, 40px, 0px); text-align: left; 
+		margin-bottom: 36px;
+		&.left {text-align: left;}
+		&.center {text-align: center;}
+	}
+	&-little {
+		@include font-type($title, 16px, 1, 0); color: #7690a4; text-align: center;
+		margin-bottom: 50px;
+	}
+	
+}
+
+
+//СТИЛИ ДЛЯ ЛЕГДИНГОВ
 .app.index {
 	padding-top: 0;
 
@@ -15,13 +43,17 @@
 				display: block; width: 110px;
 				margin: 15px auto 0 auto;
 				position: relative; top: auto; right: auto; transform: translateY(0); 
-
-				.home_product &, .home_news & {}
 			}
 
 			color: white; background: #4489FF; i {color: white;}
 			&:hover {background: #629CFF;}
 		}
+	}
+
+	//разделитель -  http://prntscr.com/hdonwo
+	.separator {
+		clear: both; display: block; width: 100%; height: 1px; margin: 20px 0 40px 0;
+		background: #e5e5e5;
 	}
 
 	//Секция с выпадающими списками на главной - http://prntscr.com/h2ns22
@@ -40,25 +72,6 @@
 				font-size: 18px; letter-spacing: 0;
 				i {
 					font-size: 16px; color: #000;
-				}
-			}
-		}
-	}
-
-	//Секция со списком людей - http://prntscr.com/hbm7rz
-	.list-people {
-		display: flex; flex-flow: column wrap; align-content: space-around;
-		max-height: 830px;
-		li {
-			width: 20%; margin-bottom: 33px;
-			figure {
-				display: flex; align-items: center;
-				margin-bottom: 0;
-				img {flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; overflow: hidden; }
-				figcaption {
-					@extend .title-bold-primary; 
-					color: #000; text-transform: none; font-size: 18px; letter-spacing: 0.4px;
-					margin-left: 20px;
 				}
 			}
 		}
@@ -191,7 +204,6 @@
 			}
 		}
 	}
-
 
 }
 ////////////////////////////////////////////////////
@@ -351,44 +363,13 @@
 							width: 19px; height: 8px; margin: 0 5px;
 							background: #d9deea; border-radius: 10px;
 							span {display: none;}
-							i {
-								display: none;
-								// top: 0; right: auto; left: 50% !important; transform: translateX(-50%);
-							}
+							i {display: none;}
 						}
 
 						&.hovered {a {background: #4489FF;}}
 
-						// &:last-child a i {display: block;}
 					}
-				// flex-direction: column;
-				// width: 100%; height: auto; border-radius: 10px;
-				// li {
-				// 	width: 100% !important; height: 64px;
-				// 	&.decoration {display: none;}
-				// 	&.hovered {background: #4489FF;}
-				// 	&:first-child {
-				// 		a {justify-content: center;}
-				// 	}
-				// 	&:nth-child(2)  {
-				// 		padding: 0;
-				// 		a {justify-content: center; padding-left: 0;}
-				// 	}
-				// 	&:last-child {
-				// 		a {
-				// 			i {display: block;}
-				// 		}
-				// 	}
-				// 	a {
-				// 		color: #4489FF; flex-direction: column; align-items: center;
-				// 		padding: 0;
-				// 		i {
-				// 			right: 24px;
-				// 			transform: rotate(90deg);
-				// 		}
-				// 	}
-					
-				// }
+	
 			}
 		}
 	}
@@ -401,7 +382,6 @@
 			a, i {color: #96be46;}
 			@include respond-to(sm) {&.hovered {a {background: #96be46;}}}
 		}
-		//@include respond-to(sm) {nav > ul {li {a {background: #96be46;}}}}
 	}
 
 	.children & {
@@ -415,7 +395,6 @@
 			a, i {color: #E8B194;}
 			@include respond-to(sm) {&.hovered {a {background: #E8B194;}}}
 		}
-		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
 	}
 
 	.dobro & {
@@ -489,7 +468,6 @@
 			a, i {color: #000;}
 			@include respond-to(sm) {&.hovered {a {background: #000;}}}
 		}
-		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
 	}
 
 	.fashion & {
@@ -500,10 +478,110 @@
 	}
 }
 
-.wrapper {
-	padding-bottom: 60px; background: white;
+//LANDINGS LISTS
+.list {
+	//Promotion - http://prntscr.com/h2dye8
+	&-promotion {
+		display: flex; justify-content: space-around;
+		margin: 0px -7px 0 -9px;
+		@include respond-to(md) {flex-wrap: wrap;}
+
+		li {
+			width: 33%;
+			@include respond-to(sm) {width: 100%;}
+
+			&:nth-child(2), &:nth-child(3) {
+				p {left: 10px;}
+			}
+		}
+	}
+	.dobro & {
+		li {
+			@include respond-to(md) {width: 25%;}
+			@include respond-to(sm) {width: 100%;}
+		}
+	}
+
+	//Showroom - http://prntscr.com/hbqxw2
+	&-showroom  {
+		display: flex;
+		margin: 0 -10px;
+		li {
+			width: calc(33.33333% - 20px); margin: 0 10px;
+			background: #fff;
+		}
+		@include respond-to(sm) {
+			width: 100%; 
+			overflow: hidden;
+			li {width: calc(50% - 10px); flex-shrink: 0;}
+		}
+		@include respond-to(xs) {li {width: 100%;} }
+	}
+
+	//EVENTS - http://prntscr.com/hbt0f3
+	&-events {
+		display: flex;
+		margin: 0 -10px;
+		li {
+			margin: 0 10px;
+			background: #fff;
+			a:hover {box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);}
+			article {padding: 20px;}
+			hgroup {
+				margin-bottom: 30px;
+				h4 {@include font-type($title, 54px, 1, 0.3px); color: #323232;}
+				h5 {@include font-type($title, 16px, 1, 0.3px); color: #323232;}
+			}
+			section {
+				h4 {@include font-type($title, 22px, 32px, 0.3px); color: #000;}
+				p {@include font-type($text, 16px, 24px, 0.7px); color: #000;}
+			}
+
+		}
+		@include respond-to(md) {
+			width: 100%; 
+			overflow: hidden;
+			li {width: calc(50% - 10px); flex-shrink: 0;}
+		}
+		@include respond-to(xs) {li {width: 100%;} }
+	}
 }
 
+//PROMOTION - http://prntscr.com/h4biip
+.promotion {
+	section {
+		display: flex; justify-content: center;
+		padding-top: 30px; margin-bottom: 15px;
+
+		p {
+			color: #000; text-align: center;
+			position: relative; left: 14px; margin-bottom: 13px;
+
+			@include font-type($title, 64px, 1, 0px);
+
+			& > i {
+				color: $brand; font-size: 24px; font-weight: 600;
+				position: absolute; top: 25px; left: -19px;
+			}
+			span {
+				@include font-type($title, 18px, 1, 0px);
+				position: relative; top: 11px; display: inline-block; vertical-align: top;
+				
+				i {color: #000; font-size: 15px; font-weight: 600;}
+			}
+		}
+	}
+	& > p {
+		@include font-type($text, 16px, 22px, 0.3px); text-align: center; color: #000;
+	}
+}
+
+.showroom {
+	a:hover {box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);}
+	figure {img {max-width: 100%;} }
+}
+
+// http://prntscr.com/hdq8sj
 .counter {
     padding: 35px 0 42px 0; background: #fff;
 
@@ -518,6 +596,248 @@
     }
 }
 
+// ADS in Index - http://prntscr.com/h2fk7d
+.ads {
+	display: flex;
+	@media (max-width: 1249px) {height: 576px; overflow: hidden;}
+	@include respond-to(lg) {height: 475px;}
+	@include respond-to(md) {flex-direction: column; height: auto; overflow: visible;}
+
+	&-block {
+		&_single, &_several header {
+			transition: all .4s ease;
+			& > a {
+				position: relative; display: inline-block;
+				transition: all .4s ease;
+
+				section {
+					display: flex; flex-direction: column; justify-content: flex-end;
+					position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+				}
+				figure {
+					img {
+						max-width: 100%;
+						@include respond-to(sm) {width: 100%;}
+					}
+				}
+			}
+		}
+
+		&_single {
+			width: 590px;
+			@include respond-to(md) {width: 80%; margin: 0 auto;}
+			@include respond-to(sm) {width: 100%;}
+
+			&:hover {
+				box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 2;
+				@media (max-width: 1249px) {box-shadow: none;}
+			}
+
+			& > a {width: 100%;}
+			section {
+				padding-left: 48px; padding-bottom: 43px;
+				@include respond-to(md) {padding-left: 35px;}
+				@media (max-width: 590px) {bottom: -25px;}
+
+				h2 {
+					@include font-type($title, 54px, 56px, -1px); color: #fff;
+					margin-bottom: 24px;
+					i {
+						font-size: 24px; position: relative; bottom: 5px; right: -2px;
+						@include respond-to(md) {bottom: 0;}
+						@include respond-to(sm) {bottom: -2px;}
+					}
+					@include respond-to(xs) {font-size: 32px; line-height: 34px;}
+				}
+				p {
+					@include font-type($title, 18px, 24px, 0); color: #fff;
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		&_several {
+			width: 590px;
+			@include respond-to(md) {width: 80%; margin: 0 auto;}
+			@include respond-to(sm) {width: 100%;}
+
+			&:hover {z-index: 2;}
+
+			section {
+				h2 {
+					@include font-type($title, 38px, 45px, 0); color: #fff;
+					margin-bottom: 19px;
+					@include respond-to(sm) {font-size: 30px; line-height: 38px;}
+					@include respond-to(xs) {font-size: 22px; line-height: 20px; margin-bottom: 15px;}
+
+				}
+				p {
+					@include font-type($title, 18px, 24px, 0); color: #fff;
+					margin-bottom: 0;
+					@include respond-to(sm) {font-size: 16px; line-height: 20px;}
+				}
+			}
+
+			header {
+				position: relative;
+				& > a {width: 100%;}
+				section {
+					padding-bottom: 40px; padding-left: 39px;
+					@include respond-to(xs) {padding-bottom: 0;}
+					h2 {
+						i {
+							font-size: 24px; position: relative; bottom: 5px; right: -3px; 
+							@include respond-to(md) {bottom: 0;}
+							@include respond-to(sm) {bottom: -2px;}
+						}
+					}
+					p {margin-bottom: 0;}
+				}
+
+				&:hover {
+					box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 3;
+					@media (max-width: 1249px) {box-shadow: none;}
+				}
+			}
+			footer {
+				display: flex; justify-content: space-between;
+				@include respond-to(xs) {flex-direction: column;} 
+				
+				&:hover {z-index: 3;}
+
+				& > a {
+					position: relative; width: 100%;
+					transition: all .4s ease;
+
+					&:hover {
+						box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 4;
+						@media (max-width: 1249px) {box-shadow: none;}
+					}
+
+					section {
+						display: flex; flex-direction: column; justify-content: flex-end;
+						padding-left: 35px; padding-bottom: 20px; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+						h2 {
+							margin-bottom: 14px;
+							i {
+								font-size: 24px; position: relative; bottom: 2px; right: -4px;
+								@include respond-to(md) {bottom: 0;}
+								@include respond-to(sm) {bottom: -2px;}
+							}
+						}
+						p {margin-bottom: 0;}
+
+						@include respond-to(lg) {bottom: 65px; left: 15px;}
+						@include respond-to(md) {bottom: 0; left: 35px;}
+						@media (max-width: 590px) {bottom: 45px;}
+						@include respond-to(sm) {bottom: 0;}
+						
+					}
+					figure {
+						height: 299px; overflow: hidden;
+						img {
+							max-width: 100%; height: 100%;
+							@include respond-to(sm) {width: 100%;}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// - http://prntscr.com/h2q6m0
+.landing-category {
+	display: flex; justify-content: space-between; position: relative;
+	@include respond-to(md) {flex-direction: column; a.btn-white {width: auto !important;}}
+
+	&-block {
+		&.first {
+			width: 680px;
+			@include respond-to(lg) {width: 57%;}
+			@include respond-to(md) {width: 80%; margin: 0 auto 20px auto;}
+			@include respond-to(sm) {width: 100%;}
+		}
+		&.second {
+			width: 480px;
+			@include respond-to(lg) {width: 40.2%; margin: 0 auto;}
+			@include respond-to(md) {width: 80%; margin: 0 auto;}
+			@include respond-to(sm) {width: 100%;}
+			section {
+				left: 44px;
+				@include respond-to(xs) {left: 15px;}
+			}
+		}
+		& > a {
+			position: relative; display: inline-block; width: 100%;
+			transition: all .4s ease;
+			&:hover {box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2)}
+
+			section {
+				display: flex; flex-direction: column; justify-content: flex-end;
+				position: absolute; left: 0; right: 0; top: 0; bottom: 0; padding-left: 50px; padding-bottom: 47px;
+				@include respond-to(xs) {left: 25px; bottom: 20px;}
+
+				h2 {
+					@include font-type($title, 54px, 58px, 0); color: #fff;
+					margin-bottom: 19px;
+					@include respond-to(sm) {font-size: 40px}
+					@include respond-to(xs) {font-size: 30px; margin-bottom: 12px;}
+					i {
+						font-size: 24px; font-weight: 600; position: relative; bottom: 8px; right: -6px;
+						@include respond-to(md) {bottom: 0;}
+					}
+				}
+
+				p {@include font-type($title, 22px, 22px, 0); color: #fff; padding-left: 3px;}
+				@include respond-to(sm) {font-size: 18px;}
+			}
+			figure {
+				img {
+					max-width: 100%;
+					@include respond-to(md) {width: 100%;}
+				}
+			}
+		}
+	}
+}
+
+//Список фильтров - http://prntscr.com/hdpn4y
+.home_filter {
+	padding: 10px 0 35px 0; background: white;
+	h2 {color: #000000; font-family: $title; font-size: 38px; line-height: 39px; text-align: center; margin-bottom: 15px;}
+
+	.app.index.pet &,  .app.index.children & {
+		padding: 40px 0;
+	}
+}
+
+//Блок с акциями - http://prntscr.com/hdpnpp
+.action {
+	display: flex; flex-direction: column; justify-content: flex-end;
+	width: 100%; min-height: 422px; padding: 0 0 60px 45px;
+	@include respond-to(xs) {padding: 0 15px 60px 15px;}
+
+	h2 {
+		display: flex; align-items: center;
+
+		@include font-type($title, 54px, 1, 0); color: #fff;  
+		/*для хрома*/margin-top: auto;/**/ margin-bottom: 25px;
+		@include respond-to(xs) {font-size: 35px; line-height: 45px;}
+		i {
+			font-size: 27px; font-weight: bold;
+			margin-left: 21px; margin-top: 7px;
+		}
+	}
+	p {
+		@include font-type($title, 22px, 32px, 0); color: #fff;
+		margin-bottom: 0; padding-left: 3px;
+		@include respond-to(xs) {font-size: 18px; line-height: 28px;}
+	}
+}
+
+
+//http://prntscr.com/hdpr74
 .about {
 	padding: 65px 0 61px 41px;
 	@include respond-to(sm) {padding-left: 0;}
@@ -610,8 +930,29 @@
 	}
 }
 
+//http://prntscr.com/h4c80l
+.members {
+	padding-bottom: 40px; position: relative;
+	ul {
+		display: flex;
+		li {
+			// margin-right: 19px; 
+			// &:last-child {margin-right: 0;}
+			padding: 10px;
+			a {
+				display: inline-block;
+				background: #fff;
+				transition: all .4s ease;
+				&:hover {
+					box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+				}
+			}
+			@include respond-to(xs){text-align: center;}
+		}
+	}
+}
+
 .people {
-	padding: 80px 0 40px 0;
 	article {
 		display: flex;
 		@include respond-to(md) {flex-direction: column;}
@@ -646,7 +987,7 @@
 
 			figure {
 				text-align: center; margin-bottom: 20px; &:last-child {margin-bottom: 0;}
-				img {width: auto !important; display: inline-block !important;}
+				img {width: 140px !important; display: inline-block !important;}
 				figcaption {
 					padding-top: 12px;
 					p {color: #000000; @include font-type($title, 16px, 24px, 0px); margin-bottom: 0;}
@@ -657,47 +998,48 @@
 	}
 }
 
-.megasale {
-	padding: 25px 0 0 0; background: white;
-	img {width: 100%;}
-}
-
-.home_filter {
-	padding: 10px 0 35px 0; background: white;
-	h2 {color: #000000; font-family: $title; font-size: 38px; line-height: 39px; text-align: center; margin-bottom: 15px;}
-
-	.app.index.pet &,  .app.index.children & {
-		padding: 40px 0;
+//Блок "Присоединиться" - http://prntscr.com/hbojdz 
+.join {
+	height: 600px; width: 100%; padding-top: 94px;
+	header {
+		text-align: center;
+		margin-bottom: 30px; padding-left: 22px;
+		h4, p {color: #fff;}
+		h4 {
+			@include font-type($title, 44px, 52px, 1.1px);
+			margin-bottom: 50px;
+		}
+		p {@include font-type($HelveticaNL, 28px, 40px, 1.1px);}
+	}
+	.form {
+		display: flex; flex-direction: column; align-items: center;
+		width: 560px;
+		.wr-input, input {width: 100%;}
+		input {color: #000; background: #fff;}
+		label {color: #000;}
+		.btn {
+			&:hover {background: #000; color: #fff;}
+		}
 	}
 }
 
-.home_product {
-	padding: 35px 0; background: #F3F6FA;
-
-	ul.list-preview > li:last-child {
-		position: relative;
-
-		@include respond-to(lg) {position: absolute; top: -10000px; left: -10000px;}
-		@include respond-to(md) {position: relative; top: auto; left: auto;}
+//Секция со списком людей - http://prntscr.com/hbm7rz
+.list-people {
+	display: flex; flex-flow: column wrap; align-content: space-around;
+	max-height: 830px;
+	li {
+		width: 20%; margin-bottom: 33px;
+		figure {
+			display: flex; align-items: center;
+			margin-bottom: 0;
+			img {flex-shrink: 0; width: 59px; height: 59px; border-radius: 50%; overflow: hidden; }
+			figcaption {
+				@extend .title-bold-primary; 
+				color: #000; text-transform: none; font-size: 18px; letter-spacing: 0.4px;
+				margin-left: 20px;
+			}
+		}
 	}
-
-	.app.index.pet & {
-		padding: 25px 0 45px 0;
-	}
-}
-
-.joined_partners {
-	padding: 45px 0; background: white;
-}
-
-.home_testimonials {
-	padding: 30px 0 35px 0; background: white;
-	.children &, .pet & {background: #F3F6FA;}
-}
-
-.home_news {
-	padding: 55px 0 35px 0; background: #F3F6FA;
-	.children &, .pet & {background: white;}
 }
 
 //http://prntscr.com/h4cg2c
@@ -721,411 +1063,11 @@
 			}
 		}
 		
-		.btn {width: 203px; padding: 20px;}
+		.btn {display: block; width: 203px; padding: 20px; text-align: center; cursor: pointer;}
 	}
 }
 
-//ДЛЯ ВЫПАДАЮЩЕГО МЕНЮ НА МОБИЛЬНОЙ ВЕРСИИ - http://prntscr.com/h4fsh2
-/*.js-toggle-menu {
-	display: none; 
-	@include respond-to(sm) {
-		display: flex; justify-content: space-between;
-
-		@include font-type($title, 20px, 1, 0.5px); color: #000;
-		width: 95%; margin: 0 auto; padding-bottom: 15px;
-		i {
-			font-size: 28px; color: $link-color;
-			transition: all .4s ease;
-			&.active {transform: rotate(180deg);}
-		}
-
-	}
-}*/
-
-//PROMOTION LIST - http://prntscr.com/h2dye8
-.list {
-	&-promotion {
-		display: flex; justify-content: space-around;
-		margin: 0px -7px 0 -9px;
-		@include respond-to(md) {flex-wrap: wrap;}
-
-		li {
-			width: 33%;
-			@include respond-to(sm) {width: 100%;}
-
-			&:nth-child(2), &:nth-child(3) {
-				p {left: 10px;}
-			}
-		}
-	}
-
-	.dobro & {
-		li {
-			@include respond-to(md) {width: 25%;}
-			@include respond-to(sm) {width: 100%;}
-		}
-	}
-}
-
-//PROMOTION - http://prntscr.com/h4biip
-.promotion {
-	section {
-		display: flex; justify-content: center;
-		padding-top: 30px; margin-bottom: 15px;
-
-		p {
-			color: #000; text-align: center;
-			position: relative; left: 14px; margin-bottom: 13px;
-
-			@include font-type($title, 64px, 1, 0px);
-
-			& > i {
-				color: $brand; font-size: 24px; font-weight: 600;
-				position: absolute; top: 25px; left: -19px;
-			}
-			span {
-				@include font-type($title, 18px, 1, 0px);
-				position: relative; top: 11px; display: inline-block; vertical-align: top;
-				
-				i {color: #000; font-size: 15px; font-weight: 600;}
-			}
-		}
-	}
-	& > p {
-		@include font-type($text, 16px, 22px, 0.3px); text-align: center; color: #000;
-	}
-}
-
-
-//http://prntscr.com/h4c7ee
-.action {
-	display: flex; flex-direction: column; justify-content: end;
-
-	width: 100%; min-height: 422px; padding: 0 0 60px 45px;
-	@include respond-to(xs) {padding: 0 15px 60px 15px;}
-
-	h2 {
-		display: flex; align-items: center;
-
-		@include font-type($title, 54px, 1, 0); color: #fff;  
-		/*для хрома*/margin-top: auto;/**/ margin-bottom: 25px;
-		@include respond-to(xs) {font-size: 35px; line-height: 45px;}
-		i {
-			font-size: 27px; font-weight: bold;
-			margin-left: 21px; margin-top: 7px;
-		}
-	}
-	p {
-		@include font-type($title, 22px, 32px, 0); color: #fff;
-		margin-bottom: 0; padding-left: 3px;
-		@include respond-to(xs) {font-size: 18px; line-height: 28px;}
-	}
-}
-
-//http://prntscr.com/h4c80l
-.joined {
-	padding-bottom: 40px; position: relative;
-	h2 {
-		@include font-type($title, 16px, 1, 0); color: #7690a4; text-align: center;
-		padding-top: 11px; margin-bottom: 50px;
-	}
-	ul {
-		display: flex;
-		li {
-			// margin-right: 19px; 
-			// &:last-child {margin-right: 0;}
-			padding: 10px;
-			a {
-				display: inline-block;
-				background: #fff;
-				transition: all .4s ease;
-				&:hover {
-					box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-				}
-			}
-		}
-	}
-	a.btn-white {z-index: 2 !important; i {margin-left: 0;}}
-}
-
-// NEWS in Index - http://prntscr.com/h2fk7d
-.news {
-	display: flex;
-	@media (max-width: 1249px) {height: 576px; overflow: hidden;}
-	@include respond-to(lg) {height: 475px;}
-	@include respond-to(md) {flex-direction: column; height: auto; overflow: visible;}
-
-	&-block {
-		&_single, &_several header {
-			transition: all .4s ease;
-			& > a {
-				position: relative; display: inline-block;
-				transition: all .4s ease;
-
-				section {
-					display: flex; flex-direction: column; justify-content: end;
-					position: absolute;
-				}
-				figure {
-					img {
-						max-width: 100%;
-						@include respond-to(sm) {width: 100%;}
-					}
-				}
-			}
-		}
-
-		&_single {
-			width: 590px;
-			@include respond-to(md) {width: 80%; margin: 0 auto;}
-			@include respond-to(sm) {width: 100%;}
-
-			&:hover {
-				box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 2;
-				@media (max-width: 1249px) {box-shadow: none;}
-			}
-
-			& > a {width: 100%;}
-			section {
-				width: 100%; height: 229px;
-				padding-left: 48px; padding-bottom: 40px; bottom: 0; left: 0;
-				@include respond-to(md) {padding-left: 35px;}
-				@media (max-width: 590px) {bottom: -25px;}
-
-				h2 {
-					@include font-type($title, 54px, 56px, -1px); color: #fff;
-					margin-bottom: 24px;
-					i {
-						font-size: 24px; position: relative; bottom: 5px; right: -2px;
-						@include respond-to(md) {bottom: 0;}
-						@include respond-to(sm) {bottom: -2px;}
-					}
-					@include respond-to(xs) {font-size: 32px; line-height: 34px;}
-				}
-				p {
-					@include font-type($title, 18px, 24px, 0); color: #fff;
-					padding-left: 4px;
-				}
-			}
-		}
-
-		&_several {
-			width: 590px;
-			@include respond-to(md) {width: 80%; margin: 0 auto;}
-			@include respond-to(sm) {width: 100%;}
-
-			&:hover {z-index: 2;}
-
-			section {
-				h2 {
-					@include font-type($title, 38px, 40px, -1px); color: #fff;
-					margin-bottom: 17px;
-					@include respond-to(sm) {font-size: 30px; line-height: 38px;}
-					@include respond-to(xs) {font-size: 22px; line-height: 20px; margin-bottom: 15px;}
-
-				}
-				p {
-					@include font-type($title, 18px, 24px, 0); color: #fff;
-					@include respond-to(sm) {font-size: 16px; line-height: 20px;}
-				}
-			}
-
-			header {
-				position: relative;
-				& > a {width: 100%;}
-				section {
-					padding-bottom: 29px; left: 39px; bottom: 2px;
-					@include respond-to(xs) {padding-bottom: 0;}
-					h2 {
-						i {
-							font-size: 24px; position: relative; bottom: 5px; right: -3px; 
-							@include respond-to(md) {bottom: 0;}
-							@include respond-to(sm) {bottom: -2px;}
-						}
-					}
-				}
-
-				&:hover {
-					box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 3;
-					@media (max-width: 1249px) {box-shadow: none;}
-				}
-			}
-			footer {
-				display: flex; justify-content: space-between;
-				@include respond-to(xs) {flex-direction: column;} 
-				
-				&:hover {z-index: 3;}
-
-				& > a {
-					position: relative; width: 100%;
-					transition: all .4s ease;
-
-					&:hover {
-						box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 4;
-						@media (max-width: 1249px) {box-shadow: none;}
-					}
-
-					section {
-						display: flex; flex-direction: column;
-
-						position: absolute; bottom: 0; left: 35px; min-height: 163px; padding-top: 5px;
-						h2 {
-							margin-bottom: 14px;
-							i {
-								font-size: 24px; position: relative; bottom: 2px; right: -4px;
-								@include respond-to(md) {bottom: 0;}
-								@include respond-to(sm) {bottom: -2px;}
-							}
-						}
-						p {padding-left: 2px;}
-
-						@include respond-to(lg) {bottom: 65px; left: 15px;}
-						@include respond-to(md) {bottom: 0; left: 35px;}
-						@media (max-width: 590px) {bottom: 45px;}
-						@include respond-to(sm) {bottom: 0;}
-						
-					}
-					figure {
-						height: 299px; overflow: hidden;
-						img {
-							max-width: 100%; height: 100%;
-							@include respond-to(sm) {width: 100%;}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-//Блок "Присоединиться" - http://prntscr.com/hbojdz 
-.join {
-	height: 600px; width: 100%; padding-top: 94px;
-	header {
-		text-align: center;
-		margin-bottom: 30px; padding-left: 22px;
-		h4, p {color: #fff;}
-		h4 {
-			font-size: 44px; letter-spacing: 1.1px; line-height: 52px;
-			margin-bottom: 50px;
-		}
-		p {font-size: 28px; line-height: 40px; letter-spacing: 1.1px;}
-	}
-	.form {
-		display: flex; flex-direction: column; align-items: center;
-		width: 560px;
-		.wr-input, input {width: 100%;}
-		input {color: #000; background: #fff;}
-		label {color: #000;}
-		.btn {
-			&:hover {background: #000; color: #fff;}
-		}
-	}
-}
-
-// - http://prntscr.com/h2q6m0
-.main-category {
-	display: flex; justify-content: space-between; position: relative;
-	@include respond-to(md) {flex-direction: column; a.btn-white {width: auto !important;}}
-
-	&-block {
-		&.first {
-			width: 680px;
-			@include respond-to(lg) {width: 57%;}
-			@include respond-to(md) {width: 80%; margin: 0 auto 20px auto;}
-			@include respond-to(sm) {width: 100%;}
-		}
-		&.second {
-			width: 480px;
-			@include respond-to(lg) {width: 40.2%; margin: 0 auto;}
-			@include respond-to(md) {width: 80%; margin: 0 auto;}
-			@include respond-to(sm) {width: 100%;}
-			section {
-				left: 44px;
-				@include respond-to(xs) {left: 15px;}
-			}
-		}
-		& > a {
-			position: relative; display: inline-block; width: 100%;
-			transition: all .4s ease;
-			&:hover {box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2)}
-
-			section {
-				display: flex; flex-direction: column;
-				position: absolute; left: 50px; bottom: 47px; width: 90%;
-				@include respond-to(xs) {left: 25px; bottom: 20px;}
-
-				h2 {
-					@include font-type($title, 54px, 58px, 0); color: #fff;
-					margin-bottom: 19px;
-					@include respond-to(sm) {font-size: 40px}
-					@include respond-to(xs) {font-size: 30px; margin-bottom: 12px;}
-					i {
-						font-size: 24px; font-weight: 600; position: relative; bottom: 8px; right: -6px;
-						@include respond-to(md) {bottom: 0;}
-					}
-				}
-
-				p {@include font-type($title, 22px, 22px, 0); color: #fff; padding-left: 3px;}
-				@include respond-to(sm) {font-size: 18px;}
-			}
-			figure {
-				img {
-					max-width: 100%;
-					@include respond-to(md) {width: 100%;}
-				}
-			}
-		}
-	}
-}
-
-.main-products {
-	position: relative; padding-top: 15px;
-	
-	.btn {
-		@include font-type($title, 16px, 16px, 0);
-		padding: 20px;
-		position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-
-		.dobro & {background: #7A3FBF; border: none;}
-	}
-}
-
-
-//CAROUSEL - http://prntscr.com/h2bo9g
-.carousel {
-	padding: 77px 0 53px 0;
-
-	.navigation {display: flex; justify-content: center;}
-	.navigation, .owl-dots {
-		margin-top: 7px; padding-left: 6px	;
-
-		li,  .owl-dot {
-			flex-shrink: 0;
-			width: 19px; height: 8px; margin: 0 5px; padding: 0;
-			background: #d9deea; border-radius: 10px; cursor: pointer;
-
-			&.active {background: #4489ff; &:hover {cursor: default;}}
-			&:active {transform: translateY(0);}
-			&.active {transform: translateY(0); &:hover {cursor: default;}}
-		}
-	}
-
-	&-wrap {
-		position: relative;
-		min-height: 160px; 
-		@include respond-to(md) {height: 250px;}
-		@include respond-to(sm) {height: 380px;}
-		@media (max-width: 620px) {height: 420px;}
-		@media (max-width: 540px) {height: 450px;}
-		@include respond-to(xs) {height: 500px;}
-		@media (max-width: 430px) {height: 545px;}
-		@media (max-width: 400px) {height: 595px;}
-		@media (max-width: 365px) {height: 695px;}
-		@media (max-width: 333px) {height: 590px;}
-	}
-
-		
+.testimonials {
 	&-item {
 		display: flex; justify-content: start;
 		width: 100%; padding-left: 102px; padding-top: 5px;
@@ -1162,7 +1104,7 @@
 			@include respond-to(sm) {padding-left: 0;}
 			p {
 				@include font-type($HelveticaM, 19px, 28px, 0.3px); color: #4b5769; font-family: $text;
-				position: relative;
+				position: relative; margin-bottom: 0;
 				@include respond-to(md) {padding-top: 20px;}
 				@include respond-to(sm) {text-align: center;}
 			}
@@ -1210,58 +1152,19 @@
 			}
 		}
 	}
-
 }
 
-
-//DOINGS - http://prntscr.com/h2caai
-.doings {
-	padding: 26px 0 21px 0; position: relative;
-
-	&-wr {
-		display: flex; justify-content: space-between; align-items: flex-start;
-		@include respond-to(md) {flex-direction: column;}
-	}
-	
-	&-item {
-		width: 32%;
-		background: #fff; cursor: pointer;
-		@include respond-to(md) {display: flex;}
-
-		&:hover {box-shadow: 0 0 20px rgba(57, 60, 66, 0.1);}
-		@include respond-to(md) {width: 100%; margin: 10px 0;}
-		@media (max-width: 580px){flex-direction: column;}
-
-		&:hover {
-			box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+//CAROUSEL - http://prntscr.com/h2bo9g
+.carousel {
+	.navigation, .owl-dots {display: flex; justify-content: center;}
+	.navigation, .owl-dots {margin-top: 30px; padding-left: 6px;
+		li,  .owl-dot {
+			flex-shrink: 0;
+			width: 19px; height: 8px; margin: 0 5px; padding: 0;
+			background: #d9deea; border-radius: 10px; cursor: pointer;
+			&.active {background: #4489ff; &:hover {cursor: default;}}
+			&:active {transform: translateY(0);}
+			&.active {transform: translateY(0); &:hover {cursor: default;}}
 		}
-
-		figure{
-			width: 100%; 
-			overflow: hidden;
-
-			img {width: 100%;}
-		}
-
-		&:first-of-type {
-			section {
-				h4 {max-width: 220px;}
-			}
-		}
-
-		section {
-			padding: 40px 27px 40px;
-			@include respond-to(md) {padding: 15px 20px;}
-
-			h4 {
-				@include font-type($title, 22px, 32px, 0);  font-size: 22px; line-height: 32px; letter-spacing: 0;
-				margin-bottom: 23px;
-			}
-			p {
-				@include font-type($text, 16px, 24px, 0.7px); color: #4b5769;
-				margin-bottom: 14px;
-			}
-			span {@include font-type($text, 10px, 18px, 1.1px); text-transform: uppercase; color: #4b5769;}
-		}
-	}
+	}			
 }
