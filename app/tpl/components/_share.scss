@@ -1,12 +1,21 @@
 // http://prntscr.com/h8yt0a + http://prntscr.com/h8yt7f
 ul.share {
-	@extend .row-center-strech;
+	@extend .row-center-center;
 	@include respond-to(sm) {margin-top: $size-s;}
 
 	li {
 		margin-right: $size-base; &:last-child {margin-right: 0;} 
 		a {display: block; height: 100%;}
 		&:first-child {@extend .title-thin-secondary;} a, i {transition: all .2s;}
+	}
+
+	.breadcrumbs & {
+		li {
+			a {
+				i {color: #c0d1dd; font-size: 17px;}
+				&:hover i {color: $brand;}
+			}
+		}
 	}
 
 	.footer & {

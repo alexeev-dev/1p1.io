@@ -1,0 +1,33 @@
+.personal {
+	&-info {
+		@extend .row-start-center;
+		figure {
+			width: 119px; height: 119px; flex-shrink: 0; margin-right: 40px;
+			border: 1px solid #dae2ea; border-radius: 50%;
+			overflow: hidden;
+			img {
+				width: 100%;
+			}
+		}
+		section {
+			h1 {
+				font-size: 34px; font-family: $title; line-height: 38px;
+				margin-bottom: 27px; margin-top: 0;
+			}
+			ul {
+				@extend .row-start-center;
+				li {
+					margin-right: 40px;
+					p {
+						font-size: 24px; font-family: $title;
+						margin-bottom: 15px;
+					}
+					span {
+						color: $font_light-5; font-size: 10px; font-family: $text; text-transform: uppercase; line-height: 1; letter-spacing: 1px;
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

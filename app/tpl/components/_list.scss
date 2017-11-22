@@ -138,6 +138,83 @@ article {
 				}
 			}
 		}
+		&-humans {
+			@extend .row-center-strech; padding: 20px 50px 20px 50px;
+			@extend .box-filled-dark-1; background: $bg-gray;
+			.gray & {
+				background: $white;
+			} 
+			header, section, footer {
+				& > * {
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			header, footer {
+				width: 230px; flex-shrink: 0; padding: 10px 0 60px 0;
+			}
+			header {
+				padding-right: 40px;
+				border-right: solid 1px $border;
+				figure {
+					img {
+						margin-bottom: 20px;
+					}
+					figcaption {
+						& > * {
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+						h3 {
+							font-size: 24px; font-family: $title;
+							margin-bottom: 10px;
+						}
+						h4, p {
+							font-size: 18px; font-family: $title;
+							margin-bottom: 20px;
+						}
+						span {
+							font-size: 14px; font-family: $title;
+							margin-bottom: 5px; display: block;
+						}
+						p {
+
+						}
+					}
+				}
+			}
+			section {
+				width: 100%; padding: 30px 40px 50px ;
+				p {
+					font-size: 14px; font-family: $text; line-height: 18px;
+					margin-bottom: 20px;
+				}
+				a {
+
+				}
+			}
+			footer {
+				padding-left: 40px;
+				border-left: solid 1px $border;
+				ul {
+					li {
+						margin-bottom: 15px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+						span {
+							font-size: 14px; font-family: $text;
+							margin-bottom: 5px; display: block;
+						}
+						p {
+							font-size: 20px; font-family: $title;
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -227,6 +304,18 @@ ul.list {
 			}
 			article {
 				@extend .preview-project;
+			}
+		}
+	}
+
+	&-humans {
+		li {
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			article {
+				@extend .preview-humans;
 			}
 		}
 	}

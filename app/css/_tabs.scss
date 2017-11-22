@@ -1,0 +1,59 @@
+.tabs {
+	// табы переключения закладок на странице пользователя, фонда либо организации
+	&-personal {
+		ul {
+			@extend .row-between-center; width: 100%;
+			li {
+				&.active {
+					a {
+						&:after { width: 100%; }
+					}
+				}
+				a {
+					color: $black; font-family: $title; font-size: 18px; line-height: 22px; letter-spacing: -1px;
+					display: block; padding: 10px 0; position: relative;
+					&:hover {
+						text-decoration: none;
+						&:after { width: 100%; }
+					}
+					&:after {
+						content: '';
+						display: block; height: 3px; width: 0%; position: absolute; left: 50%; bottom: -3px; transform: translateX(-50%);
+						background: #4489ff;
+						transition: width 0.3s ease-in-out;
+					}
+					span {
+						color:$font-light_1;
+						margin-left: 5px; display: inline-block;
+					}
+				}
+			}
+		}
+	}
+
+	&-inner {
+		margin-bottom: 35px;
+		ul {
+			@extend .row-between-center; padding-left: 20px; width: 460px; margin: 0 auto;
+			background: #e6f2f8; border-radius: 100px;
+			li {
+				color: $font_light-1; font-family: $title; display: inline-block;
+				&.active a {
+					color: $font_light-2; text-decoration: none;
+					background: $white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+					pointer-events: none;
+				}
+				a {
+					color: inherit; font-family: inherit;
+					display: inline-block; padding: 3px 18px 6px;
+					border: 1px solid transparent; border-radius: 100px;
+					transition: 0.3s ease-out;
+					&:hover {
+						color: $font_light-2; text-decoration: none;
+						background: $white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+					}
+				}
+			}
+		}
+	}
+}

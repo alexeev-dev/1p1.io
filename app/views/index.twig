@@ -12,6 +12,22 @@
     dl dd span {width: 42px; height: 42px; display: inline-block; margin-left: 21px; border-radius: 50%;}
 </style>
     <div class="container">
+        <h1>Хлебные крошки</h1>
+        <nav class="breadcrumbs">
+            <ul class="navigation">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Фонды</a></li>
+                <li><a href="#">Животные</a></li>
+                <li><a href="#">Ника</a></li>
+            </ul>
+            <ul class="share">
+                <li>Поделиться:</li>
+                <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-odnoklassniki"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </nav>
         <br>
         <h1>Заголовок h1 всегда такой большой <br>и неизменный</h1>
         <a href="#">это базовая ссылка</a>
@@ -206,11 +222,90 @@
                     {% include '../tpl/components/list-projects.html' %}
                 </li>
             </ul>
+            <h1>Список &laquo;list-humans&raquo;</h1>
+            <ul class="list-humans">
+                <li>
+                    {% include '../tpl/components/list-humans.html' %}
+                </li>
+            </ul>
 
             <a href="#" class="show_more">
                 <span>Показать еще</span>
                 <em><i class="icon icon-view-more"></i></em>
             </a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Элементы форм</h1>
+            <br><br>
+            <h1>Чекбоксы</h1>
+            <br>
+            <div class="checkbox-filter">
+                <input id="check1" type="checkbox">
+                <label for="check1">Лейбл</label>
+            </div>
+            <br>
+            <div class="checkbox-check">
+                <input id="check2" type="checkbox">
+                <label for="check2">Лейбл</label>
+            </div>
+            <br>
+            <h1>Инпуты</h1>
+            <br>
+            <div class="input-wrap">
+                <input id="input1" type="text" required="required">
+                <label for="input1">Лейбл</label>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper gray">
+        <div class="container">
+            <h1>Информация об организации, фонде или пользователе &laquo;personal-info&raquo;</h1>
+            <br><br>
+            <div class="personal-info">
+                <figure>
+                    <img src="../../assets/img/funds/fund-1.jpg">
+                </figure>
+                <section>
+                    <h1>Фонд "ОРБИ"</h1>
+                    <ul>
+                        <li>
+                            <p>11</p>
+                            <span>пожертвованных вещей выкуплено</span>
+                        </li>
+                        <li>
+                            <p>6100.00 &#8381;</p>
+                            <span>пожертвований собрано</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Табы</h1>
+            <br><br>
+            <h1>табы разделов на странице пользователя, фонда и т.д.<br>&laquo;tabs-personal&raquo;</h1>
+            <nav class="tabs-personal">
+                <ul>
+                    <li><a href="#">Добрые дела<span>3</span></a></li>
+                    <li><a href="#">Мои объявления<span>1</span></a></li>
+                    <li><a href="#">Покупки<span>5</span></a></li>
+                    <li><a href="#">Настройки</a></li>
+                </ul>
+            </nav>
+            <br>
+            <h1>внутренние табы разделов &laquo;tabs-inner&raquo;</h1>
+            <nav class="tabs-inner">
+                <ul>
+                    <li>Направления</li>
+                    <li><a href="#">Фонды</a></li>
+                    <li><a href="#">Проекты</a></li>
+                    <li><a href="#">Люди</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
 
