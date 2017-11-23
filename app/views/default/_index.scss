@@ -2,6 +2,7 @@
 ////////////////////////////////////////////////////
 
 ////---ОБЩИЕ СТИЛИ ДЛЯ БЛОКОВ---////
+a:hover {text-decoration: none;}
 
 //Отступы между блоками и фон
 .wrapper {
@@ -283,8 +284,8 @@
 
 			footer {
 				position: absolute; top: 180px; right: 40px;
-				@include respond-to(md) {right: -5px; padding-left: 50px;}
-				@include respond-to(sm) {position: static; padding-top: 60px; padding-left: 40px;}
+				@include respond-to(md) {right: 10px; top: 105px;}
+				@include respond-to(sm) {position: static; padding-top: 60px; padding-left: 20px;}
 
 				p {
 					color: #fff; @include font-type($text, 26px, 26px, 0px); text-transform: uppercase; font-weight: bold;
@@ -510,7 +511,7 @@
 		display: flex;
 		margin: 0 -10px;
 		li {
-			width: calc(33.33333% - 20px); margin: 0 10px;
+			margin: 0 10px;
 			background: #fff;
 		}
 		@include respond-to(sm) {
@@ -525,6 +526,7 @@
 	&-events {
 		display: flex;
 		margin: 0 -10px;
+		@include respond-to(xs) {margin: 0;}
 		li {
 			margin: 0 10px;
 			background: #fff;
@@ -536,25 +538,25 @@
 				h5 {@include font-type($title, 16px, 1, 0.3px); color: #323232;}
 			}
 			section {
-				h4 {@include font-type($title, 22px, 32px, 0.3px); color: #000;}
+				h4 {@include font-type($title, 22px, 32px, 0.3px); color: #000; margin-bottom: 10px;}
 				p {@include font-type($text, 16px, 24px, 0.7px); color: #000;}
 			}
 
 		}
-		@include respond-to(md) {
-			width: 100%; 
-			overflow: hidden;
-			li {width: calc(50% - 10px); flex-shrink: 0;}
-		}
-		@include respond-to(xs) {li {width: 100%;} }
 	}
 
 	//Секция со списком людей - http://prntscr.com/hbm7rz
 	&-people {
 		display: flex; flex-flow: column wrap; align-content: space-around;
 		max-height: 830px;
+		@include respond-to(sm) {max-height: 1200px;}
+		@include respond-to(xs) {max-height: 2500px;}
+
 		li {
 			width: 20%; margin-bottom: 33px;
+			&:last-child {margin-bottom: 0;}
+			@include respond-to(sm) {width: 40%;}
+			@include respond-to(sm) {width: 90%;}
 			figure {
 				display: flex; align-items: center;
 				margin-bottom: 0;
@@ -628,7 +630,6 @@
 // ADS in Index - http://prntscr.com/h2fk7d
 .ads {
 	display: flex;
-	@media (max-width: 1249px) {height: 576px; overflow: hidden;}
 	@include respond-to(lg) {height: 475px;}
 	@include respond-to(md) {flex-direction: column; height: auto; overflow: visible;}
 
@@ -683,6 +684,10 @@
 					margin-bottom: 0;
 				}
 			}
+			figure {
+				@media (min-width: 991px) and (max-width: 1199px) {height: 485px;}
+				img {@media (min-width: 991px) and (max-width: 1199px)  {height: 100%;}}
+			}
 		}
 
 		&_several {
@@ -714,14 +719,14 @@
 				& > a {width: 100%;}
 				section {
 					padding-bottom: 40px; padding-left: 39px;
+					@include respond-to(sm) {padding-bottom: 25px;}
 					@include respond-to(xs) {padding-left: 20px;}
-					@include respond-to(xs) {padding-bottom: 0;}
 
 					h2 {
 						i {
 							font-size: 24px; position: relative; bottom: 5px; right: -3px; 
 							@include respond-to(md) {bottom: 0;}
-							@include respond-to(sm) {bottom: -2px;}
+							@include respond-to(sm) {}
 						}
 					}
 					p {margin-bottom: 0;}
@@ -765,7 +770,7 @@
 						height: 299px; overflow: hidden;
 						@include respond-to(lg) {height: auto;}
 						img {
-							max-width: 100%; height: 100%;
+							width: 100%; height: 100%;
 							@include respond-to(sm) {width: 100%;}
 						}
 					}
@@ -802,21 +807,24 @@
 			section {
 				display: flex; flex-direction: column; justify-content: flex-end;
 				position: absolute; left: 0; right: 0; top: 0; bottom: 0; padding-left: 50px; padding-bottom: 47px;
-				@include respond-to(xs) {left: 25px; bottom: 20px;}
+				@include respond-to(xs) {padding-left: 20px; padding-bottom: 20px;}
 
 				h2 {
 					@include font-type($title, 54px, 58px, 0); color: #fff;
 					margin-bottom: 19px;
 					@include respond-to(sm) {font-size: 40px}
-					@include respond-to(xs) {font-size: 30px; margin-bottom: 12px;}
+					@include respond-to(xs) {font-size: 30px; line-height: 44px; margin-bottom: 10px;}
 					i {
 						font-size: 24px; font-weight: 600; position: relative; bottom: 8px; right: -6px;
 						@include respond-to(md) {bottom: 0;}
 					}
 				}
 
-				p {@include font-type($title, 22px, 22px, 0); color: #fff; padding-left: 3px;}
-				@include respond-to(sm) {font-size: 18px;}
+				p {
+					@include font-type($title, 22px, 22px, 0); color: #fff; padding-left: 3px;
+					@include respond-to(sm) {font-size: 18px;}
+				}
+				
 			}
 			figure {
 				img {
@@ -849,7 +857,7 @@
 
 		@include font-type($title, 54px, 1, 0); color: #fff;  
 		/*для хрома*/margin-top: auto;/**/ margin-bottom: 25px;
-		@include respond-to(xs) {font-size: 35px; line-height: 45px;}
+		@include respond-to(xs) {font-size: 30px; line-height: 38px;}
 		i {
 			font-size: 27px; font-weight: bold;
 			margin-left: 21px; margin-top: 7px;
@@ -858,13 +866,13 @@
 	p {
 		@include font-type($title, 22px, 32px, 0); color: #fff;
 		margin-bottom: 0; padding-left: 3px;
-		@include respond-to(xs) {font-size: 18px; line-height: 28px;}
+		@include respond-to(xs) {font-size: 16px; line-height: 26px;}
 	}
 }
 
 //http://prntscr.com/hdpr74
 .about {
-	padding: 65px 0 61px 41px;
+	padding: 61px 0 61px 41px;
 	@include respond-to(sm) {padding-left: 0;}
 	article {
 		display: flex; justify-content: space-between;
@@ -919,10 +927,14 @@
 			padding-left: 56px; padding-top: 38px; width: 64%;
 			@include respond-to(lg) {padding-right: 20px;}
 			@include respond-to(md) {width: 100%; padding-left: 0;}
+			@include respond-to(xs) {padding-right: 0;}
 
 			h2 {
 				color: #64359C; @include font-type($title, 28px, 38px, 0px); margin-bottom: 29px;
-				@include respond-to(xs) {font-size: 24px; line-height: 24px;}
+				@include respond-to(xs) {font-size: 20px; line-height: 28px;}
+				br {
+					@include respond-to(xs) {display: none;}
+				}
 			}
 			p {
 				color: #000000; @include font-type($text, 18px, 26px, 0.8px); margin-bottom: 45px;
@@ -930,9 +942,16 @@
 			}
 			ul {
 				display: flex; align-items: center;
+				@include respond-to(xs) {flex-direction: column; align-items: start;}
 				li {
 					margin-right: 43px;
-					&:last-child {margin-right: 0;}
+					@include respond-to(xs) {margin-right: 0; margin-bottom: 25px;}
+
+					&:last-child {
+						margin-right: 0;
+						@include respond-to(xs) {margin-bottom: 0;}
+					}
+
 					a {
 						color: #64359C; @include font-type($title, 18px, 19px, 0px);
 						position: relative;
@@ -1121,16 +1140,25 @@
 	header {
 		text-align: center;
 		margin-bottom: 30px; padding-left: 22px;
+		@include respond-to(md) {padding-left: 0;}
+
 		h4, p {color: #fff;}
 		h4 {
-			@include font-type($title, 44px, 52px, 1.1px);
-			margin-bottom: 50px;
+			@include font-type(
+				$title, 44px, 52px, 1.1px);
+				margin-bottom: 50px;
+				@include respond-to(xs) {font-size: 32px; line-height: 42px;}
 		}
-		p {@include font-type($HelveticaNL, 28px, 40px, 1.1px);}
+		p {
+			@include font-type($HelveticaNL, 28px, 40px, 1.1px);
+			@include respond-to(sm) {font-size: 24px; line-height: 36px;}
+			@include respond-to(xs) {font-size: 18px; line-height: 28px;}
+		}
 	}
 	.form {
 		display: flex; flex-direction: column; align-items: center;
 		width: 560px;
+		@include respond-to(sm) {width: 100%; padding: 0 15px;}
 		.wr-input, input {width: 100%;}
 		input {color: #000; background: #fff;}
 		label {color: #000;}
@@ -1147,6 +1175,8 @@
 	h2 {
 		@include font-type($title, 34px, 51px, 0.3px); text-align: center;
 		margin-bottom: 16px;
+		@include respond-to(sm) {font-size: 28px; line-height: 42px;}
+		@include respond-to(xs) {font-size: 24px; line-height: 34px;}
 	}
 
 	.form {
@@ -1179,4 +1209,22 @@
 			&.active {transform: translateY(0); &:hover {cursor: default;}}
 		}
 	}			
+}
+
+
+//FOOTER
+.footer {
+	address {
+		ul {
+			& > li {
+				& > ul {
+					& > li {
+						margin-bottom: 10px;
+						&:last-child {margin-bottom: 0;}
+						small {font-size: 70%;}
+					}
+				}
+			}
+		}
+	}
 }

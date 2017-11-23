@@ -409,7 +409,7 @@
         <div class="container">
             <div class="carousel">
                 <h2 class="title-big left">Шоурумы</h2>
-                <ul class="list-showroom">
+                <ul class="list-showroom owl-carousel js-owl-carousel-three">
                     <li>
                          <article class="showroom">
                           <a href="#">
@@ -448,13 +448,34 @@
                             </figure>
                           </a>
                         </article>
-                    </li>`
-                </ul>
-                <ul class="navigation">
-                    <li class="active"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    </li>
+                      <li>
+                        <article class="showroom">
+                          <a href="#">
+                            <figure>
+                              <img src="{{ asset('img/news/fashion6.png') }}" alt="">
+                              <figcaption>
+                                <h4>Moroseyka</h4>
+                                <p>м. Кропоткинская</p>
+                              </figcaption>
+                            </figure>
+                          </a>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="showroom">
+                          <a href="#">
+                            <figure>
+                              <img src="{{ asset('img/news/fashion7.png') }}" alt="">
+                              <figcaption>
+                                <h4>Moroseyka</h4>
+                                <p>м. Кропоткинская</p>
+                              </figcaption>
+                            </figure>
+                          </a>
+                        </article>
+                    </li>
+
                 </ul> 
             </div>
             
@@ -481,7 +502,7 @@
             <div class="carousel">
                 <section class="members">
                     <h2 class="title-little">С нами работают галереи и музеи</h2>
-                    <ul class="owl-carousel js-owl-carousel">
+                    <ul class="owl-carousel js-carousel_celebrity">
                         <li><a href="#"><img src="{{ asset('img/index/joined1.png') }}" alt=""></a></li>
                         <li><a href="#"><img src="{{ asset('img/index/joined.png') }}" alt=""></a></li>
                         <li><a href="#"><img src="{{ asset('img/index/joined.png') }}" alt=""></a></li>
@@ -1103,8 +1124,8 @@
                     </li>
                     <li>
                         <ul>
-                            <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
-                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
+                            <li><a href="mailto:{{ store.store.email }}">E-mail: contact@oneplus1.ru {{ store.store.email }}</a></li>
+                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: +7 (495) 066-14-97 {{ store.store.phone }}</a></li>
                         </ul>
                     </li>
                 </ul>
