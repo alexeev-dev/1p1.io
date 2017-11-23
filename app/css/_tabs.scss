@@ -1,6 +1,26 @@
 .tabs {
 	// табы переключения закладок на странице пользователя, фонда либо организации
 	&-personal {
+
+		&.company {
+			a.js-toggle-menu {
+				i {
+					color: #726e64;
+				}
+			}
+
+			ul {
+				li {
+					a {
+						color: #726e64; font-size: 16px; line-height: 22px;
+						padding: 0 0 20px;
+						&:after {
+							background: #726e64;
+						}
+					}
+				}
+			}
+		}
 		
 		a.js-toggle-menu {
 			@include font-type($text, 18px, 22px, -1px); color: #000;

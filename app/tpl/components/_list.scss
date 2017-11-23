@@ -431,6 +431,91 @@ article {
 				}
 			}
 		}
+
+		&-goods {
+			@extend .row-between-center;
+			@extend .box-filled-light-3;
+
+			header, section, footer {
+				flex-shrink: 0;
+			}
+
+			header {
+				@extend .row-start-center; width: 33.60593%;
+				figure {
+					width: 80px; height: 80px; overflow: hidden; margin-right: 20px; flex-shrink: 0;
+					img {
+						max-width: 100%; max-height: 100%;
+					}
+				}
+				h3 {
+					@include font-type($title, 18px, 22px, 0);
+				}
+			}
+
+			section {
+				@extend .row-between-center; width: 57.17627%;
+				& > div {
+					flex-shrink: 0; position: relative;
+					&:after {
+						content: '';
+						display: block; width: 1px; height: 50px; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+						background: #d9e4ea;
+					}
+					p {
+						@extend .text-default; text-align: center;
+						margin-bottom: 0;
+					}
+				}
+				.view {
+					width: 34.38422%; padding-left: 35px;
+					p {
+						font-family: $HelveticaR; text-align: left;
+					}
+					ul {
+						@extend .row-between-center; padding-right: 29px; width: 100%;
+						li {
+							@include font-type($text, 10px, 24px, 1px);
+						}
+					}
+				}
+				.price {
+					width: 24.698%;
+				}
+				.donation {
+					width: 25.22122%;
+					ul {
+						margin: 0 auto;
+						li {
+							p {
+								i {
+									color: #c0d1dd; font-size: 13px;
+								}
+							}
+						}
+					}
+				}
+				.status {
+					width: 15.69656%;
+				}
+			}
+
+			footer {
+				width: 9.2178%; padding: 0 10px;
+				ul {
+					@extend .row-between-center; width: 100%;
+					li {
+						text-align: center;
+						width: 50%;
+						a {
+							i {
+								color: #89a1b3; font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -577,9 +662,25 @@ ul.list {
 			@include respond-to(md) {margin-top: 20px;}
 			@include respond-to(sm) {margin-top: 20px;}
 			@include respond-to(mobile) {margin-top: 20px;}
-			li {
+			& > li {
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
 				article {
 					@extend .personal-rate;
+				}
+			}
+		}
+
+		&-goods {
+			& > li {
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				article {
+					@extend .personal-goods;
 				}
 			}
 		}
