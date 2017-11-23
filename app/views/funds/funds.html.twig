@@ -1,21 +1,15 @@
 {% extends '../../tpl/base.html.twig' %}
 
-{% block header_class %}{% endblock %}
+{% block breadcrumbs_list %}
+    <li><a href="{{ path('homepage') }}">Главная</a></li>
+    <li><a href="{{ path('funds') }}">Фонды</a></li>
+{% endblock %}
 
-{% block app_class %}{% endblock %}
-{% block preloder_class %}index{% endblock %}
-
-{% block header %}
-    {% include '../../views/landings/parts/header.html.twig' %}
-{% endblock header %}
-
-{% block breadcrumbs %}
-	{% include '../../tpl/components/breadcrumbs.html.twig' %}
-{% endblock  %}
+{% block social_share %}{% endblock %}
 
 {% block body %}
 
-	<section class="wr">
+	{# <section class="wr">
 		<div class="container">
 
 			<!-- Navigation -->
@@ -74,54 +68,27 @@
 			</nav>
 
 		</div>
-	</section>
+	</section> #}
 
 	<section class="wr p-tb">
 		<div class="container">
 
 			<ul class="list-funds">
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
-				<li>
-					{% include '../../tpl/components/list-funds.html' %}
-				</li>
+				{% for fund in funds %}
+					<li>
+						<a href="{{ path('fund', {'slug': fund.slug}) }}">
+							<figure>
+								{% if fund.logo %}
+								<img src="../../assets/img/funds/fund-1.jpg">
+								{% endif %}
+								<figcaption>
+									<p>{{ fund.specialization }}</p>
+									<span>{{ fund.city }}</span>
+								</figcaption>
+							</figure>
+						</a>
+					</li>
+				{% endfor %}
 			</ul>
 
 		</div>
@@ -129,54 +96,6 @@
 
 {% endblock %}
 
-{% block partners %}{% endblock %}
-
-{% block footer %}
-<footer class="footer">
-	<div class="container">
-		<figure>
-			<figcaption>
-				<p>Просто и безопасно</p>
-				<a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
-			</figcaption>
-			<img src="{{ asset('img/logo/blockchain.png') }}">
-		</figure>
-		<address>
-			<ul>
-				<li>
-					<a href="{{ path('homepage') }}"><img src="{{ asset('img/logo/logo-blue.svg') }}"></a>
-				</li>
-				<li>
-					<ul>
-						<li><a href="{{ path('contacts') }}">Обратная связь</a></li>
-						<li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
-					</ul>
-				</li>
-				<li>
-					<ul>
-						<li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
-						<li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<ul>
-						<li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
-						<li><small>2017 &copy; ООО “ТБП”</small></li>
-					</ul>
-				</li>
-				<li>
-					{% include '../../tpl/components/share.html' %}
-				</li>
-			</ul>
-		</address>
-
-	</div>
-</footer>
-{% endblock %}
-
 {% block javascripts %}
-    {{ parent() }}
-    <script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
+{{ parent() }}
 {% endblock %}
