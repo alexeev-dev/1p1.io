@@ -27,6 +27,12 @@
 	
 }
 
+//
+.container {
+	position: relative;
+	@include respond-to(lg) {padding: 0 15px;}
+}
+
 
 //СТИЛИ ДЛЯ ЛЕГДИНГОВ
 .app.index {
@@ -34,24 +40,25 @@
 	header.header {
 		.logo {padding-top: 20px;}
 	}
+	
 	// кнопочки справа лендинга
-	.container {
-		position: relative; 
-		@include respond-to(lg) {padding: 0 15px;}
 
-		.btn-white {
-			position: absolute; z-index: 2; right: -45px; top: 50%; transform: translateY(-50%);
-			@include respond-to(lg) {right: -20px;}
-			@include respond-to(md) {
-				display: block; width: 110px;
-				margin: 15px auto 0 auto;
-				position: relative; top: auto; right: auto; transform: translateY(0); 
-			}
 
-			color: white; background: #4489FF; i {color: white;}
-			&:hover {background: #629CFF;}
+		
+
+	.btn-white {
+		position: absolute; z-index: 2; right: -45px; top: 50%; transform: translateY(-50%);
+		@include respond-to(lg) {right: -20px;}
+		@include respond-to(md) {
+			display: block; width: 110px;
+			margin: 15px auto 0 auto;
+			position: relative; top: auto; right: auto; transform: translateY(0); 
 		}
+
+		color: white; background: #4489FF; i {color: white;}
+		&:hover {background: #629CFF;}
 	}
+
 	//Секция с выпадающими списками на главной - http://prntscr.com/h2ns22
 	.section-group {
 		display: flex; justify-content: center;
