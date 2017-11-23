@@ -31,7 +31,9 @@
 //СТИЛИ ДЛЯ ЛЕГДИНГОВ
 .app.index {
 	padding-top: 0;
-
+	header.header {
+		.logo {padding-top: 20px;}
+	}
 	// кнопочки справа лендинга
 	.container {
 		position: relative;
