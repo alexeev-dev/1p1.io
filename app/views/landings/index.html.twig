@@ -2,8 +2,8 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}index{% endblock %}
-{% block preloder_class %}{% endblock %}
+{% block app_class %}index children{% endblock %}
+{% block preloder_class %}children{% endblock %}
 
 {% block header %}
     {% include 'parts/header.html.twig' %}
@@ -250,7 +250,7 @@
                     
                 </article>
 
-                <a href="#" class="btn-white">Все категории <i class="fa fa-angle-right"></i></a>
+                <a href="#" class="show-onemore">Все категории <i class="fa fa-angle-right"></i></a>
             </div>
         </div>
     </div> 
@@ -305,7 +305,7 @@
 
     <div class="wrapper">
         <div class="container">
-            <article class="action" style="background: url({{ asset('img/index/pet-action.png') }}) no-repeat center; background-size: cover;">
+            <article class="action">
                 <h2>{Текст акции} <i class="fa fa-angle-right"></i></h2>
                 <p>Ожидаем от Андрея / Даши<br> 
                 формулировку акции</p>
@@ -485,7 +485,7 @@
     <div class="wrapper">
         <div class="container">
             <section class="members JS-members">
-                <a href="#" class="btn-white"><i class="fa fa-angle-right"></i></a>
+                <a href="#" class="show-onemore"><i class="fa fa-angle-right"></i></a>
                 <h2 class="title-little">Уже присоединились</h2>
                 <ul class="owl-carousel js-owl-carousel">
                     <li><a href="#"><img src="{{ asset('img/index/joined1.png') }}" alt=""></a></li>
