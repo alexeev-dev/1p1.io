@@ -5,6 +5,8 @@
 .preloader {
 	&.pet {background-color: #96be46;}
 	&.children {background-color: #E8B194;}
+	&.dobro {background-color: #7A3FBF;}
+	&.art, &.fashion {background-color: #000;}
 }
 
 a:hover {text-decoration: none;}
@@ -65,6 +67,8 @@ a:hover {text-decoration: none;}
 	}
 	&.pet .show-onemore {background: #96be46;}
 	&.children .show-onemore {background: #E8B194;}
+	&.dobro .show-onemore {background: #7A3FBF;}
+	&.art .show-onemore, &.fashion .show-onemore {background: #000;}
 
 	//Секция с выпадающими списками на главной - http://prntscr.com/h2ns22
 	.section-group {
@@ -99,7 +103,10 @@ a:hover {text-decoration: none;}
 		height: 547px; position: relative; overflow: hidden;
 		background: url('../img/index/bg.jpg') no-repeat center; background-size: cover;
 		.pet & {background-image: url('../img/index/pet-bg.png');}
-		.children & {background-image: url('../img/index/children-bg.png');} 
+		.children & {background-image: url('../img/index/children-bg.png');}
+		.dobro & {background-image: url('../img/index/dobro-bg.png');}
+		.art & {background-image: url('../img/index/art-header.png');}
+		.fashion & {background-image: url('../img/index/fashion-header.png');}
 
 		@include respond-to(md) {height: 600px;}
 		
@@ -223,6 +230,7 @@ a:hover {text-decoration: none;}
 						position: absolute; right: 0; top: 16px;
 						.pet & {color: #96be46;}
 						.children & {color: #E8B194;}
+						.art &, .fashion & {color: #000;}
 					} 
 				}
 				&:last-child { width: 22.6%; a {padding-right: 0 !important; i {display: none;}}}
@@ -230,8 +238,8 @@ a:hover {text-decoration: none;}
 				&.hovered {
 					a span, a, i {
 						color: white;
-						.pet & {color: white;}
-						.children & {color: white;}
+						.pet &, .children &, .art &, .fashion & {color: white;}
+						
 					}
 				}
 				&.decoration {
@@ -241,6 +249,7 @@ a:hover {text-decoration: none;}
 					transition: width .4s ease;
 					.pet & {background: #96be46;}
 					.children & {background: #E8B194;}
+					.art &, .fashion & {background: #000;}
 				}
 			}
 		}
@@ -382,6 +391,7 @@ a:hover {text-decoration: none;}
 				position: absolute; top: 25px; left: -19px;
 				.pet & {color: #96be46;}
 				.children & {color: #E8B194;}
+				.art &, .fashion & {color: #000;}
 			}
 			span {
 				@include font-type($title, 18px, 1, 0px);
@@ -411,7 +421,7 @@ a:hover {text-decoration: none;}
     	
 		article p,
     	article section p,
-    	article section p > i {color: white;}
+    	article section p i {color: white;}
     	article section p {font-size: 84px; line-height: 84px;}
     }
 }
@@ -931,6 +941,9 @@ a:hover {text-decoration: none;}
 //Блок "Присоединиться" - http://prntscr.com/hbojdz 
 .join {
 	height: 600px; width: 100%; padding-top: 94px;
+	background: url(../img/index/join-bg-fashion.png) no-repeat; background-size: cover;
+	.art & {background-image: url(../img/index/join-bg-art.png);}
+	.fashion & {background-image: url(../img/index/join-bg-fashion.png);}
 	header {
 		text-align: center;
 		margin-bottom: 30px; padding-left: 22px;
@@ -988,7 +1001,7 @@ a:hover {text-decoration: none;}
 		.btn {
 			display: block; width: 203px; padding: 20px; text-align: center; cursor: pointer;
 			transition: all .4s ease;
-			.pet &, .children & {
+			.pet &, .children &, .dobro &, .art &, .fashion &{
 				&:hover {background: #fff;}
 			}
 			.pet & {
@@ -999,6 +1012,14 @@ a:hover {text-decoration: none;}
 			.children & {
 				background: #E8B194; border-color: #E8B194;
 				&:hover {color: #E8B194;}
+			}
+			.dobro & {
+				background: #7A3FBF; border-color: #7A3FBF;
+				&:hover {color: #7A3FBF;}
+			}
+			.art &, .fashion & {
+				background: #000; border-color: #000;
+				&:hover {color: #000;}
 			}
 		}
 	}
@@ -1017,6 +1038,8 @@ a:hover {text-decoration: none;}
 				background: #4489ff; 
 				.pet & {background: #96be46;}
 				.children & {background: #E8B194;}
+				.dobro & {background: #7A3FBF;}
+				.art &, .fashion & {background: #000;}
 				&:hover {cursor: default;}
 			}
 			&:active {transform: translateY(0);}
@@ -1030,6 +1053,18 @@ a:hover {text-decoration: none;}
 .footer {
 	address {
 		ul {
+			&.share {
+				li a {
+					&:hover {
+						i {
+							.pet & {color: #96be46;}
+							.children & {color: #E8B194;}
+							.dobro & {color: #7A3FBF;}
+							.art &, .fashion & {color: #000;}
+						}
+					}
+				}
+			}
 			& > li {
 				& > ul {
 					& > li {
