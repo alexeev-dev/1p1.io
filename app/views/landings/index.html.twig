@@ -134,63 +134,71 @@
             <ul class="list-promotion">
                 <li>
                     <article class="promotion">
-                        <section>
+                        <header>
                             <p>
                                 <i class="fa fa-angle-right"></i>
                                 43
                                 <span>000 000</span>
                             </p>
+                        </header>
+                        <section>
+                            <p>
+                                Звёздных<br>
+                                товаров
+                            </p>
                         </section>
-                        <p>
-                            Звёздных<br>
-                            товаров
-                        </p>
                     </article>
                 </li>
                 <li>
                     <article class="promotion">
-                        <section>
+                        <header>
                             <p>
                                 <i class="fa fa-angle-right"></i>
                                 86
                                 <span>000</span>
                                 
                             </p>
+                        </header>
+                        <section>
+                            <p>
+                                Программ<br>
+                                различных фондов
+                            </p>
                         </section>
-                        <p>
-                            Программ<br>
-                            различных фондов
-                        </p>
                     </article>
                 </li>
                 <li>
                     <article class="promotion">
-                        <section>
+                        <header>
                             <p>
                                 <i class="fa fa-angle-right"></i>
                                 48
                                 <span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
                             </p>
+                        </header>
+                        <section>
+                            <p>
+                                Фондов<br>
+                                присоединились
+                            </p>
                         </section>
-                        <p>
-                            Фондов<br>
-                            присоединились
-                        </p>
                     </article>
                 </li>
                 <li>
                     <article class="promotion">
-                        <section>
+                        <header>
                             <p>
                                 <i class="fa fa-angle-right"></i>
                                 22
-                                 <span>000</span>
+                                <span>000</span>
+                            </p>
+                        </header>
+                        <section>
+                            <p>
+                                Фондов<br>
+                                присоединились
                             </p>
                         </section>
-                        <p>
-                            Фондов<br>
-                            присоединились
-                        </p>
                     </article>
                 </li>
             </ul>
@@ -205,55 +213,65 @@
     <div class="wrapper">
         <div class="container">
             <div class="ads">
-                <article class="ads-block_single">
+                <div class="ads-block_single">
                     <a href="{{ path('market_home')~'?individual=1' }}">
-                        <section>
-                            <h2>Частные<br>
-                                обьявления <i class="fa fa-angle-right"></i></h2>
-                                <p>94% стоимости вещи переводится<br>
-                                людям нуждающимся в помощи</p>
-                            </h2>
-                        </section>
-                        <figure><img src="{{ asset('img/index/news1.png') }}" alt=""></figure>
+                        <article>
+                            <section>
+                                <h2>Частные<br>
+                                    обьявления <i class="fa fa-angle-right"></i></h2>
+                                    <p>94% стоимости вещи переводится<br>
+                                    людям нуждающимся в помощи</p>
+                                </h2>
+                            </section>
+                            <figure><img src="{{ asset('img/index/news1.png') }}" alt=""></figure>
+                        </article>
                     </a>
-                </article>
+                </div>
 
-                <article class="ads-block_several">
+                <div class="ads-block_several">
                     <header>
                         <a href="{{ path('market_home')~'?company=1' }}">
-                            <section>
-                                <h2>Новые вещи<br>
-                                от добрых брендов <i class="fa fa-angle-right"></i></h2>
-                                <p>Компании жертвуют часть стоимости товаров</p>   
-                            </section>
-                            <figure><img src="{{ asset('img/index/news2.png') }}" alt=""></figure>
+                            <article>
+                                <section>
+                                    <h2>Новые вещи<br>
+                                        от добрых брендов <i class="fa fa-angle-right"></i>
+                                    </h2>
+                                    <p>Компании жертвуют часть стоимости товаров</p>   
+                                </section>
+                                <figure><img src="{{ asset('img/index/news2.png') }}" alt=""></figure>
+                            </article>
                         </a>
                     </header>
                     <footer>
                         <a href="{{ path('landing_delisdobrom') }}">
-                            <section>
-                               <h2>Аукционы <i class="fa fa-angle-right"></i></h2>
-                                <p>Уникальные вещи<br>
-                                с благотворительным<br>
-                                процентом</p>
-                            </section>
-                            <figure><img src="{{ asset('img/index/news3.png') }}" alt=""></figure>
+                            <article>
+                                <section>
+                                    <h2>Аукционы <i class="fa fa-angle-right"></i></h2>
+                                    <p>Уникальные вещи<br>
+                                    с благотворительным<br>
+                                    процентом
+                                    </p>
+                                </section>
+                                <figure><img src="{{ asset('img/index/news3.png') }}" alt=""></figure>
+                            </article>
                         </a>
                         <a href="{{ path('market_category', {'url': 'celebrities'}) }}">
-                            <section>
-                                <h2>
-                                    Звезды 
-                                    <i class="fa fa-angle-right"></i>
-                                </h2>
-                                <p>
-                                    Обьявления от<br> Звезд<br>
-                                    благотворителей
-                                </p>
-                            </section>
-                            <figure><img src="{{ asset('img/index/news4.png') }}" alt=""></figure>
+                            <article>
+                                <section>
+                                    <h2>
+                                        Звезды 
+                                        <i class="fa fa-angle-right"></i>
+                                    </h2>
+                                    <p>
+                                        Обьявления от<br> Звезд<br>
+                                        благотворителей
+                                    </p>
+                                </section>
+                                <figure><img src="{{ asset('img/index/news4.png') }}" alt=""></figure>
+                            </article>
                         </a>
                     </footer>
-                </article>
+                </div>
             </div>
         </div>
     </div>
@@ -765,11 +783,11 @@
         <div class="container">
             <div class="people">
                 <article>
-                    <section>
+                    <header>
                         <h2>Звездные <br> аукционы</h2>
                         <p>Предлагаем вашему вниманию личные вещи звёзд, вещи из авторских коллекций, уникальные сувениры, произведения искусства, а также кое-что из ассортимента предстоящей Барахолки-3.</p>
-                    </section>
-                    <footer>
+                    </header>
+                    <section>
                         <div class="owl-carousel js-carousel_celebrity">
                             <div class="item">
                                 <figure>
@@ -852,7 +870,7 @@
                                 </figure>
                             </div>
                         </div>
-                    </footer>
+                    </section>
                 </article>
             </div>
             
