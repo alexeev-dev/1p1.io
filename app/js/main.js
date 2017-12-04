@@ -466,3 +466,34 @@ $(window).load(function() {
   $('body').removeClass('on-load');
 });
 
+// переключалка цветов для лендинга
+$(document).ready(function() {
+  var landColorsLength = $('.color-switcher ul li').length,
+      landingColors = [];
+  for (var i=0; i < landColorsLength; i++) {
+    var colorHref = $('.color-switcher ul li').eq(i).find('a').attr('href');
+    landingColors.push(colorHref);
+  }
+  $('.color-switcher ul li a').click(function(e) {
+    e.preventDefault();
+
+    var colorClass = $(this).attr('href');
+    for (var i=0; i < landingColors.length; i++) {
+      $('.app').removeClass(landingColors[i]);
+    }
+    $('.app').addClass(colorClass);
+  });
+  $('.color-switcher > a').click(function(e){
+    e.preventDefault();
+
+    $('.color-switcher').toggleClass('active');
+    $(this).toggleClass('active');
+  });
+});
+$(document).mouseup(function (e) {
+  var colorSwitcherBlock = $('.color-switcher');
+  if (colorSwitcherBlock.has(e.target).length === 0 && !colorSwitcherBlock.is(e.target)) {
+    $(colorSwitcherBlock).removeClass('active');
+    $('.color-switcher > a').removeClass('active');
+  }
+});

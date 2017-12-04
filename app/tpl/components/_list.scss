@@ -3,7 +3,16 @@ article {
 
 	&.preview {
 		background: $white;
-		header, footer {figure {img {max-width: 100%;}}}
+		header, footer {
+			figure {
+				img {
+					max-width: 100%;
+					@include respond-to(md) {
+						width: 100%;
+					}
+				}
+			}
+		}
 		section {
 			h2, h2 a, 
 			h3, h3 a {@extend .title-bold-primary; margin: $size-base 0;}
@@ -59,6 +68,19 @@ article {
 		// превью новости – http://prntscr.com/h8z3p4
 		&-news {
 			section {padding: $size-base;}
+		}
+		// шоурумы
+		&-showroom {
+			section {padding: $size-base;}
+			a:hover {box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);}
+			figure {
+				img {max-width: 100%;}
+				figcaption {
+					padding: 20px 30px;
+					h4 {font-family: $title; font-size: 16px; text-transform: none;}
+					p {text-transform: none; font-family: $HelveticaNL; font-size: 12px;}
+				}
+			}
 		}
 		// превью проекта – 
 		&-project {
@@ -554,7 +576,9 @@ figure {
 
 // LISTS
 ul.list {
-	display: flex; flex-flow: row wrap; &-three, &-four {@extend .list; margin: 0 -10px;}
+	display: flex; flex-flow: row wrap; &-three, &-four {
+		@extend .list; margin: 0 -10px;
+	}
 
 	&-three {
 		& > li { a {display: block;}
@@ -587,14 +611,10 @@ ul.list {
 
 	// ---- Новый список - http://prntscr.com/hb9uju --- //
 	&-showroom {
-		@extend .list-three;
+		@extend .list-three; margin: 0;
 		li article {
-			@extend .preview-news;
-			figcaption {
-				padding: 20px 30px;
-				h4 {font-family: $title; font-size: 16px; text-transform: none;}
-				p {text-transform: none; font-family: $HelveticaNL; font-size: 12px;}
-			}
+			@extend .preview-showroom;
+			
 		}
 	}
 
