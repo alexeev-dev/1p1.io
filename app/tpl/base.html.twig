@@ -60,42 +60,53 @@
     <div class="app {% block app_class %}{% endblock %}">
 
         {% block header %}
-            <header class="header {% block header_class %} js-header active{% endblock %}">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="{{ path('homepage') }}" class="logo"><img src="{{ asset('images/logo-blue.svg') }}"></a>
-                            <nav class="menu-top">
-                                <a href="#" class="burger js-open_menu-top">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </a>
-                                <ul>
-                                    <li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
-                                    <li><a href="{{ path('funds') }}">Фонды</a></li>
-                                    <li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
-
-                                    {#% if is_granted("ROLE_USER") %}
-                                        <li><a href="{{ path('fos_user_profile_show') }}">Мой кабинет</a></li>
-                                            {% if user_service.isAdmin is defined and user_service.isAdmin %}
-                                                <li><a href="{{ path('sonata_admin_dashboard') }}">Админка</a></li>
-                                            {% endif %}
-                                        <li><a href="{{ logout_path() }}">Выйти</a></li>
-                                    {% else %}
-                                        <li><a href="{{ path('fos_user_security_login') }}">Войти</a></li>
-                                    {% endif %#}
-
-                                    <li class="active3"><a href="{{ path('market_add') }}">Подать объявление</a></li>
-                                    <li class="active3"><a href="{{ path('market_home') }}">Вещи</a></li>
-                                </ul>
-                            </nav>
-                            
-                        </div>
-                    </div>
-                </div>
+            <header class="header js-header active">
+                <a href="{{ path('homepage') }}" class="logo"></a> 
+                <nav class="menu">
+                    <ul>
+                        <li><a href="{{ path('market_home') }}"><i class="icon-search"></i><span>Найти вещь</span></a></li>
+                        <li><a href="{{ path('market_add') }}"><i class="icon-plus"></i><span>Продать</span></a></li>
+                        {#% if is_granted("ROLE_USER") %}
+                            <li><a href="{{ path('fos_user_profile_show') }}"><span>Мой кабинет</span></a></li>
+                        {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}"><span>Войти</span></a></li>
+                        {% endif %#}
+                    </ul>
+                    <a href="#" class="burger js-menu-open">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </nav>
             </header>
+            <nav class="menu-open">
+                <ul>
+                    <li class="languages">
+                        <a href="#">Ru</a>
+                        <a href="#">Eng</a>
+                    </li>
+                    <li class="login">
+                        {#% if is_granted("ROLE_USER") %}
+                            <a href="{{ path('fos_user_profile_show') }}">Мой кабинет</a>
+                        {% if user_service.isAdmin is defined and user_service.isAdmin %}
+                            <a href="{{ path('sonata_admin_dashboard') }}">Админка</a>
+                        {% endif %}
+                            <a href="{{ logout_path() }}">Выйти</a></li>
+                        {% else %}
+                            <a href="{{ path('fos_user_registration_register') }}">Регистрация</a>
+                            <a href="{{ path('fos_user_security_login') }}">Войти</a>
+                        {% endif %#}
+                    </li>
+                    <li><a href="{{ path('market_home') }}">Купить</a></li>
+                    <li><a href="{{ path('market_add') }}">Продать</a></li>
+                    <li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
+                    <li><a href="{{ path('funds') }}">Фонды</a></li>
+                    <li><a href="/news">Новости</a></li>
+                    <li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
+                    {#<li><a href="#">Поиск по сайту</a></li>#}
+                </ul>
+                <a href="#" class="menu-close"></a>
+            </nav>
         {% endblock %}
 
         {% block breadcrumbs %}
@@ -138,67 +149,98 @@
         {% block footer %}
             <footer class="footer">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-            
-                            <ul class="footer-info">
-                                <li>
-                                    <p>Просто и безопасно</p>
-                                    <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
-                                </li>
-                                <li class="logo">
-                                    <img src="{{ asset('img/footer-grey.png') }}">
-                                </li>
-                            </ul>
-            
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="footer-contacts">
+                    <ul class="footer-info">
+                        <li>
+                            <p>Просто и безопасно</p>
+                            <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
+                        </li>
+                        <li class="logo">
+                            <img src="{{ asset('img/logo/blockchain.png') }}">
+                        </li>
+                    </ul>
+                    <div class="footer-contacts">
+                        <ul>
+                            <li>
+                                <a href="{{ path('homepage') }}" class="logo"><img src="{{ asset('img/logo/logo-blue.svg') }}"></a>
+                            </li>
+
+                            <li>
                                 <ul>
-                                    <li>
-                                        <a href="{{ path('homepage') }}"><img src="{{ asset('images/logo-blue.svg') }}"></a>
-                                    </li>
-            
-                                    <li>
-                                        <ul>
-                                            <li><a href="{{ path('contacts') }}">Обратная связь</a></li>
-                                            <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
-                                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="{{ path('contacts') }}">Контакты</a></li>
+                                    <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
                                 </ul>
-            
+                            </li>
+                            <li>
                                 <ul>
-                                    <li>
-                                        <ul>
-                                            <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
-                                            <li><small>2017 &copy; ООО “ТБП”</small></li>
-                                        </ul>
-                                    </li>
-            
-                                    <li>
-                                        <ul class="soc">
-                                            <li><a href="https://t.me/oneplus1ru" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
-                                            <li><a href="http://vk.com/club147946456" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://ok.ru/group/54493224042613" target="_blank"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.facebook.com/oneplus1.ru/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="https://www.instagram.com/oneplus1.ru/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
+                                    <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
                                 </ul>
-                            </div>
-            
-                        </div>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфидециальности</a></li>
+                                    <li><small>2017 &copy; ООО “ТБП”</small></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <ul class="soc">
+                                    <li><a href="https://t.me/oneplus1ru" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+                                    <li><a href="http://vk.com/club147946456" target="_blank"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.facebook.com/oneplus1.ru/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://ok.ru/group/54493224042613" target="_blank"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a></li>
+                                    <li><a href="https://www.instagram.com/oneplus1.ru/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </footer>
+
+            {# <footer class="footer">
+                <div class="container">
+                    <figure>
+                        <figcaption>
+                            <p>Просто и безопасно</p>
+                            <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
+                        </figcaption>
+                        <img src="{{ asset('img/logo/blockchain.png') }}">
+                    </figure>
+                    <address>
+                        <ul>
+                            <li>
+                                <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo/logo-blue.svg') }}"></a>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a href="{{ path('contacts') }}">Обратная связь</a></li>
+                                    <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
+                                    <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
+                                    <li><small>2017 &copy; ООО “ТБП”</small></li>
+                                </ul>
+                            </li>
+                            <li>
+                                {% include '../tpl/components/share.html' %}
+                            </li>
+                        </ul>
+                    </address>
+            
+                </div>
+            </footer> #}
         {% endblock %}
     </div>
 
@@ -207,7 +249,6 @@
     {% block javascripts %}
         <script type="text/javascript" src="{{ asset('js/libs.min.js') ~ codeRevisionPostfix }}"></script>
         <script type="text/javascript" src="{{ asset('js/main.js') ~ codeRevisionPostfix }}"></script>
-        <script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 
         {# todo Уведомления пока оставляем. Пересмотрим этот вопрос позже #}
         <!-- PNotify -->
