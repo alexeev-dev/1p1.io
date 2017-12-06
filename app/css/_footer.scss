@@ -1,61 +1,198 @@
-.footer {
-	background: $white; border-top: 1px solid $border; overflow: hidden;
+// .footer {
+// 	background: $white; border-top: 1px solid $border; overflow: hidden;
 	
-	figure {
-		@extend .row-center-center;
+// 	figure {
+// 		@extend .row-center-center;
 
-		img {max-width: 220px; margin-left: $size-l;}
-		figcaption {
-			padding: $size-l 0; text-align: right; position: relative; 
-			@include respond-to(sm) {padding: $size-base 0; text-align: center;}
+// 		img {max-width: 220px; margin-left: $size-l;}
+// 		figcaption {
+// 			padding: $size-l 0; text-align: right; position: relative; 
+// 			@include respond-to(sm) {padding: $size-base 0; text-align: center;}
 
-			p {color: $black; @include font-type($title, 23px, 29px, -0.4px); margin-bottom: 7px;}
-			a {
-				display: inline-block; color: $font-light_2; @include font-type($text, 16px, 22px, 0.4px); position: relative;
-				i {color: $arrows; font-weight: 600; margin-left: $size-s; transition: all 0.4s; transform: translateX(0);}
-				&:hover i {transform: translateX(5px);}
+// 			p {color: $black; @include font-type($title, 23px, 29px, -0.4px); margin-bottom: 7px;}
+// 			a {
+// 				display: inline-block; color: $font-light_2; @include font-type($text, 16px, 22px, 0.4px); position: relative;
+// 				i {color: $arrows; font-weight: 600; margin-left: $size-s; transition: all 0.4s; transform: translateX(0);}
+// 				&:hover i {transform: translateX(5px);}
+// 			}
+
+// 			&.sep {
+// 				width:1px; height: 100px; margin: 0 $size-s; padding: 0; background: $white;
+// 				@include respond-to(sm) {display: none;}
+// 			}
+// 		}
+// 		@include respond-to(sm) {flex-direction: column-reverse; text-align: center; padding-left: 0;}
+// 	}
+
+// 	address {
+// 		display: flex; padding: $size-m 0; margin-bottom: 0; position: relative; 
+// 		@include respond-to(md){flex-direction: column;}
+// 		@include respond-to(sm){flex-wrap: wrap;}
+
+// 		&:after {
+// 			content: '';
+// 			position: absolute; top:0; left:50%; margin-left: -5000px; width:10000px; height: 1px;
+// 			background: #e7edf2;
+// 		}
+
+// 		a {color: $font-light_2; @include font-type($text, 14px, 14px, 0.6px);}
+// 		small {color: $black; @extend .title-thin-main; font-size: 12px;}
+
+// 		& > ul {
+// 			width: 50%; @extend .row-between-center;
+// 			@include respond-to(md) {width: 100%;}
+// 			@include respond-to(xs) {flex-direction: column; align-items: flex-start;}
+			
+// 			&:first-child {
+// 				padding-right: $size-s;
+// 				@include respond-to(md) {margin-right: 0; margin-bottom: $size-l;}
+// 				@include respond-to(xs) {margin-bottom: $size-s;}
+// 			}
+			
+// 			&:last-child {
+// 				padding-left: $size-l;
+// 				@include respond-to(md) {padding-left: 0;}
+// 			}
+
+// 			& > li {
+// 				@include respond-to(xs) {margin-bottom: $size-base; &:last-child {margin-bottom: 0;}}
+// 			}
+// 		}	
+// 	}	
+// }
+
+
+//PARTNERS - http://prntscr.com/h2caw6
+.partners {
+	padding: 65px 0 54px 0;
+	border-top: 1px solid #e7edf2; background: white;
+
+	ul {li a img {filter: grayscale(100%); width: 140px !important; margin: 0 auto; opacity: 0.7;}}
+	
+	.owl-carousel {padding: 0 15px;}
+	.owl-prev, .owl-next {
+		position: absolute; top: 50%; transform: translateY(-50%);
+		i {font-size: 20px;}
+	}
+	.owl-prev {left: 0;}
+	.owl-next {right: 0;}
+}
+
+.footer {
+
+	padding-top: 20px;
+	background: #fff; border-top: 1px solid #e7edf2; overflow: hidden;
+	
+	&-info {
+		display: flex; align-items: center;
+		padding-bottom: 41px;
+		@include respond-to(sm) {flex-direction: column-reverse;}
+
+		li {
+			width: 49%; padding-left: 61px; padding-top: 33px;
+			@include respond-to(sm) {padding: 10px 0; width: 100%;}
+
+			&:first-child {
+				text-align: right;
+				padding: 31px 0px 10px 0; position: relative; display: inline-block;
+				@include respond-to(sm) {text-align: center; padding-right: 0;}
+
+				p {@include font-type($title, 23px, 29px, -0.5px); color: #000; margin-bottom: 7px;}
+				a {
+					@include font-type($text, 16px, 22px, 0); color: #4B5769; letter-spacing: 0px;
+					display: inline-block; position: relative;
+
+					i {color: #8F8670; font-weight: 600; margin-left: 11px; transition: all 0.4s; transform: translateX(0);}
+					&:hover i {transform: translateX(5px);}
+					
+				}
 			}
 
 			&.sep {
-				width:1px; height: 100px; margin: 0 $size-s; padding: 0; background: $white;
+				width:1px; height: 100px; margin: 0 10px; padding: 0;
+				background: #fff;
 				@include respond-to(sm) {display: none;}
 			}
+
+			&.logo {
+				img {width: auto; max-width: 220px;}
+				@include respond-to(sm) {text-align: center; padding-left: 0;}
+			}
 		}
-		@include respond-to(sm) {flex-direction: column-reverse; text-align: center; padding-left: 0;}
+
 	}
 
-	address {
-		display: flex; padding: $size-m 0; margin-bottom: 0; position: relative; 
+	&-contacts {
+		display: flex;
+		@include font-type($text, 12px, 22px, 0);
+		position: relative; padding-top: 29px; padding-bottom: 28px;
+		
 		@include respond-to(md){flex-direction: column;}
-		@include respond-to(sm){flex-wrap: wrap;}
+		@include respond-to(sm){
+			flex-wrap: wrap;
+			font-size: 16px; letter-spacing: 0.2px;
+		}
 
 		&:after {
 			content: '';
 			position: absolute; top:0; left:50%; margin-left: -5000px; width:10000px; height: 1px;
 			background: #e7edf2;
 		}
-
-		a {color: $font-light_2; @include font-type($text, 14px, 14px, 0.6px);}
-		small {color: $black; @extend .title-thin-main; font-size: 12px;}
-
+		a {font-family: $text;}
 		& > ul {
-			width: 50%; @extend .row-between-center;
+
+			display: flex; align-items: center;  justify-content: space-between;
+			width: 50%;
 			@include respond-to(md) {width: 100%;}
 			@include respond-to(xs) {flex-direction: column; align-items: flex-start;}
-			
 			&:first-child {
-				padding-right: $size-s;
-				@include respond-to(md) {margin-right: 0; margin-bottom: $size-l;}
-				@include respond-to(xs) {margin-bottom: $size-s;}
+				padding-right: 9px;
+				@include respond-to(md) {margin-right: 0; margin-bottom: 40px;}
+				@include respond-to(xs) {margin-bottom: 10px;}
 			}
-			
 			&:last-child {
-				padding-left: $size-l;
+				padding-left: 49px;
 				@include respond-to(md) {padding-left: 0;}
 			}
 
 			& > li {
-				@include respond-to(xs) {margin-bottom: $size-base; &:last-child {margin-bottom: 0;}}
+				@include respond-to(xs) {
+					margin-bottom: 15px;
+					&:last-child {margin-bottom: 0;}
+				}
+
+				.logo {
+					&-black {display: none;}
+				}
+
+				ul {
+					&.soc {
+						display: flex;
+						li {
+							margin-left: 30px;
+							@include respond-to(xs) {&:first-child {margin-left: 0;}}
+							a {
+								&:after {display: none;}
+								i {
+									color: #b2b2b2; font-size: 24px;
+									transition: all 0.4s;
+								}
+								&:hover {i {color: $link-color;}}
+							}
+						}
+					}
+					li {
+						margin-bottom: 3px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+						a 	{
+							color: #4b5769; font-size: 14px; letter-spacing: 0.6px;
+							position: relative; padding-bottom: 5px;
+							&:hover {text-decoration: underline !important;}
+						}
+					}
+				}
 			}
 		}	
 	}	

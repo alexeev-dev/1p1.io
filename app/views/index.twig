@@ -1,9 +1,5 @@
 {% extends '../tpl/base.html.twig' %}
 
-{% block header %}
-    {% include 'landings/parts/header.html.twig' %}
-{% endblock header %}
-{% block breadcrumbs %}{% endblock %}
 {% block body %}
 <style>
     dl {display: flex; align-items: center;}
@@ -12,9 +8,6 @@
     dl dd span {width: 42px; height: 42px; display: inline-block; margin-left: 21px; border-radius: 50%;}
 </style>
     <div class="container">
-        <h1>Хлебные крошки</h1>
-        {% include '../tpl/components/breadcrumbs.html.twig' %}
-        <br>
         <h1>Заголовок h1 всегда такой большой <br>и неизменный</h1>
         <a href="#">это базовая ссылка</a>
         <p class="text-default">это наш базовый стиль шрифтов -p- 16-24   @extend .text-default; <a href="#">и ссылки внутри</a></p>
@@ -590,49 +583,4 @@
     </div>
 
 
-{% endblock %}
-
-{% block footer %}
-    <footer class="footer">
-        <div class="container">
-            <figure>
-                <figcaption>
-                    <p>Просто и безопасно</p>
-                    <a href="{{ path('page', {'slug': 'blockchain'}) }}">Узнать больше <i class="fa fa-angle-right"></i></a>
-                </figcaption>
-                <img src="{{ asset('img/logo/blockchain.png') }}">
-            </figure>
-            <address>
-                <ul>
-                    <li>
-                        <a href="{{ path('homepage') }}"><img src="{{ asset('img/logo/logo-blue.svg') }}"></a>
-                    </li>
-                    <li>
-                        <ul>
-                            <li><a href="{{ path('contacts') }}">Обратная связь</a></li>
-                            <li><a href="{{ path('page', {'slug': 'terms'}) }}">Оферта</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li><a href="mailto:{{ store.store.email }}">E-mail: {{ store.store.email }}</a></li>
-                            <li><a href="tel:{{ store.store.phone|replace({' ': '', ')': '', '(': '', '-': ''}) }}">Телефон: {{ store.store.phone }}</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <ul>
-                            <li><a href="{{ path('page', {'slug': 'privacy'}) }}">Политика конфиденциальности</a></li>
-                            <li><small>2017 &copy; ООО “ТБП”</small></li>
-                        </ul>
-                    </li>
-                    <li>
-                        {% include '../tpl/components/share.html' %}
-                    </li>
-                </ul>
-            </address>
-    
-        </div>
-    </footer>
 {% endblock %}
