@@ -31,6 +31,13 @@
 	&.children .show-onemore {background: #E8B194;}
 	&.dobro .show-onemore {background: #7A3FBF;}
 	&.art .show-onemore, &.fashion .show-onemore {background: #000;}
+	&.pet .btn {
+		position: absolute; z-index: 1; right: -45px; top: 50%; transform: translateY(-50%);
+		background: #96be46; border-color: #96be46;
+	}
+	&.children .btn {background: #E8B194; border-color: #E8B194;}
+	&.dobro .btn {background: #7A3FBF; border-color: #7A3FBF;}
+	&.art .btn, &.fashion .btn {background: #000; border-color: #000;}
 
 	//Секция с выпадающими списками на главной - http://prntscr.com/h2ns22
 	.section-group {
@@ -64,9 +71,9 @@
 		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,rgba(5,171,224,0) 100%);
 		height: 547px; position: relative; overflow: hidden;
 		background: url('../img/index/bg.jpg') no-repeat center; background-size: cover;
-		.pet & {background-image: url('../img/index/pet-bg.png');}
-		.children & {background-image: url('../img/index/children-bg.png');}
-		.dobro & {background-image: url('../img/index/dobro-bg.png');}
+		.pet & {background-image: url('../img/index/intro2.png');}
+		.children & {background-image: url('../img/index/intro1.png');}
+		.dobro & {background-image: url('../img/index/intro3.png');}
 		.art & {background-image: url('../img/index/art-header.png');}
 		.fashion & {background-image: url('../img/index/fashion-header.png');}
 
@@ -87,6 +94,14 @@
 				@include respond-to(md) {padding-left: 20px;}
 				@include respond-to(xs) {margin-top: 110px;}
 
+				.dobro & {
+					padding-left: 199px; margin-top: 228px;
+					position: relative;
+					@include respond-to(lg) {margin-top: 155px;}
+					@include respond-to(md) {padding-left: 100px;}
+					@include respond-to(sm) {margin-top: 100px; padding-left: 0;}
+				}
+
 				h1 {
 					color: #fff; @include font-type($title, 42px, 56px, -1px); 
 					margin-top: 0; margin-bottom: 22px;
@@ -99,6 +114,10 @@
 					margin-bottom: 86px;
 					@include respond-to(sm) {font-size: 20px; line-height: 26px; margin-bottom: 42px;}
 					@include respond-to(xs) {margin-left: -10px;}
+
+					.dobro & {
+						margin-bottom: 0; padding-left: 3px; letter-spacing: 0.1px;
+					}
 				}
 				h2 {
 					color: #fff; @include font-type($title, 62px, 78px, -1px); 
@@ -107,11 +126,23 @@
 						font-size: 40px; line-height: 50px; margin-bottom: 42px;
 					}
 					@include respond-to(xs) {margin-left: -10px;}
+
+					.dobro & {
+						margin-bottom: 74px; letter-spacing: -1px;
+						@include respond-to(sm) {font-size: 34px;}
+					}
 				}
 				a {
 					@include font-type($title, 16px, 16px, 0px); color: #fff;
 					position: relative;
 					@include respond-to(xs) {margin-left: -10px;}
+
+					.dobro & {
+						padding: 18px 25px;
+						border: 2px solid white; border-radius: 100px; transition: all .2s;
+						&:after {display: none;}
+						&:hover {background: white; color: #7A3FBF;}
+					}
 
 					i {
 						color: #fff; font-size: 17px; font-weight: bold;
@@ -130,6 +161,13 @@
 						@include respond-to(sm) {margin-right: 0; margin-bottom: 10px;}
 					}
 				}
+				figure {
+					.dobro & {
+						position: absolute; top: -17px; left: 60px;
+						@include respond-to(md) {left: 0;}
+						@include respond-to(sm) {position: static; margin-bottom: 30px;}
+					}
+				}
 			}
 
 			footer {
@@ -137,12 +175,32 @@
 				@include respond-to(md) {right: 10px; top: 105px;}
 				@include respond-to(sm) {position: static; padding-top: 60px; padding-left: 20px;}
 
+				.dobro & {
+					display: flex; justify-content: center; align-items: center;
+					width: 195px; height: 195px; top: 97px; right: 17px; padding-top: 4px; padding-left: 28px;
+					background: url('../images/dobro-duga.svg') no-repeat center;
+					@include respond-to(lg) {position: relative; float: right; top: -41px;}
+					@include respond-to(md) {top: -110px;}
+					@include respond-to(sm) {position: absolute; top: 77px}
+				}
+
 				p {
 					color: #fff; @include font-type($text, 26px, 26px, 0px); text-transform: uppercase; font-weight: bold;
 					position: relative;
+
+					.dobro & {
+						font-family: $title; font-size:32px;
+						margin-bottom: 0;
+					}
 					span {
 						position: absolute; top: -22px; left: -26px; 
 						@include font-type($title, 18px, 18px, 0); text-transform: none;
+
+						.dobro & {
+							font-size: 16px; line-height: 18px;
+							display: block; margin-bottom: 8px; position: relative; top: auto; left: 1px;
+						}
+
 						i {margin-right: 11px;}
 					}
 				}
@@ -250,6 +308,360 @@
 		}
 	}
 
+	
+
+}
+
+.intro-new {
+	& > section {
+		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,rgba(5,171,224,0) 100%);
+		height: 750px; position: relative; overflow: hidden;
+		background: url('../img/index/bg.jpg') no-repeat center; background-size: cover;
+		@include respond-to(xs) {height: 575px;}
+		
+		article {
+			display: flex; justify-content: space-between;
+
+			transition: height .6s, opacity .4s ease-out;
+			width: 100%; padding: 143px 15px 0; min-height: 570px;
+
+			color: #fff;
+			position: absolute; top: 0; left: 0;
+			opacity: 0; pointer-events: none;
+			@include respond-to(md) {
+				flex-wrap: wrap;
+			}
+			@include respond-to(xs) {
+				min-height: 500px; padding-top: 105px;
+			}
+
+			&.active {
+				opacity: 1; pointer-events: auto;
+			}
+			
+
+			header {
+				max-width: 50%;
+				@include respond-to(md) {max-width: none; width: 100%; margin-bottom: 50px;}
+				@include respond-to(sm) {
+					margin-bottom: 30px;
+				}
+				.main-landing & {
+					padding-left: 0; margin-top: 176px;
+				}
+				.auction &, .stars & {
+					text-align: center;	
+					padding-left: 0; margin-top: 134px;
+				}
+
+				hgroup {
+					& > * {
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+					h2 {
+						color: #fff; @include font-type($title, 74px, 70px, -1px); 
+						margin-bottom: 20px;
+						@include respond-to(sm) {
+							font-size: 58px; line-height: 54px;
+						}
+						@include respond-to(xs) {
+							font-size: 40px; line-height: 44px;
+						}
+					}
+					h3 {
+						color: #fff; @include font-type($title, 44px, 48px, -1px); 
+						@include respond-to(sm) {
+							font-size: 28px; line-height: 38px;
+						}
+						@include respond-to(xs) {
+							font-size: 20px; line-height: 26px;
+						}
+					}
+				}
+				p {
+					@include font-type($title, 26px, 32px, 0px); 
+					margin-bottom: 86px;
+					@include respond-to(sm) {font-size: 20px; line-height: 26px; margin-bottom: 42px;}
+					@include respond-to(xs) {margin-left: -10px;}
+
+					.auction &, .stars & {
+						margin-bottom: 26px;
+						@include respond-to(xs) {font-size: 16px;}
+					}
+				}
+			}
+
+			footer {
+				display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between;
+				@include respond-to(md) {
+					width: 100%; align-items: flex-start; justify-content: flex-end;
+				}
+				p {
+					@include font-type($text, 26px, 26px, 0px); color: #ffffff; text-transform: uppercase; font-weight: bold;
+					position: relative;
+					@include respond-to(md) {
+						margin-bottom: 30px; padding-left: 26px;
+					}
+					span {
+						position: relative; left: -26px; display: block;
+						@include font-type($title, 18px, 25px, 0); text-transform: none;
+						i {margin-right: 11px;}
+					}
+				}
+				a {
+
+				}
+			}
+		}
+	}
+
+	nav {
+		margin-top: -32px; background: white;
+		@include respond-to(lg) {
+			padding: 0 15px;
+		}
+
+		& > ul {
+			display: flex; justify-content: space-between; align-items: stretch;
+			width: 984px; height: 64px; margin: 0 auto;
+			position: relative; z-index: 2;
+			background: #fff; border-radius: 100px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+			@include respond-to(sm) {
+				width: 100%;
+			}
+
+			li {
+				height: 100%; width: 26.3%;
+				position: relative; z-index: 1;
+				@include respond-to(sm) {width: 100%; height: 64px;}
+				&.decoration, &:nth-child(2) {
+					width: 24.6%;
+					@include respond-to(sm) {width: 100%; height: 64px;}
+					a {
+						justify-content: start;
+						padding-left: 50px;
+						i {right: 24px}
+					}
+				}
+
+				
+				a, i {transition: color 1s ease, padding .2s linear;}
+				a {
+					display: flex; justify-content: center; align-items: center;
+					color: #4489FF; font-family: $title; font-size: 18px; line-height: 18px; text-align: center;
+					width: 100%; height: 100%; padding-right: 50px; padding-left: 32px;
+					position: relative;
+
+					span {
+						transition: color 0.4s ease;
+					}
+
+					i {
+						color: #4489FF; font-size: 30px;
+						position: absolute; right: 0; top: 16px;
+					} 
+				}
+				&:last-child { width: 22.6%; a {padding-right: 0 !important; i {display: none;}}}
+
+				&.hovered {a, i, a span {color: white;}}
+				&.decoration {
+					height: 100%;
+					position: absolute; top: 0; bottom: 0;
+					background: #4489FF; border-radius: 100px;
+					transition: width .4s ease;
+				}
+			}
+		}
+		@include respond-to(lg) {
+			& > ul {width: 100%; li {width: 25%; a {padding-right: 20px;} &.selectedLava {a {padding-right: 20px;}}}}
+		}
+		@include respond-to(sm) {
+			margin-top: 25px;
+
+			& > ul {
+				border-radius: 0; width: 120px; height: 10px; box-shadow: none;
+					li {
+						width: 25% !important; height: 100% !important;
+						&.decoration {display: none;}
+
+						a {
+							padding: 0 !important; display: block; 
+							width: 19px; height: 8px; margin: 0 5px;
+							background: #d9deea; border-radius: 10px;
+							span {display: none;}
+							i {
+								display: none;
+								// top: 0; right: auto; left: 50% !important; transform: translateX(-50%);
+							}
+						}
+
+						&.hovered {a {background: #4489FF;}}
+
+						// &:last-child a i {display: block;}
+					}
+				// flex-direction: column;
+				// width: 100%; height: auto; border-radius: 10px;
+				// li {
+				// 	width: 100% !important; height: 64px;
+				// 	&.decoration {display: none;}
+				// 	&.hovered {background: #4489FF;}
+				// 	&:first-child {
+				// 		a {justify-content: center;}
+				// 	}
+				// 	&:nth-child(2)  {
+				// 		padding: 0;
+				// 		a {justify-content: center; padding-left: 0;}
+				// 	}
+				// 	&:last-child {
+				// 		a {
+				// 			i {display: block;}
+				// 		}
+				// 	}
+				// 	a {
+				// 		color: #4489FF; flex-direction: column; align-items: center;
+				// 		padding: 0;
+				// 		i {
+				// 			right: 24px;
+				// 			transform: rotate(90deg);
+				// 		}
+				// 	}
+					
+				// }
+			}
+		}
+	}
+
+	.pet & {
+		& > section {background: url('../img/index/intro2.png') no-repeat center; background-size: cover;}
+		nav > ul li {
+			&.decoration {background: #96be46; color: #fff;}
+			&.hovered {a, i {color: white;}}
+			a, i {color: #96be46;}
+			@include respond-to(sm) {&.hovered {a {background: #96be46;}}}
+		}
+		//@include respond-to(sm) {nav > ul {li {a {background: #96be46;}}}}
+	}
+
+	.children & {
+		& > section {
+			background: url('../img/index/intro1.png') no-repeat right center; background-size: cover;
+			@media (max-width: 360px) {background: url('../img/index/intro1.png') no-repeat -890px center; background-size: cover;}
+		}
+		nav > ul li {
+			&.decoration {background: #E8B194; color: #fff;}
+			&.hovered {a, i {color: white;}}
+			a, i {color: #E8B194;}
+			@include respond-to(sm) {&.hovered {a {background: #E8B194;}}}
+		}
+		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
+	}
+
+	.dobro & {
+		& > section {
+			background: url('../img/index/intro3.png') no-repeat center; background-size: cover;
+			@include respond-to(sm) {height: 625px;}
+			@include respond-to(sm) {height: 700px;}
+
+			article {
+				header {
+					padding-left: 199px; margin-top: 228px;
+					position: relative;
+					@include respond-to(lg) {margin-top: 155px;}
+					@include respond-to(md) {padding-left: 100px;}
+					@include respond-to(sm) {margin-top: 100px; padding-left: 0;}
+
+					figure {
+						position: absolute; top: -17px; left: 60px;
+						@include respond-to(md) {left: 0;}
+						@include respond-to(sm) {position: static; margin-bottom: 30px;}
+					}
+					
+
+					p {margin-bottom: 0; padding-left: 3px; letter-spacing: 0.1px;}
+					h2 {
+						margin-bottom: 74px; letter-spacing: -1px;
+						@include respond-to(sm) {font-size: 34px;}
+					}
+					a {
+						padding: 18px 25px;
+						border: 2px solid white; border-radius: 100px; transition: all .2s;
+						&:after {display: none;}
+						&:hover {background: white; color: #7A3FBF;}
+					}
+				}
+				footer {
+					display: flex; justify-content: center; align-items: center;
+					width: 195px; height: 195px; top: 97px; right: 17px; padding-top: 4px; padding-left: 28px;
+					background: url('../images/dobro-duga.svg') no-repeat center;
+					@include respond-to(lg) {position: relative; float: right; top: -41px;}
+					@include respond-to(md) {top: -110px;}
+					@include respond-to(sm) {position: absolute; top: 77px}
+					
+					p {
+						font-family: $title; font-size:32px; margin-bottom: 0;
+						span {
+							display: block;
+							font-size: 16px; line-height: 18px;
+							margin-bottom: 8px;
+							position: relative; top: auto; left: 1px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.fashion &, .art & {
+		nav > ul li {
+			&.decoration {background: #000; color: #fff;}
+			&.hovered {a, i {color: white;}}
+			a, i {color: #000;}
+			@include respond-to(sm) {&.hovered {a {background: #000;}}}
+		}
+		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
+	}
+
+	.fashion & {
+		& > section {
+			background: url('../img/index/fashion-header.png') no-repeat center top; background-size: cover;
+		}
+	}
+	.art & {
+		& > section {
+			background: url('../img/index/art-header.jpg') no-repeat right center; background-size: cover;
+			@include respond-to(xs) {background: url('../img/index/art-header.jpg') no-repeat 85% center; background-size: cover;}
+		}
+	}
+
+	.main-landing & {
+		& > section {
+			background: url('../img/index/main-bg.png') no-repeat right center; background-size: cover;
+			height: 650px;
+			@include respond-to(sm) {height: 700px;}
+			@include respond-to(xs) {height: 770px;}
+			@media (max-width: 360px) {background: url('../img/index/main-bg.png') no-repeat -890px center; background-size: cover;}
+		}
+	}
+	.auction & {
+		& > section {
+			background: url('../img/index/auction-bg.png') no-repeat right center; background-size: cover;
+			height: 420px;
+			@media (max-width: 360px) {background: url('../img/index/auction-bg.png') no-repeat -890px center; background-size: cover;}
+		}
+	}
+
+	.stars & {
+		& > section {
+			background: url('../img/index/stars-bg.png') no-repeat right center; background-size: cover;
+			height: 420px;
+			@media (max-width: 360px) {background: url('../img/index/auction-bg.png') no-repeat -890px center; background-size: cover;}
+		}
+	}
 }
 
 //LANDINGS LISTS
@@ -588,6 +1000,12 @@
 		@include font-type($title, 22px, 32px, 0); color: #fff;
 		margin-bottom: 0; padding-left: 3px;
 		@include respond-to(xs) {font-size: 16px; line-height: 26px;}
+	}
+}
+.megasale {
+	margin-bottom: 60px;
+	img {
+		width: 100%;
 	}
 }
 

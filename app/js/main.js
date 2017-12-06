@@ -549,6 +549,38 @@ $(document).ready(function () {
     var itemNumber = $(this).parent().index() - 1;
     $('.js-slides article').fadeOut().eq(itemNumber).fadeIn();
   });
+  
+  $('.intro-new nav > ul li a').hover(function() {
+    let decor = $('.intro-new nav > ul li.decoration');
+    let itemNumber = $(this).parent().index();
+
+    $('.intro-new nav > ul li').removeClass('hovered');
+    
+    if (itemNumber === 1) {
+     decor.css('width', '26%');
+     $('.intro-new nav > ul li:nth-child(2)').addClass('hovered');
+    } else if (itemNumber === 2) {
+      decor.css('width', '54%');
+      $('.intro-new nav > ul li:nth-child(2)').addClass('hovered');
+      $('.intro-new nav > ul li:nth-child(3)').addClass('hovered');
+    } else if (itemNumber === 3) {
+      decor.css('width', '80%');
+      $('.intro-new nav > ul li:nth-child(2)').addClass('hovered');
+      $('.intro-new nav > ul li:nth-child(3)').addClass('hovered');
+      $('.intro-new nav > ul li:nth-child(4)').addClass('hovered');
+    } else if (itemNumber === 4) {
+      decor.css('width', '100%');
+      $('.intro-new nav > ul li:nth-child(2)').addClass('hovered');
+      $('.intro-new nav > ul li:nth-child(3)').addClass('hovered');
+      $('.intro-new nav > ul li:nth-child(4)').addClass('hovered');
+      $('.intro-new nav > ul li:nth-child(5)').addClass('hovered');
+    }
+  });
+  $('.intro-new nav > ul li a').click(function() {
+    let itemNumber = $(this).parent().index() - 1;
+    $('.js-slides article').removeClass('active').eq(itemNumber).addClass('active');
+    return false;
+  });
 
   $('.reset').click(function () {
     $('.filters input').attr('checked', false);

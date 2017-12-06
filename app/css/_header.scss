@@ -8,7 +8,7 @@ $header-height: 65px;
 	height: $header-height; width: 100%; padding: 0 $size-xl;
 	position: fixed; top: 0; left: 0; z-index: 5;
 	@extend .white-shadow;
-	// transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
 	// transform: translateY(-100%); &.active {transform: translateY(0);}
 
 	a.logo {
@@ -44,7 +44,7 @@ $header-height: 65px;
 						&.icon-plus {@extend .plus-black;}
 					}
 
-					span {color: $black; @include font-type($title, 15px, 15px, 0); opacity: 0.7;}
+					span {color: $black; @include font-type($title, 15px, 15px, 0); opacity: 0.7; transition: all .3s ease-out;}
 					&:hover, &:active, &:focus {text-decoration: none;}
 					&:hover {background: $shadow-full; span, i {opacity: 0.6;}}
 				}
@@ -59,7 +59,7 @@ $header-height: 65px;
 
 		a.burger {
 			@extend .column-between-strech; width: 22px; height: 20px;
-			span {background: $black; height: 2px; opacity: 0.7;}
+			span {background: $black; height: 2px; opacity: 0.7; transition: all 0.3s ease-out;}
 		}
 	}
 

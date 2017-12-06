@@ -50,7 +50,7 @@ article {
 						li, li a, li span {color: $black; @extend .title-thin-main;}
 							li a, li span {@extend .box-filled-dark-1; padding: 0 $size-xs;}
 					}
-					&.posted {li {margin-right: $size-s;}} 
+					&.posted {margin-bottom: 5px; li {margin-right: $size-s;}} 
 					&.tags {li {margin-right: $size-xs;} margin-left: -$size-xs;}
 					&.posted, &.tags {&:last-child {margin-right: 0;}}
 				}
@@ -60,6 +60,10 @@ article {
 				figure {
 					@extend .row-center-center;
 					img {max-width: $size-m;}
+					span {
+						width: 31px; height: 31px; margin-right: 8px;
+						border-radius: 50%; background-position: center; background-repeat: none;
+					}
 					figcaption {@extend .title-bold-secondary; @extend .doted; width: 100px; height: $size-base; margin-left: $size-s;}
 				}
 				.price {@extend .title-bold-primary; margin-bottom: 0;}

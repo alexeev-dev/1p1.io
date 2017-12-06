@@ -49,8 +49,29 @@
 			background: #f4f7fb;
 		}
 	}
-}
 
+	&-transparent {
+		@extend .btn;
+		background: transparent; border-color: #ffffff; border-width: 2px;
+		&:hover {
+			color: #000000;
+			background: #ffffff;
+		}
+		&:focus {
+			background: transparent;
+			&:hover {
+				color: #000000;
+				background: #ffffff;
+			}
+		}
+	}
+}
+// неактивная полупрозрачная кнопка с помощью класса disabled для всех кнопок
+[class^='btn'] {
+	&.disabled {
+		opacity: 0.8; pointer-events: none;
+	}
+}
 
 // DONATION BUTTON – http://prntscr.com/gg1z7v
 /*********************************************/

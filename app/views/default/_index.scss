@@ -3,10 +3,18 @@
 
 ////---ОБЩИЕ СТИЛИ ДЛЯ БЛОКОВ---////
 .preloader {
-	// &.pet {background-color: #96be46;}
-	// &.children {background-color: #E8B194;}
-	// &.dobro {background-color: #7A3FBF;}
-	// &.art, &.fashion {background-color: #000;}
+	display: block; width: 100%; height: 100%;
+	position: fixed; top: 0; left: 0; z-index: 99999;
+	background: #3f86ff url('../img/preloader.gif') center center no-repeat;
+
+	&.index {
+		background: #669CF9 url('../images/index.gif') center center no-repeat;
+
+		&.pet {background: #96BE46 url('../images/animals.gif') center center no-repeat;}
+		&.children {background: #E8B194 url('../images/kids.gif') center center no-repeat;}
+		&.dobro {background: #7A3FBF url('../images/dobro.gif') center center no-repeat;}
+		&.art, &.fashion {background: #000000 url('../images/dark.gif') center center no-repeat;}
+	}
 }
 
 a:hover {text-decoration: none;}
