@@ -264,3 +264,44 @@ span {
 	}
 	
 }
+
+//для твиговских шаблонов кнопка на сайт - http://prntscr.com/h0v8x0
+#buttons {
+	padding-top: 30px;
+	h4 {
+		@extend .title-bold-primary; text-align: left;
+		margin-bottom: 0;
+	}
+}
+#shareButton {
+	padding: 20px 0 50px 0;
+	form {
+		margin-bottom: 20px;
+		& > div {
+			display: inline-block;
+			@include respond-to(lg) {display: block; margin-bottom: 15px;}
+		}
+	}
+	strong {
+		@extend .text-default; font-size: 14px; font-family: $HelveticaM;
+	}
+	 
+	.selectstyle {
+		position: relative; padding-right: 10px; margin-right: 25px; height: 23px; display: inline-block;
+		&:last-child {margin-right: 0;}
+		&:after {
+			content: '\203A'; 
+			color: $link-color; font-size: 24px; text-align: center;
+			width: 23px; height: 31px; position: absolute; right: 4px; top: -4px;
+			background: #fff; 
+			transform: rotate(90deg); pointer-events: none;
+		}
+		select {border: none; cursor: pointer; outline:none; height: 23px;}
+	}
+	.form {
+		width: 50%; margin: 30px 0 0 0;
+		input {
+			margin-bottom: 20px;
+		}
+	}
+}

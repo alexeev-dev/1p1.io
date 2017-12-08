@@ -34,16 +34,16 @@
 	}
 
 	&_logo {
-		text-align: center;
-		display: block; width: 100%; margin: 45px 0 41px;
+		display: inline-block; margin: 42px 0; left: 50%; transform: translateX(-50%); position: relative;
 		&.edit {
 			margin: 0 0 41px;
 		}
 
+		img {
+			max-height: 260px;
+		}
+
 		figure {
-			imb {
-				max-width: 170px;
-			}
 			figcaption {
 				@include font-type ($text, 16px, 22px, 0.1px); color: #9d988c;
 				margin-top: 16px;

@@ -1,4 +1,55 @@
-let app = (function ($) {
+'use strict';
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var app = function ($) {
+
+  $(function () {
+    // $('#js-registration').click(function(){
+    //     $('.booking-proc section > form').addClass('hide');
+    //     $('.booking-proc section .verification').addClass('active');
+    // });
+
+    // $('#js-confirm').click(function(){
+    //     $('.booking-proc section .verification > p').addClass('active');
+    //     $('.booking-proc section .verification > .form').addClass('hide');
+    //     $('.reservation .booking-proc').addClass('active');
+    // });
+
+    //popUp
+    $('.js-poPup').click(function () {
+      $('body .popup-main').addClass('active');
+      return false;
+    });
+    $('.js-close_popup').click(function () {
+      $('body .popup-main').removeClass('active');
+      return false;
+    });
+
+    //INDEX MENU
+    $('.js-index-menu').click(function () {
+      $('.js-index-menu .help-menu').toggleClass('active');
+      $('.js-index-menu .js-toggle-men i').addClass('active');
+    });
+
+    //dropDown menu - http://prntscr.com/h1da0x
+    // $('.js-dropDown').click(function(){
+    //     $('.menu-top ul .drop-down > ul').toggleClass('active');
+    // });
+
+    // $('.js-popupButton').click(function() {
+    //   $('.popup').bPopup({
+    //     speed: 450,
+    //     transition: 'slideDown'
+    //   });
+
+    // });  
+
+    // $('js-popup-close').bPopup({
+    //       closeClass:'popup',
+    //       follow: [false, false]
+    //   });
+  });
 
   // ======================================================================== //
   //                        ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ                           //
@@ -12,7 +63,7 @@ let app = (function ($) {
   function initComponents(components) {
     Object.getOwnPropertyNames(components).forEach(function (callback) {
       if (typeof components[callback] !== 'function') {
-        return console.error(`Ошибка! Не возможно инициализировать компонент ${callback} - объект компонента не является функцией`);
+        return console.error('\u041E\u0448\u0438\u0431\u043A\u0430! \u041D\u0435 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E \u0438\u043D\u0438\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442 ' + callback + ' - \u043E\u0431\u044A\u0435\u043A\u0442 \u043A\u043E\u043C\u043F\u043E\u043D\u0435\u043D\u0442\u0430 \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0444\u0443\u043D\u043A\u0446\u0438\u0435\u0439');
       }
       components[callback] = components[callback]();
     });
@@ -82,7 +133,7 @@ let app = (function ($) {
     ');
   }
 
-  let myPreview = '\
+  var myPreview = '\
     <span href="#" class="dz-preview image">\
       <img data-dz-thumbnail>\
       <a href="#" class="close-img" data-dz-remove><i class="icon icon-close-lit"></i></a>\
@@ -103,95 +154,104 @@ let app = (function ($) {
       // ==================================================================== //
 
       /**
-			 * COMPONENT: PROJECT LIST - Выпадающий список проектов
-			 * @return Возвращает содержимое списка в обёртке jQuery
-			 */
+      * COMPONENT: PROJECT LIST - Выпадающий список проектов
+      * @return Возвращает содержимое списка в обёртке jQuery
+      */
 
-      projectList() {
-        let [list, listContent, closeButton] = [
-          '.js-projectListToggle', '.js-projectList',
-          '.js-projectListAction li a'
-        ].map(el => $(el));
+      projectList: function projectList() {
+        var _map = ['.js-projectListToggle', '.js-projectList', '.js-projectListAction li a'].map(function (el) {
+          return $(el);
+        }),
+            _map2 = _slicedToArray(_map, 3),
+            list = _map2[0],
+            listContent = _map2[1],
+            closeButton = _map2[2];
 
         list.click(function toggleList() {
           listContent.toggleClass('active');
           if ($('.js-projectList input:checked').length > 0) {
-						$(window).trigger('project-selected');
-					}
+            $(window).trigger('project-selected');
+          }
           return false;
         });
 
         closeButton.click(function closeList() {
           listContent.removeClass('active');
-					if ($('.js-projectList input:checked').length > 0) {
-						$(window).trigger('project-selected');
-					}
+          if ($('.js-projectList input:checked').length > 0) {
+            $(window).trigger('project-selected');
+          }
           return false;
         });
 
-        return Object.freeze({ listContent });
+        return Object.freeze({ listContent: listContent });
       },
 
-			/**
-			 * COMPONENT: LOGIN FORM - форма входа в личный кабинет
-			 * @return Возвращает статус пользователя
-			 */
 
-			loginForm() {
-				// Проверка на статус пользователя (вошел или нет)
-				let isLogin = (function showForm() {
-					let [body, wrapper] = [ $('body'), $('.wr-login')];
-					if (body.data('user') === undefined) {
-						// Пользователь не залогинелся - показываем форму
-						wrapper.addClass('active');
-						return false;
-					} else {
-						return true;
-					}
-				}());
-				// Валидация и отправка формы
-				function submitForm(event) {
-					let form = $('.login form'),
-						email = form.find('input[name=email]'),
-						password = form.find('input[name=password]');
-					if (!/^.*\@.*\..*$/.test(email.val())) {
-						alert('Неправильно введён email!');
-						return false;
-					}
-					if (password.val().length < 3) {
-						alert('Пароль должен быть длиннее 3-х символов!');
-						return false;
-					}
-					$('.login form').submit();
-				}
+      /**
+       * COMPONENT: LOGIN FORM - форма входа в личный кабинет
+       * @return Возвращает статус пользователя
+       */
 
-				$('.js-login').click(submitForm);
+      loginForm: function loginForm() {
+        // Проверка на статус пользователя (вошел или нет)
+        var isLogin = function showForm() {
+          var _ref = [$('body'), $('.wr-login')],
+              body = _ref[0],
+              wrapper = _ref[1];
 
-				return { isLogin }
-			},
+          if (body.data('user') === undefined) {
+            // Пользователь не залогинелся - показываем форму
+            wrapper.addClass('active');
+            return false;
+          } else {
+            return true;
+          }
+        }();
+        // Валидация и отправка формы
+        function submitForm(event) {
+          var form = $('.login form'),
+              email = form.find('input[name=email]'),
+              password = form.find('input[name=password]');
+          if (!/^.*\@.*\..*$/.test(email.val())) {
+            alert('Неправильно введён email!');
+            return false;
+          }
+          if (password.val().length < 3) {
+            alert('Пароль должен быть длиннее 3-х символов!');
+            return false;
+          }
+          $('.login form').submit();
+        }
 
-			/**
-			 * COMPONENT: PARTICIPANT SELECT - выбор конкретного участника проекта
-			 * @return Возвращает компонент
-			 */
+        $('.js-login').click(submitForm);
 
-			participantSelect() {
-				let [select, list] = [
-					$('#participants'), $('.js-participants')
-				];
+        return { isLogin: isLogin };
+      },
 
-        let isFirst = true;
+
+      /**
+       * COMPONENT: PARTICIPANT SELECT - выбор конкретного участника проекта
+       * @return Возвращает компонент
+       */
+
+      participantSelect: function participantSelect() {
+        var _ref2 = [$('#participants'), $('.js-participants')],
+            select = _ref2[0],
+            list = _ref2[1];
+
+
+        var isFirst = true;
 
         $('.js-hide').hide();
         select.prop('checked', false).prop('disabled', 'true');
 
-				function activateSelect() {
-					select.prop('disabled', false);
+        function activateSelect() {
+          select.prop('disabled', false);
           $('.js-hide').fadeIn();
-				}
+        }
 
-				$('#participants').change(function toggleList() {
-					list.toggleClass('active');
+        $('#participants').change(function toggleList() {
+          list.toggleClass('active');
           if (isFirst) {
             $('.owl-carousel').owlCarousel({
               loop: false,
@@ -200,35 +260,38 @@ let app = (function ($) {
               dotClass: 'owl-dot',
               dotsClass: 'navigation',
               dots: true,
-              responsive:{
+              responsive: {
                 0: {
-                  items:1
+                  items: 1
                 },
                 480: {
-                  items:2
+                  items: 2
                 },
-                768:{
-                  items:3
+                768: {
+                  items: 3
                 },
-                992:{
-                  items:3
+                992: {
+                  items: 3
                 }
               }
             });
             isFirst = false;
           }
-				});
+        });
 
-				return Object.freeze({ activateSelect });
-			},
+        return Object.freeze({ activateSelect: activateSelect });
+      },
+
 
       /**
-			 * COMPONENT: PHOTOS UPLOADER - загрузка файлов с предпросмотром
-			 * @return Возвращает компонент
-			 */
+      * COMPONENT: PHOTOS UPLOADER - загрузка файлов с предпросмотром
+      * @return Возвращает компонент
+      */
 
-      photosUploader() {
-        $('.js-dropzone .photos a').click(e => e.preventDefault());
+      photosUploader: function photosUploader() {
+        $('.js-dropzone .photos a').click(function (e) {
+          return e.preventDefault();
+        });
 
         if ($('.js-dropzone .photos').length === 0) {
           return null;
@@ -240,33 +303,36 @@ let app = (function ($) {
           clickable: '.js-dropzone .photos a',
           previewsContainer: '.js-dropzone .preview .images',
           previewTemplate: myPreview
-        }).on('addedfile', (file) => {
+        }).on('addedfile', function (file) {
           $('.js-dropzone .preview').addClass('active');
         });
       },
+
 
       /**
        * COMPONENT: PRODUCTS LIST - список товаров с возможностью
        * добавления новых экземпляров
        */
 
-      productsList() {
-        let productsList = $('.js-dropzone');
+      productsList: function productsList() {
+        var productsList = $('.js-dropzone');
 
         /**
          * Добавляет новый товар
          */
 
         function addNew() {
-          let product = Product();
-          product.find('.photos a').click(e => e.preventDefault());
+          var product = Product();
+          product.find('.photos a').click(function (e) {
+            return e.preventDefault();
+          });
           product.find('.photos').dropzone({
             url: 'uploadPhoto',
             acceptedFiles: 'image/jpeg, image/png',
             clickable: product.find('.photos a')[0],
             previewsContainer: product.find('.photos .images')[0],
             previewTemplate: myPreview
-          }).on('addedfile', (file) => {
+          }).on('addedfile', function (file) {
             $('.js-dropzone .preview').addClass('active');
           });
           $(window).trigger('selectbox-created', product.find('.js-selectToogle'));
@@ -278,18 +344,19 @@ let app = (function ($) {
           addNew();
         });
 
-        return Object.freeze({ addNew });
+        return Object.freeze({ addNew: addNew });
       },
+
 
       /**
        * COMPONENT: TABS - табы направлений
        */
 
-      directionsTabs() {
-        let tabs = $('.js-tab_direct-wr > .tab');
+      directionsTabs: function directionsTabs() {
+        var tabs = $('.js-tab_direct-wr > .tab');
         tabs.not('.tab--active').hide();
         $('.js-tab_direct li a').click(function changeTab(event) {
-          let tabId = $(this).attr('href');
+          var tabId = $(this).attr('href');
           event.preventDefault();
           tabs.hide().filter(tabId).show();
           $('.js-tab_direct li').removeClass('active');
@@ -297,15 +364,16 @@ let app = (function ($) {
         });
       },
 
+
       /**
        * COMPONENT: PROFILE TABS - табы профиля
        */
 
-      profileTabs() {
-        let tabs = $('.js-tab_user-wr > .tab');
+      profileTabs: function profileTabs() {
+        var tabs = $('.js-tab_user-wr > .tab');
         tabs.not('.tab--active').hide();
         $('.js-tab_user li a').click(function changeTab(event) {
-          let tabId = $(this).attr('href');
+          var tabId = $(this).attr('href');
           event.preventDefault();
           tabs.hide().filter(tabId).show();
           $('.js-tab_user ul').removeClass('active');
@@ -314,26 +382,30 @@ let app = (function ($) {
         });
       },
 
+
       /**
        * COMPONENT: PURCHASES ACCORDION - аккордион покупок
        */
 
-      purchasesAccordion() {
-        let items = $('.js-accordion .goods-header');
-        items.find('a').click(e => e.preventDefault());
+      purchasesAccordion: function purchasesAccordion() {
+        var items = $('.js-accordion .goods-header');
+        items.find('a').click(function (e) {
+          return e.preventDefault();
+        });
         $('js-accordion .goods-content').hide();
         items.click(function openItem(event) {
           $(this).next().toggle();
         });
       },
 
+
       /**
        * COMPONENT: PROFILE BOOKMARKS - управление лайками
        */
 
-      profileBookmarks() {
+      profileBookmarks: function profileBookmarks() {
         return $('#bookmarks-tab > ul > li').each(function initItem() {
-          let bookmark = $(this);
+          var bookmark = $(this);
           bookmark.find('ul + a').click(function toggleLike(event) {
             event.preventDefault();
             bookmark.toggleClass('active');
@@ -341,17 +413,21 @@ let app = (function ($) {
         });
       },
 
+
       /**
        * COMPONENT: SELECT BOX - кастомный селект
        */
 
-      selectBox() {
+      selectBox: function selectBox() {
         $('.js-selectToogle, .js-selectLists').removeClass('active');
 
         function initSelectBox(selectToggle) {
-          let selectList = selectToggle.next();
+          var selectList = selectToggle.next();
 
           selectToggle.click(function toggleSelect(event) {
+            if (!selectToggle.hasClass('active')) {
+              $('.js-selectToogle, .js-selectLists').removeClass('active');
+            }
             event.preventDefault();
             selectToggle.toggleClass('active');
             selectList.toggleClass('active');
@@ -365,100 +441,104 @@ let app = (function ($) {
           });
         }
 
-        $('.js-selectToogle').each((i, el) => initSelectBox($(el)));
+        $('.js-selectToogle').each(function (i, el) {
+          return initSelectBox($(el));
+        });
 
-        return {initSelectBox};
+        return { initSelectBox: initSelectBox };
       },
+
 
       /**
        * COMPONENT: SEARCH BOX - Поиск с фильтром
        */
 
-      searchBox() {
-        let [searchArea, searchPrice, selectArea] = [
-          $('.filter-main .search'),
-          $('.filter-main .price'),
-          $('.filter-selects')
-        ];
+      searchBox: function searchBox() {
+        var _ref3 = [$('.filter-main .search'), $('.filter-main .price'), $('.filter-selects')],
+            searchArea = _ref3[0],
+            searchPrice = _ref3[1],
+            selectArea = _ref3[2];
+
 
         $('.js-open_filter').click(function toggleFilter(event) {
           event.preventDefault();
-          [searchArea, searchPrice, selectArea].forEach((item) => {
+          [searchArea, searchPrice, selectArea].forEach(function (item) {
             item.toggleClass('active');
           });
           $(this).toggleClass('active');
         });
       }
-
     },
 
-    events: [
-			['project-selected', 'activateParticipantSelect'],
-      ['#confirm', 'click', 'toggleConfirm'],
-      ['.js-toggle-menu', 'click', 'showProfileMenu'],
-      ['.js-open_menu-general', 'click', 'showThingsMenu'],
-      ['.js-open_found-filter', 'click', 'showFoundFilter'],
-      ['.js-open_menu-top', 'click', 'showSiteMenu'],
-      ['.js-close_notice, .js-later', 'click', 'hideNotice'],
-      ['selectbox-created', 'initSelectBox']
-    ],
+    events: [['project-selected', 'activateParticipantSelect'], ['#confirm', 'click', 'toggleConfirm'], ['.js-toggle-menu', 'click', 'showProfileMenu'], ['.js-open_menu-general', 'click', 'showThingsMenu'], ['.js-open_found-filter', 'click', 'showFoundFilter'], ['.js-open_menu-top', 'click', 'showSiteMenu'], ['.js-close_notice, .js-later', 'click', 'hideNotice'], ['selectbox-created', 'initSelectBox']],
 
     actions: {
+      activateParticipantSelect: function activateParticipantSelect() {
+        var participantSelect = this.components.participantSelect;
 
-			activateParticipantSelect() {
-				let {participantSelect} = this.components;
-				participantSelect.activateSelect();
-			},
-
-      toggleConfirm() {
-        let isChecked = $('#confirm').prop('checked');
+        participantSelect.activateSelect();
+      },
+      toggleConfirm: function toggleConfirm() {
+        var isChecked = $('#confirm').prop('checked');
         $('.js-confirm').prop('disabled', !isChecked);
       },
-
-      showProfileMenu(event) {
+      showProfileMenu: function showProfileMenu(event) {
         event.preventDefault();
         $('.tabs-main ul, .tabs-shop ul').toggleClass('active');
+        $('.tabs-company ul').slideToggle();
         $('.js-toggle-menu i').toggleClass('active');
       },
-
-      showThingsMenu(event) {
+      showThingsMenu: function showThingsMenu(event) {
         event.preventDefault();
         $('.js-open_menu-general').toggleClass('active');
         $('.menu-general ul').toggleClass('active');
       },
-
-      showFoundFilter(event) {
+      showFoundFilter: function showFoundFilter(event) {
         event.preventDefault();
         $('.js-open_found-filter').toggleClass('active');
         $('.found-main-filter ul').toggleClass('active');
       },
-
-      showSiteMenu(event) {
+      showSiteMenu: function showSiteMenu(event) {
         event.preventDefault();
         $('.js-open_menu-top').toggleClass('active');
         $('.menu-top ul').toggleClass('active');
         $('.menu-top').toggleClass('active');
       },
-
-      hideNotice(event) {
+      hideNotice: function hideNotice(event) {
         event.preventDefault();
         $('.wr-notice').hide();
       },
+      initSelectBox: function initSelectBox(event, box) {
+        var selectBox = this.components.selectBox;
 
-      initSelectBox(event, box) {
-        let {selectBox} = this.components;
         selectBox.initSelectBox($(box));
       }
-
     },
 
-    run() {
+    run: function run() {
       initComponents(this.components);
       bindEvents(this, this.events, this.actions);
     }
-  });// Инициализируем приложение после загрузки
+  }); // Инициализируем приложение после загрузки
+}(jQuery);
 
-})(jQuery);
+$(function () {
+  app.run();
+});
+
+$(document).mouseup(function (e) {
+  var menuBlock = $(".menu-open"),
+      selectBlock = $(".js-selectLists"),
+      selectButton = $('.js-selectToogle');
+  if (menuBlock.has(e.target).length === 0 && !menuBlock.is(e.target)) {
+    $(menuBlock).removeClass('active');
+    $('body').removeClass('on-load');
+  }
+  if (selectBlock.has(e.target).length === 0 && !selectBlock.siblings('.js-selectToogle').is(e.target)) {
+    $(selectBlock).removeClass('active');
+    $(selectButton).removeClass('active');
+  }
+});
 
 $(() => { app.run(); });
 $(window).load(function() {

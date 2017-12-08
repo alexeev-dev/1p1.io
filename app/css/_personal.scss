@@ -38,6 +38,7 @@
 
 		header {
 			font-family: $text;
+			flex-shrink: 0; max-width: 205px;
 
 			h3 {
 				color: #9b9b9b; font-size: 18px;

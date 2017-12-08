@@ -6,9 +6,8 @@
 
 //кнопка пожертвований - http://prntscr.com/h0v0y1
 .donation-wr {
-	padding-top: 30px;
+	@extend .row-end-center; padding-top: 30px; 
 	.donation {
-		justify-content: end;
 		transition: .4s all ease;
 		&:hover {
 			color: $link-color;
