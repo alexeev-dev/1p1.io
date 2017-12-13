@@ -292,7 +292,7 @@ span {
 		&:after {
 			content: '\203A'; 
 			color: $link-color; font-size: 24px; text-align: center;
-			width: 23px; height: 31px; position: absolute; right: 4px; top: -4px;
+			width: 23px; height: 31px; position: absolute; right: -4px; top: -4px;
 			background: #fff; 
 			transform: rotate(90deg); pointer-events: none;
 		}

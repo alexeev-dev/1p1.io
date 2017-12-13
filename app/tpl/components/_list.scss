@@ -245,7 +245,7 @@ article {
 
 	&.personal {
 		&-funds {
-			@extend .box-filled-light-3; padding: 20px 0;
+			@extend .box-filled-light-3; padding: 20px 0; margin: 10px 0;
 			box-shadow: none; border: none;
 			header {
 				display: flex; flex-direction: column; margin-bottom: 14px;
@@ -698,7 +698,7 @@ ul.list {
 			li {
 				display: inline-block; width: 100%;
 				article {
-					@extend .personal-funds; padding: 20px 0; margin: 10px 0;
+					@extend .personal-funds;
 				}
 			}
 		}

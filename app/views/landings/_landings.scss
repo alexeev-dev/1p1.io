@@ -264,7 +264,6 @@
 					a span, a, i {
 						color: white;
 						.pet &, .children &, .art &, .fashion & {color: white;}
-						
 					}
 				}
 				&.decoration {
@@ -307,8 +306,6 @@
 			}
 		}
 	}
-
-	
 
 }
 
@@ -536,85 +533,7 @@
 		}
 	}
 
-	.pet & {
-		& > section {background: url('../img/index/intro2.png') no-repeat center; background-size: cover;}
-		nav > ul li {
-			&.decoration {background: #96be46; color: #fff;}
-			&.hovered {a, i {color: white;}}
-			a, i {color: #96be46;}
-			@include respond-to(sm) {&.hovered {a {background: #96be46;}}}
-		}
-		//@include respond-to(sm) {nav > ul {li {a {background: #96be46;}}}}
-	}
-
-	.children & {
-		& > section {
-			background: url('../img/index/intro1.png') no-repeat right center; background-size: cover;
-			@media (max-width: 360px) {background: url('../img/index/intro1.png') no-repeat -890px center; background-size: cover;}
-		}
-		nav > ul li {
-			&.decoration {background: #E8B194; color: #fff;}
-			&.hovered {a, i {color: white;}}
-			a, i {color: #E8B194;}
-			@include respond-to(sm) {&.hovered {a {background: #E8B194;}}}
-		}
-		//@include respond-to(sm) {nav > ul {li {a {background: #E8B194;}}}}
-	}
-
-	.dobro & {
-		& > section {
-			background: url('../img/index/intro3.png') no-repeat center; background-size: cover;
-			@include respond-to(sm) {height: 625px;}
-			@include respond-to(sm) {height: 700px;}
-
-			article {
-				header {
-					padding-left: 199px; margin-top: 228px;
-					position: relative;
-					@include respond-to(lg) {margin-top: 155px;}
-					@include respond-to(md) {padding-left: 100px;}
-					@include respond-to(sm) {margin-top: 100px; padding-left: 0;}
-
-					figure {
-						position: absolute; top: -17px; left: 60px;
-						@include respond-to(md) {left: 0;}
-						@include respond-to(sm) {position: static; margin-bottom: 30px;}
-					}
-					
-
-					p {margin-bottom: 0; padding-left: 3px; letter-spacing: 0.1px;}
-					h2 {
-						margin-bottom: 74px; letter-spacing: -1px;
-						@include respond-to(sm) {font-size: 34px;}
-					}
-					a {
-						padding: 18px 25px;
-						border: 2px solid white; border-radius: 100px; transition: all .2s;
-						&:after {display: none;}
-						&:hover {background: white; color: #7A3FBF;}
-					}
-				}
-				footer {
-					display: flex; justify-content: center; align-items: center;
-					width: 195px; height: 195px; top: 97px; right: 17px; padding-top: 4px; padding-left: 28px;
-					background: url('../images/dobro-duga.svg') no-repeat center;
-					@include respond-to(lg) {position: relative; float: right; top: -41px;}
-					@include respond-to(md) {top: -110px;}
-					@include respond-to(sm) {position: absolute; top: 77px}
-					
-					p {
-						font-family: $title; font-size:32px; margin-bottom: 0;
-						span {
-							display: block;
-							font-size: 16px; line-height: 18px;
-							margin-bottom: 8px;
-							position: relative; top: auto; left: 1px;
-						}
-					}
-				}
-			}
-		}
-	}
+	
 
 	.fashion &, .art & {
 		nav > ul li {
@@ -635,31 +554,6 @@
 		& > section {
 			background: url('../img/index/art-header.jpg') no-repeat right center; background-size: cover;
 			@include respond-to(xs) {background: url('../img/index/art-header.jpg') no-repeat 85% center; background-size: cover;}
-		}
-	}
-
-	.main-landing & {
-		& > section {
-			background: url('../img/index/main-bg.png') no-repeat right center; background-size: cover;
-			height: 650px;
-			@include respond-to(sm) {height: 700px;}
-			@include respond-to(xs) {height: 770px;}
-			@media (max-width: 360px) {background: url('../img/index/main-bg.png') no-repeat -890px center; background-size: cover;}
-		}
-	}
-	.auction & {
-		& > section {
-			background: url('../img/index/auction-bg.png') no-repeat right center; background-size: cover;
-			height: 420px;
-			@media (max-width: 360px) {background: url('../img/index/auction-bg.png') no-repeat -890px center; background-size: cover;}
-		}
-	}
-
-	.stars & {
-		& > section {
-			background: url('../img/index/stars-bg.png') no-repeat right center; background-size: cover;
-			height: 420px;
-			@media (max-width: 360px) {background: url('../img/index/auction-bg.png') no-repeat -890px center; background-size: cover;}
 		}
 	}
 }

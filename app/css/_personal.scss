@@ -14,6 +14,27 @@
 				font-size: 34px; font-family: $title; line-height: 38px;
 				margin-bottom: 27px; margin-top: 0;
 			}
+			dl {
+				dt, dd {
+					font-size: 18px; font-family: $text;
+				}
+				dt {
+					font-family: $HelveticaR;
+					float: left; margin-right: 5px;
+				}
+				dd {
+					margin-bottom: 15px;
+					&:after {
+						content: '';
+						display: block; width: 100%; height: 0; margin: 0; padding: 0; clear: both;
+						border: none;
+					}
+					p {
+						font-size: inherit; font-weight: inherit; font-family: inherit; line-height: inherit;
+						margin: 0; padding: 0;
+					}
+				}
+			}
 			ul {
 				@extend .row-start-center;
 				li {

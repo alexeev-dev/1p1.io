@@ -171,74 +171,14 @@
 	}
 
 	&-deeds {
-		///////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////
 		header {
 			display: flex;
 			@include respond-to(xs) {flex-direction: column;}
 		}
 		ul li {display: flex; justify-content: space-between; align-items: center;}
 
-		&.column_3 {
-			header {flex-direction: column;}
-		}
-
-
-		///////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////
-		///////////////////////////////////////////////////////////////
 		column-count: 2; column-gap: 0;
 		@include respond-to(md) {column-count: 1;}
-
-		&.column_3 {
-			column-count: 3;
-			@include respond-to(lg) {column-count: 2;}
-			@include respond-to(md) {column-count: 1;}
-			li {
-				article {
-					padding: 20px 0;
-					box-shadow: none; border: none;
-					header {
-						margin-bottom: 14px;
-						figure {
-							text-align: center;
-							width: 100%; margin-right: 0; margin-bottom: 22px;
-							border: none;
-						}
-						section {
-							width: 100%;
-							hgroup {
-								padding: 0 16px; height: 57px;
-								h3 {letter-spacing: 0; margin-bottom: 8px;}
-								h4 {@include font-type($text, 10px, 24px, 1px); color: #4b5769; text-transform: uppercase;}
-							}
-						}
-					}
-
-					ul {
-						li {
-							padding: 13px 16px;
-							h4 {
-								font-family: $text; letter-spacing: 0.8px;
-							}
-							dl {
-								dt {
-									font-size: 16px;
-								}
-							}
-						}
-					}
-					
-					footer {
-						h4 {
-							font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
-							padding: 0 16px;
-						}
-					}
-				}
-			}
-		}
 		
 		li {
 			display: inline-block; width: 100%;
