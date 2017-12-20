@@ -76,6 +76,16 @@
 		.dobro & {background-image: url('../img/index/intro3.png');}
 		.art & {background-image: url('../img/index/art-header.png');}
 		.fashion & {background-image: url('../img/index/fashion-header.png');}
+		.auction & {
+			background: url('../img/index/auction-bg.png') no-repeat right center; background-size: cover;
+			height: 420px;
+			@media (max-width: 360px) {background: url('../img/index/auction-bg.png') no-repeat -890px center; background-size: cover;}
+		}
+		.stars & {
+			background: url('../img/index/stars-bg.png') no-repeat right center; background-size: cover;
+			height: 420px;
+			@media (max-width: 360px) {background: url('../img/index/auction-bg.png') no-repeat -890px center; background-size: cover;}
+		}
 
 		@include respond-to(md) {height: 600px;}
 		
@@ -102,6 +112,11 @@
 					@include respond-to(sm) {margin-top: 100px; padding-left: 0;}
 				}
 
+				.auction &, .stars & {
+					text-align: center;	
+					padding-left: 0; margin-top: 134px;
+				}
+
 				h1 {
 					color: #fff; @include font-type($title, 42px, 56px, -1px); 
 					margin-top: 0; margin-bottom: 22px;
@@ -117,6 +132,11 @@
 
 					.dobro & {
 						margin-bottom: 0; padding-left: 3px; letter-spacing: 0.1px;
+					}
+
+					.auction &, .stars & {
+						margin-bottom: 26px;
+						@include respond-to(xs) {font-size: 16px;}
 					}
 				}
 				h2 {
@@ -143,6 +163,8 @@
 						&:after {display: none;}
 						&:hover {background: white; color: #7A3FBF;}
 					}
+
+					.auction & {padding: 18px 22px 16px 24px;}
 
 					i {
 						color: #fff; font-size: 17px; font-weight: bold;
@@ -626,6 +648,31 @@
 			}
 		}
 	}
+
+	//http://prntscr.com/hha5hu
+	&-auction {
+		display: flex; flex-wrap: wrap;
+		margin: 0 -10px;
+		& > li {
+			width: calc(33.33333% - 20px); margin: 0 10px 20px 10px;
+			background: #fff;
+			@include respond-to(sm) {width: calc(50% - 20px);}
+			@include respond-to(xs) {width: 100%; margin: 0 0 20px 0;}
+			&:hover {box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); }
+
+			article {
+				@extend .preview-auction;
+			}
+		}
+	}
+}
+
+.auction-wrapp {
+	padding: 27px 0;
+    background: #F3F6FA;
+    .pagination-block {
+    	padding: 10px 0 0 0;
+    }
 }
 
 //PROMOTION - http://prntscr.com/h4biip

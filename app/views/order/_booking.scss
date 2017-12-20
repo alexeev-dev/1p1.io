@@ -211,7 +211,7 @@
 
 			.form {
 				@include respond-to(lg) {width: 100%;}
-				transition: .4s all aese;
+				transition: .4s all ease;
 				&.hide {opacity: 0;}
 				.wr-input {
 					padding-top: 27px; padding-bottom: 0; margin-bottom: 13px;
@@ -222,33 +222,40 @@
 				}
 
 				&-btn-group {
-					justify-content: flex-start!important; align-items: center;
+					justify-content: flex-start; align-items: center;
 					margin-top: 0; padding-top: 31px; 
 					@include respond-to(md) {display: flex; padding-right: 10px;}
 					@include respond-to(sm) {display: block; text-align: center;}
 
-					.btn {
-						text-align: center;
-						margin-right: 40px; left: 3px; right: auto; padding: 12px 0; display: inline-block;
-						@include respond-to(sm) {
-							display: inline-block; margin-right: 0;
+					li {
+						&:last-child {
+							& > * {
+								margin-right: 0;
+							}
 						}
-					}
-					a {
-						@include font-type($title, 16px, 1, 0); color: $link-color;
-						position: relative; padding-top: 3px;
-						@include respond-to(sm) {display: inline-block;}
-
-						&:after {
-							content: ''; 
-							display: block; height: 3px; width: 0%; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
-							background: $link-color; 
-							transition: width 0.3s ease-in-out;
+						.btn {
+							text-align: center;
+							margin-right: 40px; left: 3px; right: auto; padding: 12px 0; display: inline-block;
+							@include respond-to(sm) {
+								display: inline-block; margin-right: 0;
+							}
 						}
+						a {
+							@include font-type($title, 16px, 1, 0); color: $link-color;
+							position: relative; padding-top: 3px; margin-right: 30px;
+							@include respond-to(sm) {display: inline-block;}
 
-						&:hover {
-							&:after {width: 100%;}
+							&:after {
+								content: ''; 
+								display: block; height: 3px; width: 0%; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+								background: $link-color; 
+								transition: width 0.3s ease-in-out;
+							}
 
+							&:hover {
+								&:after {width: 100%;}
+
+							}
 						}
 					}
 				}
