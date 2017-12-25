@@ -1,0 +1,143 @@
+// POPUPs
+.popup {
+	//http://prntscr.com/h0zgpy
+	&-seller_info {
+		display: none;
+		max-width: 480px; padding: 25px;
+		background: rgba(192,209,221,0.9); border-radius: 4px;
+
+		figure {
+			text-align: center;
+			img {margin-bottom: 25px;}
+
+			figcaption {
+				text-align: left;
+	
+				h3 {color: #000; @include font-type($title, 22px, 32px, 0px);}
+				p {color: #000; @include font-type($text, 16px, 24px, 0.5px);}
+				address {margin-bottom: 0;}
+			}
+		}
+
+		a.b-close {position: absolute; right: 15px; top: 15px;}
+
+		@include respond-to(sm) {max-width: 100%;}
+	}
+
+	// LOGIN POPUP – http://prntscr.com/gg2gi8
+	&-login {
+		padding: 70px 0; position: relative;
+		background: #fff; box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.05);
+		@include respond-to(sm) {width: 90%; margin: 0 auto; padding: 40px 0;}
+		@include respond-to(xs) {width: 100%; min-width: 300px;}
+
+		&-close {position: absolute; right: 25px; top: 25px;}
+
+		h2 {
+			@include font-type($title, 32px, 36px, -0.5px); color: $brand; text-align: center;
+			margin-bottom: 35px;
+			@include respond-to(sm) {margin-bottom: 15px;}
+		}
+
+		& > ul {
+			display: flex; justify-content: center;
+			@include respond-to(sm) {flex-direction: column;}
+
+			& > li {
+				width: 50%;
+				@include respond-to(sm) {text-align: center; width: 100%;}
+
+				&:last-child {@include respond-to(sm) {margin-top: 20px;}}
+				
+				&.sep {
+					width: 2px; margin: 0 50px;
+					background: #eff1f2;
+				}
+
+				form {
+					width: 60%; float: right;
+					@include respond-to(lg) {width: 80%;}
+					@include respond-to(sm) {display: inline-block; float: none;}
+
+					& > a {
+						@include font-type($text, 12px, 1, 0); color: #9da8af;
+						display: block; margin: -11px 0 0 20px;
+					}
+
+					ul {
+						display: flex; justify-content: flex-end;
+						margin-top: 20px;
+						li {line-height: 35px;}
+					}
+				}
+
+				a {
+					&.link {
+						@include font-type($text, 16px, 1, -0.5px); color: $brand;
+						margin-right: 25px;
+
+						@include respond-to(xs) {font-size: 14px; margin-right: 20px;}
+					}
+					&.social {
+						@include font-type($text, 16px, 1, -0.5px); color: #000;
+						display: flex; align-items: center; width: 67%; padding: 10px 20px; margin: 15px 0;
+						border: 1px solid #d7deea; border-radius: 4px;
+						@include respond-to(lg) {width: 80%;}
+						@include respond-to(sm) {display: inline-block; margin: 5px 0;}
+
+						i {
+							color: #507db1; font-size: 25px;
+							width: 25px; margin-right: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// NOTICE POPUP – http://prntscr.com/gg2ew1
+	&-notice {
+		text-align: center;
+		padding: 70px 0;
+		background: #fff;
+
+		@include respond-to(sm) {width: calc(100% + 30px); margin-left: -15px; padding-left: 15px; padding-right: 15px;}
+
+		&-top {
+			height: 80px; 
+			position: relative; top: -72px;
+			border-bottom: 1px solid #dae5eb;
+
+			a.close {display: block; position: absolute; top: 26px; right: 30px;}
+		}
+
+		h3 {letter-spacing: 0; margin-bottom: 30px;}
+		ul {
+			display: flex; justify-content: center;
+			@include respond-to(xs) {flex-direction: column-reverse;}
+
+			li {
+				font-family: $text; line-height: 36px; letter-spacing: 0.5px;
+				margin: 0 10px;
+				@include respond-to(xs) {margin: 10px 0;}
+
+				a {
+					padding: 11px 23px 12px;
+					border-radius: 100px;
+				}
+			}
+		}
+	}
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	&-notice {
+		ul li a {
+			border: solid 1px transparent; transition: 0.2s ease-out;
+			&:hover {border: solid 1px #4489ff;}
+		}
+	}
+}
+

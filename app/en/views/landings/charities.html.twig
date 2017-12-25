@@ -1,0 +1,93 @@
+{% extends '../../tpl/base-en.html.twig' %}
+
+{% block header_class %}{% endblock %}
+
+{% block app_class %}en{% endblock %}
+{% block preloder_class %}{% endblock %}
+
+{% block body %}
+	
+	<div class="wr-landings-intro charities">
+		<div class="container">
+			<div class="landings-intro">
+				<h1></h1>
+				<p></p>
+				<ul>
+					<li>
+						<a href="#" class="btn"></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="wr-testimonials">
+		<div class="container">
+
+			<div class="testi-brands">
+				<header>
+					<figure>
+						<img src="">
+					</figure>
+				</header>
+				<section>
+					<p></p>
+					<a href="#"></a>
+				</section>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="wr-how-works">
+		<div class="container">
+
+			<div class="how-works">
+				<h2></h2>
+				<ul>
+					<li>
+						<figure>
+							<img src="">
+						</figure>
+						<p></p>
+					</li>
+					<li>
+						<figure>
+							<img src="">
+						</figure>
+						<p></p>
+					</li>
+					<li>
+						<figure>
+							<img src="">
+						</figure>
+						<p></p>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="wr-join">
+		<div class="container">
+
+			<div class="join">
+				<h2></h2>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<a href="#" class="btn"></a>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
+{% endblock %}

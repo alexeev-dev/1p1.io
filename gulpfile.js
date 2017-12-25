@@ -148,6 +148,45 @@ gulp.task('twig:build', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('twigEN:build', function () {
+
+    return gulp.src('app/en/views/*/*.html.twig')
+        .pipe(twig({
+            data: {
+                title: 'Gulp and Twig',
+                benefits: [
+                    'Fast',
+                    'Flexible',
+                    'Secure'
+                ]
+            },
+            functions: [
+            	{
+            		name: 'asset',
+            		func: function (url) {
+				        return 'assets/' + url;
+				    }
+            	},
+            	{
+            		name: 'path',
+            		func: function (link,sublink) {
+				        return link + '.html'; 
+				    }
+            	}
+            ]
+        }))
+        .pipe(rename(function (path) {
+        	var dir = path.dirname,
+        		name = path.basename;
+	        	
+        	path.basename = 'en-' + dir + '_' + name;
+    		path.extname = '';
+        }))
+        .pipe(flatten())
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('twig:index', function () {
 
     return gulp.src('app/views/index.twig')
@@ -180,10 +219,11 @@ gulp.task('twig:index', function () {
 });
 
 
-gulp.task('watch', ['twig:build', 'twig:index', 'js:libs', 'js:main', 'sprite', 'browser-sync', 'sass'], function () {
+gulp.task('watch', ['twig:build', 'twigEN:build', 'twig:index', 'js:libs', 'js:main', 'sprite', 'browser-sync', 'sass'], function () {
 	gulp.watch('app/**/*.scss', ['sass']);
 	// gulp.watch('app/**/*.html', ['html:build']);
 	gulp.watch('app/views/*/*.html.twig', ['twig:build']);
+	gulp.watch('app/en/views/*/*.html.twig', ['twigEN:build']);
 	gulp.watch('app/views/index.twig', ['twig:index']);
 	gulp.watch('app/img/icons/svg/*.svg', ['sprite', 'sass']);
 	gulp.watch('app/js/*.js', ['js:main']);

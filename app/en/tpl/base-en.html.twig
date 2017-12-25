@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- FAVICON -->
+	<link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
+	<!-- SEO -->
+   {% block meta_description %}
+	   <meta name="Description" content="">
+   {% endblock meta_description %}
+	<meta name="Author" content="Один+Один">
+	<meta name="Robots" content="index,follow">
+
+	<!-- CONFIG -->
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- CSS -->
+	{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('css/main.css') ~ codeRevisionPostfix }}">
+		<link rel="stylesheet" href="{{ asset('css/print.css') ~ codeRevisionPostfix }}" media="print">
+
+	{% endblock %}
+</head>
+
+<body class="on-load">
+
+	<!-- Preloader  -->
+	<div class="preloader {% block preloder_class %}{% endblock %}"></div>
+
+	<!-- Application -->
+	<div class="app {% block app_class %}{% endblock %}">
+
+		{% block header %}
+			<header>
+				<div class="wr-header">
+					<div class="container">
+
+						<div class="header">
+							<div>
+								<a href="#" class="logo"></a>
+								<nav>
+									<ul>
+										<li><a href="#">Home</a></li>
+										<li><a href="#">Buyers</a></li>
+										<li><a href="#">Sellers</a></li>
+										<li class="active"><a href="#">Brands</a></li>
+										<li><a href="#">Charities</a></li>
+									</ul>
+								</nav>
+							</div>
+							<div>
+								<ul>
+									<li><a href="#"></a></li>
+									<li><a href="#">User goods</a></li>
+									<li><a href="#">Brand products</a></li>
+									<li><a href="#">Sell</a></li>
+									<li><a href="#">Sign in</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</header>
+		{% endblock %}
+
+		{% block body %}{% endblock %}
+		
+		{% block footer %}
+			<footer>
+				<div class="wr-footer-nav">
+					<div class="conatiner">
+						<div class="footer-nav">
+							<header>
+								<h3></h3>
+								<p></p>
+								<form action="#">
+									<input type="text">
+									<button></button>
+								</form>
+								<ul class="socials">
+									<li><a href="#"><i class="fa fa-"></i></a></li>
+									<li><a href="#"><i class="fa fa-"></i></a></li>
+									<li><a href="#"><i class="fa fa-"></i></a></li>
+								</ul>
+							</header>
+							<section>
+								<div>
+									<h4></h4>
+									<ul></ul>
+									<h4></h4>
+									<ul></ul>
+								</div>
+								<div>
+									<h4></h4>
+									<ul></ul>
+								</div>
+								<div>
+									<h4></h4>
+									<ul></ul>
+									<h4></h4>
+									<ul></ul>
+								</div>
+								<div>
+									<h4></h4>
+									<ul></ul>
+									<h4></h4>
+									<ul></ul>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<div class="wr-footer">
+					<div class="container">
+						<div class="footer">
+							<p>
+								<small>2017 © Oneplusone. All rights reserved.</small>
+								63 W 38th St, New York, NY 10018
+							</p>
+							<nav>
+								<ul>
+									<li>
+										<a href="#">En</a>
+										<a href="#">Español</a>
+									</li>
+									<li>
+										<a href="#">Press Kit</a>
+									</li>
+									<li>
+										<a href="#">Terms of use</a>
+									</li>
+									<li>
+										<a href="#">Privacy Policy</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</footer>
+		{% endblock %}
+	</div>
+
+	{% block popup %}{% endblock %}
+
+	{% block javascripts %}
+		<script type="text/javascript" src="{{ asset('js/libs.min.js') ~ codeRevisionPostfix }}"></script>
+		<script type="text/javascript" src="{{ asset('js/main.js') ~ codeRevisionPostfix }}"></script>
+	{% endblock javascripts %}
+
+</body>
+
+</html>
