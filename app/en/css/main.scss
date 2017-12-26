@@ -1,0 +1,19 @@
+@import 'settings';
+@import 'libs';
+@import 'variables';
+@import 'sprite';
+
+@import 'buttons';
+@import 'forms';
+@import 'header';
+@import 'footer';
+@import 'tabs';
+@import 'modules';
+
+// landings
+@import '../views/landings/landings';
+
+// catalog
+@import '../views/market/catalog';
+
+@import 'style';

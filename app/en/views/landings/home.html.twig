@@ -1,0 +1,170 @@
+{% extends '../../tpl/base.html.twig' %}
+
+{% block header_class %}{% endblock %}
+
+{% block app_class %}en{% endblock %}
+{% block preloder_class %}{% endblock %}
+
+{% block body %}
+	
+	<div class="wr-landings-intro">
+		<div class="container">
+			<div class="landings-intro">
+				<h1></h1>
+				<p></p>
+				<a href="#" class="video">Watch the video</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="wr-trade">
+		<div class="container">
+
+			<div class="trade">
+				<ul>
+					<li>
+						<article>
+							<header>
+								<h2>Sell and donate</h2>
+							</header>
+							<section>
+								<p>Place the item and set the percent of the price you want to donate</p>
+								<ul>
+									<li><a href="#">Place an ad</a></li>
+								</ul>
+							</section>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<h2>Buy</h2>
+							</header>
+							<section>
+								<p>Each your purchase turns into a meaningful financial aid</p>
+								<ul>
+									<li><a href="#">Brand products</a></li>
+									<li><a href="#">User goods</a></li>
+								</ul>
+							</section>
+						</article>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="wr-testimonials">
+		<div class="container">
+
+			<div class="testimonials">
+				<section class="carousel">
+					<div class="owl-carousel js-carousel">
+						<div class="testimonials-item">
+							<figure>
+								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
+							</figure>
+
+							<section>
+								<p>Thanks to everyone who helps our children! The money for their treatment is collected, and everything necessary is paid for or bought. Without your support, we could not pay for the search and activation of a bone marrow donor, treatment abroad, the purchase of expensive medications and surgeries. Thank you!</p>
+							</section>
+						</div>
+						<div class="testimonials-item">
+							<figure>
+								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
+							</figure>
+
+							<section>
+								<p>Thanks to everyone who helps our children! The money for their treatment is collected, and everything necessary is paid for or bought. Without your support, we could not pay for the search and activation of a bone marrow donor, treatment abroad, the purchase of expensive medications and surgeries. Thank you!</p>
+							</section>
+						</div>
+						<div class="testimonials-item">
+							<figure>
+								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
+							</figure>
+
+							<section>
+								<p>Thanks to everyone who helps our children! The money for their treatment is collected, and everything necessary is paid for or bought. Without your support, we could not pay for the search and activation of a bone marrow donor, treatment abroad, the purchase of expensive medications and surgeries. Thank you!</p>
+							</section>
+						</div>
+						<div class="testimonials-item">
+							<figure>
+								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
+							</figure>
+
+							<section>
+								<p>Thanks to everyone who helps our children! The money for their treatment is collected, and everything necessary is paid for or bought. Without your support, we could not pay for the search and activation of a bone marrow donor, treatment abroad, the purchase of expensive medications and surgeries. Thank you!</p>
+							</section>
+						</div>
+					</div>
+				</section>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="wr-news-preview">
+		<div class="container">
+			
+			<div class="section-header">
+				<h3>News & events</h3>
+				<a href="#">See all</a>
+			</div>
+			<div class="news-preview">
+				<ul>
+					<li>
+						<article>
+							<header>
+								<figure>
+									<img src="">
+								</figure>
+							</header>
+							<section>
+								<h4>Rihanna joins ‘The Giving Pledge’ </h4>
+								<p>We use blockchain technology to make sure that each donation reaches its addressee. When publishing your item, you choose the charity or a recipient and track the money you earn from selling your item.</p>
+							</section>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<figure>
+									<img src="">
+								</figure>
+							</header>
+							<section>
+								<h4>How do I know if my donation reaches the addressee</h4>
+								<p>We use blockchain technology to make sure that each donation reaches its addressee. When publishing your item, you choose the charity or a recipient and track the money you earn from selling your item.</p>
+							</section>
+						</article>
+					</li>
+					<li>
+						<article>
+							<header>
+								<figure>
+									<img src="">
+								</figure>
+							</header>
+							<section>
+								<h4>Eminem joins ‘The Giving Pledge’</h4>
+								<p>We use blockchain technology to make sure that each donation reaches its addressee. When publishing your item, you choose the charity or a recipient and track the money you earn from selling your item.</p>
+							</section>
+						</article>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
+{% endblock %}

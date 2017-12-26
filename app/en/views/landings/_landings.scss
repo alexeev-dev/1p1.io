@@ -1,0 +1,103 @@
+// testimonials type 1
+.testimonials {
+	&-item {
+		display: flex; justify-content: start;
+		width: 100%; padding-left: 102px; padding-top: 5px;
+		@include respond-to(lg) {padding-left: 40px;}
+		@include respond-to(sm) {flex-direction: column; padding-left: 0;}
+
+		figure {
+			display: flex;
+			text-align: left;
+			@include respond-to(md) {flex-direction: column; justify-content: center; align-items: flex-start; }
+			@include respond-to(sm) {align-items: center; text-align: center; width: 100%; margin-bottom: 60px;}
+			img {
+				width: 80px !important; height: 80px !important; margin-right: 20px; max-width: 100%;
+				@include respond-to(md) {width: auto !important; margin: 0 0 40px 0;}
+				@include respond-to(sm) {margin: 0 0 15px 0;}
+			}
+			figcaption {
+				@include font-type($title, 34px, 40px, -1px);
+				@include respond-to(sm) {br {display: none;}}
+
+				span {
+					@include font-type($title, 18px, 24px, 0.5px); color: #4b5769 !important;
+					width: 180px; 
+					display: block; padding-top: 12px;
+					@include respond-to(sm) {width: 100%;}
+				}
+			}
+		}
+
+		section {
+			width: 56%; padding-left: 120px;  position: relative; top: -8px;
+			@include respond-to(lg) {width: 100%;}
+			@include respond-to(md) {padding-left: 60px;}
+			@include respond-to(sm) {padding-left: 0;}
+			p {
+				@include font-type($HelveticaM, 19px, 28px, 0.3px); color: #4b5769; font-family: $text;
+				position: relative; margin-bottom: 0;
+				@include respond-to(md) {padding-top: 20px;}
+				@include respond-to(sm) {text-align: center;}
+			}
+		}
+
+		//FOR JS
+		figure {opacity: 0; transition: all .8s;}
+		section {
+			transform: translateX(150px);
+			opacity: 0;
+			transition: 0.5s ease-out;
+		}
+
+		.active & {
+			figure {
+				opacity: 1;
+			}
+			section {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+		&.left {
+			section {
+				opacity: 0;
+				transform: translateX(-150px); width: 70%;
+				@include respond-to(sm) {
+				transform: translateX(-75px);
+				}
+				@include respond-to(xs) {
+					transform: translateX(-30px);
+				}
+			}
+		}
+		&.right {
+			section {
+				opacity: 0;
+				transform: translateX(150px); width: 70%;
+				@include respond-to(sm) {
+				transform: translateX(75px);
+				}
+				@include respond-to(xs) {
+				transform: translateX(30px);
+				}
+			}
+		}
+	}
+}
+.carousel {
+	.navigation, .owl-dots {display: flex; justify-content: center;}
+	.navigation, .owl-dots {margin-top: 30px; padding-left: 6px;
+		li,  .owl-dot {
+			flex-shrink: 0;
+			width: 19px; height: 4px; margin: 0 5px; padding: 0;
+			background: #d9deea; border-radius: 100px; cursor: pointer;
+			&.active {
+				background: #4489ff;
+				&:hover {cursor: default;}
+			}
+			&:active {transform: translateY(0);}
+			&.active {transform: translateY(0); &:hover {cursor: default;}}
+		}
+	}			
+}

@@ -1,0 +1,154 @@
+{% extends '../../tpl/base.html.twig' %}
+
+{% block header_class %}{% endblock %}
+
+{% block app_class %}en{% endblock %}
+{% block preloder_class %}{% endblock %}
+
+{% block body %}
+
+	{% block header %}
+		<header>
+			<div class="wr-header">
+				<div class="container">
+
+					<div class="header">
+						<div>
+							<a href="#" class="logo"></a>
+							<nav>
+								<ul>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Buyers</a></li>
+									<li><a href="#">Sellers</a></li>
+									<li class="active"><a href="#">Brands</a></li>
+									<li><a href="#">Charities</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div>
+							<ul>
+								<li><a href="#"></a></li>
+								<li><a href="#">User goods</a></li>
+								<li><a href="#">Brand products</a></li>
+								<li><a href="#">Sell</a></li>
+								<li><a href="#">Sign in</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="wr-catalog-nav">
+				<div class="container">
+					<div class="catalog-nav">
+						<ul>
+							<li><a href="#">All categories</a></li>
+							<li><a href="#">Clothes</a></li>
+							<li><a href="#">Furniture</a></li>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Goods for kids</a></li>
+							<li><a href="#">Tickets</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="wr-catalog-nav-category">
+				<div class="container">
+
+					<div class="catalog-nav-category">
+						<ul>
+							<li><a href="#">Childen's goods</a></li>
+							<li><a href="#">Clothes and footwear</a></li>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Appliances</a></li>
+							<li><a href="#">Pet supplies</a></li>
+							<li><a href="#">House and Cottage</a></li>
+							<li><a href="#">Beauty and health</a></li>
+							<li><a href="#">Auto</a></li>
+							<li><a href="#">Sport and leisure</a></li>
+							<li><a href="#">Leisure and entertainment</a></li>
+							<li><a href="#">Equipment</a></li>
+							<li><a href="#">Food</a></li>
+							<li><a href="#">Software</a></li>
+							<li><a href="#">Media</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">Childen's goods</a></li>
+							<li><a href="#">Clothes and footwear</a></li>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Appliances</a></li>
+							<li><a href="#">Pet supplies</a></li>
+							<li><a href="#">House and Cottage</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Appliances</a></li>
+							<li><a href="#">Pet supplies</a></li>
+							<li><a href="#">House and Cottage</a></li>
+							<li><a href="#">Beauty and health</a></li>
+							<li><a href="#">Auto</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">Childen's goods</a></li>
+							<li><a href="#">Clothes and footwear</a></li>
+							<li><a href="#">Electronics</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</header>
+	{% endblock %}
+	
+	<div class="wr-category-list">
+		<div class="container">
+
+			<div class="brands-category">
+				<div class="light masonry-item height-double width-double">
+					<figure>
+						<img src="" alt="">
+					</figure>
+					<section>
+						<h2>Clothes</h2>
+						<p>384 items on sale</p>
+					</section>
+				</div>
+				<div class="masonry-item width-double">
+					<figure>
+						<img src="" alt="">
+					</figure>
+					<section>
+						<h2>Electronics</h2>
+						<p>384 items on sale</p>
+					</section>
+				</div>
+				<div class="light masonry-item">
+					<figure>
+						<img src="" alt="">
+					</figure>
+					<section>
+						<h2>Electronics</h2>
+						<p>384 items on sale</p>
+					</section>
+				</div>
+				<div class="masonry-item">
+					<figure>
+						<img src="" alt="">
+					</figure>
+					<section>
+						<h2>Electronics</h2>
+						<p>384 items on sale</p>
+					</section>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
+{% endblock %}

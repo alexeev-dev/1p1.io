@@ -1,0 +1,154 @@
+// reset
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box; // не включаем паддинги у всех блоков
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+audio, canvas, img, video {
+    vertical-align: middle;
+}
+h1,h2,h3,h4,h5,h6,p, ul {
+	margin: 0;
+}
+body {
+	line-height: 1;
+
+	&.on-load {overflow:hidden;}
+
+	* {
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	*:before, *:after {
+		box-sizing: border-box;
+	}
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+	&:hover, &:focus, &:active {
+		cursor: pointer;
+	}
+}
+form, input, select, textarea, button, a, fieldset {
+	text-overflow: ellipsis;
+	margin: 0; padding: 0;
+	outline: none; border: 0;
+} textarea {resize: vertical;}
+
+// font
+@mixin font-type($font-family, $font-size, $line-height, $letter-spacing) {
+	font-family: $font-family;
+	font-size: $font-size;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+}
+
+// responsive
+@mixin respond-to($media) {
+
+	// mobile first
+	@if $media == mobile {@media (max-width: 400px) {@content;}}
+
+	// grid
+	@else if $media == xs {@media (max-width: 480px) {@content;}}
+	@else if $media == sm {@media (max-width: 767px) {@content;}}
+	@else if $media == md {@media (max-width: 991px) {@content;}}
+	@else if $media == lg {@media (max-width: 1199px) {@content;}}
+	@else if $media == desktop {@media (max-width: 1299px) {@content;}}
+	@else {@media (max-width: $media) {@content;}}
+}
+
+// fonts
+@mixin font-face($file-path, $font-family) {
+
+	@font-face {
+		font-family: $font-family;
+		src: url('../fonts/' + $file-path + '/' + $file-path + '.eot');
+		src: url('../fonts/' + $file-path + '/' + $file-path + '.eot') format('embedded-opentype'),
+		// url('../fonts/' + $file-path + '/' + $file-path + '.woff2') format('woff2'),
+		url('../fonts/' + $file-path + '/' + $file-path + '.woff') format('woff'),
+		url('../fonts/' + $file-path + '/' + $file-path + '.ttf') format('truetype'),
+		url('../fonts/' + $file-path + '/' + $file-path + '.svg##{$file-path}') format('svg');      
+
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		@font-face {
+			font-family: $font-family;
+			src: url('../fonts/' + $file-path + '/' + $file-path + '.svg##{$file-path}') format('svg');
+		}
+	}
+}
+
+// sliding
+@mixin slide_me() {
+	overflow: hidden; max-height: 0;
+	&.active {max-height: 1000px;}
+}
+
+// Cormac
+@include font-face('cormac-book', cormac-book);
+@include font-face('cormac-extralight', cormac-extralight);
+
+// Helvetica
+@include font-face('HelveticaLight', HelveticaLight);
+@include font-face('HelveticaThin', HelveticaThin);
+@include font-face('HelveticaRegular', HelveticaRegular);
+@include font-face('HelveticaMedium', HelveticaMedium);
+@include font-face('HelveticaHeavy', HelveticaHeavy);
+@include font-face('HelveticaBold', HelveticaBold);
+@include font-face('HelveticaBlack', HelveticaBlack);
+
+// Helvetica 
+@include font-face('HelveticaNeueThin', HelveticaNeueThin);
+@include font-face('helveticaneuemedium', helveticaneuemedium);
+@include font-face('helveticaneuecyrlight', helveticaneuecyrlight);
+
+
+// ICONs
+.icon {display: inline-block;}
+
+// preloader
+.preloader {
+	display: block; width: 100%; height: 100%; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99999;
+	background: #3f86ff url(../img/preloader.gif) center center no-repeat;
+}
