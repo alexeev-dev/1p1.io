@@ -1,3 +1,475 @@
+// landings intro
+.landings {
+	&-intro {
+		position: relative;
+
+		.charities &, .sellers & {
+			&:before {
+				content: '';
+				display: block; width: 350px; height: 350px; position: absolute; right: 110px; top: -45px;
+				background: $brand; border-radius: 50%;
+			}
+			&:after {
+				content: '';
+				display: block; width: 116px; height: 116px; position: absolute; right: 10px; top: -45px;
+				background: $brand; border-radius: 50%;
+			}
+		}
+
+		.sellers & {
+			&:before {
+				background: $white url('../img/intro-bg-sellers.png') center center no-repeat;
+			}
+			&:after {
+				background: $white;
+			}
+		}
+
+		.brands & {
+			&:after {
+				content: '';
+				display: block; width: 694px; height: 521px; position: absolute; right: 0; top: -60px;
+				background: url('../img/intro-bg-brands.png') center center no-repeat; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+			}
+		}
+
+		.buyers & {
+			&:after {
+				content: '';
+				display: block; width: 628px; height: 639px; position: absolute; right: 0; top: -84px;
+				background: url('../img/intro-bg-buyers.png') center center no-repeat;
+			}
+		}
+		.home & {
+			&:before {
+				content: '';
+				display: block; width: 350px; height: 350px; position: absolute; right: 110px; top: -20px;
+				background: $brand; border-radius: 50%;
+			}
+			&:after {
+				content: '';
+				display: block; width: 116px; height: 116px; position: absolute; right: 10px; top: -20px;
+				background: $brand; border-radius: 50%;
+			}
+		}
+		.home-1 & {
+			&:before {
+				content: '';
+				display: block; width: 352px; height: 352px; position: absolute; right: 110px; top: -21px;
+				background: transparent; border: solid 1px #979797; border-radius: 50%;
+			}
+			&:after {
+				content: '';
+				display: block; width: 118px; height: 118px; position: absolute; right: 60px; top: -11px;
+				background: transparent; border: solid 1px #979797; border-radius: 50%;
+			}
+		}
+
+		& > * {
+			max-width: 380px; width: 100%;
+
+			.buyers & {
+				max-width: 460px;
+			}
+		}
+		h1 {
+			color: $black; font-family: $ms-500; font-size: 30px; line-height: 36px;
+			margin-bottom: 30px;
+
+			.brands &, .sellers & {
+				color: $white;
+			}
+
+			.buyers & {
+				font-size: 36px; line-height: 43px;
+			}
+
+			.home & {
+				font-size: 48px; line-height: 58px;
+				max-width: 540px;
+			}
+		}
+		p {
+			color: $black; font-family: $ms-500; font-size: 16px; line-height: 24px;
+			margin-bottom: 35px;
+
+			.brands &, .sellers & {
+				color: $white;
+				opacity: 0.8;
+			}
+
+			.home & {
+				font-size: 18px; line-height: 26px;
+				max-width: 400px;
+			}
+		}
+		& > a {
+			color: $brand; font-family: $ms-500; font-size: 16px; line-height: 20px;
+			display: inline-block; width: auto;
+			&.video {
+				padding-right: 36px; position: relative;
+				&:after {
+					content: '';
+					display: block; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+					border-left: solid 11px $brand; border-top: solid 7px transparent; border-bottom: solid 7px transparent;
+				}
+			}
+		}
+		ul {
+			@extend .row-start-start;
+			li {
+				margin-right: 22px;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+					&.btn {
+						padding: 9px 40px;
+
+						.brands &, .sellers & {
+							color: $black;
+							padding: 15px 40px;
+							background: $white; border-color: $white;
+							&:hover {
+								color: $white;
+								background: $brand;
+							}
+						}
+
+						.buyers & {
+							color: $brand;
+							padding: 13px 35px 14px;
+							background: $bg-gray; border-color: $brand;
+							&:hover {
+								color: $white;
+								background: $brand;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.trade {
+	& > ul {
+		@extend .row-between-stretch; margin-top: -80px;
+		& > li {
+			width: 50%;
+			&:first-child {
+				padding-right: 10px;
+			}
+			&:last-child {
+				padding-left: 10px;
+			}
+			article {
+				width: 100%; height: 100%;
+				background: $white; box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+				header {
+					padding: 20px 0 14px;
+					border-bottom: 1px solid rgba(151,151,151,0.1);
+					h2 {
+						color: $black; font-family: $ms-500; font-size: 24px; line-height: 46px; text-align: center;
+					}
+				}
+				section {
+					padding: 30px 0 35px;
+					p {
+						color: $black; font-family: $ms-500; font-size: 18px; line-height: 26px; text-align: center;
+						max-width: 320px; margin: 0 auto 33px;
+					}
+					ul {
+						@extend .row-center-center;
+						li {
+							margin-right: 30px;
+							&:last-child {
+								margin-right: 0;
+							}
+							a {
+								color: $brand; font-family: $ms-500; font-size: 16px; line-height: 19px;
+								display: inline-block; padding-right: 13px; position: relative;
+								&:after {
+									content: '';
+									display: block; width: 6px; height: 6px; position: absolute; right: 0; top: 50%; transform: translateY(-50%) rotate(45deg);
+									border-right: 2px solid #4489ff; border-top: 2px solid #4489ff;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ads {
+	display: flex; height: 596px;
+	@include respond-to(lg) {height: 475px;}
+	@include respond-to(md) {flex-direction: column; height: auto; overflow: visible;}
+
+	div {
+		width: 50%;
+		&:first-child {
+			padding-right: 10px;
+		}
+		&:last-child {
+			padding-left: 10px;
+		}
+		@include respond-to(md) {
+			width: 100%;
+		}
+	}
+	header, footer {
+		width: 100%; height: 50%;
+		section {
+			padding-bottom: 35px; padding-left: 30px;
+			h2 {
+				@include font-type($ms-500, 28px, 30px, 0);
+				margin-bottom: 10px;
+				@include respond-to(lg) {font-size: 32px; line-height: 38px;}
+
+				@include respond-to(sm) {font-size: 30px; line-height: 38px;}
+				@include respond-to(xs) {font-size: 22px; line-height: 20px; margin-bottom: 15px;}
+			}
+		}
+	}
+	article {
+		width: 100%; height: 100%; position: relative;
+		background: $white;
+		transition: all .4s ease;
+		overflow: hidden;
+		@include respond-to(lg) {
+			overflow: hidden;
+		}
+		@include respond-to(md) {
+			overflow: visible;
+		}
+		&:hover {
+			box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.05); z-index: 2;
+			@media (max-width: 1249px) {box-shadow: none;}
+		}
+
+		&.auctions {
+			background: #9a91b7;
+		}
+
+		&.light {
+			section {
+				h2 {
+					color: $white;
+				}
+				p {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	figure {
+		text-align: right;
+		height: 100%;
+		img {
+			@include respond-to(lg) {
+				min-width: 0; min-height: 0; width: 100%;
+			}
+		}
+	}
+
+	section {
+		padding-left: 50px; padding-bottom: 120px; position: absolute; left: 0; bottom: 0;
+		@include respond-to(md) {padding-left: 35px;}
+		@include respond-to(sm) {padding-bottom: 25px;}
+		@include respond-to(xs) {padding-left: 20px;}
+
+		h2 {
+			color: $black; font-family: $ms-500; font-size: 54px; line-height: 58px;
+			margin-bottom: 10px;
+			i {
+				font-size: 24px; position: relative; bottom: 5px; right: -2px;
+				@include respond-to(md) {bottom: 0;}
+				@include respond-to(sm) {bottom: -2px;}
+			}
+			@include respond-to(xs) {font-size: 32px; line-height: 34px;}
+		}
+		p {
+			color: $black; font-family: $ms-500; font-size: 16px;
+			margin-bottom: 0;
+		}
+	}
+
+	header {
+		position: relative; padding-bottom: 10px;
+		@include respond-to(lg) {
+			height: 50%;
+		}
+		article {width: 100%; height: 100%;}
+	}
+	footer {
+		display: flex; justify-content: space-between; padding-top: 10px;
+		@include respond-to(lg) {
+			height: 50%;
+		}
+		@include respond-to(xs) {flex-direction: column;}
+
+		div {
+			width: 50%;
+			@include respond-to(xs) {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.landing-category {
+	display: flex; justify-content: space-between; position: relative;
+	@include respond-to(md) {flex-direction: column; a.btn-white {width: auto !important;}}
+
+	div {
+		&:first-child {
+			width: 680px;
+			@include respond-to(lg) {width: 57%;}
+			@include respond-to(md) {width: 100%; margin: 0 auto 20px auto;}
+		}
+		&:last-child {
+			width: 480px;
+			@include respond-to(lg) {width: 40.2%; margin: 0 auto;}
+			@include respond-to(md) {width: 100%; margin: 0 auto;}
+		}
+		article {
+			position: relative; display: inline-block; width: 100%;
+			transition: all .4s ease; box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+			&:hover {box-shadow: 0 2px 40px rgba(0, 0, 0, 0.2)}
+
+			&.light {
+				section {
+					h2, p {
+						color: $white;
+					}
+				}
+			}
+
+			section {
+				display: flex; flex-direction: column; justify-content: flex-end;
+				position: absolute; left: 0; right: 0; top: 0; bottom: 0; padding-left: 50px; padding-bottom: 85px;
+				@include respond-to(xs) {padding-left: 20px; padding-bottom: 20px;}
+
+				h2 {
+					@include font-type($ms-500, 54px, 66px, 0); color: $black;
+					@include respond-to(sm) {font-size: 40px}
+					@include respond-to(xs) {font-size: 30px; line-height: 44px; margin-bottom: 10px;}
+				}
+
+				p {
+					@include font-type($ms-500, 22px, 27px, 0); color: $black;
+					padding-left: 3px;
+					@include respond-to(sm) {font-size: 18px;}
+				}
+
+			}
+			figure {
+				img {
+					max-width: 100%;
+					@include respond-to(md) {width: 100%;}
+				}
+			}
+		}
+	}
+}
+
+.how-works {
+	h2 {
+		color: $black; font-family: $ms-500; font-size: 30px; text-align: center;
+		margin-bottom: 60px;
+	}
+	ul {
+		@extend .row-between-start;
+		li {
+			@extend .column-center-center;
+			figure {
+				width: 208px; height: 208px; margin-bottom: 43px;
+				border: 2px dashed #979797; border-radius: 50%;	
+			}
+			p {
+				color: $black; font-family: $ms-500; font-size: 14px; line-height: 19px; text-align: center;
+				max-width: 280px;
+			}
+		}
+	}
+}
+
+.news-preview {
+	padding-top: 40px;
+	ul {
+		@extend .row-between-start; margin: 0 -10px;
+		li {
+			width: calc(33.33333% - 20px); margin: 0 10px;
+			article {
+				header {
+					margin-bottom: 25px;
+					figure {
+						width: 100%; height: 246px;
+						border-radius: 3px;
+						overflow: hidden;
+						img {
+							width: 100%;
+						}
+					}
+				}
+				section {
+					h4 {
+						color: $black; font-family: $ms-500; font-size: 20px; line-height: 24px;
+						margin-bottom: 20px;
+					}
+					p {
+						color: $black; font-family: $ms-500; font-size: 14px; line-height: 20px;
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+	}
+}
+
+.join {
+	h2 {
+		color: $white; font-family: $ms-500; font-size: 24px; text-align: center;
+		margin-bottom: 47px;
+	}
+	ul {
+		@extend .column-between-center; margin-bottom: 60px;
+		li {
+			color: $white; font-family: $ms-500; font-size: 14px; line-height: 18px;
+			position: relative; width: 335px; padding-left: 33px; margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:before, &:after {
+				content: '';
+				position: absolute; top: 50%; transform: translateY(-50%);
+				background: $white;
+			}
+			&:before {
+				width: 4px; height: 20px; left: 8px;
+			}
+			&:after {
+				width: 20px; height: 4px; left: 0;
+			}
+		}
+	}
+	a {
+		&.btn {
+			color: $black;
+			display: block; width: 290px; margin: 0 auto;
+			background: $white; border-color: $white;
+			&:hover {
+				color: $white;
+				background: $brand;
+			}
+		}
+	}
+}
+
 // testimonials type 1
 .testimonials {
 	&-item {
@@ -17,11 +489,11 @@
 				@include respond-to(sm) {margin: 0 0 15px 0;}
 			}
 			figcaption {
-				@include font-type($title, 34px, 40px, -1px);
+				@include font-type($ms-500, 34px, 40px, -1px);
 				@include respond-to(sm) {br {display: none;}}
 
 				span {
-					@include font-type($title, 18px, 24px, 0.5px); color: #4b5769 !important;
+					@include font-type($ms-500, 18px, 24px, 0.5px); color: #4b5769;
 					width: 180px; 
 					display: block; padding-top: 12px;
 					@include respond-to(sm) {width: 100%;}
@@ -35,7 +507,7 @@
 			@include respond-to(md) {padding-left: 60px;}
 			@include respond-to(sm) {padding-left: 0;}
 			p {
-				@include font-type($HelveticaM, 19px, 28px, 0.3px); color: #4b5769; font-family: $text;
+				@include font-type($ms-500, 19px, 28px, 0.3px); color: #4b5769;
 				position: relative; margin-bottom: 0;
 				@include respond-to(md) {padding-top: 20px;}
 				@include respond-to(sm) {text-align: center;}
@@ -84,20 +556,49 @@
 			}
 		}
 	}
-}
-.carousel {
-	.navigation, .owl-dots {display: flex; justify-content: center;}
-	.navigation, .owl-dots {margin-top: 30px; padding-left: 6px;
-		li,  .owl-dot {
-			flex-shrink: 0;
-			width: 19px; height: 4px; margin: 0 5px; padding: 0;
-			background: #d9deea; border-radius: 100px; cursor: pointer;
-			&.active {
-				background: #4489ff;
-				&:hover {cursor: default;}
+	.carousel {
+		.navigation, .owl-dots {display: flex; justify-content: center;}
+		.navigation, .owl-dots {margin-top: 30px; padding-left: 6px;
+			li,  .owl-dot {
+				flex-shrink: 0;
+				width: 19px; height: 4px; margin: 0 5px; padding: 0;
+				background: #d9deea; border-radius: 100px; cursor: pointer;
+				&.active {
+					background: #4489ff;
+					&:hover {cursor: default;}
+				}
+				&:active {transform: translateY(0);}
+				&.active {transform: translateY(0); &:hover {cursor: default;}}
 			}
-			&:active {transform: translateY(0);}
-			&.active {transform: translateY(0); &:hover {cursor: default;}}
 		}
-	}			
+	}
+}
+
+
+// testimonials type 2
+.testi {
+	&-item {
+		@extend .row-start-start;
+		header {
+			width: 300px; flex-shrink: 0;
+			figure {
+				width: 180px; height: 180px;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+		}
+		section {
+			width: 100%; padding-top: 17px;
+			p {
+				color: $black; font-family: $ms-500; font-size: 20px; line-height: 27px;
+				margin-bottom: 20px;
+			}
+			span {
+				color: $brand; font-family: $ms-500; font-size: 16px; line-height: 20px;
+			}
+		}
+	}
+	.carousel {
+
+	}
 }

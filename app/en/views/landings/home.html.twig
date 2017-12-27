@@ -2,16 +2,16 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}en{% endblock %}
+{% block app_class %}{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block body %}
 	
-	<div class="wr-landings-intro">
+	<div class="wr-landings-intro home">
 		<div class="container">
 			<div class="landings-intro">
-				<h1></h1>
-				<p></p>
+				<h1>Transparent blockchain charity marketplace</h1>
+				<p>We connect individual sellers, buyers, brands and charity organizations transparently via blockchain. Each donation is traced until it reached the addressee.</p>
 				<a href="#" class="video">Watch the video</a>
 			</div>
 		</div>
@@ -121,7 +121,7 @@
 						<article>
 							<header>
 								<figure>
-									<img src="">
+									<img src="assets/img/news-preview-1.png">
 								</figure>
 							</header>
 							<section>
@@ -134,7 +134,7 @@
 						<article>
 							<header>
 								<figure>
-									<img src="">
+									<img src="assets/img/news-preview-2.png">
 								</figure>
 							</header>
 							<section>
@@ -147,7 +147,7 @@
 						<article>
 							<header>
 								<figure>
-									<img src="">
+									<img src="assets/img/news-preview-3.png">
 								</figure>
 							</header>
 							<section>
@@ -166,5 +166,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}

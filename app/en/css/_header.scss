@@ -1,18 +1,68 @@
-
-.white-shadow {background: $white; box-shadow: 0 1px $size-s 0 $shadow-full;}
-$header-height: 65px;
+$header-height: 70px;
 
 // HEADER
 .header {
-	@extend .row-between-strech;
-	height: $header-height; width: 100%; padding: 0 $size-xl;
-	position: fixed; top: 0; left: 0; z-index: 5;
-	@extend .white-shadow;
-	transition: all 0.3s ease-out;
-	// transform: translateY(-100%); &.active {transform: translateY(0);}
+	height: $header-height;
+	@extend .row-between-stretch;
+
+	ul {
+		height: 100%;
+		li {
+			a {
+				color: #5d5d5d; font-family: $ms-500; font-size: 15px;
+				display: flex; align-items: center; height: 100%; padding: 10px;
+			}
+			&.active, &.links {
+				a {
+					font-family: $ms-700; font-size: 15px;
+				}
+			}
+			&.links {
+				a {
+					color: $brand;
+				}
+			}
+			&.active {
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+
+	div {
+		@extend .row-start-stretch;
+		nav {
+			ul {
+				@extend .row-start-stretch;
+				li {
+					margin-right: 25px;
+					&:last-child {
+						margin-right: 0;
+					}
+					a {
+
+					}
+				}
+			}
+		}
+
+		& > ul {
+			@extend .row-start-stretch; margin-right: -10px;
+			li {
+				margin-right: 15px;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+
+				}
+			}
+		}
+	}
 
 	a.logo {
-		height: 100%; @extend .column-center-center;
+		height: 100%; @extend .column-center-center; margin-right: 70px;
 		@extend .icon; @extend .logo-blue; position: relative;
 
 		span {
@@ -28,138 +78,4 @@ $header-height: 65px;
 			}
 		}
 	}
-	
-	nav.menu {
-		height: 100%; @extend .row-end-center;
-		& > ul {
-			height: 100%; @extend .row-center-strech;
-			li {
-				height: 100%; position: relative;
-				a {
-					height: 100%; @extend .row-center-center; padding: 0 $size-m 0 $size-base;
-					i {
-						height: 100% !important; @extend .column-center-center; @extend .icon; margin: 0 $size-s;
-
-						&.icon-search {@extend .search-black;}
-						&.icon-plus {@extend .plus-black;}
-					}
-
-					span {color: $black; @include font-type($title, 15px, 15px, 0); opacity: 0.7; transition: all .3s ease-out;}
-					&:hover, &:active, &:focus {text-decoration: none;}
-					&:hover {background: $shadow-full; span, i {opacity: 0.6;}}
-				}
-				&:last-child {a {padding: 0 $size-m; margin-right: $size-m;}}
-				&.active {
-					&:after {@extend .absoluteX; bottom: 0; width: 100%; height: 2px; background: $brand; content: '';}
-					a {background: $shadow-half; span, i {opacity: 0.6;} &:hover {cursor: default;}}
-				}
-			}
-			@include respond-to(md) {display: none;}
-		}
-
-		a.burger {
-			@extend .column-between-strech; width: 22px; height: 20px;
-			span {background: $black; height: 2px; opacity: 0.7; transition: all 0.3s ease-out;}
-		}
-	}
-
-
-	.index & {
-		background: transparent; box-shadow: none;
-
-		a.logo {
-			@extend .icon; @extend .logo-white;
-			span {display: block; @include respond-to(sm) {display: none;}}
-		}
-		nav.menu { 
-			& > ul li a {
-				span {color: white; opacity: 1;}
-				i {
-					&.icon-search {@extend .search-white;}
-					&.icon-plus {@extend .plus-white;}
-				}
-			}
-			a.burger {span {background: $white; opacity: 1;}}
-		}
-		
-		// меню со сплошным фоном
-		&.filled {
-			@extend .white-shadow;
-			a.logo {@extend .logo-blue;}
-			nav.menu {
-				& > ul li a {
-					span {color: $black; opacity: 0.7;}
-					i {
-						&.icon-search {@extend .search-black;}
-						&.icon-plus {@extend .plus-black;}
-					}
-				}
-				a.burger {span {background: $black; opacity: 0.7;}}
-			}
-		}
-	}
-	@include respond-to(sm) {padding: 0 $size-m;}
 }
-
-nav.menu-open {
-	width: 510px; height: 100vh; margin-right: -24px; overflow-y: scroll;
-	position: fixed; top: 0; right: 0; z-index: 9;
-	background: $bg-gray;
-
-	transition: transform 0.3s ease-out; 
-	transform: translateX(100%); &.active {transform: translateX(0);}
-
-
-	a.menu-close {
-		width: 34px; height: 34px;
-		position: absolute; right: $size-l; top: $size-s;
-
-		&:before, &:after {
-			content: '';
-			height: 20px; width: 2px;
-			position: absolute; left: 16px; top: 8px;
-			background-color: #333;
-		}
-
-		&:before {transform: rotate(45deg);}
-		&:after {transform: rotate(-45deg);}
-	}
-
-	& > ul > li {
-		border-bottom: 1px solid $border;
-
-		a {
-			display: block; color: $black; @extend .title-bold-primary; padding: $size-base $size-m;
-			&:hover {background: $selected; text-decoration: none;}
-		}   &.active {a {background: $selected; text-decoration: none; &:hover {cursor: default;}}}
-
-		&.languages, &.login {
-			padding: $size-base $size-m;
-
-			a {
-				display: inline-block; padding: 0; position: relative;
-				&:hover {background: transparent; text-decoration: underline !important;}
-
-				&:first-child {
-					padding-right: $size-base;
-
-					&:after {
-						display: block; text-align: center; 
-						width: 15px; height: 100%; 
-						position: absolute; top: 0; right: 0;
-					}
-				}
-			}
-		}
-		&.login {a {&:first-child {&:after {content: '/';}}}}
-		&.languages {
-			a, span {color: $font-light_1; opacity: 0.5;}
-			a {&:first-child {&:after {content: '|';}}}
-		}
-	}
-
-	@include respond-to(sm) {width: calc(100% + 24px);}
-}
-
-
-

@@ -125,23 +125,9 @@ form, input, select, textarea, button, a, fieldset {
 	&.active {max-height: 1000px;}
 }
 
-// Cormac
-@include font-face('cormac-book', cormac-book);
-@include font-face('cormac-extralight', cormac-extralight);
-
-// Helvetica
-@include font-face('HelveticaLight', HelveticaLight);
-@include font-face('HelveticaThin', HelveticaThin);
-@include font-face('HelveticaRegular', HelveticaRegular);
-@include font-face('HelveticaMedium', HelveticaMedium);
-@include font-face('HelveticaHeavy', HelveticaHeavy);
-@include font-face('HelveticaBold', HelveticaBold);
-@include font-face('HelveticaBlack', HelveticaBlack);
-
-// Helvetica 
-@include font-face('HelveticaNeueThin', HelveticaNeueThin);
-@include font-face('helveticaneuemedium', helveticaneuemedium);
-@include font-face('helveticaneuecyrlight', helveticaneuecyrlight);
+// Muse Sans
+@include font-face('museosans500', museosans500);
+@include font-face('museosans700', museosans700);
 
 
 // ICONs

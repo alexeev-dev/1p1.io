@@ -2,7 +2,7 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}en{% endblock %}
+{% block app_class %}{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block body %}
@@ -24,16 +24,42 @@
 	<div class="wr-testimonials">
 		<div class="container">
 
-			<div class="testi-brands">
-				<header>
-					<figure>
-						<img src="">
-					</figure>
-				</header>
-				<section>
-					<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore. </p>
-					<a href="#">– Saadika Alard, New York</a>
-				</section>
+			<div class="testi">
+				<div class="owl-carousel js-testi">
+					<div class="testi-item">
+						<header>
+							<figure>
+								<img src="assets/img/testi-1.png">
+							</figure>
+						</header>
+						<section>
+							<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore.</p>
+							<span>– Saadika Alard, New York</span>
+						</section>
+					</div>
+					<div class="testi-item">
+						<header>
+							<figure>
+								<img src="assets/img/testi-1.png">
+							</figure>
+						</header>
+						<section>
+							<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore.</p>
+							<span>– Saadika Alard, New York</span>
+						</section>
+					</div>
+					<div class="testi-item">
+						<header>
+							<figure>
+								<img src="assets/img/testi-1.png">
+							</figure>
+						</header>
+						<section>
+							<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore.</p>
+							<span>– Saadika Alard, New York</span>
+						</section>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -89,5 +115,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}

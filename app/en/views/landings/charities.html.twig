@@ -2,7 +2,7 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}en{% endblock %}
+{% block app_class %}{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block body %}
@@ -24,16 +24,42 @@
 	<div class="wr-testimonials">
 		<div class="container">
 
-			<div class="testi-brands">
-				<header>
-					<figure>
-						<img src="">
-					</figure>
-				</header>
-				<section>
-					<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore. </p>
-					<a href="#">– Saadika Alard, New York</a>
-				</section>
+			<div class="testi">
+				<div class="owl-carousel js-testi">
+					<div class="testi-item">
+						<header>
+							<figure>
+								<img src="assets/img/testi-1.png">
+							</figure>
+						</header>
+						<section>
+							<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore.</p>
+							<span>– Saadika Alard, New York</span>
+						</section>
+					</div>
+					<div class="testi-item">
+						<header>
+							<figure>
+								<img src="assets/img/testi-1.png">
+							</figure>
+						</header>
+						<section>
+							<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore.</p>
+							<span>– Saadika Alard, New York</span>
+						</section>
+					</div>
+					<div class="testi-item">
+						<header>
+							<figure>
+								<img src="assets/img/testi-1.png">
+							</figure>
+						</header>
+						<section>
+							<p>As for the ladies out there, this career is for you too. I was a single mom at the time when I started learning. Take on something different and something challenging and jump at this wonderful learning opportunity that is free for you to explore.</p>
+							<span>– Saadika Alard, New York</span>
+						</section>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -43,7 +69,7 @@
 		<div class="container">
 
 			<div class="how-works">
-				<h2>How it works for brands, stores and celebrities</h2>
+				<h2>How it works for charities</h2>
 				<ul>
 					<li>
 						<figure>
@@ -73,13 +99,13 @@
 		<div class="container">
 
 			<div class="join">
-				<h2>Be responsible.<br>Show that you care.</h2>
+				<h2>Connect to a new funding source.<br>Be transparent.</h2>
 				<ul>
 					<li>1,900,000 buyers each month</li>
 					<li>100% secure and transparent withdrawals</li>
 					<li>Stylish branded pages to showcase your stuff</li>
 				</ul>
-				<a href="#" class="btn">Join 285 responsible brands</a>
+				<a href="#" class="btn">Join our platform</a>
 			</div>
 
 		</div>
@@ -89,5 +115,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}

@@ -286,6 +286,7 @@ gulp.task('watchEN', ['twigEN:build', 'jsEN:libs', 'jsEN:main', 'spriteEN', 'bro
 	gulp.watch('app/en/**/*.scss', ['sassEN']);
 	// gulp.watch('app/**/*.html', ['html:build']);
 	gulp.watch('app/en/views/*/*.html.twig', ['twigEN:build']);
+	gulp.watch('app/en/tpl/*/*.html.twig', ['twigEN:build']);
 	gulp.watch('app/en/img/icons/svg/*.svg', ['spriteEN', 'sassEN']);
 	gulp.watch('app/en/js/*.js', ['jsEN:main']);
 });

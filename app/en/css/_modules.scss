@@ -1,0 +1,93 @@
+// Custom Icons
+.search-icon {
+	display: inline-block; width: 15px; height: 15px; position: relative;
+	&:before {
+		content: '';
+		display: block; width: 13px; height: 13px; position: absolute; left: 0; top: 0;
+		border: 2px solid #89a1b3; border-radius: 50%;
+	}
+	&:after {
+		content: '';
+		display: block; width: 5px; height: 2px; position: absolute; left: 9px; top: 11px; transform: rotate(45deg);
+		background: #89a1b3;
+	}
+}
+
+// section header
+.section-header {
+	@extend .row-between-center;
+	h1 {
+		color: $black; font-family: $ms-500; font-size: 36px; line-height: 44px;
+	}
+	h3 {
+		color: #222222; font-family: $ms-500; font-size: 30px; line-height: 36px;
+	}
+	& > a {
+		color: $brand; font-family: $ms-500; font-size: 20px; line-height: 24px;
+		display: inline-block;
+	}
+	form {
+		position: relative; width: 580px;
+		input {
+			color: $black; font-family: $ms-500; font-size: 28px; line-height: 33px;
+			padding: 0 36px 17px; width: 100%;
+			background: transparent; border-bottom: solid 1px #e1e1e1;
+			&::-webkit-input-placeholder {color: $black; opacity: 0.3;}
+			&::-moz-placeholder {color: $black; opacity: 0.3;}
+			&:-moz-placeholder {color: $black; opacity: 0.3;}
+			&:-ms-input-placeholder {color: $black; opacity: 0.3;}
+		}
+		button {
+			display: block; width: 23px; height: 23px; position: absolute; left: 0; top: 3px;
+			background: transparent;
+			cursor: pointer;
+			&:hover {
+				&:before, &:after {
+					border-color: $black;
+				}
+			}
+			&:before, &:after {
+				transition: 0.3s ease-out;
+			}
+			&:before {
+				content: '';
+				display: block; width: 20px; height: 20px;
+				border: solid 3px #b2b2b2; border-radius: 50%;
+			}
+			&:after {
+				content: '';
+				display: block; width: 7px; height: 2px; position: absolute; left: 15px; top: 20px; transform: rotate(45deg);
+				border: solid 1.5px #b2b2b2;
+			}
+		}
+	}
+}
+
+.pagination {
+	display: flex; justify-content: center; padding-top: 10px;
+	ul {
+		@extend .row-center-center;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); border-radius: 4px;
+		overflow: hidden;
+		li {
+			border-right: solid 1px #f3f3f3;
+			&.active {
+				a {
+					color: $white;
+					background: $brand;
+					pointer-events: none;
+				}
+			}
+			a, span {
+				color: $black; font-family: $ms-500; font-size: 15px; text-align: center; line-height: 18px;
+				display: block; width: 40px; height: 40px; padding-top: 11px;
+				background: $white;
+			}
+			a {
+				&:hover {
+					background: #eeeef3;
+				}
+			}
+		}
+	}
+}

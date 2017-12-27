@@ -37,8 +37,8 @@
 	<div class="app {% block app_class %}{% endblock %}">
 
 		{% block header %}
-			<header>
-				<div class="wr-header">
+			<header class="wr-header">
+				<div class="wr-header-nav">
 					<div class="container">
 
 						<div class="header">
@@ -56,9 +56,9 @@
 							</div>
 							<div>
 								<ul>
-									<li><a href="#"></a></li>
-									<li><a href="#">User goods</a></li>
-									<li><a href="#">Brand products</a></li>
+									<li><a href="#"><span class="search-icon"></span></a></li>
+									<li class="links"><a href="#">User goods</a></li>
+									<li class="links"><a href="#">Brand products</a></li>
 									<li><a href="#">Sell</a></li>
 									<li><a href="#">Sign in</a></li>
 								</ul>
@@ -73,7 +73,7 @@
 		{% block body %}{% endblock %}
 		
 		{% block footer %}
-			<footer>
+			<footer class="wr-footer">
 				<div class="wr-footer-nav">
 					<div class="container">
 						<div class="footer-nav">
@@ -85,9 +85,9 @@
 									<button>Subscribe</button>
 								</form>
 								<ul class="socials">
-									<li><a href="#"><i class="fa fa-"></i></a></li>
-									<li><a href="#"><i class="fa fa-"></i></a></li>
-									<li><a href="#"><i class="fa fa-"></i></a></li>
+									<li><a href="#"><img src="assets/img/linkedin.svg"></a></li>
+									<li><a href="#"><img src="assets/img/twitter.svg"></a></li>
+									<li><a href="#"><img src="assets/img/facebook.svg"></a></li>
 								</ul>
 							</header>
 							<section>
@@ -156,9 +156,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="wr-footer">
+				<div class="wr-footer-copy">
 					<div class="container">
-						<div class="footer">
+						<div class="footer-copy">
 							<p>
 								<small>2017 © Oneplusone. All rights reserved.</small>
 								63 W 38th St, New York, NY 10018

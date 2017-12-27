@@ -2,16 +2,16 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}en{% endblock %}
+{% block app_class %}{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block body %}
 	
-	<div class="wr-landings-intro">
+	<div class="wr-landings-intro home home-1">
 		<div class="container">
 			<div class="landings-intro">
-				<h1></h1>
-				<p></p>
+				<h1>Transparent blockchain charity marketplace</h1>
+				<p>We connect individual sellers, buyers, brands and charity organizations transparently via blockchain. Each donation is traced until it reached the addressee.</p>
 				<a href="#" class="video">Watch the video</a>
 			</div>
 		</div>
@@ -60,15 +60,14 @@
 			<div class="ads">
 				<div>
 					<a href="#">
-						<article>
+						<article class="light">
 							<section>
-								<h2>Частные<br>
-									обьявления <i class="fa fa-angle-right"></i></h2>
-									<p>94% стоимости вещи переводится<br>
-									людям нуждающимся в помощи</p>
-								</h2>
+								<h2>Star’s things</h2>
+								<p>384 items on sale</p>
 							</section>
-							<figure><img src="{{ asset('img/index/news1.png') }}"></figure>
+							<figure>
+								<img src="{{ asset('img/ads-1.png') }}">
+							</figure>
 						</article>
 					</a>
 				</div>
@@ -78,27 +77,23 @@
 						<a href="#">
 							<article>
 								<section>
-									<h2>Новые вещи<br>
-										от добрых брендов <i class="fa fa-angle-right"></i>
-									</h2>
-									<p>Компании жертвуют часть стоимости товаров</p>   
+									<h2>New things<br>from the kind<br>brands</h2>
+									<p>384 items on sale</p>
 								</section>
-								<figure><img src="{{ asset('img/index/news2.png') }}"></figure>
+								<figure>
+									<img src="{{ asset('img/ads-2.png') }}">
+								</figure>
 							</article>
 						</a>
 					</header>
 					<footer>
 						<div>
 							<a href="#">
-								<article>
+								<article class="auctions light">
 									<section>
-										<h2>Аукционы <i class="fa fa-angle-right"></i></h2>
-										<p>Уникальные вещи<br>
-											с благотворительным<br>
-											процентом
-										</p>
+										<h2>Auctions</h2>
+										<p>384 items on sale</p>
 									</section>
-									<figure><img src="{{ asset('img/index/news3.png') }}"></figure>
 								</article>
 							</a>
 						</div>
@@ -106,16 +101,12 @@
 							<a href="#">
 								<article>
 									<section>
-										<h2>
-											Звезды 
-											<i class="fa fa-angle-right"></i>
-										</h2>
-										<p>
-											Обьявления от<br> Звезд<br>
-											благотворителей
-										</p>
+										<h2>User ads</h2>
+										<p>384 items on sale</p>
 									</section>
-									<figure><img src="{{ asset('img/index/news4.png') }}"></figure>
+									<figure>
+										<img src="{{ asset('img/ads-3.png') }}">
+									</figure>
 								</article>
 							</a>
 						</div>
@@ -127,6 +118,7 @@
 
 	<div class="wr-landing-category">
 		<div class="container">
+
 			<div class="landing-category">
 				<div>
 					<a href="#">
@@ -135,24 +127,23 @@
 								<h2>Fashion</h2>
 								<p>384 items on sale</p>
 							</section>
-							<figure><img src="{{ asset('img/') }}"></figure>
-
+							<figure><img src="{{ asset('img/land-cat-1.png') }}"></figure>
 						</article>
 					</a>
 				</div>
-
-				<div class="light">
+				<div>
 					<a href="#">
-						<article>
+						<article class="light">
 							<section>
 								<h2>Art</h2>
 								<p>384 items on sale</p>
 							</section>
-							<figure><img src="{{ asset('img/') }}"></figure>
+							<figure><img src="{{ asset('img/land-cat-2.png') }}"></figure>
 						</article>
 					</a>
 				</div>
 			</div>
+
 		</div>
 	</div> 
 
@@ -222,7 +213,7 @@
 						<article>
 							<header>
 								<figure>
-									<img src="">
+									<img src="assets/img/news-preview-1.png">
 								</figure>
 							</header>
 							<section>
@@ -235,7 +226,7 @@
 						<article>
 							<header>
 								<figure>
-									<img src="">
+									<img src="assets/img/news-preview-2.png">
 								</figure>
 							</header>
 							<section>
@@ -248,7 +239,7 @@
 						<article>
 							<header>
 								<figure>
-									<img src="">
+									<img src="assets/img/news-preview-3.png">
 								</figure>
 							</header>
 							<section>
@@ -267,5 +258,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}

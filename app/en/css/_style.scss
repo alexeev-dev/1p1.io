@@ -2,27 +2,113 @@
 	padding-top: $header-height;
 	overflow-x:hidden;
 
-	.wrapper {
-		&.gray {background: $bg-gray;}
+	&.catalog {
+		padding-top: 120px;
+		.wr {
+			&-header {
+				&-nav {
+
+				}
+			}
+		}
 	}
 
 	.wr {
-		&-authentication {
-			&.gray {background: $bg-gray;}
+		&-header {
+			position: fixed; top: 0; left: 0; z-index: 5; width: 100%;
+			box-shadow: 0 1px $size-s 0 $shadow-full;
+			&-nav {
+				background: $white;
+			}
 		}
 
-		&-authentication {
-			h1, h2 {
-				font-size: 34px; font-family: $title; line-height: 42px; text-align: center;
-			}
-			p {
-				text-align: center;
-				a {
-					color: $brand;
-					&:hover {
-						text-decoration: underline;
-					}
+		&-landings {
+			&-intro {
+				overflow: hidden;
+				&.brands {
+					padding: 120px 0 140px;
+					background: $brand;
 				}
+				&.charities {
+					padding: 160px 0 130px;
+					background: $bg-gray;
+				}
+				&.buyers {
+					padding: 115px 0 155px;
+					background: $bg-gray;
+				}
+				&.sellers {
+					padding: 115px 0 110px;
+					background: $brand;
+				}
+				&.home {
+					padding: 85px 0 180px;
+				}
+			}
+		}
+
+		&-trade {
+			padding: 0 0 54px;
+			background: $bg-gray;
+		}
+
+		&-ads {
+			padding: 0 0 40px;
+			background: $bg-gray;
+		}
+
+		&-landing-category {
+			padding: 40px 0 75px;
+			background: $bg-gray;
+		}
+
+		&-testimonials {
+			padding: 110px 0;
+		}
+
+		&-how-works {
+			padding: 56px 0 72px;
+			background: $bg-gray;
+		}
+
+		&-news {
+			&-preview {
+				padding: 60px 0 70px;
+				background: $bg-gray;
+			}
+		}
+
+		&-catalog {
+			&-nav {
+				background: $white; border-top: solid 1px #f1f1f1;
+				&-category {
+					position: absolute; left: 0; bottom: 0; width: 100%; z-index: -1;
+					background: $white;
+				}
+			}
+			&-list {
+				padding: 40px 0;
+				background: $bg-gray;
+			}
+		}
+
+		&-join {
+			padding: 50px 0 60px;
+			background: $brand;
+		}
+
+		&-footer {
+			& > * {
+				&:last-child {
+					border: none;
+				}
+			}
+			&-nav {
+				padding: 30px 0;
+				border-bottom: solid 1px #f3f3f3;
+			}
+			&-copy {
+				padding: 37px 0 44px;
 			}
 		}
 	}

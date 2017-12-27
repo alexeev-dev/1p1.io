@@ -2,7 +2,7 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}en{% endblock %}
+{% block app_class %}{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block body %}
@@ -150,5 +150,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}

@@ -2,14 +2,14 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}en{% endblock %}
+{% block app_class %}catalog{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block body %}
 
 	{% block header %}
-		<header>
-			<div class="wr-header">
+		<header class="wr-header">
+			<div class="wr-header-nav">
 				<div class="container">
 
 					<div class="header">
@@ -43,7 +43,7 @@
 					<div class="catalog-nav">
 						<ul>
 							<li><a href="#">All categories</a></li>
-							<li><a href="#">Clothes</a></li>
+							<li class="active"><a href="#">Clothes</a></li>
 							<li><a href="#">Furniture</a></li>
 							<li><a href="#">Electronics</a></li>
 							<li><a href="#">Electronics</a></li>
@@ -128,7 +128,7 @@
 					</ul>
 				</div>
 				<div class="catalog-list-body">
-					<ul>
+					<ul class="list">
 						<li>
 							<a href="#">
 								<article>
@@ -140,22 +140,6 @@
 									<section>
 										<h3>CALVIN KLEIN</h3>
 										<p>Leather woman bag </p>
-										<span class="price">$736</span>
-									</section>
-								</article>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<article>
-									<header>
-										<figure>
-											<img src="assets/img/catalog-item-2.png">
-										</figure>
-									</header>
-									<section>
-										<h3>Stella McCartney</h3>
-										<p>Blue jacket</p>
 										<span class="price">$736</span>
 									</section>
 								</article>
@@ -198,6 +182,22 @@
 								<article>
 									<header>
 										<figure>
+											<img src="assets/img/catalog-item-2.png">
+										</figure>
+									</header>
+									<section>
+										<h3>Stella McCartney</h3>
+										<p>Blue jacket</p>
+										<span class="price">$736</span>
+									</section>
+								</article>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<article>
+									<header>
+										<figure>
 											<img src="assets/img/catalog-item-4.png">
 										</figure>
 									</header>
@@ -230,22 +230,6 @@
 								<article>
 									<header>
 										<figure>
-											<img src="assets/img/catalog-item-5.png">
-										</figure>
-									</header>
-									<section>
-										<h3>CALVIN KLEIN</h3>
-										<p>Leather woman bag </p>
-										<span class="price">$736</span>
-									</section>
-								</article>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<article>
-									<header>
-										<figure>
 											<img src="assets/img/catalog-item-3.png">
 										</figure>
 									</header>
@@ -263,6 +247,22 @@
 									<header>
 										<figure>
 											<img src="assets/img/catalog-item-5.png">
+										</figure>
+									</header>
+									<section>
+										<h3>CALVIN KLEIN</h3>
+										<p>Leather woman bag </p>
+										<span class="price">$736</span>
+									</section>
+								</article>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<article>
+									<header>
+										<figure>
+											<img src="assets/img/catalog-item-1.png">
 										</figure>
 									</header>
 									<section>
@@ -295,6 +295,22 @@
 									<header>
 										<figure>
 											<img src="assets/img/catalog-item-2.png">
+										</figure>
+									</header>
+									<section>
+										<h3>CALVIN KLEIN</h3>
+										<p>Leather woman bag </p>
+										<span class="price">$736</span>
+									</section>
+								</article>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<article>
+									<header>
+										<figure>
+											<img src="assets/img/catalog-item-5.png">
 										</figure>
 									</header>
 									<section>
@@ -354,5 +370,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}
