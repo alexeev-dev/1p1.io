@@ -99,7 +99,8 @@ gulp.task('jsEN:libs', function () {
 		'bower_components/dropzone/dist/dropzone.js',
 		'bower_components/owl.carousel/dist/owl.carousel.min.js',
 		'bower_components/bPopup/jquery.bpopup.min.js',
-		'bower_components/jRange/jquery.range-min.js'
+		'bower_components/jRange/jquery.range-min.js',
+		'bower_components/masonry/dist/masonry.pkgd.min.js'
 		])
 	.pipe(concat('libs.min.js'))
 	.pipe(uglify())

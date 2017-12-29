@@ -4,18 +4,18 @@
 		header {
 			width: 33.89831%; padding-right: 120px;
 			h3 {
-				color: #222222; font-family: $ms-500; font-size: 20px;
-				margin-bottom: 20px;
+				color: #222222; font-family: $ms-500; font-size: 20px; letter-spacing: -0.2px;
+				margin-bottom: 23px;
 			}
 			p {
 				color: #696969; font-family: $ms-500; font-size: 13px; line-height: 20px;
-				margin-bottom: 24px;
+				margin-bottom: 23px;
 			}
 			form {
 				position: relative; margin-bottom: 22px;
 				input {
 					color: $black; font-family: $ms-500; font-size: 12px; line-height: 14px;
-					width: 100%; padding: 11px 85px 11px 14px;
+					width: 100%; padding: 12px 100px 10px 14px;
 					background-color: #f3f3f3; border-radius: 100px;
 					&::-webkit-input-placeholder {opacity: 0.5;}
 					&::-moz-placeholder {opacity: 0.5;}
@@ -23,8 +23,8 @@
 					&:-ms-input-placeholder {opacity: 0.5;}
 				}
 				button {
-					color: $brand; font-size: 12px; font-family: $ms-500;
-					position: absolute; top: 0; right: -23px; padding: 11px 18px; height: 36px;
+					color: $brand; font-size: 12px; font-family: $ms-500; letter-spacing: 0.2px;
+					position: absolute; top: 0; right: 0px; padding: 11px 16px 11px 18px; height: 36px;
 					background: $white; border: 1px solid #4489ff; border-radius: 100px;
 					cursor: pointer; transition: 0.3s ease-out;
 					&:hover {
@@ -50,9 +50,9 @@
 			}
 		}
 		section {
-			@extend .row-between-start; width: 66.10169%;
+			@extend .row-between-start; width: 66.10169%; padding-top: 4px;
 			div {
-				width: 25%; padding-right: 30px;
+				width: 23%;
 				& > * {
 					&:last-child {
 						margin-bottom: 0;
@@ -61,10 +61,10 @@
 			}
 			h4 {
 				color: #222222; font-family: $ms-500; font-size: 15px; line-height: 18px;
-				margin-bottom: 11px;
+				margin-bottom: 12px;
 			}
 			ul {
-				margin-bottom: 30px;
+				margin-bottom: 34px;
 				li {
 					margin-bottom: 2px;
 					a {
@@ -85,7 +85,7 @@
 			flex-direction: column; align-items: flex-start;
 		}
 		p {
-			color: #575757; font-family: $ms-500; font-size: 11px; line-height: 13px; letter-spacing: 0.35px;
+			color: #575757; font-family: $ms-500; font-size: 11px; line-height: 13px; letter-spacing: 0.2px;
 			opacity: 0.5;
 			@include respond-to(sm) {
 				order: 1;
@@ -108,7 +108,7 @@
 						margin-right: 0;
 					}
 					a {
-						color: $brand; font-family: $ms-500; font-size: 11px; line-height: 14px; letter-spacing: 0.35px;
+						color: $brand; font-family: $ms-500; font-size: 11px; line-height: 14px; letter-spacing: 0.25px;
 						margin-right: 0; display: inline-block;
 						@include respond-to(sm) {
 							font-size: 14px;

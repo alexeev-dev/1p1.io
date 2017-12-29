@@ -10,7 +10,7 @@ $header-height: 70px;
 		li {
 			a {
 				color: #5d5d5d; font-family: $ms-500; font-size: 15px;
-				display: flex; align-items: center; height: 100%; padding: 10px;
+				display: flex; align-items: center; height: 100%;
 			}
 			&.active, &.links {
 				a {
@@ -36,7 +36,7 @@ $header-height: 70px;
 			ul {
 				@extend .row-start-stretch;
 				li {
-					margin-right: 25px;
+					margin-right: 34px;
 					&:last-child {
 						margin-right: 0;
 					}
@@ -48,9 +48,9 @@ $header-height: 70px;
 		}
 
 		& > ul {
-			@extend .row-start-stretch; margin-right: -10px;
+			@extend .row-start-stretch; padding-right: 4px;
 			li {
-				margin-right: 15px;
+				margin-right: 28px;
 				&:last-child {
 					margin-right: 0;
 				}

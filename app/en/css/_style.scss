@@ -15,9 +15,25 @@
 
 	.wr {
 		&-header {
-			position: fixed; top: 0; left: 0; z-index: 5; width: 100%;
+			position: fixed; top: 0; left: 0; z-index: 1000; width: 100%;
 			box-shadow: 0 1px $size-s 0 $shadow-full;
+			&:after {
+				content: '';
+					position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: -1;
+					background: $black;
+					opacity: 0; pointer-events: none; transition: 0.3s ease-out;
+			}
+			&.active {
+				&:after {
+					opacity: 0.2; pointer-events: auto;
+				}
+				.wr-catalog-nav-category {
+					transform: translateY(100%);
+				}
+			}
+
 			&-nav {
+				position: relative; z-index: 5;
 				background: $white;
 			}
 		}
@@ -26,23 +42,23 @@
 			&-intro {
 				overflow: hidden;
 				&.brands {
-					padding: 120px 0 140px;
+					padding: 122px 0 144px;
 					background: $brand;
 				}
 				&.charities {
-					padding: 160px 0 130px;
+					padding: 161px 0 130px;
 					background: $bg-gray;
 				}
 				&.buyers {
-					padding: 115px 0 155px;
-					background: $bg-gray;
+					padding: 115px 0 166px;
+					background: $bg-gray; border-bottom: solid 1px #f3f3f3;
 				}
 				&.sellers {
-					padding: 115px 0 110px;
+					padding: 115px 0;
 					background: $brand;
 				}
 				&.home {
-					padding: 85px 0 180px;
+					padding: 86px 0 178px;
 				}
 			}
 		}
@@ -53,7 +69,7 @@
 		}
 
 		&-ads {
-			padding: 0 0 40px;
+			padding: 6px 0 40px;
 			background: $bg-gray;
 		}
 
@@ -63,52 +79,78 @@
 		}
 
 		&-testimonials {
+			padding: 80px 0 55px;
+		}
+
+		&-testi {
 			padding: 110px 0;
 		}
 
 		&-how-works {
-			padding: 56px 0 72px;
+			padding: 59px 0 72px;
 			background: $bg-gray;
 		}
 
 		&-news {
 			&-preview {
-				padding: 60px 0 70px;
+				padding: 63px 0 66px;
 				background: $bg-gray;
 			}
 		}
 
 		&-catalog {
 			&-nav {
-				background: $white; border-top: solid 1px #f1f1f1;
+				z-index: 5; position: relative;
+				background: $white; border-top: solid 1px #f1f1f1; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 				&-category {
-					position: absolute; left: 0; bottom: 0; width: 100%; z-index: -1;
+					position: absolute; left: 0; bottom: 0; width: 100%; z-index: 1; height: 330px;
 					background: $white;
+					transition: 0.5s ease-out;
+					.container {
+						height: 100%;
+					}
 				}
 			}
 			&-list {
-				padding: 40px 0;
+				padding: 21px 0 40px;
 				background: $bg-gray;
 			}
 		}
 
+		&-category {
+			&-list {
+				padding: 58px 0 68px;
+				background: $bg-gray;
+
+				.section-header {
+					h1 {
+						font-size: 46px; line-height: 55px;
+					}
+					form {
+						top: 4px;
+					}
+				}
+			}
+		}
+
 		&-join {
-			padding: 50px 0 60px;
+			padding: 51px 0 60px;
 			background: $brand;
 		}
 
 		&-footer {
+			border-top: solid 1px #f3f3f3;
 			& > * {
 				&:last-child {
 					border: none;
 				}
 			}
 			&-nav {
-				padding: 30px 0;
+				padding: 36px 0 27px;
 				border-bottom: solid 1px #f3f3f3;
 			}
 			&-copy {
-				padding: 37px 0 44px;
+				padding: 38px 0 43px;
 			}
 		}
 	}

@@ -2,104 +2,104 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}{% endblock %}
+{% block app_class %}catalog{% endblock %}
 {% block preloder_class %}{% endblock %}
 
-{% block body %}
+{% block header %}
+	<header class="wr-header">
+		<div class="wr-header-nav">
+			<div class="container">
 
-	{% block header %}
-		<header>
-			<div class="wr-header">
-				<div class="container">
-
-					<div class="header">
-						<div>
-							<a href="#" class="logo"></a>
-							<nav>
-								<ul>
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Buyers</a></li>
-									<li><a href="#">Sellers</a></li>
-									<li class="active"><a href="#">Brands</a></li>
-									<li><a href="#">Charities</a></li>
-								</ul>
-							</nav>
-						</div>
-						<div>
+				<div class="header">
+					<div>
+						<a href="#" class="logo"></a>
+						<nav>
 							<ul>
-								<li><a href="#"></a></li>
-								<li><a href="#">User goods</a></li>
-								<li><a href="#">Brand products</a></li>
-								<li><a href="#">Sell</a></li>
-								<li><a href="#">Sign in</a></li>
+								<li><a href="#">Home</a></li>
+								<li><a href="#">Buyers</a></li>
+								<li><a href="#">Sellers</a></li>
+								<li class="active"><a href="#">Brands</a></li>
+								<li><a href="#">Charities</a></li>
 							</ul>
-						</div>
+						</nav>
 					</div>
-
-				</div>
-			</div>
-			<div class="wr-catalog-nav">
-				<div class="container">
-					<div class="catalog-nav">
+					<div>
 						<ul>
-							<li><a href="#">All categories</a></li>
-							<li><a href="#">Clothes</a></li>
-							<li><a href="#">Furniture</a></li>
-							<li><a href="#">Electronics</a></li>
-							<li><a href="#">Electronics</a></li>
-							<li><a href="#">Goods for kids</a></li>
-							<li><a href="#">Tickets</a></li>
+							<li><a href="#"><span class="search-icon"></span></a></li>
+							<li class="links"><a href="#">User goods</a></li>
+							<li class="links"><a href="#">Brand products</a></li>
+							<li><a href="#">Sell</a></li>
+							<li><a href="#">Sign in</a></li>
 						</ul>
 					</div>
 				</div>
+
 			</div>
-			<div class="wr-catalog-nav-category">
-				<div class="container">
-
-					<div class="catalog-nav-category">
-						<ul>
-							<li><a href="#">Childen's goods</a></li>
-							<li><a href="#">Clothes and footwear</a></li>
-							<li><a href="#">Electronics</a></li>
-							<li><a href="#">Appliances</a></li>
-							<li><a href="#">Pet supplies</a></li>
-							<li><a href="#">House and Cottage</a></li>
-							<li><a href="#">Beauty and health</a></li>
-							<li><a href="#">Auto</a></li>
-							<li><a href="#">Sport and leisure</a></li>
-							<li><a href="#">Leisure and entertainment</a></li>
-							<li><a href="#">Equipment</a></li>
-							<li><a href="#">Food</a></li>
-							<li><a href="#">Software</a></li>
-							<li><a href="#">Media</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">Childen's goods</a></li>
-							<li><a href="#">Clothes and footwear</a></li>
-							<li><a href="#">Electronics</a></li>
-							<li><a href="#">Appliances</a></li>
-							<li><a href="#">Pet supplies</a></li>
-							<li><a href="#">House and Cottage</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">Electronics</a></li>
-							<li><a href="#">Appliances</a></li>
-							<li><a href="#">Pet supplies</a></li>
-							<li><a href="#">House and Cottage</a></li>
-							<li><a href="#">Beauty and health</a></li>
-							<li><a href="#">Auto</a></li>
-						</ul>
-						<ul>
-							<li><a href="#">Childen's goods</a></li>
-							<li><a href="#">Clothes and footwear</a></li>
-							<li><a href="#">Electronics</a></li>
-						</ul>
-					</div>
-
+		</div>
+		<div class="wr-catalog-nav">
+			<div class="container">
+				<div class="catalog-nav js-catalog-nav">
+					<ul>
+						<li><a href="#">All categories</a></li>
+						<li class="active"><a href="#">Clothes</a></li>
+						<li><a href="#">Furniture</a></li>
+						<li><a href="#">Electronics</a></li>
+						<li><a href="#">Electronics</a></li>
+						<li><a href="#">Goods for kids</a></li>
+						<li><a href="#">Tickets</a></li>
+					</ul>
 				</div>
 			</div>
-		</header>
-	{% endblock %}
+		</div>
+		<div class="wr-catalog-nav-category">
+			<div class="container">
+
+				<div class="catalog-nav-category">
+					<ul>
+						<li><a href="#">Childen's goods</a></li>
+						<li><a href="#">Clothes and footwear</a></li>
+						<li><a href="#">Electronics</a></li>
+						<li><a href="#">Appliances</a></li>
+						<li><a href="#">Pet supplies</a></li>
+						<li><a href="#">House and Cottage</a></li>
+						<li><a href="#">Beauty and health</a></li>
+						<li><a href="#">Auto</a></li>
+						<li><a href="#">Sport and leisure</a></li>
+						<li><a href="#">Leisure and entertainment</a></li>
+						<li><a href="#">Equipment</a></li>
+						<li><a href="#">Food</a></li>
+						<li><a href="#">Software</a></li>
+						<li><a href="#">Media</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Childen's goods</a></li>
+						<li><a href="#">Clothes and footwear</a></li>
+						<li><a href="#">Electronics</a></li>
+						<li><a href="#">Appliances</a></li>
+						<li><a href="#">Pet supplies</a></li>
+						<li><a href="#">House and Cottage</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Electronics</a></li>
+						<li><a href="#">Appliances</a></li>
+						<li><a href="#">Pet supplies</a></li>
+						<li><a href="#">House and Cottage</a></li>
+						<li><a href="#">Beauty and health</a></li>
+						<li><a href="#">Auto</a></li>
+					</ul>
+					<ul>
+						<li><a href="#">Childen's goods</a></li>
+						<li><a href="#">Clothes and footwear</a></li>
+						<li><a href="#">Electronics</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</header>
+{% endblock %}
+
+{% block body %}
 	
 	<div class="wr-category-list">
 		<div class="container">
@@ -163,6 +163,51 @@
 							<article>
 								<header>
 									<figure>
+										<img src="assets/img/category-item-4.png">
+									</figure>
+								</header>
+								<section>
+									<h2>Clothes</h2>
+									<p>274 items on sale</p>
+								</section>
+							</article>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<article>
+								<header>
+									<figure>
+										<img src="assets/img/category-item-5.png">
+									</figure>
+								</header>
+								<section>
+									<h2>Clothes</h2>
+									<p>274 items on sale</p>
+								</section>
+							</article>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<article>
+								<header>
+									<figure>
+										<img src="assets/img/category-item-6.png">
+									</figure>
+								</header>
+								<section>
+									<h2>Clothes</h2>
+									<p>274 items on sale</p>
+								</section>
+							</article>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<article>
+								<header>
+									<figure>
 										<img src="assets/img/category-item-1.png">
 									</figure>
 								</header>
@@ -208,7 +253,7 @@
 							<article>
 								<header>
 									<figure>
-										<img src="assets/img/category-item-1.png">
+										<img src="assets/img/category-item-4.png">
 									</figure>
 								</header>
 								<section>
@@ -223,52 +268,7 @@
 							<article>
 								<header>
 									<figure>
-										<img src="assets/img/category-item-2.png">
-									</figure>
-								</header>
-								<section>
-									<h2>Clothes</h2>
-									<p>274 items on sale</p>
-								</section>
-							</article>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<article>
-								<header>
-									<figure>
-										<img src="assets/img/category-item-3.png">
-									</figure>
-								</header>
-								<section>
-									<h2>Clothes</h2>
-									<p>274 items on sale</p>
-								</section>
-							</article>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<article>
-								<header>
-									<figure>
-										<img src="assets/img/category-item-1.png">
-									</figure>
-								</header>
-								<section>
-									<h2>Clothes</h2>
-									<p>274 items on sale</p>
-								</section>
-							</article>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<article>
-								<header>
-									<figure>
-										<img src="assets/img/category-item-2.png">
+										<img src="assets/img/category-item-5.png">
 									</figure>
 								</header>
 								<section>

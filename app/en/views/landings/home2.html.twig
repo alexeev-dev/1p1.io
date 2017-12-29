@@ -12,7 +12,7 @@
 			<div class="landings-intro">
 				<h1>Transparent blockchain charity marketplace</h1>
 				<p>We connect individual sellers, buyers, brands and charity organizations transparently via blockchain. Each donation is traced until it reached the addressee.</p>
-				<a href="#" class="video">Watch the video</a>
+				<a href=".popup-video" class="video js-popup-btn">Watch the video</a>
 			</div>
 		</div>
 	</div>
@@ -155,7 +155,7 @@
 					<div class="owl-carousel js-carousel">
 						<div class="testimonials-item">
 							<figure>
-								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<img src="{{ asset('img/testi.png') }}" alt="">
 								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
 							</figure>
 
@@ -165,7 +165,7 @@
 						</div>
 						<div class="testimonials-item">
 							<figure>
-								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<img src="{{ asset('img/testi.png') }}" alt="">
 								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
 							</figure>
 
@@ -175,7 +175,7 @@
 						</div>
 						<div class="testimonials-item">
 							<figure>
-								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<img src="{{ asset('img/testi.png') }}" alt="">
 								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
 							</figure>
 
@@ -185,7 +185,7 @@
 						</div>
 						<div class="testimonials-item">
 							<figure>
-								<img src="{{ asset('img/testi/1.png') }}" alt="">
+								<img src="{{ asset('img/testi.png') }}" alt="">
 								<figcaption>Chulpan <br>Hamatova <span>Actress</span>    </figcaption>
 							</figure>
 
@@ -254,6 +254,10 @@
 		</div>
 	</div>
 
+{% endblock %}
+
+{% block popup %}
+	{% include '../../tpl/components/popups-landings.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}

@@ -1,0 +1,22 @@
+.popup {
+	&-video {
+		display: none; width: 720px; height: 480px;
+		background: $black;
+
+		.close {
+			color: $white; font-size: 20px; font-family: $ms-500;
+			display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; position: absolute; right: -40px; top: -40px;
+			&:before, &:after {
+				content: '';
+				display: block; width: 20px; height: 3px; position: absolute; left: 50%; top: 50%;
+				background: $white; border-radius: 10px;
+			}
+			&:before {
+				transform: translate(-50%,-50%) rotate(45deg);
+			}
+			&:after {
+				transform: translate(-50%,-50%) rotate(-45deg);
+			}
+		}
+	}
+}

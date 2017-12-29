@@ -19,14 +19,13 @@
     "jquery.easing": "^1.3.1",
     "jquery-mousewheel": "^3.1.13",
     "jquery-touchswipe": "^1.6.18",
-    
     "animate.css": "^3.5.2",
     "font-awesome": "^4.7.0",
-    
     "select2": "^4.0.5",
     "dropzone": "^5.1.1",
     "owl.carousel": "^2.2.1",
     "bPopup": "bpopup#^0.11.0",
-    "jRange": "*"
+    "jRange": "*",
+    "masonry": "masonry-layout#^4.2.0"
   }
 }
