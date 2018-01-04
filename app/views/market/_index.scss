@@ -20,12 +20,13 @@
 	}
 
 	ul {
-		@include respond-to(lg) {flex-wrap: wrap; align-items: start;}
+		padding: 12px 0;
+		@include respond-to(lg) {flex-wrap: wrap; align-items: start; margin-bottom: -10px;}
+		@include respond-to(sm) {margin-bottom: 0;}
 		li {
-			padding: 30px 0;
 			@extend .checkbox-filter; margin-right: 10px;
 			@include respond-to(lg) {
-				width: 50%; margin-right: 0; margin-bottom: 15px;
+				margin-right: 10px; margin-bottom: 10px;
 				&:last-child {margin-bottom: 0;}
 			}
 			@include respond-to(md) {width: 100%;}
@@ -35,14 +36,16 @@
 		display: flex; justify-content: flex-end; align-items: center; width: 550px;
 		@include respond-to(lg) {flex-wrap: wrap; justify-content: flex-end; width: 680px; padding-top: 15px;}
 		@include respond-to(md) {width: 850px;} 
-		@include respond-to(sm) {width: 100%; justify-content: flex-start; margin-bottom: 25px;}
+		@include respond-to(sm) {width: 100%; justify-content: flex-start;}
 
 
 		.select > a, .reset {
 			@include font-type($title, 14px, 14px, 0); color: $font-light_2;
 			@media (max-width: 1249px) {@include font-type($title, 13px, 13px, 0);}
 		}
-
+		.reset {
+			@include respond-to(xs) {margin-bottom: 25px;}
+		}
 		.select {
 			@include respond-to(lg) {margin-right: 20px;}
 			@include respond-to(xs) {margin-right: 0; margin-bottom: 25px;}
@@ -55,26 +58,26 @@
 		padding: 0 20px; position: relative;
 		background: none; border: none;
 		@include respond-to(lg) {padding-left: 0; width: 210px;}
-		@include respond-to(xs) {left: -6px;}
+		@include respond-to(xs) {width: auto;}
 		
 		&:after {
 			content: '';
 			width: 10px; height: 10px;
 			position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-			background: url('../images/filter_close.svg') center center no-repeat;
+			background: url('../img/svg/filter_close.svg') center center no-repeat;
 		}
 	}
 }
 
 .search {
-	padding: 15px 0 30px 0;
+	padding: 11px 0 2px;
 	form {
-		display: flex; align-items: center; justify-content: space-between;
+		display: flex; align-items: center; justify-content: space-between; padding: 25px 0;
 		width: 100%;
 		@include respond-to(sm) {flex-direction: column; align-items: start;}
 
 		input {
-			padding-top: 30px; width: 85%;
+			width: 85%; padding-bottom: 2px;
 			@include font-type($title, 28px, 28px, 0); color: #000;
 			border: none; background: #fff;
 			@include respond-to(sm) {margin-bottom: 25px;}
@@ -83,23 +86,23 @@
 		}
 
 		button {
-			position: relative; padding-left: 38px; padding-right: 22px; top: 12px;
+			position: relative; padding: 11px 22px 10px 38px;
 			i {position: absolute; left: 16px; top: 13px;}
 		}
 	}
 }
 
 .categories {
-	padding: 25px 0 24px 0;
+	padding: 23px 0 24px;
 	& > .container {@include respond-to(sm) {flex-direction: column-reverse; align-items: start;}}
 	
-	ul {
-		@include respond-to(lg) {
+	& > ul {
+		@include respond-to(sm) {
 			flex-direction: column;
 		}
-		li {
+		& > li {
 			margin-right: 30px;
-			@include respond-to(lg) {
+			@include respond-to(sm) {
 				margin-bottom: 25px;
 				&:last-child {margin-bottom: 0;}
 			}

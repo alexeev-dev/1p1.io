@@ -603,7 +603,7 @@ $(document).ready(function () {
     $('.intro nav > ul li').removeClass('hovered');
 
     if (itemNumber === 1) {
-      decor.css('width', '26%');
+      decor.css('width', '24.6%');
       $('.intro nav > ul li:nth-child(2)').addClass('hovered');
     } else if (itemNumber === 2) {
       decor.css('width', '54%');

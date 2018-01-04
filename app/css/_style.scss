@@ -7,7 +7,7 @@
 	}
 
 	.wr {
-		&-authentication {
+		&-authentication, &-products, &-product, &-ads, &-landing-category, &-main-products, &-main-news {
 			&.gray {background: $bg-gray;}
 		}
 
@@ -24,6 +24,33 @@
 					}
 				}
 			}
+		}
+
+		&-products {
+			padding: 35px 0;
+		}
+		&-product {
+			padding: 0;
+			background: $white;
+		}
+
+		// landing pages
+		&-ads {
+			padding: 37px 0 30px;
+		}
+		&-landing-category {
+			padding: 30px 0 60px;
+		}
+		&-main {
+			&-products {
+				padding: 50px 0 35px;
+			}
+			&-news {
+				padding: 71px 0 46px;
+			}
+		}
+		&-testimonials {
+			padding: 107px 0 88px;
 		}
 	}
 }

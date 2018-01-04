@@ -4,11 +4,11 @@
 //СТИЛИ ДЛЯ ЛЕГДИНГОВ
 // кнопочки справа лендинга
 .show-onemore {
-	color: white; background: #4489FF;
-	padding: 21px 23px 22px 27px; position: absolute; z-index: 2; right: -45px; top: 50%; transform: translateY(-50%);
+	color: white; background: #4489FF; letter-spacing: 0;
+	padding: 17px 23px 18px 27px; position: absolute; z-index: 2; right: -45px; top: 50%; transform: translateY(-50%);
 	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); border-radius: 100px;
 	&:hover {background: #629CFF;}
-	i {font-weight: 600; color: white; margin-left: 12px;}
+	i {font-weight: 600; color: white; margin-left: 13px;}
 
 	@include respond-to(1299px) {
 		right: 0;
@@ -23,7 +23,7 @@
 .app.index {
 	padding-top: 0;
 	header.header {
-		.logo {padding-top: 20px;}
+		.logo {padding-top: 17px;}
 	}
 
 	
@@ -63,10 +63,23 @@
 }
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
-
+// main products
+.main {
+	&-products, &-news {
+		@include respond-to(md) {
+			display: flex; flex-direction: column; align-items: center;
+		}
+	}
+	&-news {
+		@include respond-to(sm) {
+			padding-bottom: 40px;
+		}
+	}
+}
 
 // INTRO LANDING - http://prntscr.com/h2bdli
 .intro {
+	padding-bottom: 35px;
 	section {
 		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,rgba(5,171,224,0) 100%);
 		height: 547px; position: relative; overflow: hidden;
@@ -101,7 +114,7 @@
 
 			header {
 				padding-left: 102px; margin-top: 143px;
-				@include respond-to(md) {padding-left: 20px;}
+				@include respond-to(md) {padding-left: 0;}
 				@include respond-to(xs) {margin-top: 110px;}
 
 				.dobro & {
@@ -121,14 +134,13 @@
 					color: #fff; @include font-type($title, 42px, 56px, -1px); 
 					margin-top: 0; margin-bottom: 22px;
 					@include respond-to(sm) {font-size: 36px; line-height: 48px;}
-					@include respond-to(xs) {font-size: 28px; line-height: 38px; margin-left: -10px;}
+					@include respond-to(xs) {font-size: 28px; line-height: 38px;}
 				}
 				h1 + ul {margin-top: 86px; @include respond-to(sm) {margin-bottom: 42px;}}
 				p {
 					color: #fff; @include font-type($title, 26px, 32px, 0px); 
 					margin-bottom: 86px;
 					@include respond-to(sm) {font-size: 20px; line-height: 26px; margin-bottom: 42px;}
-					@include respond-to(xs) {margin-left: -10px;}
 
 					.dobro & {
 						margin-bottom: 0; padding-left: 3px; letter-spacing: 0.1px;
@@ -145,7 +157,6 @@
 					@include respond-to(sm) {
 						font-size: 40px; line-height: 50px; margin-bottom: 42px;
 					}
-					@include respond-to(xs) {margin-left: -10px;}
 
 					.dobro & {
 						margin-bottom: 74px; letter-spacing: -1px;
@@ -155,7 +166,6 @@
 				a {
 					@include font-type($title, 16px, 16px, 0px); color: #fff;
 					position: relative;
-					@include respond-to(xs) {margin-left: -10px;}
 
 					.dobro & {
 						padding: 18px 25px;
@@ -176,7 +186,7 @@
 				}
 				& > ul {
 					display: flex; 
-					@include respond-to(sm) {flex-flow: column nowrap; margin-left: -10px;}
+					@include respond-to(sm) {flex-flow: column nowrap;}
 
 					li {
 						margin-right: 40px; &:last-child {margin-right: 0;}
@@ -193,9 +203,9 @@
 			}
 
 			footer {
-				position: absolute; top: 180px; right: 40px;
+				position: absolute; top: 180px; right: 25px;
 				@include respond-to(md) {right: 10px; top: 105px;}
-				@include respond-to(sm) {position: static; padding-top: 60px; padding-left: 20px;}
+				@include respond-to(sm) {position: static; padding-top: 60px;}
 
 				.dobro & {
 					display: flex; justify-content: center; align-items: center;
@@ -217,6 +227,9 @@
 					span {
 						position: absolute; top: -22px; left: -26px; 
 						@include font-type($title, 18px, 18px, 0); text-transform: none;
+						@include respond-to(sm) {
+							display: block; margin-bottom: 5px; position: relative; left: 0; top: 0;
+						}
 
 						.dobro & {
 							font-size: 16px; line-height: 18px;
@@ -262,8 +275,8 @@
 				
 				a, i {transition: color 1s ease, padding .2s linear;}
 				a {
+					color: #4489FF; font-family: $title; font-size: 18px; line-height: 18px; text-align: center; letter-spacing: 0;
 					display: flex; justify-content: center; align-items: center;
-					color: #4489FF; font-family: $title; font-size: 18px; line-height: 18px; text-align: center;
 					width: 100%; height: 100%; padding-right: 50px; padding-left: 32px;
 					position: relative;
 					span {
@@ -704,7 +717,7 @@
 	}
 	section {
 		p {
-			@include font-type($text, 16px, 22px, 0.3px); text-align: center; color: #000;
+			@include font-type($text, 16px, 22px, 0.5px); text-align: center; color: #000;
 		}
 	}
 }
@@ -712,7 +725,7 @@
 
 // http://prntscr.com/hdq8sj
 .counter {
-    padding: 35px 0 42px 0; background: #fff;
+    padding: 0 0 37px; background: #fff;
 
     .dobro & {
     	padding: 33px 0 50px 0;
@@ -748,8 +761,8 @@
 		width: 100%; height: 50%;
 		section {
 			h2 {
-				@include font-type($title, 38px, 45px, 0);
-				margin-bottom: 19px;
+				@include font-type($title, 38px, 40px, -1px);
+				margin-bottom: 17px;
 				@include respond-to(lg) {font-size: 32px; line-height: 38px;}
 
 				@include respond-to(sm) {font-size: 30px; line-height: 38px;}
@@ -784,7 +797,7 @@
 	}
 
 	section {
-		padding-left: 48px; padding-bottom: 43px; position: absolute; left: 0; bottom: 0;
+		padding-left: 50px; padding-bottom: 45px; position: absolute; left: 0; bottom: 0;
 		@include respond-to(md) {padding-left: 35px;}
 		@include respond-to(sm) {padding-bottom: 25px;}
 		@include respond-to(xs) {padding-left: 20px;}
@@ -842,7 +855,7 @@
 		article {
 
 			section {
-				padding-left: 35px; padding-bottom: 20px;
+				padding-left: 37px; padding-bottom: 32px;
 				@include respond-to(lg) {padding-left: 20px; padding-bottom: 30px;}
 				@include respond-to(md) {padding-left: 35px;}
 				@include respond-to(sm) {padding-bottom: 25px;}
@@ -887,7 +900,7 @@
 
 				h2 {
 					@include font-type($title, 54px, 58px, 0); color: #fff;
-					margin-bottom: 19px;
+					margin-bottom: 14px;
 					@include respond-to(sm) {font-size: 40px}
 					@include respond-to(xs) {font-size: 30px; line-height: 44px; margin-bottom: 10px;}
 					i {
