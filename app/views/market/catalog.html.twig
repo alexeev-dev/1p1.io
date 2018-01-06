@@ -1,0 +1,327 @@
+{% extends '../../tpl/base.html.twig' %}
+
+{% block header_class %}{% endblock %}
+
+{% block app_class %}market2{% endblock %}
+{% block preloder_class %}{% endblock %}
+
+{% block header %}
+		<header class="header js-header active">
+		<a href="{{ path('homepage') }}" class="logo"></a> 
+		<nav class="menu">
+			<ul>
+				<li><a href="{{ path('market_home') }}"><i class="icon-search"></i><span>Найти вещь</span></a></li>
+				<li><a href="{{ path('market_add') }}"><i class="icon-plus"></i><span>Продать</span></a></li>
+				{#% if is_granted("ROLE_USER") %}
+					<li><a href="{{ path('fos_user_profile_show') }}"><span>Мой кабинет</span></a></li>
+				{% else %}
+					<li><a href="{{ path('fos_user_security_login') }}"><span>Войти</span></a></li>
+				{% endif %#}
+			</ul>
+			<a href="#" class="burger js-menu-open">
+				<span></span>
+				<span></span>
+				<span></span>
+			</a>
+		</nav>
+	</header>
+	<nav class="menu-open">
+		<ul>
+			<!--li class="languages">
+				<a href="#">Ru</a>
+				<a href="#">Eng</a>
+			</li-->
+			<li class="login">
+				{#% if is_granted("ROLE_USER") %}
+					<a href="{{ path('fos_user_profile_show') }}">Мой кабинет</a>
+						{% if user_service.isAdmin is defined and user_service.isAdmin %}
+							<a href="{{ path('sonata_admin_dashboard') }}">Админка</a>
+						{% endif %}
+					<a href="{{ logout_path() }}">Выйти</a></li>
+				{% else %}
+					<a href="{{ path('fos_user_registration_register') }}">Регистрация</a>
+					<a href="{{ path('fos_user_security_login') }}">Войти</a>
+				{% endif %#}
+			</li>
+			<li><a href="{{ path('market_home') }}">Купить</a></li>
+			<li><a href="{{ path('market_add') }}">Продать</a></li>
+			<li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
+			<li><a href="{{ path('funds') }}">Фонды</a></li>
+			<li><a href="/news">Новости</a></li>
+			<li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
+			{#<li><a href="#">Поиск по сайту</a></li>#}
+		</ul>
+		<a href="#" class="menu-close"></a>
+	</nav>
+	
+	<div class="wr-catalog-header">
+		<div class="wr-catalog-nav">
+			<div class="container">
+				<div class="catalog-nav">
+					<ul class="js-catalog-dropdown">
+						<li>
+							<a href=".category">Смартфоны от магазинов</a>
+						</li>
+						<li>
+							<a href=".funds">Вся благотворительность</a>
+						</li>
+					</ul>
+					<div class="select">
+						<a href="#" class="js-selectToogle">В Москве</a>
+						<div class="js-selectList">
+							<ul>
+								<li>
+									<a href="#">В Санкт-Питербурге</a>
+								</li>
+								<li>
+									<a href="#">В Москве</a>
+								</li>
+								<li>
+									<a href="#">В Санкт-Питербурге</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wr-catalog-dropdown category">
+			<div class="container">
+				<div class="catalog-category">
+					<div>
+						<a href="#" class="active">
+							<i class="icon market-shops"></i>
+							<span>От магазинов</span>
+						</a>
+						<a href="#">
+							<i class="icon market-users"></i>
+							<span>От пользователей</span>
+						</a>
+					</div>
+					<ul>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+						<li>
+							<a href="#">Детские товары</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="wr-catalog-dropdown funds">
+			<div class="container">
+				<div class="catalog-category">
+					<ul>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+						<li>
+							<a href="#">Фонд</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock header %}
+
+{% block breadcrumbs %}{% endblock  %}
+
+{% block body %}
+	
+	<div class="wr-catalog">
+		<div class="container">
+			<div class="catalog-tags">
+				<a class="js-filterToggle active" href="#"><span class="close">Скрыть фильтры</span><span class="open">Показать фильтры</span></a>
+				<ul>
+					<li><a class="active" href="#">Все результаты (14 732 626)</a></li>
+					<li><a href="#">Звездные вещи (150)</a></li>
+				</ul>
+			</div>
+			<div class="catalog js-catalog active">
+				<div class="catalog-filter">
+					<ul class="js-catalog-filter">
+						<li>
+							<input id="filter1" type="checkbox">
+							<label for="filter1">Фиксированная цена</label>
+							<input id="filter2" type="checkbox">
+							<label for="filter2">Аукционы</label>
+							<div class="price-range">
+								<input type="text" placeholder="от 300 Р">
+								<input type="text" placeholder="до 300 000">
+							</div>
+						</li>
+						<li>
+							<a href="#">Все бренды</a>
+							<ul>
+								<li>
+									<input id="filter3" type="checkbox">
+									<label for="filter3">Бренд</label>
+								</li>
+								<li>
+									<input id="filter4" type="checkbox">
+									<label for="filter4">Бренд</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Все магазины</a>
+							<ul>
+								<li>
+									<input id="filter5" type="checkbox">
+									<label for="filter5">Магазин</label>
+								</li>
+								<li>
+									<input id="filter6" type="checkbox">
+									<label for="filter6">Магазин</label>
+								</li>
+								<li>
+									<input id="filter7" type="checkbox">
+									<label for="filter7">Магазин</label>
+								</li>
+								<li>
+									<input id="filter8" type="checkbox">
+									<label for="filter8">Магазин</label>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Все коллекции</a>
+							<ul>
+								<li>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Все мероприятия</a>
+							<ul>
+								<li>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Все стили</a>
+							<ul>
+								<li>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Пол</a>
+							<ul>
+								<li>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Цвет</a>
+							<ul>
+								<li>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="reset" href="#">Сбросить фильтр</a>
+						</li>
+					</ul>
+				</div>
+				<div class="catalog-list">
+					<ul class="list-products">
+						<li>
+							{% include '../../tpl/components/list-product.html' %}
+						</li>
+						<li>
+							{% include '../../tpl/components/list-product.html' %}
+						</li>
+						<li>
+							{% include '../../tpl/components/list-product.html' %}
+						</li>
+						<li>
+							{% include '../../tpl/components/list-product.html' %}
+						</li>
+						<li>
+							{% include '../../tpl/components/list-product.html' %}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block partners %}
+	{% include '../parts/partners.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

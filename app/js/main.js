@@ -768,6 +768,29 @@ $(document).ready(function () {
     }
   });
 
+  // new catalog dropdown menu
+  $('.js-catalog-dropdown li a').click(function(e) {
+    e.preventDefault();
+
+    var catalogDrop = $(this).attr('href');
+    $('.wr-catalog-dropdown:not(' + catalogDrop + ')').removeClass('active');
+    $(catalogDrop).toggleClass('active');
+  });
+
+  // catalog filter show hide
+  $('.js-filterToggle').click(function(e) {
+    e.preventDefault();
+
+    $(this).toggleClass('active');
+    $('.js-catalog').toggleClass('active');
+  });
+  // catalog filter list show hide
+  $('.js-catalog-filter > li > a:not(.reset)').click(function(e) {
+    e.preventDefault(e);
+
+    $(this).toggleClass('active').next().slideToggle();
+  })
+
   // scroll menu
   var header = $(".js-header"),
       scrollPrev = 0;
@@ -807,6 +830,8 @@ $(document).ready(function () {
     }
 
     // parallax();
+
+
   });
 
   // function parallax() {

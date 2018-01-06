@@ -35,9 +35,10 @@
 		position: absolute; z-index: 1; right: -45px; top: 50%; transform: translateY(-50%);
 		background: #96be46; border-color: #96be46;
 	}
-	&.children .btn {background: #E8B194; border-color: #E8B194;}
+	&.children .btn {background: #E8B194; border-color: #E8B194; &:hover {color: $white; background: #efc3ac;border-color: #efc3ac;}}
 	&.dobro .btn {background: #7A3FBF; border-color: #7A3FBF;}
 	&.art .btn, &.fashion .btn {background: #000; border-color: #000;}
+	&.art .btn-transparent, &.fashion .btn-transparent {background: transparent; border-color: $white;&:hover {background: $white;}}
 
 	//Секция с выпадающими списками на главной - http://prntscr.com/h2ns22
 	.section-group {
@@ -59,7 +60,6 @@
 			}
 		}
 	}
-
 }
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
@@ -70,16 +70,59 @@
 			display: flex; flex-direction: column; align-items: center;
 		}
 	}
+	&-products {
+		h2 {
+			margin-bottom: 10px;
+		}
+	}
 	&-news {
 		@include respond-to(sm) {
 			padding-bottom: 40px;
+		}
+	}
+	&-pagination {
+		display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 0 -10px;
+		@include respond-to(xs) {
+			margin: 0 -7px;
+		}
+		li {
+			flex-shrink: 0;
+			text-align: center;
+			width: 50px; height: 50px; margin: 10px;
+			border-radius: 50px; 
+			transition: .4s ease;
+			@include respond-to(xs) {margin: 7px; width: 35px; height: 35px;}
+			&.active, &:hover {
+				background: #fff;
+				a {color: #000;}
+			}
+			&.next {
+				width: auto; padding: 0 20px;
+				background: #fff; 
+				@include respond-to(sm) {padding: 0; width: 50px;}
+				@include respond-to(xs) {width: 35px;}
+				span {
+					@include respond-to(sm) {display: none;}
+				}
+				i {
+					font-weight: 600;
+					margin-left: 10px; margin-top: 4px;
+					@include respond-to(sm) {margin: 0;}
+				}
+			}
+			a {
+				display: flex; align-items: center; justify-content: center;
+				@include font-type($title, 16px, 16px, 0.5px); color: #7d8894;
+				width: 100%; height: 100%;
+				transition: .4s ease;
+				@include respond-to(xs) {font-size: 14px;}
+			}
 		}
 	}
 }
 
 // INTRO LANDING - http://prntscr.com/h2bdli
 .intro {
-	padding-bottom: 35px;
 	section {
 		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,rgba(5,171,224,0) 100%);
 		height: 547px; position: relative; overflow: hidden;
@@ -135,6 +178,10 @@
 					margin-top: 0; margin-bottom: 22px;
 					@include respond-to(sm) {font-size: 36px; line-height: 48px;}
 					@include respond-to(xs) {font-size: 28px; line-height: 38px;}
+
+					.stars & {
+						font-size: 46px; letter-spacing: 0;
+					}
 				}
 				h1 + ul {margin-top: 86px; @include respond-to(sm) {margin-bottom: 42px;}}
 				p {
@@ -610,7 +657,6 @@
 			}
 
 			.dobro & {
-				@include respond-to(md) {width: 25%;}
 				@include respond-to(sm) {width: 100%;}	
 			}
 		}
@@ -666,6 +712,9 @@
 	&-auction {
 		display: flex; flex-wrap: wrap;
 		margin: 0 -10px;
+		@include respond-to(xs) {
+			margin: 0;
+		}
 		& > li {
 			width: calc(33.33333% - 20px); margin: 0 10px 20px 10px;
 			background: #fff;
@@ -725,7 +774,7 @@
 
 // http://prntscr.com/hdq8sj
 .counter {
-    padding: 0 0 37px; background: #fff;
+    padding: 35px 0 37px; background: #fff;
 
     .dobro & {
     	padding: 33px 0 50px 0;
@@ -957,7 +1006,6 @@
 	}
 }
 .megasale {
-	margin-bottom: 60px;
 	img {
 		width: 100%;
 	}
@@ -965,8 +1013,6 @@
 
 //http://prntscr.com/hdpr74
 .about {
-	padding: 61px 0 61px 41px;
-	@include respond-to(sm) {padding-left: 0;}
 	article {
 		display: flex; justify-content: space-between;
 		@include respond-to(md) {
@@ -1229,8 +1275,8 @@
 				img {width: 140px !important; display: inline-block !important;}
 				figcaption {
 					padding-top: 12px;
-					p {color: #000000; @include font-type($title, 16px, 24px, 0px); margin-bottom: 0;}
-					span {color: #000000; @include font-type($title, 12px, 16px, 0px); opacity: 0.7;}
+					p {color: #000000; @include font-type($title, 16px, 24px, 0px); margin-bottom: 3px;}
+					span {color: #000000; @include font-type($title, 12px, 16px, 0px); display: block; opacity: 0.7;}
 				}
 			}
 		}
@@ -1319,6 +1365,47 @@
 			.art &, .fashion & {
 				background: #000; border-color: #000;
 				&:hover {color: #000;}
+			}
+		}
+	}
+}
+
+// http://prntscr.com/hwbf65
+.joined {
+	@include respond-to(sm) {
+		display: flex; flex-direction: column; align-items: center;
+	}
+	h2 {
+		padding-top: 11px; margin-bottom: 50px;
+	}
+
+	.btn {
+		position: absolute; right: -45px; top: 50%; transform: translateY(-50%); z-index: 2;
+		@include respond-to(1299px) {
+			right: 0;
+		}
+		@include respond-to(sm) {
+			position: relative; top: 0; transform: none; margin-top: 15px;
+		}
+	}
+}
+
+// http://prntscr.com/hwbltc
+.people-block {
+	h2 {
+		font-size: 44px; line-height: 65px; text-align: center;
+		margin-bottom: 50px;
+	}
+}
+
+.auction {
+	&-filter {
+		h2 {
+			font-size: 24px; font-family: $title; line-height: 28px; letter-spacing: 0px;
+			margin-bottom: 0;
+			sup {
+				font-size: 15px;
+				position: relative; top: -11px; right: 4px;
 			}
 		}
 	}
