@@ -6,7 +6,7 @@
       display: inline-block;
       background-image: url("../img/sprite.svg");
       background-repeat: no-repeat;
-      background-size: 10.6em 2.8em;
+      background-size: 9.2em 3.1em;
 
       .no-svg & {
         background-image: url("../img/sprite.png");
@@ -20,8 +20,8 @@
 .icon.logo-blue {
   &:before {
       background-position: 0em 0em;
-      width: 10.6em;
-      height: 2.8em;
+      width: 9.2em;
+      height: 3.1em;
     }
   }
 
