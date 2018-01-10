@@ -6,7 +6,7 @@
       display: inline-block;
       background-image: url("../img/sprite.svg");
       background-repeat: no-repeat;
-      background-size: 13.7em 29.3em;
+      background-size: 13.7em 38.1em;
 
       .no-svg & {
         background-image: url("../img/sprite.png");
@@ -95,9 +95,35 @@
   }
 
 
-.icon.message {
+.icon.market-shops {
   &:before {
       background-position: 0em -17.7em;
+      width: 4.3em;
+      height: 4.3em;
+    }
+  }
+
+  @mixin icon-market-shops(){
+    @extend .market-shops;
+  }
+
+
+.icon.market-users {
+  &:before {
+      background-position: 0em -22em;
+      width: 4em;
+      height: 4.5em;
+    }
+  }
+
+  @mixin icon-market-users(){
+    @extend .market-users;
+  }
+
+
+.icon.message {
+  &:before {
+      background-position: 0em -26.5em;
       width: 1.3em;
       height: 1.3em;
     }
@@ -110,7 +136,7 @@
 
 .icon.pin {
   &:before {
-      background-position: 0em -19em;
+      background-position: 0em -27.8em;
       width: 1.1em;
       height: 1.3em;
     }
@@ -123,7 +149,7 @@
 
 .icon.plus {
   &:before {
-      background-position: 0em -20.3em;
+      background-position: 0em -29.1em;
       width: 1.2em;
       height: 1.2em;
     }
@@ -136,7 +162,7 @@
 
 .icon.plus-black {
   &:before {
-      background-position: 0em -21.5em;
+      background-position: 0em -30.3em;
       width: 1.2em;
       height: 1.2em;
     }
@@ -149,7 +175,7 @@
 
 .icon.plus-white {
   &:before {
-      background-position: 0em -22.7em;
+      background-position: 0em -31.5em;
       width: 1.2em;
       height: 1.2em;
     }
@@ -162,7 +188,7 @@
 
 .icon.search-black {
   &:before {
-      background-position: 0em -23.9em;
+      background-position: 0em -32.7em;
       width: 1.5em;
       height: 1.5em;
     }
@@ -175,7 +201,7 @@
 
 .icon.search-white {
   &:before {
-      background-position: 0em -25.4em;
+      background-position: 0em -34.2em;
       width: 1.5em;
       height: 1.5em;
     }
@@ -188,7 +214,7 @@
 
 .icon.seen {
   &:before {
-      background-position: 0em -26.9em;
+      background-position: 0em -35.7em;
       width: 1.4em;
       height: 1.1em;
     }
@@ -201,7 +227,7 @@
 
 .icon.time {
   &:before {
-      background-position: 0em -28em;
+      background-position: 0em -36.8em;
       width: 1.3em;
       height: 1.3em;
     }

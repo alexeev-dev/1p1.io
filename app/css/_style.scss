@@ -1,14 +1,62 @@
 .app {
-	padding-top: $header-height;
+	padding-top: $header-height; min-width: 320px;
 	overflow-x:hidden;
+
+	&.market2 {
+		padding-top: calc(65px + 70px);
+	}
 
 	.wrapper {
 		&.gray {background: $bg-gray;}
 	}
 
+	.pagination-block {
+		padding: 10px 0 0 0;
+		background: $bg-gray;
+		.container {
+			padding: 0;
+		}
+	}
+
+	.header {
+		z-index: 1000;
+	}
+
 	.wr {
-		&-authentication {
+		&-authentication, &-products, &-product, &-ads, &-landing-category, &-main-products, &-main-news, &-testimonials, 
+		&-megasale, &-joined_partners, &-people, &-auction, &-auction-filter {
 			&.gray {background: $bg-gray;}
+		}
+
+		&-catalog {
+			padding: 26px 0 79px;
+			&-header {
+				position: fixed; z-index: 500; left: 0; top: $header-height; width: 100%; height: 70px;
+
+				.wr-catalog-dropdown.active ~ &:after {
+					content: '';
+					position: fixed; left: 0; top: 0; right: 0; bottom: 0;
+					background: red;
+				}
+			}
+			&-nav {
+				position: relative; height: 100%; z-index: 5;
+				background: $white; border-bottom: solid 1px #d9deea;
+				.container {
+					height: 100%; z-index: 5; position: relative;
+				}
+			}
+			&-dropdown {
+				position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; transform: translateY(-1px);
+				background: #ffffff; border-bottom: solid 1px #d9deea;
+				transition: 0.5s ease-out;
+				opacity: 0;
+
+				&.active {
+					transform: translateY(100%); z-index: 4;
+					opacity: 1;
+				}
+			}
 		}
 
 		&-authentication {
@@ -23,6 +71,62 @@
 						text-decoration: underline;
 					}
 				}
+			}
+		}
+
+		&-products {
+			padding: 35px 0;
+		}
+		&-product {
+			padding: 0;
+			background: $white;
+		}
+
+		// landing pages
+		&-ads {
+			padding: 35px 0 30px;
+		}
+		&-landing-category {
+			padding: 30px 0 60px;
+		}
+		&-main {
+			&-products {
+				padding: 50px 0 35px;
+			}
+			&-news {
+				padding: 71px 0 46px;
+			}
+		}
+		&-testimonials {
+			padding: 107px 0 88px;
+		}
+
+		&-megasale {
+			padding: 30px 0 60px;
+		}
+
+		&-joined_partners {
+			padding: 45px 0;
+		}
+
+		&-people {
+			padding: 80px 0 40px;
+		}
+
+		&-about {
+			padding: 65px 0 61px 41px;
+			@include respond-to(sm) {padding-left: 0;}
+		}
+
+		&-people-block {
+			padding: 40px 0 60px;
+		}
+
+		&-auction {
+			padding: 22px 0 34px;
+			border-bottom: 1px solid #d9deea;
+			&-filter {
+				padding: 45px 0 0;
 			}
 		}
 	}

@@ -276,9 +276,8 @@ gulp.task('watch', ['twig:build', 'twig:index', 'js:libs', 'js:main', 'sprite', 
 	gulp.watch('app/**/*.scss', ['sass']);
 	// gulp.watch('app/**/*.html', ['html:build']);
 	gulp.watch('app/views/*/*.html.twig', ['twig:build']);
-	gulp.watch('app/en/views/*/*.html.twig', ['twigEN:build']);
 	gulp.watch('app/views/index.twig', ['twig:index']);
-	gulp.watch('app/img/icons/svg/*.svg', ['sprite', 'sass']);
+	gulp.watch('app/img/icons/**/*.svg', ['sprite', 'sass']);
 	gulp.watch('app/js/*.js', ['js:main']);
 });
 
@@ -288,6 +287,6 @@ gulp.task('watchEN', ['twigEN:build', 'jsEN:libs', 'jsEN:main', 'spriteEN', 'bro
 	// gulp.watch('app/**/*.html', ['html:build']);
 	gulp.watch('app/en/views/*/*.html.twig', ['twigEN:build']);
 	gulp.watch('app/en/tpl/*/*.html.twig', ['twigEN:build']);
-	gulp.watch('app/en/img/icons/svg/*.svg', ['spriteEN', 'sassEN']);
+	gulp.watch('app/en/img/icons/**/*.svg', ['spriteEN', 'sassEN']);
 	gulp.watch('app/en/js/*.js', ['jsEN:main']);
 });

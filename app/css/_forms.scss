@@ -45,7 +45,7 @@ span {
 	// для фильтра
 	&-filter {
 		input {position: absolute; opacity: 0;}
-		label {margin-bottom: 0;}
+		label {margin-bottom: 0; display: inline-block;}
 		input + label {
 			color: #283651; @include font-type($title, 16px, 16px, -0.2px); font-weight: 100;
 			@media (max-width: 1249px) {@include font-type($title, 15px, 15px, 0);}

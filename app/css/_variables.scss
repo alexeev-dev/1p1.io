@@ -145,12 +145,15 @@ $shadow-half : rgba(0, 0, 0, 0.05);
 .absoluteXY {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 /* FLEX-boxes */
+.row-start-start {display: flex; justify-content: flex-start; align-items: flex-start;}
+.row-start-stretch {display: flex; justify-content: flex-start; align-items: stretch;}
 .row-center-strech {display: flex; justify-content: center; align-items: stretch;}
 .row-between-strech {display: flex; justify-content: space-between; align-items: stretch;}
 .row-between-center {display: flex; justify-content: space-between; align-items: center;}
 .row-start-center {display: flex; justify-content: flex-start; align-items: center;}
 .row-end-center {display: flex; justify-content: flex-end; align-items: center;}
 .row-center-center {display: flex; justify-content: center; align-items: center;} // посередине по ширине – КНОПОЧКИ
+.column-start-start {display: flex; flex-flow: column nowrap; justify-content: flex-start; align-items: flex-start;}
 .column-center-center {display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;} // посередине по высоте – ИКОНКИ
 .column-between-strech {display: flex; flex-flow: column nowrap; justify-content: space-between; align-items: stretch;}
 /***********************************************************/

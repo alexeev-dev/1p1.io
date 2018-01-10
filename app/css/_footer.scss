@@ -80,8 +80,8 @@
 
 .footer {
 
-	padding-top: 20px;
-	background: #fff; border-top: 1px solid #e7edf2; overflow: hidden;
+	padding-top: 19px;
+	background: $white; border-top: 1px solid #e7edf2; overflow: hidden;
 	
 	&-info {
 		display: flex; align-items: center;
@@ -125,7 +125,7 @@
 	&-contacts {
 		display: flex;
 		@include font-type($text, 12px, 22px, 0);
-		position: relative; padding-top: 29px; padding-bottom: 28px;
+		position: relative; padding: 28px 0;
 		
 		@include respond-to(md){flex-direction: column;}
 		@include respond-to(sm){
@@ -170,6 +170,15 @@
 						display: flex;
 						li {
 							margin-left: 30px;
+							@include respond-to(lg) {
+								margin-left: 15px;
+							}
+							@include respond-to(md) {
+								margin-left: 25px;
+							}
+							&:first-child {
+								margin-left: 0;
+							}
 							@include respond-to(xs) {&:first-child {margin-left: 0;}}
 							a {
 								&:after {display: none;}
@@ -182,14 +191,17 @@
 						}
 					}
 					li {
-						margin-bottom: 3px;
+						margin-bottom: 2px;
 						&:last-child {
 							margin-bottom: 0;
 						}
 						a 	{
 							color: #4b5769; font-size: 14px; letter-spacing: 0.6px;
-							position: relative; padding-bottom: 5px;
+							position: relative;
 							&:hover {text-decoration: underline !important;}
+						}
+						small {
+							font-size: 85%;
 						}
 					}
 				}

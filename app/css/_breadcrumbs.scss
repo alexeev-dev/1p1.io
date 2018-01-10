@@ -3,15 +3,15 @@
 
 	@include font-type($text, 12px, 1, 0.5px); color: #89a1b3;
 	display: flex; justify-content: space-between; padding: 7px 0px 2px; position: relative;
+	@include respond-to(sm) {
+		flex-direction: column; align-items: flex-start; width: calc(100% + 30px); margin-left: -15px;
+		padding: 7px 15px 2px;
+		background: #fff;
+	}
 	&:after {
 		content: '';
 		display: block; width: 10000px; height: 1px; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
 		background: #eff3f5;
-	}
-	@include respond-to(sm) {
-		flex-direction: column; width: calc(100% + 30px); margin-left: -15px;
-		padding: 7px 15px 2px;
-		background: #fff;
 	}
 
 	ul {
