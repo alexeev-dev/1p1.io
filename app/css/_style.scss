@@ -4,6 +4,9 @@
 
 	&.market2 {
 		padding-top: calc(65px + 70px);
+		@include respond-to(md) {
+			padding-top: 65px;
+		}
 	}
 
 	.wrapper {
@@ -24,7 +27,7 @@
 
 	.wr {
 		&-authentication, &-products, &-product, &-ads, &-landing-category, &-main-products, &-main-news, &-testimonials, 
-		&-megasale, &-joined_partners, &-people, &-auction, &-auction-filter {
+		&-megasale, &-joined_partners, &-people, &-auction, &-auction-filter, &-funds, &-personal-tab, &-profile-orders {
 			&.gray {background: $bg-gray;}
 		}
 
@@ -32,11 +35,42 @@
 			padding: 26px 0 79px;
 			&-header {
 				position: fixed; z-index: 500; left: 0; top: $header-height; width: 100%; height: 70px;
+				@include respond-to(md) {
+					position: relative; top: 0; height: auto;
+				}
+				&:after {
+					content: '';
+					position: fixed; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100vh; z-index: -1;
+					background: $black;
+					opacity: 0; pointer-events: none; transition: opacity 0.5s ease-out;
+				}
 
 				.wr-catalog-dropdown.active ~ &:after {
 					content: '';
 					position: fixed; left: 0; top: 0; right: 0; bottom: 0;
 					background: red;
+				}
+
+				&.layout {
+					&:after {
+						opacity: 0.2; pointer-events: auto;
+						@include respond-to(md) {
+							display: none;
+						}
+					}
+				}
+
+				.desktop {
+					height: 100%;
+					@include respond-to(md) {
+						display: none;
+					}
+				}
+				.mobile {
+					display: none; height: 100%;
+					@include respond-to(md) {
+						display: block;
+					}
 				}
 			}
 			&-nav {
@@ -52,10 +86,19 @@
 				transition: 0.5s ease-out;
 				opacity: 0;
 
+				@include respond-to(md) {
+					display: none;
+				}
+
 				&.active {
 					transform: translateY(100%); z-index: 4;
 					opacity: 1;
 				}
+			}
+
+			// mobile version
+			&-sellers {
+				background: $white;
 			}
 		}
 
@@ -129,6 +172,45 @@
 				padding: 45px 0 0;
 			}
 		}
+
+		&-funds {
+			padding: 30px 0;
+		}
+
+		&-personal {
+			&-info {
+				border-bottom: 3px solid #eff3f5;
+			}
+			&-tabs {
+				
+			}
+			&-tab {
+				padding: 30px 0;
+			}
+		}
+
+		&-profile {
+			h3 {
+				font-size: 24px; font-family: $title; letter-spacing: 0; text-align: center;
+				margin-top: 0;
+			}
+			&-orders {
+				padding: 0 15px;
+			}
+
+			&-avatar {
+				padding: 0 0 20px;
+			}
+		}
+
+		&-booking {
+			padding: 11px 0 0;
+			
+			&-steps {
+				border-bottom: 1px solid #e8eaee;
+			}
+		}
 	}
+
 }
 

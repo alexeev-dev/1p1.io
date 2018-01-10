@@ -269,18 +269,18 @@ span {
 
 //для твиговских шаблонов кнопка на сайт - http://prntscr.com/h0v8x0
 #buttons {
-	padding-top: 30px;
+	padding: 30px 0 50px;
 	h4 {
-		@extend .title-bold-primary; text-align: left;
+		@extend .title-bold-primary; text-align: left; font-size: 18px;
 		margin-bottom: 0;
 	}
 }
 #shareButton {
-	padding: 20px 0 50px 0;
+	padding: 32px 0 0;
 	form {
-		margin-bottom: 20px;
+		margin-bottom: 18px;
 		& > div {
-			display: inline-block;
+			display: inline-block; margin-right: 15px;
 			@include respond-to(lg) {display: block; margin-bottom: 15px;}
 		}
 	}
@@ -303,7 +303,11 @@ span {
 	.form {
 		width: 50%; margin: 30px 0 0 0;
 		input {
-			margin-bottom: 20px;
+			letter-spacing: 0.7px;
+			margin-bottom: 23px;
+		}
+		button {
+			padding: 11px 24px 10px;
 		}
 	}
 }

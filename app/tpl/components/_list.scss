@@ -74,7 +74,7 @@ article {
 				@extend .row-between-center; padding: $size-base; a {color: $black;}
 				figure {
 					@extend .row-center-center;
-					img {max-width: $size-m;}
+					img {max-width: $size-m; margin-right: 8px;}
 					span {
 						width: 31px; height: 31px; margin-right: 8px;
 						border-radius: 50%; background-position: center; background-repeat: none;
@@ -120,25 +120,55 @@ article {
 		&-project {
 			@extend .row-between-strech; padding: 20px 80px 20px 100px;
 			@extend .box-filled-dark-1; background: $bg-gray;
+			@include respond-to(md) {
+				flex-direction: column; padding: 30px;
+			}
+			&:hover {
+				box-shadow: none;
+			}
 			.gray & {
 				background: $white;
 			}
+			& > * {
+				border-right: solid 1px $border;
+				@include respond-to(md) {
+					border-right: none; border-bottom: solid 1px $border;
+				}
+				&:last-child {
+					border-right: none;
+					@include respond-to(md) {
+						border-bottom: none;
+					}
+				}
+			}
 			section {
 				width: 100%; padding: 30px 40px 100px 0; position: relative;
+				@include respond-to(md) {
+					padding: 0 0 30px;
+				}
 				h3 {
+					font-size: 24px;
 					margin-bottom: 25px;
 				}
 				p {
-					@extend .text-default; line-height: 22px;
+					@extend .text-default; line-height: 22px; letter-spacing: 0.1px;
+					&:last-child {
+						margin-bottom: 0;
+					}
 				}
 				a {
 					position: absolute; left: 0; bottom: 45px;
+					@include respond-to(md) {
+						position: relative; bottom: 0; margin-top: 30px; display: inline-block;
+					}
 				}
 			}
 			footer {
 				text-align: right;
 				width: 290px; flex-shrink: 0; padding: 20px 0 105px 40px; position: relative;
-				border-left: 1px solid $border;
+				@include respond-to(md) {
+					width: 100%; padding: 30px 0 0;
+				}
 
 				.progress {
 					&_bar {
@@ -191,15 +221,33 @@ article {
 				}
 				& > a {
 					position: absolute; right: 0; bottom: 45px;
+					@include respond-to(md) {
+						position: relative; bottom: 0; margin-top: 30px; display: inline-block;
+					}
 				}
 			}
 		}
 		&-humans {
 			@extend .row-center-strech; padding: 20px 50px 20px 50px;
 			@extend .box-filled-dark-1; background: $bg-gray;
+			@include respond-to(md) {
+				flex-direction: column;
+			}
 			.gray & {
 				background: $white;
-			} 
+			}
+			& > * {
+				border-right: solid 1px $border;
+				@include respond-to(md) {
+					border-right: none; border-bottom: solid 1px $border;
+				}
+				&:last-child {
+					border-right: none;
+					@include respond-to(md) {
+						border-bottom: none;
+					}
+				}
+			}
 			header, section, footer {
 				& > * {
 					&:last-child {
@@ -209,10 +257,16 @@ article {
 			}
 			header, footer {
 				width: 230px; flex-shrink: 0; padding: 10px 0 60px 0;
+				@include respond-to(md) {
+					width: 100%;
+				}
 			}
 			header {
 				padding-right: 40px;
-				border-right: solid 1px $border;
+				@include respond-to(md) {
+					padding: 0 0 30px;
+					border-right: none;
+				}
 				figure {
 					img {
 						margin-bottom: 20px;
@@ -243,6 +297,9 @@ article {
 			}
 			section {
 				width: 100%; padding: 30px 40px 50px ;
+				@include respond-to(md) {
+					padding: 30px 0;
+				}
 				p {
 					font-size: 14px; font-family: $text; line-height: 18px;
 					margin-bottom: 20px;
@@ -253,7 +310,9 @@ article {
 			}
 			footer {
 				padding-left: 40px;
-				border-left: solid 1px $border;
+				@include respond-to(md) {
+					padding: 30px 0 0;
+				}
 				ul {
 					li {
 						margin-bottom: 15px;
@@ -685,7 +744,7 @@ figure {
 	&.preview {
 		&-funds {
 			text-align: center;
-			@extend .column-center-center; height: 270px; padding: 20px 20px;
+			@extend .column-center-center; height: 270px; padding: 16px 20px 20px;
 			@extend .box-filled-light-3;
 			&:hover {
 				figcaption {
@@ -699,7 +758,7 @@ figure {
 			}
 			figcaption {
 				& > * {
-					@extend .title-thin-main; font-size: 14px; line-height: 20px;
+					@extend .title-thin-main; font-size: 14px; line-height: 20px; letter-spacing: 0;
 				}
 				p {
 					margin-bottom: 15px;

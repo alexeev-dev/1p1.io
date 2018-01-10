@@ -5,16 +5,16 @@
 	header.header {
 		box-shadow: none; border-bottom: 1px solid #e4e7ea;
 	}
-	&-stap {
 
-		padding: 27px 0 27px 11px;
+	&-step {
+		padding: 21px 0 23px 11px;
 		ul {
 			display: flex;
 			counter-reset: list;
 			@include respond-to(md) {flex-direction: column;}
 			li {
 				font-family: $title; font-size: 22px;
-				position: relative; padding-left: 58px;
+				position: relative; padding-left: 58px; padding-top: 8px; height: 41px;
 				opacity: 0.4; margin-right: 69px;
 				transition: .4s all ease;
 				@include respond-to(md) {margin-bottom: 10px; margin-right: 0;}
@@ -29,7 +29,7 @@
 					content: counter(list);
 					
 					font-family: $title; font-size: 22px; line-height: 22px; color: #000; text-align: center;
-					position: absolute; left: 0; top: -6px; display: inline-block; width: 41px; height: 41px; padding: 5px 0; 
+					position: absolute; left: 0; top: 0; display: inline-block; width: 41px; height: 41px; padding: 6px 0 ; 
 
 					border: 2px solid #7487f5; border-radius: 50%;
 					
@@ -109,7 +109,10 @@
 	
 	&-proc {
 		display: flex; justify-content: space-between;
-		@extend .box-filled-light-3;
+		@extend .box-filled-light-3; box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.075);
+		&:hover {
+			box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.075);
+		}
 		@include respond-to(md) {flex-direction: column;}
 
 		width: calc(100% + 3px); position: relative; margin-bottom: 20px; padding: 43px 20px 20px;

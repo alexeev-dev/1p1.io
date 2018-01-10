@@ -2,6 +2,7 @@
 @import 'libs';
 @import 'variables';
 @import 'sprite';
+@import 'icons';
 
 @import 'buttons';
 @import 'forms';
@@ -36,5 +37,11 @@
 @import '../views/order/booking';
 
 @import '../views/landings/landings';
+
+// profile
+@import 'profile';
+
+// Temporary styles
+@import 'cabinet-TEMP';
 
 @import 'style';

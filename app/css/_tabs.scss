@@ -23,7 +23,7 @@
 		}
 		
 		a.js-toggle-menu {
-			@include font-type($text, 18px, 22px, -1px); color: #000;
+			@include font-type($HelveticaR, 18px, 22px, -1px); color: #000;
 			position: relative; width: 100%; padding-bottom: 20px; margin-bottom: 25px;
 			border-bottom: 3px solid #eff3f5;
 			
@@ -39,14 +39,26 @@
 
 		ul {
 			@extend .row-between-center; width: 100%;
+			@media (min-width: 992px) {
+				display: flex !important;
+			}
+			@include respond-to(md) {
+				display: block; display: none;
+			}
 			li {
+				@include respond-to(md) {
+					width: 100%; margin-bottom: 10px; display: block;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
 				&.active {
 					a {
 						&:after { width: 100%; }
 					}
 				}
 				a {
-					color: $black; font-family: $title; font-size: 18px; line-height: 22px; letter-spacing: -1px;
+					color: $black; font-family: $title; font-size: 18px; line-height: 22px; letter-spacing: -1px; text-align: center;
 					display: block; padding: 10px 0; position: relative;
 					&:hover {
 						text-decoration: none;

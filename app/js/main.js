@@ -485,8 +485,9 @@ var app = function ($) {
       showProfileMenu: function showProfileMenu(event) {
         event.preventDefault();
         $('.tabs-main ul, .tabs-shop ul').toggleClass('active');
-        $('.tabs-company ul').slideToggle();
+        $('.tabs-personal ul, .tabs-company ul').slideToggle();
         $('.js-toggle-menu i').toggleClass('active');
+        console.log(1);
       },
       showThingsMenu: function showThingsMenu(event) {
         event.preventDefault();
@@ -521,10 +522,6 @@ var app = function ($) {
     }
   }); // Инициализируем приложение после загрузки
 }(jQuery);
-
-$(function () {
-  app.run();
-});
 
 $(document).mouseup(function (e) {
   var menuBlock = $(".menu-open"),
@@ -773,8 +770,11 @@ $(document).ready(function () {
     e.preventDefault();
 
     var catalogDrop = $(this).attr('href');
+    $('.js-catalog-dropdown li a').not(this).removeClass('active');
+    $(this).toggleClass('active');
     $('.wr-catalog-dropdown:not(' + catalogDrop + ')').removeClass('active');
     $(catalogDrop).toggleClass('active');
+    $('.wr-catalog-dropdown').hasClass('active') ? $('.wr-catalog-header').addClass('layout') : $('.wr-catalog-header').removeClass('layout');
   });
 
   // catalog filter show hide
@@ -790,6 +790,26 @@ $(document).ready(function () {
 
     $(this).toggleClass('active').next().slideToggle();
   })
+
+  // mobile filters
+  $('.js-filterToggle-mobile, .js-category-toggle').click(function(e) {
+    e.preventDefault();
+
+    var catalogFilterPopup = $(this).attr('href');
+    $('.catalog-popup' + catalogFilterPopup + '-popup').addClass('active');
+    $('body').addClass('on-load');
+  });
+  $('.catalog-popup header a.back').click(function(e) {
+    e.preventDefault();
+
+    $(this).parent().parent().removeClass('active');
+    $('body').removeClass('on-load');
+  });
+  $('.js-listDrop a.drop').click(function(e) {
+    e.preventDefault();
+
+    $(this).toggleClass('active').next().slideToggle();
+  });
 
   // scroll menu
   var header = $(".js-header"),
