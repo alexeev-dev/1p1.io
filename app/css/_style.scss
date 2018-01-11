@@ -31,6 +31,16 @@
 			&.gray {background: $bg-gray;}
 		}
 
+		&-menu-open {
+			position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 5000;
+			background: transparent;
+			pointer-events: none;
+
+			&.active {
+				pointer-events: auto;
+			}
+		}
+
 		&-catalog {
 			padding: 26px 0 79px;
 			&-header {
@@ -103,12 +113,14 @@
 		}
 
 		&-authentication {
+			padding: 50px 0;
 			h1, h2 {
 				font-size: 34px; font-family: $title; line-height: 42px; text-align: center;
+				margin-top: 0;
 			}
 			p {
 				text-align: center;
-				a {
+				a:not(.btn) {
 					color: $brand;
 					&:hover {
 						text-decoration: underline;

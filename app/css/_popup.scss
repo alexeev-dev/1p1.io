@@ -1,0 +1,85 @@
+.popup {
+
+	h3 {
+		font-size: 20px;
+	}
+
+	&-select_charity {
+		.funds-container,
+		.people-container,
+		.projects-container {
+			text-align: center;
+		}
+
+		#funds .fund,
+		#projects .project {
+			display: inline-block;
+			width: 30%;
+			padding: 15px;
+			text-align: center;
+			min-width: 200px;
+			line-height: 14px;
+		}
+
+		#projects .project {
+			width: 100%;
+		}
+
+		#people .person {
+			display: inline-block;
+			width: 45%;
+			padding: 15px;
+			text-align: center;
+			min-width: 200px;
+			.btn {
+				white-space: normal;
+			}
+		}
+
+		#funds .fund img,
+		#projects .project img,
+		#fund-logo img {
+			width: 100%;
+			max-width: 128px;
+			height: auto;
+			border: 2px solid #eee;
+		}
+
+		#fund-logo img,
+		#project-logo img,
+		#people .person img {
+			width: 100%;
+			max-width: 256px;
+			height: auto;
+			border: 2px solid #eee;
+		}
+
+		#funds .fund h3,
+		#projects .project h3,
+		#people .person h3 {
+			font-size: 12px;
+			line-height: 15px;
+		}
+
+		#funds .fund span {
+			font-size: 12px;
+			color: #0a0a0a;
+			line-height: 8px;
+		}
+
+		#fund-description,
+		#project-description,
+		#person-description {
+			margin: 10px 0 0 0;
+		}
+
+		#fund-specialization {
+			font-size: 15px;
+		}
+
+		#select-fund-container, #select-projects-container,
+		#select-project-container, #select-people-container {
+			margin: 10px 0 0 0;
+		}
+	}
+}

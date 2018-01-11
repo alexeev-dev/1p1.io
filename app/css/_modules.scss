@@ -16,7 +16,7 @@
 }
 // форма авторизации
 .login-form {
-	padding-top: 75px; padding-bottom: 75px; display: flex;
+	display: flex;
 	@include respond-to(sm) {padding-top: 50px; padding-bottom: 50px; flex-wrap: wrap;}
 	
 	h1, h2 {
@@ -105,5 +105,9 @@
 		label {
 
 		}
+	}
+
+	.form-actions {
+		text-align: center;
 	}
 }

@@ -528,7 +528,7 @@ $(document).mouseup(function (e) {
       selectBlock = $(".js-selectLists"),
       selectButton = $('.js-selectToogle');
   if (menuBlock.has(e.target).length === 0 && !menuBlock.is(e.target)) {
-    $(menuBlock).removeClass('active');
+    $(menuBlock).parent().removeClass('active');
     $('body').removeClass('on-load');
   }
   if (selectBlock.has(e.target).length === 0 && !selectBlock.siblings('.js-selectToogle').is(e.target)) {
@@ -538,7 +538,7 @@ $(document).mouseup(function (e) {
 });
 
 $(() => { app.run(); });
-$(window).load(function() {
+$(window).on('load', function() {
   $('.preloader').fadeOut();
   $('body').removeClass('on-load');
 });
@@ -582,13 +582,13 @@ $(document).ready(function () {
   var _$$jRange;
 
   $('.js-menu-open').click(function () {
-    $('.menu-open').addClass('active');
+    $('.menu-open').parent().addClass('active');
     $('body').addClass('on-load');
     return false;
   });
 
   $('.menu-close').click(function () {
-    $('.menu-open').removeClass('active');
+    $('.menu-open').parent().removeClass('active');
     $('body').removeClass('on-load');
     return false;
   });
@@ -703,6 +703,32 @@ $(document).ready(function () {
       }
     }
   });
+  $('.js-kids-carousel').owlCarousel({
+    loop: true,
+    nav: true,
+    responsiveClass: true,
+    navText: [, '<i class="fa fa-angle-right"></i>'],
+    responsive: {
+      0: {
+        items: 1,
+        margin: 0
+      },
+      481: {
+        items: 2,
+        margin: 15
+      },
+      600: {
+        items: 3,
+        margin: 15
+      },
+      1000: {
+        items: 4,
+        margin: 20
+      }
+    }
+  });
+
+    navText: [, '<i class="fa fa-angle-right"></i>'],
   $('.JS-members a.btn-white').click(function () {
     owl.trigger('next.owl.carousel');
     return false;
@@ -745,6 +771,8 @@ $(document).ready(function () {
   $('.js-carousel_celebrity').owlCarousel({
     loop: true,
     responsiveClass: true,
+    nav: true,
+    navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
     responsive: {
       0: {
         items: 1,

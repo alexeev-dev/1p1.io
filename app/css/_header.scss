@@ -15,7 +15,7 @@ $header-height: 65px;
 	}
 
 	a.logo {
-		height: 100%; @extend .column-center-center;
+		height: 100%; @extend .column-center-center; margin-top: 0;
 		@extend .icon; @extend .logo-blue; position: relative;
 
 		span {
@@ -109,12 +109,18 @@ $header-height: 65px;
 }
 
 nav.menu-open {
-	width: 510px; height: 100vh; margin-right: -24px; overflow-y: scroll;
+	width: 430px; height: 100vh; margin-right: -24px;
 	position: fixed; top: 0; right: 0; z-index: 5000;
 	background: $bg-gray;
 
 	transition: transform 0.3s ease-out; 
-	transform: translateX(100%); &.active {transform: translateX(0);}
+	transform: translateX(100%);
+
+	@include respond-to(xs) {width: calc(100% + 24px);}
+
+	.active & {
+		transform: translateX(0);
+	}
 
 
 	a.menu-close {
@@ -132,40 +138,50 @@ nav.menu-open {
 		&:after {transform: rotate(-45deg);}
 	}
 
-	& > ul > li {
-		border-bottom: 1px solid $border;
-
-		a {
-			display: block; color: $black; @extend .title-bold-primary; padding: $size-base $size-m;
-			&:hover {background: $selected; text-decoration: none;}
-		}   &.active {a {background: $selected; text-decoration: none; &:hover {cursor: default;}}}
-
-		&.languages, &.login {
-			padding: $size-base $size-m;
+	& > ul {
+		overflow-y: auto; max-height: 100%;
+		& > li {
+			border-bottom: 1px solid $border;
 
 			a {
-				display: inline-block; padding: 0; position: relative;
-				&:hover {background: transparent; text-decoration: underline !important;}
+				display: block; color: $black; @extend .title-bold-primary; padding: $size-base $size-m;
+				&:hover {
+					background: $selected; text-decoration: none;
+				}
+			}
+			&.active {
+				a {
+					background: $selected; text-decoration: none;
+					&:hover {cursor: default;}
+				}
+			}
 
-				&:first-child {
-					padding-right: $size-base;
+			&.languages, &.login {
+				padding: $size-base $size-m;
 
-					&:after {
-						display: block; text-align: center; 
-						width: 15px; height: 100%; 
-						position: absolute; top: 0; right: 0;
+				a {
+					display: inline-block; padding: 0; position: relative;
+					&:hover {background: transparent; text-decoration: underline !important;}
+
+					&:first-child {
+						padding-right: $size-base;
+
+						&:after {
+							display: block; text-align: center; 
+							width: 15px; height: 100%; 
+							position: absolute; top: 0; right: 0;
+						}
 					}
 				}
 			}
-		}
-		&.login {a {&:first-child {&:after {content: '/';}}}}
-		&.languages {
-			a, span {color: $font-light_1; opacity: 0.5;}
-			a {&:first-child {&:after {content: '|';}}}
+			&.login {a {&:first-child {&:after {content: '/';}}}}
+			&.languages {
+				a, span {color: $font-light_1; opacity: 0.5;}
+				a {&:first-child {&:after {content: '|';}}}
+			}
 		}
 	}
 
-	@include respond-to(sm) {width: calc(100% + 24px);}
 }
 
 

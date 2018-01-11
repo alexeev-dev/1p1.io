@@ -17,8 +17,9 @@
 			</a>
 		</nav>
 	</header>
-	<nav class="menu-open">
-		<ul>
+	<div class="wr-menu-open">
+		<nav class="menu-open">
+			<ul>
 			<!--li class="languages">
 				<a href="#">Ru</a>
 				<a href="#">Eng</a>
@@ -33,18 +34,19 @@
 				{% else %}
 					<a href="{{ path('fos_user_registration_register') }}">Регистрация</a>
 					<a href="{{ path('fos_user_security_login') }}">Войти</a>
-				{% endif %#}
-			</li>
-			<li><a href="{{ path('market_home') }}">Купить</a></li>
-			<li><a href="{{ path('market_add') }}">Продать</a></li>
-			<li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
-			<li><a href="{{ path('funds') }}">Фонды</a></li>
-			<li><a href="/news">Новости</a></li>
-			<li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
-			{#<li><a href="#">Поиск по сайту</a></li>#}
-		</ul>
-		<a href="#" class="menu-close"></a>
-	</nav>
+					{% endif %#}
+				</li>
+				<li><a href="{{ path('market_home') }}">Купить</a></li>
+				<li><a href="{{ path('market_add') }}">Продать</a></li>
+				<li><a href="{{ path('page', {'slug': 'about'}) }}">О проекте</a></li>
+				<li><a href="{{ path('funds') }}">Фонды</a></li>
+				<li><a href="/news">Новости</a></li>
+				<li><a target="_blank" href="https://oneplus1.io/">Инвесторам</a></li>
+				{#<li><a href="#">Поиск по сайту</a></li>#}
+			</ul>
+			<a href="#" class="menu-close"></a>
+		</nav>
+	</div>
 
 	<div class="wr-catalog-nav">
 		<div class="container">
