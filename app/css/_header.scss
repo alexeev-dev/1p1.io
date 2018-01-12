@@ -186,3 +186,104 @@ nav.menu-open {
 
 
 
+// header new
+.header-new {
+	display: flex; justify-content: space-between; align-items: center; height: $header-height;
+	a.logo {
+		height: 100%; @extend .column-center-center; margin-top: 0;
+		@extend .icon; @extend .logo-blue; position: relative;
+
+		span {
+			display: none;
+			padding-left: $size-base;
+			@extend .absoluteY; left: $size-xl * 2;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 2px; height: 25px; background: $white;
+				@extend .absoluteY; left: 0;
+			}
+		}
+	}
+
+	form {
+		position: relative; width: 602px;
+		input {
+			color: $black; font-family: $title; font-size: 15px; line-height: 17px;
+			width: 100%; height: 40px; padding: 0 50px 0 12px;
+			background: #f5f2f7; border: 1px solid #d9deea;
+			&::-webkit-input-placeholder {color:#89a1b3;}
+			&::-moz-placeholder {color:#89a1b3;}/* Firefox 19+ */
+			&:-moz-placeholder {color:#89a1b3;}/* Firefox 18- */
+			&:-ms-input-placeholder {color:#89a1b3;}
+		}
+		button {
+			display: flex; align-items: center; position: absolute; right: 0; top: 0; height: 100%; padding: 0 14px;
+			background: transparent;
+			cursor: pointer;
+			&:hover {
+				i {
+					opacity: 1;
+				}
+			}
+			i {
+				opacity: 0.8;
+				&.search-gray {
+					&:before {
+						background: url('../img/icons/search-gray.svg') center center no-repeat;
+					}
+				}
+			}
+		}
+	}
+
+	nav {
+		display: flex; align-items: center; height: 100%;
+		ul {
+			display: flex; height: 100%;
+			@include respond-to(sm) {
+				display: none;
+			}
+			li {
+				margin-right: 43px; height: 100%;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+					color: $black; font-family: $title; font-size: 16px; line-height: 20px;
+					height: 100%; display: flex; align-items: center;
+					transition: 0.3s ease-out;
+					&:hover {
+						color: $brand;
+					}
+				}
+			}
+		}
+		a.user {
+			display: block; width: 32px; height: 32px; position: relative; margin-left: 41px;
+			background-color: #f5f2f7; border-radius: 50%;
+			overflow: hidden;
+			img {
+				max-width: 100%; max-height: 100%;
+				position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+			}
+		}
+		a.burger {
+			display: block; width: 25px; height: 25px; position: relative; margin-left: 32px;
+			span {
+				display: block; width: 19px; height: 2px; position: absolute; left: 50%; transform: translateX(-50%);
+				background: #b2b2b2;
+				&:first-child {
+					top: 4px;
+				}
+				&:nth-child(2), &:nth-child(3) {
+					top: 11px;
+				}
+				&:last-child {
+					top: 18px;
+				}
+			}
+		}
+	}
+}

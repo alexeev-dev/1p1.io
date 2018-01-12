@@ -796,10 +796,13 @@ $(document).ready(function () {
   // new catalog dropdown menu
   $('.js-catalog-dropdown li a').click(function(e) {
     e.preventDefault();
+  });
+  $('.js-catalog-dropdown li a, .wr-catalog-dropdown').hover(function(e) {
+    e.preventDefault();
 
     var catalogDrop = $(this).attr('href');
     $('.js-catalog-dropdown li a').not(this).removeClass('active');
-    $(this).toggleClass('active');
+    $(this).addClass('active');
     $('.wr-catalog-dropdown:not(' + catalogDrop + ')').removeClass('active');
     $(catalogDrop).toggleClass('active');
     $('.wr-catalog-dropdown').hasClass('active') ? $('.wr-catalog-header').addClass('layout') : $('.wr-catalog-header').removeClass('layout');
@@ -816,7 +819,7 @@ $(document).ready(function () {
   $('.js-catalog-filter > li > a:not(.reset)').click(function(e) {
     e.preventDefault(e);
 
-    $(this).toggleClass('active').next().slideToggle();
+    $(this).toggleClass('active').next().slideToggle(200);
   })
 
   // mobile filters
@@ -837,6 +840,14 @@ $(document).ready(function () {
     e.preventDefault();
 
     $(this).toggleClass('active').next().slideToggle();
+  });
+
+  // tags toggle
+  $('.js-tagsToggle li a').click(function(e) {
+    e.preventDefault();
+
+    $('.js-tagsToggle li a').removeClass('active');
+    $(this).addClass('active');
   });
 
   // scroll menu

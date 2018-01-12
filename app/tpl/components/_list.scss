@@ -44,6 +44,11 @@ article {
 			}
 			section {
 				padding: 15px $size-base 0;
+				h2 {
+					a {
+						color: inherit; font-size: inherit; font-family: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit;
+					}
+				}
 				ul {
 					@extend .row-start-center; 
 					&.posted, &.tags {
@@ -58,7 +63,6 @@ article {
 						}
 					} 
 					&.tags {
-						margin-left: -$size-xs;
 						li {
 							margin-right: $size-xs;
 							a {
@@ -711,7 +715,8 @@ article {
 					}
 				}
 				.status {
-					width: 19.69656%;
+					font-family: $text; font-size: 16px; line-height: 24px; letter-spacing: 0.8px;
+					width: 19.69656%; display: flex; align-items: center; justify-content: center;
 					&.auction {
 						p {
 							font-family: $title; font-size: 15px;

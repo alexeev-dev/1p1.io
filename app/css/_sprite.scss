@@ -6,7 +6,7 @@
       display: inline-block;
       background-image: url("../img/sprite.svg");
       background-repeat: no-repeat;
-      background-size: 13.7em 50.8em;
+      background-size: 13.7em 52.3em;
 
       .no-svg & {
         background-image: url("../img/sprite.png");
@@ -251,9 +251,22 @@
   }
 
 
-.icon.search-white {
+.icon.search-gray {
   &:before {
       background-position: 0em -43.2em;
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  @mixin icon-search-gray(){
+    @extend .search-gray;
+  }
+
+
+.icon.search-white {
+  &:before {
+      background-position: 0em -44.7em;
       width: 1.5em;
       height: 1.5em;
     }
@@ -266,7 +279,7 @@
 
 .icon.seen {
   &:before {
-      background-position: 0em -44.7em;
+      background-position: 0em -46.2em;
       width: 1.4em;
       height: 1.1em;
     }
@@ -279,7 +292,7 @@
 
 .icon.shops-small {
   &:before {
-      background-position: 0em -45.8em;
+      background-position: 0em -47.3em;
       width: 1.9em;
       height: 1.9em;
     }
@@ -292,7 +305,7 @@
 
 .icon.time {
   &:before {
-      background-position: 0em -47.7em;
+      background-position: 0em -49.2em;
       width: 1.3em;
       height: 1.3em;
     }
@@ -305,7 +318,7 @@
 
 .icon.users-small {
   &:before {
-      background-position: 0em -49em;
+      background-position: 0em -50.5em;
       width: 1.6em;
       height: 1.8em;
     }

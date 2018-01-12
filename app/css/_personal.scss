@@ -160,4 +160,31 @@
 			}
 		}
 	}
+
+	&-documents {
+		& > * {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		h5 {
+			font-size: 14px; font-family: $HelveticaH; line-height: 18px;
+			margin-bottom: 10px;
+		}
+		ul {
+			margin-bottom: 20px;
+			li {
+				margin-bottom: 5px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				a {
+					font-size: 14px; font-family: $HelveticaR; line-height: 18px;
+					&:hover {
+						color: $black;
+					}
+				}
+			}
+		}
+	}
 }

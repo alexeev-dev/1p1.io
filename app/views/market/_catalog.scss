@@ -33,19 +33,22 @@
 		& > ul {
 			@extend .row-start-center; height: 100%;
 			& > li {
-				height: 100%; display: flex; align-items: center; margin-right: 30px;
+				height: 100%; display: flex; align-items: center;
 				&:first-child {
 					width: 230px; flex-shrink: 0; border-right: 1px solid #d9deea;
+					a {
+						width: 100%; padding-left: 0;
+					}
 				}
 				&:last-child {
 					margin-right: 0;
 				}
 				a {
-					color: $black; font-family: $text; font-size: 15px; line-height: 17px;
-					display: inline-block; padding-right: 17px; position: relative;
+					color: $black; font-family: $HelveticaR; font-size: 15px; line-height: 17px;
+					display: flex; height: 100%; align-items: center; padding: 0 30px 1px; position: relative; margin-bottom: -1px;
 					&:after {
 						content: '';
-						display: block; width: 7px; height: 7px; position: absolute; right: 0; top: 50%; transform: translateY(-75%) rotate(45deg);
+						display: block; width: 7px; height: 7px; position: absolute; right: 13px; top: 50%; transform: translateY(-75%) rotate(45deg);
 						border-right: 2px solid #89a1b3; border-bottom: solid 2px #89a1b3;
 					}
 
@@ -63,6 +66,7 @@
 
 		.select {
 			& > a {
+				font-family: $HelveticaR; font-size: 15px;
 				padding-right: 17px;
 				&:after {
 					content: '';
@@ -74,6 +78,13 @@
 				&.active {
 					&:after {
 						transform: translateY(-25%) rotate(-135deg);
+					}
+				}
+			}
+			ul {
+				li {
+					a {
+						font-family: $HelveticaR; font-size: 15px; letter-spacing: 0;
 					}
 				}
 			}
@@ -165,10 +176,11 @@
 			}
 			& > li {
 				a {
-					color: $black; font-family: $text; font-size: 14px; line-height: 22px; letter-spacing: 0.2px;
+					color: $black; font-family: $HelveticaR; font-size: 14px; line-height: 22px; letter-spacing: 0.2px;
 					display: block; padding: 16px 21px 13px;
 					&:hover {
 						color: $brand;
+						background: #f7fafd;
 					}
 				}
 			}
@@ -207,7 +219,7 @@
 						}
 						ul {
 							li {
-								color: $black; font-family: $text; font-size: 14px; line-height: 20px; letter-spacing: 0.4px;
+								color: $black; font-family: $HelveticaR; font-size: 14px; line-height: 20px; letter-spacing: 0.4px;
 							}
 						}
 					}
@@ -220,13 +232,13 @@
 					margin-bottom: 12px;
 				}
 				p {
-					color: $black; font-family: $text; font-size: 14px; line-height: 20px; letter-spacing: 0.3px;
+					color: $black; font-family: $HelveticaR; font-size: 14px; line-height: 20px; letter-spacing: 0.3px;
 					margin-bottom: 5px;
 				}
 			}
 			footer {
 				a {
-					color: $black; font-family: $text; font-size: 15px; line-height: 17px;
+					color: $black; font-family: $HelveticaR; font-size: 15px; line-height: 17px;
 					position: relative; display: inline-block; padding-right: 15px;
 					&:after {
 						content: '';
@@ -268,7 +280,7 @@
 			}
 		}
 		a {
-			color: $black; font-family: $text; font-size: 15px; line-height: 18px; letter-spacing: 0.4px;
+			color: $black; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.4px;
 			display: inline-block;
 		}
 		& > a {
@@ -317,6 +329,7 @@
 					}
 					&.active {
 						background: $bg-gray;
+						pointer-events: none;
 					}
 				}
 			}
@@ -332,13 +345,13 @@
 		}
 		& > ul {
 			& > li {
-				@extend .column-start-start; padding: 21px 24px 20px; width: 278px;
+				@extend .column-start-start; width: 278px;
 				border-bottom: 1px solid #e4e4e4;
 				&:last-child {
 					border-bottom: none;
 				}
-				&.price {
-					 padding: 27px 24px 19px;
+				.price {
+					padding: 27px 24px 19px;
 				}
 				& > * {
 					&:last-child {
@@ -355,7 +368,7 @@
 					}
 				}
 				label {
-					color: #79879e; font-family: $text; font-size: 15px; line-height: 18px; letter-spacing: 0.4px;
+					color: #79879e; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.4px;
 					display: inline-block; margin-bottom: 22px; padding-left: 24px; position: relative;
 					cursor: pointer;
 					&:before {
@@ -368,18 +381,18 @@
 				.price-range {
 					@extend .row-between-center; width: 100%; padding-top: 3px;
 					input[type=text] {
-						color: #79879e; font-family: $text; font-size: 15px; line-height: 28px; letter-spacing: 0.67px;
+						color: #79879e; font-family: $HelveticaR; font-size: 15px; line-height: 28px; letter-spacing: 0.67px;
 						height: 40px; width: calc(50% - 10px); padding: 10px 10px 2px;
 						background: $bg-gray; border-radius: 4px;
 					}
 				}
 
 				a {
-					color: $black; font-family: $text; font-size: 15px; line-height: 18px; letter-spacing: 0.2px;
-					display: inline-block; padding-left: 24px; position: relative;
+					color: $black; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.2px;
+					display: block; width: 100%; padding: 21px 24px 20px 48px; position: relative;
 					&:before {
 						content: '';
-						display: block; width: 7px; height: 7px; position: absolute; left: 1px; top: 50%; transform: translateY(-75%) rotate(45deg);
+						display: block; width: 7px; height: 7px; position: absolute; left: 25px; top: 50%; transform: translateY(-75%) rotate(45deg);
 						border-right: 2px solid $black; border-bottom: solid 2px $black;
 						opacity: 0.2;
 					}
@@ -391,7 +404,7 @@
 					&.reset {
 						&:before, &:after {
 							content: '';
-							display: block; width: 10px; height: 2px; position: absolute; left: 0; top: 50%;
+							display: block; width: 10px; height: 2px; position: absolute; left: 24px; top: 50%;
 							background: #79879e; border: none;
 							opacity: 1;
 						}
@@ -405,7 +418,7 @@
 				}
 
 				ul {
-					padding-top: 22px; display: none;
+					padding: 5px 24px 20px; display: none;
 					li {
 						margin-bottom: 15px;
 						&:last-child {

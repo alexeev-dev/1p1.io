@@ -483,6 +483,40 @@
 						}
 					}
 				}
+				.complete-btn {
+					font-family: $title; 
+					@extend .row-center-center;
+					@include respond-to(sm) {text-align: center;}
+					li {
+						width: 50%;
+						.btn {
+							font-family: $title;
+							margin-right: 33px; padding: 15px 28px;
+							@include respond-to(sm) {
+								margin-bottom: 20px; margin-right: 0;
+							}
+						}
+						a:not(.btn) {
+							font-size: 16px;
+							position: relative;
+
+							&:before, &:after {
+								content: ''; 
+								display: block; height: 3px; width: 0; position: absolute; bottom: -10px; 
+								background: $link-color;
+								transition: width 0.3s ease-in-out;
+							} 
+							&:before {right: 50%;}
+							&:after {left: 50%;}
+
+							&:hover {
+								&:before {width: 50%;}
+								&:after {width: 50%;}
+
+							}
+						}
+					}
+				}
 			}
 		}
 	}	
