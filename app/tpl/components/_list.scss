@@ -904,8 +904,9 @@ ul.list {
 		}
 
 		&-goods {
+			overflow-x: auto;
 			& > li {
-				margin-bottom: 10px;
+				margin-bottom: 10px; min-width: 950px;
 				&:last-child {
 					margin-bottom: 0;
 				}

@@ -1,15 +1,21 @@
 .personal {
 	&-info {
 		@extend .row-start-center; padding: 70px 0 40px;
-		@include respond-to(md) {
-			flex-wrap: wrap; justify-content: flex-end;
+		@include respond-to(sm) {
+			flex-wrap: wrap; justify-content: flex-end; padding-top: 60px;
+		}
+		@include respond-to(xs) {
+			flex-wrap: nowrap; flex-direction: column; align-items: flex-start; padding-top: 45px;
 		}
 		figure {
 			width: 119px; height: 119px; flex-shrink: 0; margin-right: 40px;
 			border: 1px solid #dae2ea; border-radius: 50%;
 			overflow: hidden;
-			@include respond-to(md) {
+			@include respond-to(sm) {
 				order: 1;
+			}
+			@include respond-to(xs) {
+				margin-right: 0; margin-bottom: 15px;
 			}
 			img {
 				width: 100%;
@@ -17,8 +23,11 @@
 		}
 		section {
 			width: 100%; flex-shrink: 1;
-			@include respond-to(md) {
+			@include respond-to(sm) {
 				width: calc(100% - 159px); order: 2;
+			}
+			@include respond-to(xs) {
+				width: 100%;
 			}
 			h1 {
 				font-size: 34px; font-family: $title; line-height: 38px;
@@ -47,8 +56,20 @@
 			}
 			ul {
 				@extend .row-start-center;
+				@include respond-to(md) {
+					flex-wrap: wrap;
+				}
 				li {
 					margin-right: 40px;
+					@include respond-to(md) {
+						width: 100%; margin-right: 0; margin-bottom: 10px;
+					}
+					&:last-child {
+						margin-right: 0;
+						@include respond-to(md) {
+							margin-bottom: 0;
+						}
+					}
 					p {
 						font-size: 24px; font-family: $title;
 						display: inline-block; margin: 0;
@@ -63,8 +84,11 @@
 
 		a.donation {
 			@extend .row-end-center; flex-shrink: 0; align-self: flex-start; position: relative; top: -40px;
-			@include respond-to(md) {
+			@include respond-to(sm) {
 				order: 0; top: 0; margin-bottom: 20px; width: 100%;
+			}
+			@include respond-to(xs) {
+				align-self: flex-end;
 			}
 			&:hover {
 				p {

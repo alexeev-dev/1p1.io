@@ -30,7 +30,7 @@
 			transition: max-height 0.7s linear;
 			@include respond-to(md) {
 				flex-direction: column;
-				border-bottom: none; @include slide_me();
+				border-bottom: none;
 			}
 
 			li {

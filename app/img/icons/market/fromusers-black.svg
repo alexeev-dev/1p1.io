@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="45px" viewBox="0 0 40 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>user copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="1-Main-Copy-49" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-121.000000, -501.000000)" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group-8" transform="translate(60.000000, 502.000000)" stroke="#000000" stroke-width="1.5">
+            <g id="user-copy" transform="translate(62.000000, 0.000000)">
+                <path d="M38,43 L38,38.3333333 C38,33.1786757 33.7467051,29 28.5,29 L9.5,29 C4.25329488,29 0,33.1786757 0,38.3333333 L0,43" id="Shape"></path>
+                <circle id="Oval" cx="18.5" cy="9.5" r="9.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
