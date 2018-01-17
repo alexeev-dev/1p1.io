@@ -4,7 +4,7 @@
 	&-seller_info {
 		display: none;
 		max-width: 480px; padding: 25px;
-		background: rgba(192,209,221,0.9); border-radius: 4px;
+		background: $white; border-radius: 4px;
 
 		figure {
 			text-align: center;
@@ -15,11 +15,34 @@
 	
 				h3 {color: #000; @include font-type($title, 22px, 32px, 0px);}
 				p {color: #000; @include font-type($text, 16px, 24px, 0.5px);}
-				address {margin-bottom: 0;}
+				address {
+					font-size: 14px; font-family: $text; line-height: 1.42857143; letter-spacing: 0;
+					margin-bottom: 0;
+					a {
+						color: $brand; font-size: inherit; font-family: inherit; line-height: inherit; letter-spacing: inherit;
+						&:hover {
+							color: $black;
+						}
+					}
+				}
 			}
 		}
 
-		a.b-close {position: absolute; right: 15px; top: 15px;}
+		a.b-close {
+			position: absolute; right: 15px; top: 15px;
+			display: block; width: 28px; height: 28px;
+			&:before, &:after {
+				content: '';
+				display: block; width: 40px; height: 4px; position: absolute; left: 50%; top: 50%;
+				background: #9ca8ae;
+			}
+			&:before {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+			&:after {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		}
 
 		@include respond-to(sm) {max-width: 100%;}
 	}
@@ -137,6 +160,89 @@
 		ul li a {
 			border: solid 1px transparent; transition: 0.2s ease-out;
 			&:hover {border: solid 1px #4489ff;}
+		}
+	}
+
+	h3 {
+		font-size: 20px;
+	}
+
+	&-select_charity {
+		.funds-container,
+		.people-container,
+		.projects-container {
+			text-align: center;
+		}
+
+		#funds .fund,
+		#projects .project {
+			display: inline-block;
+			width: 30%;
+			padding: 15px;
+			text-align: center;
+			min-width: 200px;
+			line-height: 14px;
+		}
+
+		#projects .project {
+			width: 100%;
+		}
+
+		#people .person {
+			display: inline-block;
+			width: 45%;
+			padding: 15px;
+			text-align: center;
+			min-width: 200px;
+			.btn {
+				white-space: normal;
+			}
+		}
+
+		#funds .fund img,
+		#projects .project img,
+		#fund-logo img {
+			width: 100%;
+			max-width: 128px;
+			height: auto;
+			border: 2px solid #eee;
+		}
+
+		#fund-logo img,
+		#project-logo img,
+		#people .person img {
+			width: 100%;
+			max-width: 256px;
+			height: auto;
+			border: 2px solid #eee;
+		}
+
+		#funds .fund h3,
+		#projects .project h3,
+		#people .person h3 {
+			font-size: 12px;
+			line-height: 15px;
+		}
+
+		#funds .fund span {
+			font-size: 12px;
+			color: #0a0a0a;
+			line-height: 8px;
+		}
+
+		#fund-description,
+		#project-description,
+		#person-description {
+			margin: 10px 0 0 0;
+		}
+
+		#fund-specialization {
+			font-size: 15px;
+		}
+
+		#select-fund-container, #select-projects-container,
+		#select-project-container, #select-people-container {
+			margin: 10px 0 0 0;
 		}
 	}
 }

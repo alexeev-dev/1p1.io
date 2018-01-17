@@ -20,7 +20,7 @@
 			}
 		}
 		& > a {
-			@include font-type ($text, 26px, 32px, 0); color: #000;
+			@include font-type ($text, 16px, 24px, 0); color: #000;
 			i {border-color: #afaba1; top: 12px;}
 		}
 		& > div.active {

@@ -108,14 +108,15 @@
 	}
 	
 	&-proc {
-		display: flex; justify-content: space-between;
+		display: flex; justify-content: space-between; width: 100%; position: relative; margin-bottom: 20px; padding: 43px 20px 20px;
 		@extend .box-filled-light-3; box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.075);
 		&:hover {
 			box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.075);
 		}
-		@include respond-to(md) {flex-direction: column;}
-
-		width: calc(100% + 3px); position: relative; margin-bottom: 20px; padding: 43px 20px 20px;
+		@include respond-to(md) {flex-direction: column; padding: 43px 30px 20px;}
+		@include respond-to(xs) {
+			padding: 30px 15px 20px;
+		}
 		& > * {
 			opacity: 0.3; pointer-events: none;
 			transition: .5s all ease;
@@ -129,16 +130,18 @@
 		h3 {
 			@include font-type($title, 34px, 42px, 0); color: #000;
 			position: relative; margin-bottom: 29px;
+			@include respond-to(sm) {
+				padding-left: 0;
+			}
 			@include respond-to(xs) {
 				font-size: 26px; line-height: 28px;
-				padding-left: 30px;
 			}
 		}
 		
 		header {
 			padding-left: 60px; width: 44%;
-			@include respond-to(md) {width: 100%; margin-bottom: 30px;}
-			@include respond-to(xs) {padding-left: 0;}
+			@include respond-to(md) {width: 100%; margin-bottom: 30px; padding-left: 0;}
+			@include respond-to(xs) {}
 
 			h3 {
 				span {
@@ -209,7 +212,7 @@
 
 		section {
 			width: 61%; position: relative;
-			@include respond-to(md) {width: 100%; padding-left: 40px;}
+			@include respond-to(md) {width: 100%; padding-left: 0;}
 			@include respond-to(xs) {padding-left: 0;}
 
 			.form {
@@ -220,6 +223,9 @@
 					padding-top: 27px; padding-bottom: 0; margin-bottom: 13px;
 					label {
 						// @include font-type($text, 18px, 28px, 1px); color: #000;
+						@include respond-to(sm) {
+							left: 1px;
+						}
 					}
 
 				}
@@ -231,21 +237,26 @@
 					@include respond-to(sm) {display: block; text-align: center;}
 
 					li {
+						margin-right: 30px;
+						@include respond-to(sm) {
+							margin-right: 0; margin-bottom: 5px;
+						}
 						&:last-child {
+							margin-right: 0;
 							& > * {
 								margin-right: 0;
 							}
 						}
 						.btn {
 							text-align: center;
-							margin-right: 40px; left: 3px; right: auto; padding: 12px 0; display: inline-block;
-							@include respond-to(sm) {
-								display: inline-block; margin-right: 0;
+							left: 3px; right: auto; padding: 12px 0; display: inline-block;
+							@include respond-to(xs) {
+								width: 100%;
 							}
 						}
 						a {
 							@include font-type($title, 16px, 1, 0); color: $link-color;
-							position: relative; padding-top: 3px; margin-right: 30px;
+							position: relative; padding-top: 3px;
 							@include respond-to(sm) {display: inline-block;}
 
 							&:after {
@@ -469,6 +480,40 @@
 							&:before {width: 50%;}
 							&:after {width: 50%;}
 
+						}
+					}
+				}
+				.complete-btn {
+					font-family: $title; 
+					@extend .row-center-center;
+					@include respond-to(sm) {text-align: center;}
+					li {
+						width: 50%;
+						.btn {
+							font-family: $title;
+							margin-right: 33px; padding: 15px 28px;
+							@include respond-to(sm) {
+								margin-bottom: 20px; margin-right: 0;
+							}
+						}
+						a:not(.btn) {
+							font-size: 16px;
+							position: relative;
+
+							&:before, &:after {
+								content: ''; 
+								display: block; height: 3px; width: 0; position: absolute; bottom: -10px; 
+								background: $link-color;
+								transition: width 0.3s ease-in-out;
+							} 
+							&:before {right: 50%;}
+							&:after {left: 50%;}
+
+							&:hover {
+								&:before {width: 50%;}
+								&:after {width: 50%;}
+
+							}
 						}
 					}
 				}

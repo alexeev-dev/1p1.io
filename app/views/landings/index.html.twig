@@ -136,73 +136,81 @@
 		<div class="container">
 			<ul class="list-promotion">
 				<li>
-					<article class="promotion">
-						<header>
-							<p>
-								<i class="fa fa-angle-right"></i>
-								43
-								<span>000 000</span>
-							</p>
-						</header>
-						<section>
-							<p>
-								Звёздных<br>
-								товаров
-							</p>
-						</section>
-					</article>
+					<a href="#">
+						<article>
+							<header>
+								<p>
+									<i class="fa fa-angle-right"></i>
+									43
+									<span>000 000</span>
+								</p>
+							</header>
+							<section>
+								<p>
+									Звёздных<br>
+									товаров
+								</p>
+							</section>
+						</article>
+					</a>
 				</li>
 				<li>
-					<article class="promotion">
-						<header>
-							<p>
-								<i class="fa fa-angle-right"></i>
-								86
-								<span>000</span>
-								
-							</p>
-						</header>
-						<section>
-							<p>
-								Программ<br>
-								различных фондов
-							</p>
-						</section>
-					</article>
+					<a href="#">
+						<article>
+							<header>
+								<p>
+									<i class="fa fa-angle-right"></i>
+									86
+									<span>000</span>
+
+								</p>
+							</header>
+							<section>
+								<p>
+									Программ<br>
+									различных фондов
+								</p>
+							</section>
+						</article>
+					</a>
 				</li>
 				<li>
-					<article class="promotion">
-						<header>
-							<p>
-								<i class="fa fa-angle-right"></i>
-								48
-								<span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
-							</p>
-						</header>
-						<section>
-							<p>
-								Фондов<br>
-								присоединились
-							</p>
-						</section>
-					</article>
+					<a href="#">
+						<article>
+							<header>
+								<p>
+									<i class="fa fa-angle-right"></i>
+									48
+									<span><i class="fa fa-heart-o" aria-hidden="true"></i></span>
+								</p>
+							</header>
+							<section>
+								<p>
+									Фондов<br>
+									присоединились
+								</p>
+							</section>
+						</article>
+					</a>
 				</li>
 				<li>
-					<article class="promotion">
-						<header>
-							<p>
-								<i class="fa fa-angle-right"></i>
-								22
-								<span>000</span>
-							</p>
-						</header>
-						<section>
-							<p>
-								Фондов<br>
-								присоединились
-							</p>
-						</section>
-					</article>
+					<a href="#">
+						<article>
+							<header>
+								<p>
+									<i class="fa fa-angle-right"></i>
+									22
+									<span>000</span>
+								</p>
+							</header>
+							<section>
+								<p>
+									Фондов<br>
+									присоединились
+								</p>
+							</section>
+						</article>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -511,10 +519,9 @@
 
 	<div class="wrapper">
 		<div class="container">
-			<section class="members JS-members">
-				<a href="#" class="show-onemore"><i class="fa fa-angle-right"></i></a>
+			<section class="joined JS-members">
 				<h2 class="title-little">Уже присоединились</h2>
-				<ul class="owl-carousel js-owl-carousel">
+				<ul class="owl-carousel js-kids-carousel">
 					<li><a href="#"><img src="{{ asset('img/index/joined1.png') }}" alt=""></a></li>
 					<li><a href="#"><img src="{{ asset('img/index/joined.png') }}" alt=""></a></li>
 					<li><a href="#"><img src="{{ asset('img/index/joined.png') }}" alt=""></a></li>
@@ -1130,5 +1137,4 @@
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript" src="{{ asset('js/main-new.js') ~ codeRevisionPostfix }}"></script>
 {% endblock %}

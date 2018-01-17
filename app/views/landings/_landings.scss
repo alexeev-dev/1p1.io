@@ -656,6 +656,28 @@
 				p {left: 10px;}
 			}
 
+			article {
+				@extend .promotion;
+			}
+			a {
+				&:hover {
+					article {
+						header {
+							p {
+								i {
+									left: -15px;
+								}
+							}
+						}
+						section {
+							p {
+								color: $brand;
+							}
+						}
+					}
+				}
+			}
+
 			.dobro & {
 				@include respond-to(sm) {width: 100%;}	
 			}
@@ -752,6 +774,7 @@
 			& > i {
 				color: $brand; font-size: 24px; font-weight: 600;
 				position: absolute; top: 25px; left: -19px;
+				transition: 0.3s ease-out;
 				.pet & {color: #96be46;}
 				.children & {color: #E8B194;}
 				.art &, .fashion & {color: #000;}
@@ -767,6 +790,7 @@
 	section {
 		p {
 			@include font-type($text, 16px, 22px, 0.5px); text-align: center; color: #000;
+			transition: 0.3s ease-out;
 		}
 	}
 }
@@ -1279,6 +1303,16 @@
 					span {color: #000000; @include font-type($title, 12px, 16px, 0px); display: block; opacity: 0.7;}
 				}
 			}
+
+			.owl-carousel {
+				.owl-nav {
+					position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+					@extend .row-between-center; width: 100%;
+					.owl-prev, .owl-next {
+						padding: 5px;
+					}
+				}
+			}
 		}
 	}
 }
@@ -1379,15 +1413,27 @@
 		padding-top: 11px; margin-bottom: 50px;
 	}
 
-	.btn {
-		position: absolute; right: -45px; top: 50%; transform: translateY(-50%); z-index: 2;
-		@include respond-to(1299px) {
-			right: 0;
-		}
-		@include respond-to(sm) {
-			position: relative; top: 0; transform: none; margin-top: 15px;
+	.owl-carousel {
+		.owl-nav {
+			display: block; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+			.owl-prev {
+				display: none;
+			}
+			.owl-next {
+				padding: 5px;
+			}
 		}
 	}
+
+	// .btn {
+	// 	position: absolute; right: -45px; top: 50%; transform: translateY(-50%); z-index: 2;
+	// 	@include respond-to(1299px) {
+	// 		right: 0;
+	// 	}
+	// 	@include respond-to(sm) {
+	// 		position: relative; top: 0; transform: none; margin-top: 15px;
+	// 	}
+	// }
 }
 
 // http://prntscr.com/hwbltc

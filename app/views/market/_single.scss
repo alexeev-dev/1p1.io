@@ -121,9 +121,6 @@
 				text-align: left;
 				width: 100%; margin-bottom: 10px; 
 				background-size: cover; background-position: center;
-				@include respond-to(sm) {
-					display: none;
-				}
 				&:first-child {display: block;}
 				&:last-child {margin-bottom: 0;}
 
@@ -301,13 +298,19 @@
 					&-operations {
 						margin-bottom: 59px; padding: 24px 0 0; clear: both; outline: none;
 						border-top: 1px solid #f2f2f2; border-bottom: 1px solid #f2f2f2;
+						@include respond-to(md) {
+							display: flex; flex-direction: column; align-items: center;
+						}
 						
 						.btn {
 							@include font-type($title, 16px, 1, 0.2px); text-align: center;
-							width: 218px; padding: 20px 0; margin-right: 57px; margin-bottom: 20px; display: inline-block;
+							width: 218px; padding: 20px 30px; margin-right: 57px; margin-bottom: 20px; display: inline-block;
 							outline: none;
 							@include respond-to(md) {
-								width: 100%; margin-bottom: 25px;
+								margin-bottom: 25px; width: 250px; margin-right: 0;
+							}
+							@include respond-to(xs) {
+								width: 100%;
 							}
 							&:last-child {
 								margin-right: 0;
@@ -376,7 +379,7 @@
 						padding: 15px 0 20px;
 					}
 					@include respond-to(sm) {
-						display: inline-block; width: 100%; padding: 0 15px;
+						display: inline-block; width: 100%; padding: 0 15px; left: 0;
 						border: 1px solid #edf3f6; border-radius: 5px;
 					}
 					& > div {

@@ -6,24 +6,31 @@
 {% block preloder_class %}{% endblock %}
 
 {% block header %}
-		<header class="header js-header active">
-		<a href="{{ path('homepage') }}" class="logo"></a> 
-		<nav class="menu">
-			<ul>
-				<li><a href="{{ path('market_home') }}"><i class="icon-search"></i><span>Найти вещь</span></a></li>
-				<li><a href="{{ path('market_add') }}"><i class="icon-plus"></i><span>Продать</span></a></li>
-				{#% if is_granted("ROLE_USER") %}
-					<li><a href="{{ path('fos_user_profile_show') }}"><span>Мой кабинет</span></a></li>
-				{% else %}
-					<li><a href="{{ path('fos_user_security_login') }}"><span>Войти</span></a></li>
-				{% endif %#}
-			</ul>
-			<a href="#" class="burger js-menu-open">
-				<span></span>
-				<span></span>
-				<span></span>
-			</a>
-		</nav>
+	<header class="wr-header-new js-header active">
+		<div class="container">
+			<div class="header-new">
+				<a href="#" class="logo"></a>
+				<form action="#">
+					<input type="text" placeholder="Что вас интересует?">
+					<button><i class="icon search-gray"></i></button>
+				</form>
+				<nav>
+					<ul>
+						<li><a href="{{ path('market_home') }}">Каталог</a></li>
+						<li><a href="{{ path('market_add') }}">Продать</a></li>
+					</ul>
+					<a href="#" class="user">
+						<img src="assets/img/market/user.svg">
+					</a>
+					<a href="#" class="burger js-menu-open">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</a>
+				</nav>
+			</div>
+		</div>
 	</header>
 	<nav class="menu-open">
 		<ul>
@@ -392,14 +399,16 @@
 			<div class="catalog js-catalog active">
 				<div class="catalog-filter">
 					<ul class="js-catalog-filter">
-						<li class="price">
-							<input id="filter1" type="checkbox">
-							<label for="filter1">Фиксированная цена</label>
-							<input id="filter2" type="checkbox">
-							<label for="filter2">Аукционы</label>
-							<div class="price-range">
-								<input type="text" placeholder="от 300 Р">
-								<input type="text" placeholder="до 300 000">
+						<li>
+							<div class="price">
+								<input id="filter1" type="checkbox">
+								<label for="filter1">Фиксированная цена</label>
+								<input id="filter2" type="checkbox">
+								<label for="filter2">Аукционы</label>
+								<div class="price-range">
+									<input type="text" placeholder="от 300">
+									<input type="text" placeholder="до 300 000">
+								</div>
 							</div>
 						</li>
 						<li>

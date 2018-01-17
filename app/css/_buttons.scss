@@ -112,10 +112,23 @@
 	}
 	em {
 		text-align: left;
-		display: block; width: 33px; height: 33px; position: relative; padding: 11px 0 0 11px; margin: 0 auto;
+		display: block; width: 34px; height: 34px; position: relative; padding: 11px 0 0 11px; margin: 0 auto;
 		border: 1px solid #4489ff; border-radius: 50%;
 		
-		i {vertical-align: top;}
+		&:before, &:after {
+			content: '';
+			display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+			background: $brand; border-radius: 50px;
+		}
+		&:before {
+			width: 10px; height: 2px;
+		}
+		&:after {
+			width: 2px; height: 10px;
+		}
+		i {
+			display: none;
+		}
 	}
 	.ladda-label {
 		position: relative;

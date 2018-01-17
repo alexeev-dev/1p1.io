@@ -31,6 +31,25 @@
 			&.gray {background: $bg-gray;}
 		}
 
+		&-header {
+
+			// new header
+			&-new {
+				position: fixed; left: 0; top: 0; width: 100%; z-index: 1000;
+				background: $white; border-bottom: 1px solid #d9deea;
+			}
+		}
+
+		&-menu-open {
+			position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 5000;
+			background: transparent;
+			pointer-events: none;
+
+			&.active {
+				pointer-events: auto;
+			}
+		}
+
 		&-catalog {
 			padding: 26px 0 79px;
 			&-header {
@@ -81,18 +100,18 @@
 				}
 			}
 			&-dropdown {
-				position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; transform: translateY(-1px);
+				position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; transform: translateY(100%);
 				background: #ffffff; border-bottom: solid 1px #d9deea;
-				transition: 0.5s ease-out;
-				opacity: 0;
+				transition: opacity 0.5s ease-out;
+				opacity: 0; pointer-events: none;
 
 				@include respond-to(md) {
 					display: none;
 				}
 
-				&.active {
-					transform: translateY(100%); z-index: 4;
-					opacity: 1;
+				&.active, &:hover {
+					z-index: 4;
+					opacity: 1; pointer-events: auto;
 				}
 			}
 
@@ -103,12 +122,14 @@
 		}
 
 		&-authentication {
+			padding: 50px 0;
 			h1, h2 {
 				font-size: 34px; font-family: $title; line-height: 42px; text-align: center;
+				margin-top: 0;
 			}
 			p {
 				text-align: center;
-				a {
+				a:not(.btn) {
 					color: $brand;
 					&:hover {
 						text-decoration: underline;
