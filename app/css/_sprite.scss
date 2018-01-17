@@ -6,7 +6,7 @@
       display: inline-block;
       background-image: url("../img/sprite.svg");
       background-repeat: no-repeat;
-      background-size: 13.7em 52.3em;
+      background-size: 13.7em 62.8em;
 
       .no-svg & {
         background-image: url("../img/sprite.png");
@@ -43,9 +43,61 @@
   }
 
 
-.icon.heart {
+.icon.fromshops-black {
   &:before {
       background-position: 0em -1.7em;
+      width: 4.3em;
+      height: 4.3em;
+    }
+  }
+
+  @mixin icon-fromshops-black(){
+    @extend .fromshops-black;
+  }
+
+
+.icon.fromshops-blue {
+  &:before {
+      background-position: 0em -6em;
+      width: 4.3em;
+      height: 4.3em;
+    }
+  }
+
+  @mixin icon-fromshops-blue(){
+    @extend .fromshops-blue;
+  }
+
+
+.icon.fromusers-black {
+  &:before {
+      background-position: 0em -10.3em;
+      width: 4em;
+      height: 4.5em;
+    }
+  }
+
+  @mixin icon-fromusers-black(){
+    @extend .fromusers-black;
+  }
+
+
+.icon.fromusers-blue {
+  &:before {
+      background-position: 0em -14.8em;
+      width: 4em;
+      height: 4.5em;
+    }
+  }
+
+  @mixin icon-fromusers-blue(){
+    @extend .fromusers-blue;
+  }
+
+
+.icon.heart {
+  &:before {
+      background-position: 0em -19.3em;
       width: 7.8em;
       height: 6.8em;
     }
@@ -58,7 +110,7 @@
 
 .icon.logo-blue {
   &:before {
-      background-position: 0em -8.5em;
+      background-position: 0em -26.1em;
       width: 10.6em;
       height: 2.8em;
     }
@@ -71,7 +123,7 @@
 
 .icon.logo-white {
   &:before {
-      background-position: 0em -11.3em;
+      background-position: 0em -28.9em;
       width: 10.6em;
       height: 2.8em;
     }
@@ -84,7 +136,7 @@
 
 .icon.logo_gray {
   &:before {
-      background-position: 0em -14.1em;
+      background-position: 0em -31.7em;
       width: 13.7em;
       height: 3.6em;
     }
@@ -97,7 +149,7 @@
 
 .icon.market-heart {
   &:before {
-      background-position: 0em -17.7em;
+      background-position: 0em -35.3em;
       width: 2em;
       height: 1.7em;
     }
@@ -108,22 +160,9 @@
   }
 
 
-.icon.market-shops {
-  &:before {
-      background-position: 0em -19.4em;
-      width: 4.3em;
-      height: 4.3em;
-    }
-  }
-
-  @mixin icon-market-shops(){
-    @extend .market-shops;
-  }
-
-
 .icon.market-squares {
   &:before {
-      background-position: 0em -23.7em;
+      background-position: 0em -37em;
       width: 2em;
       height: 2em;
     }
@@ -134,22 +173,9 @@
   }
 
 
-.icon.market-users {
-  &:before {
-      background-position: 0em -25.7em;
-      width: 4em;
-      height: 4.5em;
-    }
-  }
-
-  @mixin icon-market-users(){
-    @extend .market-users;
-  }
-
-
 .icon.message {
   &:before {
-      background-position: 0em -30.2em;
+      background-position: 0em -39em;
       width: 1.3em;
       height: 1.3em;
     }
@@ -162,7 +188,7 @@
 
 .icon.pin {
   &:before {
-      background-position: 0em -31.5em;
+      background-position: 0em -40.3em;
       width: 1.1em;
       height: 1.3em;
     }
@@ -175,7 +201,7 @@
 
 .icon.plus {
   &:before {
-      background-position: 0em -32.8em;
+      background-position: 0em -41.6em;
       width: 1.2em;
       height: 1.2em;
     }
@@ -188,7 +214,7 @@
 
 .icon.plus-add {
   &:before {
-      background-position: 0em -34em;
+      background-position: 0em -42.8em;
       width: 3.7em;
       height: 3.7em;
     }
@@ -201,7 +227,7 @@
 
 .icon.plus-black {
   &:before {
-      background-position: 0em -37.7em;
+      background-position: 0em -46.5em;
       width: 1.2em;
       height: 1.2em;
     }
@@ -214,7 +240,7 @@
 
 .icon.plus-white {
   &:before {
-      background-position: 0em -38.9em;
+      background-position: 0em -47.7em;
       width: 1.2em;
       height: 1.2em;
     }
@@ -227,7 +253,7 @@
 
 .icon.popup-back {
   &:before {
-      background-position: 0em -40.1em;
+      background-position: 0em -48.9em;
       width: 1.6em;
       height: 1.6em;
     }
@@ -240,7 +266,7 @@
 
 .icon.search-black {
   &:before {
-      background-position: 0em -41.7em;
+      background-position: 0em -50.5em;
       width: 1.5em;
       height: 1.5em;
     }
@@ -253,7 +279,7 @@
 
 .icon.search-gray {
   &:before {
-      background-position: 0em -43.2em;
+      background-position: 0em -52em;
       width: 1.5em;
       height: 1.5em;
     }
@@ -266,7 +292,7 @@
 
 .icon.search-white {
   &:before {
-      background-position: 0em -44.7em;
+      background-position: 0em -53.5em;
       width: 1.5em;
       height: 1.5em;
     }
@@ -279,7 +305,7 @@
 
 .icon.seen {
   &:before {
-      background-position: 0em -46.2em;
+      background-position: 0em -55em;
       width: 1.4em;
       height: 1.1em;
     }
@@ -290,9 +316,22 @@
   }
 
 
+.icon.shield {
+  &:before {
+      background-position: 0em -56.1em;
+      width: 1.4em;
+      height: 1.7em;
+    }
+  }
+
+  @mixin icon-shield(){
+    @extend .shield;
+  }
+
+
 .icon.shops-small {
   &:before {
-      background-position: 0em -47.3em;
+      background-position: 0em -57.8em;
       width: 1.9em;
       height: 1.9em;
     }
@@ -305,7 +344,7 @@
 
 .icon.time {
   &:before {
-      background-position: 0em -49.2em;
+      background-position: 0em -59.7em;
       width: 1.3em;
       height: 1.3em;
     }
@@ -318,7 +357,7 @@
 
 .icon.users-small {
   &:before {
-      background-position: 0em -50.5em;
+      background-position: 0em -61em;
       width: 1.6em;
       height: 1.8em;
     }

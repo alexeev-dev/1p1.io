@@ -487,7 +487,6 @@ var app = function ($) {
         $('.tabs-main ul, .tabs-shop ul').toggleClass('active');
         $('.tabs-personal ul, .tabs-company ul').slideToggle();
         $('.js-toggle-menu i').toggleClass('active');
-        console.log(1);
       },
       showThingsMenu: function showThingsMenu(event) {
         event.preventDefault();
@@ -703,7 +702,7 @@ $(document).ready(function () {
       }
     }
   });
-  $('.js-kids-carousel').owlCarousel({
+  $('.js-kids-carousel, .js-animals-carousel').owlCarousel({
     loop: true,
     nav: true,
     responsiveClass: true,
@@ -797,15 +796,22 @@ $(document).ready(function () {
   $('.js-catalog-dropdown li a').click(function(e) {
     e.preventDefault();
   });
-  $('.js-catalog-dropdown li a, .wr-catalog-dropdown').hover(function(e) {
+  $('.js-catalog-dropdown li a').click(function(e) {
     e.preventDefault();
 
     var catalogDrop = $(this).attr('href');
     $('.js-catalog-dropdown li a').not(this).removeClass('active');
-    $(this).addClass('active');
+    $(this).toggleClass('active');
     $('.wr-catalog-dropdown:not(' + catalogDrop + ')').removeClass('active');
     $(catalogDrop).toggleClass('active');
     $('.wr-catalog-dropdown').hasClass('active') ? $('.wr-catalog-header').addClass('layout') : $('.wr-catalog-header').removeClass('layout');
+  });
+  $('.wr-catalog-dropdown .catalog-category a, .wr-catalog-dropdown .sellers span').click(function(e) {
+    e.preventDefault();
+
+    $('.js-catalog-dropdown li a').removeClass('active');
+    $('.wr-catalog-header').removeClass('layout');
+    $('.wr-catalog-dropdown').removeClass('active');
   });
 
   // catalog filter show hide
@@ -826,7 +832,7 @@ $(document).ready(function () {
   $('.js-filterToggle-mobile, .js-category-toggle').click(function(e) {
     e.preventDefault();
 
-    var catalogFilterPopup = $(this).attr('href');
+    var catalogFilterPopup = $(this).attr('data-class');
     $('.catalog-popup' + catalogFilterPopup + '-popup').addClass('active');
     $('body').addClass('on-load');
   });
@@ -842,11 +848,10 @@ $(document).ready(function () {
     $(this).toggleClass('active').next().slideToggle();
   });
 
-  // tags toggle
-  $('.js-tagsToggle li a').click(function(e) {
+  $('.js-tagsFilter span').click(function(e) {
     e.preventDefault();
 
-    $('.js-tagsToggle li a').removeClass('active');
+    $('.js-tagsFilter span').removeClass('active');
     $(this).addClass('active');
   });
 

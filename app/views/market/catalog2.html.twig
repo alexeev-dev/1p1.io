@@ -2,7 +2,7 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}market2{% endblock %}
+{% block app_class %}market{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block header %}
@@ -99,7 +99,7 @@
 			<div class="wr-catalog-dropdown category">
 				<div class="container">
 					<div class="catalog-category">
-						<div>
+						<div class="sellers">
 							<a href="#" class="active">
 								<i class="icon market-shops"></i>
 								<span>От магазинов</span>
@@ -392,8 +392,8 @@
 			<div class="catalog-tags">
 				<a class="js-filterToggle active" href="#"><span class="close">Скрыть фильтры</span><span class="open">Показать фильтры</span></a>
 				<ul>
-					<li><a class="active" href="#">Все результаты (14 732 626)</a></li>
-					<li><a href="#">Звездные вещи (150)</a></li>
+					<li><input id="catalog-tag-1" type="radio" name="catalog-tags" checked="checked"><label for="catalog-tag-1">Все результаты (14 732 626)</label></li>
+					<li><input id="catalog-tag-2" type="radio" name="catalog-tags"><label for="catalog-tag-2">Звездные вещи (150)</label></li>
 				</ul>
 			</div>
 			<div class="catalog js-catalog active">

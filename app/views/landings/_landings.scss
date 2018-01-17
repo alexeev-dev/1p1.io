@@ -272,10 +272,10 @@
 						margin-bottom: 0;
 					}
 					span {
-						position: absolute; top: -22px; left: -26px; 
+						position: relative; display: block; margin-bottom: 5px;
 						@include font-type($title, 18px, 18px, 0); text-transform: none;
 						@include respond-to(sm) {
-							display: block; margin-bottom: 5px; position: relative; left: 0; top: 0;
+							display: flex; align-items: center;
 						}
 
 						.dobro & {
@@ -283,7 +283,12 @@
 							display: block; margin-bottom: 8px; position: relative; top: auto; left: 1px;
 						}
 
-						i {margin-right: 11px;}
+						i {
+							position: absolute; left: -26px; top: -1px;
+							@include respond-to(sm) {
+								position: relative; left: 0; top: 0; margin-right: 10px;
+							}
+						}
 					}
 				}
 			}
@@ -1420,7 +1425,22 @@
 				display: none;
 			}
 			.owl-next {
-				padding: 5px;
+				color: $white; text-align: center;
+				padding: 15px 5px 5px 8px; width: 50px; height: 50px;
+				background: $brand; border-radius: 50%;
+
+				.pet & {
+					background: #96be46;
+				}
+				.children & {
+					background: #E8B194;
+				}
+				.dobro & {
+					background: #7A3FBF;
+				}
+				.art &, .fashion & {
+					background: #000;
+				}
 			}
 		}
 	}

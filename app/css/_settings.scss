@@ -33,6 +33,7 @@ h1,h2,h3,h4,h5,h6,p, ul {
 }
 body {
 	line-height: 1;
+	background: #fff;
 
 	&.on-load {overflow:hidden;}
 
@@ -127,7 +128,6 @@ form, input, select, textarea, button, a, fieldset {
 
 // Cormac
 @include font-face('cormac-book', cormac-book);
-@include font-face('cormac-extralight', cormac-extralight);
 
 // Helvetica
 @include font-face('HelveticaLight', HelveticaLight);

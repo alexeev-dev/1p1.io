@@ -2,7 +2,7 @@
 
 {% block header_class %}{% endblock %}
 
-{% block app_class %}market2{% endblock %}
+{% block app_class %}market{% endblock %}
 {% block preloder_class %}{% endblock %}
 
 {% block header %}
@@ -96,59 +96,61 @@
 			<div class="wr-catalog-dropdown category">
 				<div class="container">
 					<div class="catalog-category">
-						<div>
-							<a href="#" class="active">
-								<i class="icon market-shops"></i>
-								<span>От магазинов</span>
-							</a>
-							<a href="#">
-								<i class="icon market-users"></i>
-								<span>От пользователей</span>
-							</a>
+						<div class="sellers">
+							<span href="#" class="active">
+								<i class="icon fromshops-black"></i>
+								<em>От магазинов</em>
+							</span>
+							<span href="#">
+								<i class="icon fromusers-black"></i>
+								<em>От пользователей</em>
+							</span>
 						</div>
-						<ul>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-							<li>
-								<a href="#">Детские товары</a>
-							</li>
-						</ul>
+						<div>
+							<ul>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+								<li>
+									<a href="#">Детские товары</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -223,10 +225,10 @@
 					<div class="catalog-sellers">
 						<ul>
 							<li class="active">
-								<a href="#"><i class="icon shops-small"></i>От магазинов</a>
+								<span><i class="icon shops-small"></i>От магазинов</span>
 							</li>
 							<li>
-								<a href="#"><i class="icon users-small"></i>От пользователей</a>
+								<span><i class="icon users-small"></i>От пользователей</span>
 							</li>
 						</ul>
 					</div>
@@ -238,11 +240,11 @@
 						<ul>
 							<li>
 								<p><i class="icon market-squares"></i><span>Категория</span></p>
-								<a href=".category" class="js-category-toggle">Выбрать</a>
+								<span data-class=".category" class="js-category-toggle">Выбрать</span>
 							</li>
 							<li>
 								<p><i class="icon market-heart"></i><span>Благотворительность</span></p>
-								<a href=".fund" class="js-category-toggle">Выбрать</a>
+								<span data-class=".fund" class="js-category-toggle">Выбрать</span>
 							</li>
 						</ul>
 					</div>
@@ -259,12 +261,12 @@
 	<div class="wr-catalog">
 		<div class="container">
 			<div class="catalog-tags">
-				<a class="js-filterToggle active" href="#"><span class="close">Скрыть фильтры</span><span class="open">Показать фильтры</span></a>
-				<ul class="js-tagsToggle">
-					<li><a class="active" href="#">Все результаты (14 732 626)</a></li>
-					<li><a href="#">Звездные вещи (150)</a></li>
+				<span class="js-filterToggle active"><em class="close">Скрыть фильтры</em><em class="open">Показать фильтры</em></span>
+				<ul class="js-tagsFilter">
+					<li><span class="active">Все результаты (14 732 626)</span></li>
+					<li><span>Звездные вещи (150)</span></li>
 				</ul>
-				<a href=".filter" class="mobile js-filterToggle-mobile active">Фильтры 3</a>
+				<span data-class=".filter" class="mobile js-filterToggle-mobile active">Фильтры 3</span>
 			</div>
 			<div class="catalog js-catalog active">
 				<div class="catalog-filter">
@@ -289,7 +291,7 @@
 									<label for="filter3">Бренд</label>
 								</li>
 								<li>
-									<input id="filter4" type="checkbox">
+									<input id="filter4" type="radio">
 									<label for="filter4">Бренд</label>
 								</li>
 							</ul>
@@ -310,7 +312,7 @@
 									<label for="filter7">Магазин</label>
 								</li>
 								<li>
-									<input id="filter8" type="checkbox">
+									<input id="filter8" type="radio">
 									<label for="filter8">Магазин</label>
 								</li>
 							</ul>
@@ -393,14 +395,16 @@
 		<section>
 			<div class="catalog-filter">
 				<ul class="js-catalog-filter">
-					<li class="price">
-						<input id="filter1" type="checkbox">
-						<label for="filter1">Фиксированная цена</label>
-						<input id="filter2" type="checkbox">
-						<label for="filter2">Аукционы</label>
-						<div class="price-range">
-							<input type="text" placeholder="от 300 Р">
-							<input type="text" placeholder="до 300 000">
+					<li>
+						<div class="price">
+							<input id="filter1" type="checkbox">
+							<label for="filter1">Фиксированная цена</label>
+							<input id="filter2" type="checkbox">
+							<label for="filter2">Аукционы</label>
+							<div class="price-range">
+								<input type="text" placeholder="от 300 Р">
+								<input type="text" placeholder="до 300 000">
+							</div>
 						</div>
 					</li>
 					<li>
@@ -411,8 +415,8 @@
 								<label for="filter3">Бренд</label>
 							</li>
 							<li>
-								<input id="filter4" type="checkbox">
-								<label for="filter4">Бренд</label>
+								<input id="filter9" type="radio">
+								<label for="filter9">Магазин</label>
 							</li>
 						</ul>
 					</li>
@@ -488,10 +492,10 @@
 			<div class="catalog-sellers">
 				<ul>
 					<li class="active">
-						<a href="#"><i class="icon shops-small"></i>От магазинов</a>
+						<span><i class="icon shops-small"></i>От магазинов</span>
 					</li>
 					<li>
-						<a href="#"><i class="icon users-small"></i>От пользователей</a>
+						<span><i class="icon users-small"></i>От пользователей</span>
 					</li>
 				</ul>
 			</div>

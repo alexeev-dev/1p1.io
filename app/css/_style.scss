@@ -2,7 +2,7 @@
 	padding-top: $header-height; min-width: 320px;
 	overflow-x:hidden;
 
-	&.market2 {
+	&.market {
 		padding-top: calc(65px + 70px);
 		@include respond-to(md) {
 			padding-top: 65px;
@@ -27,7 +27,8 @@
 
 	.wr {
 		&-authentication, &-products, &-product, &-ads, &-landing-category, &-main-products, &-main-news, &-testimonials, 
-		&-megasale, &-joined_partners, &-people, &-auction, &-auction-filter, &-funds, &-personal-tab, &-profile-orders {
+		&-megasale, &-joined_partners, &-people, &-auction, &-auction-filter, &-funds, &-personal-tab, &-profile-orders,
+		&-catalog {
 			&.gray {background: $bg-gray;}
 		}
 
@@ -52,6 +53,7 @@
 
 		&-catalog {
 			padding: 26px 0 79px;
+			background: #FAFBFC;
 			&-header {
 				position: fixed; z-index: 500; left: 0; top: $header-height; width: 100%; height: 70px;
 				@include respond-to(md) {
@@ -61,14 +63,14 @@
 					content: '';
 					position: fixed; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100vh; z-index: -1;
 					background: $black;
-					opacity: 0; pointer-events: none; transition: opacity 0.5s ease-out;
+					opacity: 0; pointer-events: none;
 				}
 
-				.wr-catalog-dropdown.active ~ &:after {
-					content: '';
-					position: fixed; left: 0; top: 0; right: 0; bottom: 0;
-					background: red;
-				}
+				// .wr-catalog-dropdown.active ~ &:after {
+				// 	content: '';
+				// 	position: fixed; left: 0; top: 0; right: 0; bottom: 0;
+				// 	background: red;
+				// }
 
 				&.layout {
 					&:after {
@@ -102,14 +104,13 @@
 			&-dropdown {
 				position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; transform: translateY(100%);
 				background: #ffffff; border-bottom: solid 1px #d9deea;
-				transition: opacity 0.5s ease-out;
 				opacity: 0; pointer-events: none;
 
 				@include respond-to(md) {
 					display: none;
 				}
 
-				&.active, &:hover {
+				&.active {
 					z-index: 4;
 					opacity: 1; pointer-events: auto;
 				}
