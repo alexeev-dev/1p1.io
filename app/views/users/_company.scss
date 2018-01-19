@@ -2,7 +2,11 @@
 
 	&-edit {
 		text-align: right;  @include font-type ($text, 16px, 22px, 0); color: #4b5769; font-weight: 200;
-		@extend .row-end-center; margin: 18px 0 10px 0; 
+		@extend .row-end-center; margin: 18px 0 10px 0; width: 100%;
+
+		a {
+			display: flex; align-items: center;
+		}
 
 		input {
 			cursor: pointer; opacity: 0;

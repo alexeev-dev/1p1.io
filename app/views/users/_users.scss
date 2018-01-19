@@ -7,14 +7,16 @@
 .filter {
 
 	display: flex;
-	@include respond-to(xs) {flex-direction: column;}
+	@include respond-to(sm) {flex-direction: column;}
 	
 	padding: 20px 0 40px 0;
 	.select {
-		@include respond-to(xs) {
-			margin-bottom: 20px;
+		margin-right: 40px;
+		@include respond-to(sm) {
+			margin-bottom: 20px; margin-right: 0;
 		}
 		&:last-child {
+			margin-right: 0;
 			@include respond-to(xs) {
 				margin-bottom: 0;
 			}
@@ -78,7 +80,7 @@
 
 		&_pagination {
 			display: flex; justify-content: center;
-			padding-top: 25px;
+			padding-top: 30px;
 			li {
 				padding: 0 10px;
 				a {

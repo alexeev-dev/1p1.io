@@ -60,6 +60,34 @@
     <div class="app {% block app_class %}{% endblock %}">
 
         {% block header %}
+        <!-- <header class="header js-header active">
+                <a href="{{ path('homepage') }}" class="logo"></a> 
+                <nav class="menu">
+                    <ul>
+                        {# trans "menu.find_goods":Найти вещь#}
+                        <li><a href="{{ path('market_home') }}"><i class="icon-search"></i><span>{{ 'menu.find_goods'|trans }}</span></a></li>
+                        {# trans "menu.sell":Продать#}
+                        <li><a href="{{ path('market_add') }}"><i class="icon-plus"></i><span>{{ 'menu.sell'|trans }}</span></a></li>
+                        {% if is_granted("ROLE_USER") %}
+                            {# trans "menu.user_profile":Мой кабинет#}
+                            <li><a href="{{ path('fos_user_profile_show') }}"><span>{{ 'menu.user_profile'|trans }}</span></a></li>
+
+                            {% if user_service.isAdmin is defined and user_service.isAdmin %}
+                                {# trans "menu.admin_dashboard":Админка#}
+                                <li><a href="{{ path('sonata_admin_dashboard') }}"><span>{{ 'menu.admin_dashboard'|trans }}</span></a></li>
+                            {% endif %}
+                        {% else %}
+                            {# trans "menu.sign_in":Войти#}
+                            <li><a href="{{ path('fos_user_security_login') }}"><span>{{ 'menu.sign_in'|trans }}</span></a></li>
+                        {% endif %}
+                    </ul>
+                    <a href="#" class="burger js-menu-open">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </nav>
+            </header> -->
             <header class="header js-header active">
                 <a href="{{ path('homepage') }}" class="logo"></a> 
                 <nav class="menu">

@@ -26,7 +26,7 @@ article {
 		&-product {
 			header {
 				figure {
-					position: relative;
+					position: relative; height: 280px;
 					figcaption {
 						width: 100%; height: 100%; position: absolute; top: 0; left: 0; 
 						background: rgba(255,255,255, 0.85); opacity: 0; transition: .4s all ease;
@@ -651,8 +651,10 @@ article {
 				}
 				h3 {
 					@include font-type($title, 18px, 22px, 0);
+					height: 100%;
 					a {
 						color: $brand;
+						display: flex; align-items: center; height: 100%; padding: 10px 0;
 						&:hover {
 							color: $black;
 						}
@@ -733,8 +735,14 @@ article {
 						text-align: center;
 						width: 50%;
 						a {
+							&:hover {
+								i {
+									opacity: 1;
+								}
+							}
 							i {
 								color: #89a1b3; font-size: 18px;
+								opacity: 0.8;
 							}
 						}
 					}

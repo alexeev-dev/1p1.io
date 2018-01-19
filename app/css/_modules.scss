@@ -1,5 +1,5 @@
 /*** Аутентификация ***/
-.login-form, .registration-form {
+.login-form, .registration-form, .reset-form, .reset-pass-form, .contacts-form {
 	input[type=text], input[type=password], input[type=email] {
 		color: #555; font-size: 14px; line-height: 1.42857143;
 		display: block; width: 100%; height: 34px; padding: 6px 12px;
@@ -100,14 +100,156 @@
 // форма регистрации
 .registration-form {
 	width: 50%; margin: 0 auto;
+	@include respond-to(md) {
+		width: 100%;
+	}
 
 	.form-group {
+		display: flex; margin-bottom: 15px; align-items: center;
+		@include respond-to(sm) {
+			flex-wrap: wrap;
+		}
 		label {
+			line-height: 16px;
+			width: 25%; padding: 0 15px 0;
+			@include respond-to(sm) {
+				text-align: center;
+				width: 100%; margin-bottom: 5px;
+			}
+		}
+		div {
+			width: 66.6666667%; padding: 0 15px;
+			@include respond-to(sm) {
+				width: 100%;
+			}
+		}
+	}
 
+	p {
+		label {
+			a {
+				font-size: inherit; font-family: inherit; letter-spacing: inherit; line-height: inherit;
+			}
 		}
 	}
 
 	.form-actions {
 		text-align: center;
+		margin-top: 20px;
+	}
+}
+
+// форма восстановления доступа
+.reset-form, .reset-pass-form {
+	text-align: center;
+	width: 66.66666667%; margin: 0 auto;
+	.form-group {
+		display: flex; margin-bottom: 15px; align-items: center;
+		@include respond-to(sm) {
+			flex-wrap: wrap;
+		}
+		label, input {
+			margin: 0;
+		}
+		label {
+			width: 25%; padding: 0 15px 0; margin-right: 15px; flex-shrink: 0;
+			@include respond-to(sm) {
+				text-align: center;
+				width: 100%; margin-bottom: 7px; margin-right: 0;
+			}
+		}
+		input {
+			width: 50%;
+			@include respond-to(sm) {
+				width: 100%; margin-right: 0;
+			}
+		}
+	}
+}
+.reset-pass-form {
+	width: 50%;
+	@include respond-to(md) {
+		width: 66.6666667%;
+	}
+	@include respond-to(sm) {
+		width: 100%;
+	}
+}
+
+// форма обратной связи
+.contacts {
+	h1 {
+		text-align: center;
+	}
+	&-form {
+		display: flex;
+		@include respond-to(sm) {
+			flex-wrap: wrap; margin-bottom: 30px;
+		}
+		.feedback-form {
+			width: 60%;
+			@include respond-to(sm) {
+				width: 100%; margin-bottom: 10px;
+			}
+			.form-group {
+				display: flex; margin-bottom: 15px; align-items: flex-start;
+				@include respond-to(sm) {
+					flex-wrap: wrap;
+				}
+				label, div {
+					margin: 0;
+				}
+				label {
+					width: 14%; padding: 7px 15px 0; margin-right: 15px; flex-shrink: 0;
+					@include respond-to(md) {
+						width: 25%;
+					}
+					@include respond-to(sm) {
+						text-align: center;
+						width: 100%; margin-bottom: 7px; margin-right: 0;
+					}
+				}
+				div {
+					width: 75%;
+					@include respond-to(sm) {
+						width: 100%; margin-right: 0;
+					}
+				}
+			}
+		}
+		.social-links {
+			text-align: center;
+			width: 40%;
+			@include respond-to(sm) {
+				width: 100%;
+			}
+			p {
+				font-size: 14px; letter-spacing: 0; line-height: 20px;
+			}
+		}
+	}
+
+	.captcha {
+		padding-left: 10%; margin-bottom: 20px;
+		@include respond-to(md) {
+			padding-left: 18%;
+		}
+		@include respond-to(sm) {
+			padding-left: 0; display: flex; justify-content: center;
+		}
+	}
+
+	.submit {
+		padding-left: 16%;
+		@include respond-to(md) {
+			padding-left: 122%;
+		}
+		@include respond-to(sm) {
+			text-align: center;
+			padding-left: 0;
+		}
+		.btn {
+			padding: 11px 26px 10px;
+		}
 	}
 }

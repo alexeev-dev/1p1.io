@@ -10,6 +10,9 @@
 				}
 			}
 		}
+		& > * {
+			line-height: inherit;
+		}
 	}
 
 	&-body {
@@ -21,6 +24,10 @@
 		}
 		div, p, span {
 			font-family: $helv; font-size: 14px; line-height: 1.42857143;
+		}
+
+		.select2-container {
+			width: 100% !important;
 		}
 	}
 }
@@ -35,7 +42,10 @@
 .main_view {
 	background-color: #fffdfd;
 	box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.05);
-	margin-bottom: 50px;
+	margin-bottom: 50px; padding-top: 50px;
+	@include respond-to(sm) {
+		padding-top: 30px;
+	}
 }
 
 .select2-container {

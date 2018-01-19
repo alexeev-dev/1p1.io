@@ -809,9 +809,7 @@ $(document).ready(function () {
   $('.wr-catalog-dropdown .catalog-category a, .wr-catalog-dropdown .sellers span').click(function(e) {
     e.preventDefault();
 
-    $('.js-catalog-dropdown li a').removeClass('active');
-    $('.wr-catalog-header').removeClass('layout');
-    $('.wr-catalog-dropdown').removeClass('active');
+    catalogHideDropdown();
   });
 
   // catalog filter show hide
@@ -854,6 +852,11 @@ $(document).ready(function () {
     $('.js-tagsFilter span').removeClass('active');
     $(this).addClass('active');
   });
+
+  $('.catalog-category .sellers > span').click(function() {
+    $('.catalog-category .sellers > span').removeClass('active');
+    $(this).addClass('active');
+  })
 
   // scroll menu
   var header = $(".js-header"),
@@ -904,3 +907,12 @@ $(document).ready(function () {
   //   $('.dobro .counter').css('background-position', '-200px '+position+'px');
   // }
 });
+
+function catalogHideDropdown() {
+    $('.js-catalog-dropdown li a').removeClass('active');
+    $('.wr-catalog-header').removeClass('layout');
+    $('.wr-catalog-dropdown').removeClass('active');
+}
+function catalogHideCity() {
+  $('.js-selectToogle, .js-selectLists').toggleClass('active');
+}

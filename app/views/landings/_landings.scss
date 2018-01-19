@@ -13,7 +13,7 @@
 	@include respond-to(1299px) {
 		right: 0;
 	}
-	@include respond-to(lg) {right: -20px;}
+	@include respond-to(lg) {right: 0px;}
 	@include respond-to(md) {
 		display: block;
 		margin: 15px auto 0 auto;
@@ -45,7 +45,6 @@
 		display: flex; justify-content: center;
 		@include respond-to(md) {flex-direction: column;}
 
-		padding-top: 27px;
 		.select {
 			margin: 0 32px;
 			@include respond-to(md) {margin-bottom: 25px; margin-right: 0;}
@@ -794,7 +793,8 @@
 	}
 	section {
 		p {
-			@include font-type($text, 16px, 22px, 0.5px); text-align: center; color: #000;
+			@include font-type($HelveticaR, 16px, 22px, 0.5px); text-align: center; color: #000;
+			margin-bottom: 0;
 			transition: 0.3s ease-out;
 		}
 	}
@@ -1001,11 +1001,20 @@
 			}
 		}
 	}
+
+	.show-onemore {
+		@include respond-to(lg) {
+			right: -15px;
+		}
+		@include respond-to(md) {
+			right: auto;
+		}
+	}
 }
 
 //Список фильтров - http://prntscr.com/hdpn4y
 .home_filter {
-	padding: 10px 0 35px 0; background: white;
+	padding: 0 0 35px 0; background: white;
 	h2 {color: #000000; font-family: $title; font-size: 38px; line-height: 39px; text-align: center; margin-bottom: 15px;}
 }
 
@@ -1411,6 +1420,7 @@
 
 // http://prntscr.com/hwbf65
 .joined {
+	padding-bottom: 40px;
 	@include respond-to(sm) {
 		display: flex; flex-direction: column; align-items: center;
 	}

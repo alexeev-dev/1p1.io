@@ -189,9 +189,15 @@ nav.menu-open {
 // header new
 .header-new {
 	display: flex; justify-content: space-between; align-items: center; height: $header-height;
+	@include respond-to(xs) {
+		flex-wrap: wrap; height: 125px; padding: 15px 0;
+	}
 	a.logo {
 		height: 100%; @extend .column-center-center; margin-top: 0;
 		@extend .icon; @extend .logo-blue; position: relative;
+		@include respond-to(xs) {
+			order: 0; height: auto;
+		}
 
 		span {
 			display: none;
@@ -208,7 +214,10 @@ nav.menu-open {
 	}
 
 	form {
-		position: relative; width: 602px;
+		position: relative; width: 51%; margin: 0 15px;
+		@include respond-to(xs) {
+			width: 100%; margin: 10px 0 0; order: 2;
+		}
 		input {
 			color: $black; font-family: $title; font-size: 15px; line-height: 17px;
 			width: 100%; height: 40px; padding: 0 50px 0 12px;
@@ -240,13 +249,16 @@ nav.menu-open {
 
 	nav {
 		display: flex; align-items: center; height: 100%;
+		@include respond-to(xs) {
+			order: 1; height: auto;
+		}
 		ul {
 			display: flex; height: 100%;
 			@include respond-to(sm) {
 				display: none;
 			}
 			li {
-				margin-right: 43px; height: 100%;
+				margin-right: 43px; height: 100%; display: flex; align-items: center;
 				&:last-child {
 					margin-right: 0;
 				}
@@ -261,9 +273,12 @@ nav.menu-open {
 			}
 		}
 		a.user {
-			display: block; width: 32px; height: 32px; position: relative; margin-left: 41px;
+			display: block; width: 32px; height: 32px; position: relative;
 			background-color: #f5f2f7; border-radius: 50%;
 			overflow: hidden;
+			@include respond-to(sm) {
+				margin-left: 0;
+			}
 			img {
 				max-width: 100%; max-height: 100%;
 				position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);

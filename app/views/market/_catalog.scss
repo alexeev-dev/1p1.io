@@ -193,7 +193,7 @@
 			width: 270px; flex-shrink: 0; height: 100%;
 			overflow-y: auto;
 			@include respond-to(lg) {
-				width: 25%;
+				width: 225px;
 			}
 			&::-webkit-scrollbar {
 				width: 4px;
@@ -213,7 +213,7 @@
 				}
 			}
 		}
-		& > div:not(.sellers) > ul {
+		& > div:not(.sellers):not(.info):not(.promo) > ul {
 			border-right: 1px solid #d9deea;
 			&:last-child {
 				border-right: none;
@@ -232,6 +232,14 @@
 		.info {
 			width: 100%; height: 100%; display: block; padding: 25px 43px; flex-shrink: 1;
 			border-right: none;
+			overflow-y: auto;
+			&::-webkit-scrollbar {
+				width: 4px;
+			}
+			&::-webkit-scrollbar-thumb {
+				width: 4px;
+				background: #c4d1da; border-radius: 50px;
+			}
 			& > *, header > *, section > *, footer > * {
 				&:last-child {
 					margin-bottom: 0;
@@ -579,7 +587,7 @@
 	&-categories {
 		ul {
 			li {
-				@extend .row-between-center; padding: 18px 0 22px; position: relative;
+				@extend .row-between-center; height: 65px; position: relative;
 				&:after {
 					content: '';
 					display: block; width: 1000%; height: 0; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
@@ -597,9 +605,9 @@
 						overflow: hidden;
 					}
 				}
-				span {
+				& > span {
 					color: $brand; font-family: $text; font-size: 14px; line-height: 20px;
-					display: inline-block;
+					display: inline-block; height: 100%; display: flex; align-items: center;
 				}
 			}
 		}

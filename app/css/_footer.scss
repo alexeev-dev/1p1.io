@@ -186,7 +186,24 @@
 									color: #b2b2b2; font-size: 24px;
 									transition: all 0.4s;
 								}
-								&:hover {i {color: $link-color;}}
+								&:hover {
+									i {
+										color: $link-color;
+
+										.children & {
+											color: #E8B194;
+										}
+										.pet & {
+											color: #96be46;
+										}
+										.dobro & {
+											color: #7A3FBF;
+										}
+										.art &, .fashion & {
+											color: $black;
+										}
+									}
+								}
 							}
 						}
 					}

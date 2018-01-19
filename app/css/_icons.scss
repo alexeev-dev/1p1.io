@@ -1,24 +1,35 @@
-.icon.market-shops:before {
-	background: url('../img/icons/market-shops.svg') center center no-repeat;
-}
-.icon.market-users:before {
-	background: url('../img/icons/market-users.svg') center center no-repeat;
-}
-.icon.market-heart:before {
-	background: url('../img/icons/market-heart.svg') center center no-repeat;
-}
-.icon.market-squares:before {
-	background: url('../img/icons/market-squares.svg') center center no-repeat;
-}
-.icon.popup-back:before {
-	background: url('../img/icons/popup-back.svg') center center no-repeat;
-}
-.icon.shops-small:before {
-	background: url('../img/icons/shops-small.svg') center center no-repeat;
-}
-.icon.users-small:before {
-	background: url('../img/icons/users-small.svg') center center no-repeat;
-}
-.icon.plus-add:before {
-	background: url('../img/icons/plus-add.svg') center center no-repeat;
+.icon {
+	&.fromshops-black:before {
+		background: url('../img/icons/fromshops-black.svg') center center no-repeat;
+	}
+	&.fromusers-black:before {
+		background: url('../img/icons/fromusers-black.svg') center center no-repeat;
+	}
+	&.market-heart:before {
+		background: url('../img/icons/market-heart.svg') center center no-repeat;
+	}
+	&.market-squares:before {
+		background: url('../img/icons/market-squares.svg') center center no-repeat;
+	}
+	&.popup-back:before {
+		background: url('../img/icons/popup-back.svg') center center no-repeat;
+	}
+	&.shops-small:before {
+		background: url('../img/icons/shops-small.svg') center center no-repeat;
+	}
+	&.users-small:before {
+		background: url('../img/icons/users-small.svg') center center no-repeat;
+	}
+	&.plus-add:before {
+		background: url('../img/icons/plus-add.svg') center center no-repeat;
+	}
+	&.shield:before {
+		background: url('../img/icons/shield.svg') center center no-repeat;
+	}
+	&.pen:before {
+		background: url('../img/icons/pen.svg') center center no-repeat;
+	}
+	&.refresh:before {
+		background: url('../img/icons/refresh.svg') center center no-repeat;
+	}
 }

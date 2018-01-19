@@ -163,8 +163,12 @@
 		}
 	}
 
+	&-btn-close {
+		font-family: $helv;
+	}
+
 	h3 {
-		font-size: 20px;
+		font-size: 20px; font-family: $title; letter-spacing: 0;
 	}
 
 	&-select_charity {
