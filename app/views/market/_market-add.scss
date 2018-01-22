@@ -1,8 +1,14 @@
 .panel {
 	&-title {
 		font-family: $title; letter-spacing: 0;
+		@include respond-to(sm) {
+			display: flex; flex-direction: column;
+		}
 		span {
 			font-family: inherit; letter-spacing: inherit; font-size: inherit;
+			@include respond-to(sm) {
+				float: none !important; order: 1; margin-top: 10px;
+			}
 			label {
 				font-family: inherit; letter-spacing: inherit; font-size: inherit;
 				input {

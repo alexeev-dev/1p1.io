@@ -522,20 +522,6 @@ var app = function ($) {
   }); // Инициализируем приложение после загрузки
 }(jQuery);
 
-$(document).mouseup(function (e) {
-  var menuBlock = $(".menu-open"),
-      selectBlock = $(".js-selectLists"),
-      selectButton = $('.js-selectToogle');
-  if (menuBlock.has(e.target).length === 0 && !menuBlock.is(e.target)) {
-    $(menuBlock).parent().removeClass('active');
-    $('body').removeClass('on-load');
-  }
-  if (selectBlock.has(e.target).length === 0 && !selectBlock.siblings('.js-selectToogle').is(e.target)) {
-    $(selectBlock).removeClass('active');
-    $(selectButton).removeClass('active');
-  }
-});
-
 $(() => { app.run(); });
 $(window).on('load', function() {
   $('.preloader').fadeOut();
@@ -572,6 +558,13 @@ $(document).mouseup(function (e) {
     $(colorSwitcherBlock).removeClass('active');
     $('.color-switcher > a').removeClass('active');
   }
+
+  var selectBlock = $(".js-selectLists"),
+      selectButton = $('.js-selectToogle');
+  if (selectBlock.has(e.target).length === 0 && !selectBlock.siblings('.js-selectToogle').is(e.target)) {
+    $(selectBlock).removeClass('active');
+    $(selectButton).removeClass('active');
+  }
 });
 
 // НАДО РЕФАКТОРИТЬ КОД
@@ -584,6 +577,12 @@ $(document).ready(function () {
     $('.menu-open').parent().addClass('active');
     $('body').addClass('on-load');
     return false;
+  });
+  $('.wr-menu-open').click(function(e) {
+    if ($('.menu-open').has(e.target).length === 0 && !$('.menu-open').is(e.target)) {
+      $('.menu-open').parent().removeClass('active');
+      $('body').removeClass('on-load');
+    }
   });
 
   $('.menu-close').click(function () {
@@ -834,7 +833,7 @@ $(document).ready(function () {
     $('.catalog-popup' + catalogFilterPopup + '-popup').addClass('active');
     $('body').addClass('on-load');
   });
-  $('.catalog-popup header a.back').click(function(e) {
+  $('.catalog-popup header a.back, .catalog-popup header a.cancel').click(function(e) {
     e.preventDefault();
 
     $(this).parent().parent().removeClass('active');
@@ -856,7 +855,19 @@ $(document).ready(function () {
   $('.catalog-category .sellers > span').click(function() {
     $('.catalog-category .sellers > span').removeClass('active');
     $(this).addClass('active');
-  })
+  });
+
+  // sellers mobile
+  $('.catalog-sellers span').click(function() {
+    $('.catalog-sellers li.active').removeClass('active');
+    $(this).parent().addClass('active');
+  });
+
+  // product color switcher
+  $('.js-product-color span').click(function() {
+    $('.js-product-color span.active').removeClass('active');
+    $(this).addClass('active');
+  });
 
   // scroll menu
   var header = $(".js-header"),

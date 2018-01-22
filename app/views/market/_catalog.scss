@@ -396,6 +396,15 @@
 		@include respond-to(md) {
 			display: none;
 		}
+
+		&.loading {
+			min-height: 200px;
+			background: #fff url('../img/market-preloader.svg') center center no-repeat;
+			& > * {
+				opacity: 0; pointer-events: none;
+			}
+		}
+
 		& > ul {
 			& > li {
 				@extend .column-start-start; width: 278px;
@@ -465,7 +474,7 @@
 					}
 				}
 
-				a {
+				& > a {
 					color: $black; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.2px;
 					display: block; width: 100%; padding: 21px 24px 20px 48px; position: relative;
 					&:before {
@@ -507,6 +516,15 @@
 						}
 					}
 				}
+
+				.mobile-tags {
+					padding: 20px 24px;
+					& > * {
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -518,6 +536,14 @@
 			@include respond-to(580px) {
 				margin: -10px 0;
 			}
+
+			&.loading {
+				background: url('../img/market-preloader.svg') center 150px no-repeat;
+				& > li {
+					opacity: 0; pointer-events: none;
+				}
+			}
+
 			& > li {
 				width: calc(25% - 20px);
 				transition: 0.5s ease-out;
@@ -642,9 +668,12 @@
 			.catalog {
 				&-filter {
 					display: block; width: 100%;
-					ul {
-						li {
+					& > ul {
+						& > li {
 							padding-left: 25px; padding-right: 25px; width: 100%;
+							@include respond-to(360px) {
+								padding-left: 0; padding-right: 0;
+							}
 
 							.price {
 								padding: 27px 24px 19px; display: flex; flex-direction: column;

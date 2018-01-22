@@ -256,49 +256,6 @@
 		&-news {
 			&-content {
 				padding: 40px 0 60px;
-				a {
-					color: $brand; font-size: 16px; font-family: $text; line-height: 24px; letter-spacing: 0.7;
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-
-				h2 {
-					font-family: $title; font-size: 26px; line-height: 32px; letter-spacing: 0px;
-					margin-bottom: 10px;
-				}
-
-				p {
-					margin-bottom: 10px;
-					strong {
-						font-weight: 700;
-					}
-				}
-
-				ul {
-					margin-bottom: 30px;
-					&.typo-list_2 {
-						li {
-							padding-left: 40px;
-							&:before {
-								content: '';
-								width: 12px; height: 12px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
-								background: url('../images/plus.svg') center no-repeat;
-							}
-						}
-					}
-					li {
-						font-size: 16px; font-family: $text; line-height: 24px; letter-spacing: 0.7px;
-						position: relative; margin-bottom: 5px;
-					}
-				}
-
-				figure {
-					margin-bottom: 30px; max-width: 600px; width: 100%;
-					figcaption {
-						color: #4b5769; font-family: $text; font-size: 10px; line-height: 18px; letter-spacing: 1.1px; text-transform: uppercase;
-					}
-				}
 			}
 		}
 	}

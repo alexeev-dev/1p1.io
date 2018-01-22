@@ -2,10 +2,10 @@
 	&-info {
 		@extend .row-start-center; padding: 70px 0 40px;
 		@include respond-to(sm) {
-			flex-wrap: wrap; justify-content: flex-end; padding-top: 60px;
+			flex-wrap: wrap; justify-content: flex-end; padding-top: 30px;
 		}
 		@include respond-to(xs) {
-			flex-wrap: nowrap; flex-direction: column; align-items: flex-start; padding-top: 45px;
+			flex-wrap: nowrap; flex-direction: column; align-items: flex-start; padding-top: 25px;
 		}
 		figure {
 			width: 119px; height: 119px; flex-shrink: 0; margin-right: 40px;
@@ -32,6 +32,9 @@
 			h1 {
 				font-size: 34px; font-family: $title; line-height: 38px;
 				margin-bottom: 27px; margin-top: 0;
+				@include respond-to(xs) {
+					font-size: 26px; line-height: 32px;
+				}
 			}
 			dl {
 				dt, dd {
@@ -113,7 +116,10 @@
 	&-about {
 		display: flex;
 		@include  respond-to(md) {flex-direction: column;}
-		@extend .box-filled-light-3; padding: 20px 40px 40px 40px;
+		@extend .box-filled-light-3; padding: 20px 40px 40px;
+		@include respond-to(xs) {
+			padding: 20px 15px 40px;
+		}
 
 		header {
 			font-family: $text;
@@ -122,10 +128,16 @@
 			h3 {
 				color: #9b9b9b; font-size: 18px; font-family: $title;
 				margin-bottom: 40px;
+				@include respond-to(xs) {
+					margin-bottom: 25px;
+				}
 			}
 
 			hgroup {
 				margin-bottom: 37px;
+				@include respond-to(xs) {
+					margin-bottom: 20px;
+				}
 
 				h4 {@include font-type($text, 24px, 30px, 0.2px);}
 				h5 {@include font-type($text, 24px, 30px, 0.2px);/*font-family: $text; font-size: 18px;*/ margin-top: 16px;}
@@ -136,18 +148,34 @@
 			a.btn {
 				font-size: 16px; letter-spacing: 0.2px;
 				padding: 6px 30px; margin-top: 30px;
+				@include respond-to(xs) {
+					margin-top: 10px;
+				}
 			}
 		}
 
 		footer {
 			padding: 50px 80px 0 80px;
 			@include  respond-to(md) {padding: 50px 0 0 0; margin-top: 50px; border-top: 1px solid #d9e4ea;}
+			@include respond-to(xs) {
+				padding-top: 30px; margin-top: 40px;
+			}
 
 			p {
 				font-size: 18px; line-height: 26px; letter-spacing: 0;
 				margin-bottom: 25px;
+				@include respond-to(xs) {
+					font-size: 16px; line-height: 12px;
+					margin-bottom: 15px;
+				}
 
 				&:last-child {margin-bottom: 0;}
+			}
+
+			& > * {
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}

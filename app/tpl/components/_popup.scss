@@ -172,6 +172,9 @@
 	}
 
 	&-select_charity {
+		@include respond-to(xs) {
+			padding: 50px 10px;
+		}
 		.funds-container,
 		.people-container,
 		.projects-container {
@@ -186,10 +189,17 @@
 			text-align: center;
 			min-width: 200px;
 			line-height: 14px;
+			@include respond-to(xs) {
+				min-width: 0; width: 100%;
+				.btn {
+					white-space: normal;
+				}
+			}
 		}
 
 		#projects .project {
 			width: 100%;
+
 		}
 
 		#people .person {

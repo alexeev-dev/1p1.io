@@ -215,6 +215,15 @@ nav.menu-open {
 
 	form {
 		position: relative; width: 51%; margin: 0 15px;
+		@include respond-to(lg) {
+			width: 40%;
+		}
+		@include respond-to(md) {
+			width: 30%;
+		}
+		@include respond-to(sm) {
+			width: 60%;
+		}
 		@include respond-to(xs) {
 			width: 100%; margin: 10px 0 0; order: 2;
 		}
@@ -259,6 +268,9 @@ nav.menu-open {
 			}
 			li {
 				margin-right: 43px; height: 100%; display: flex; align-items: center;
+				@include respond-to(md) {
+					margin-right: 30px;
+				}
 				&:last-child {
 					margin-right: 0;
 				}
@@ -286,6 +298,9 @@ nav.menu-open {
 		}
 		a.burger {
 			display: block; width: 25px; height: 25px; position: relative; margin-left: 32px;
+			@include respond-to(md) {
+				margin-left: 20px;
+			}
 			span {
 				display: block; width: 19px; height: 2px; position: absolute; left: 50%; transform: translateX(-50%);
 				background: #b2b2b2;

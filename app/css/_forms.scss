@@ -1,6 +1,12 @@
 // outline: NONE
 input, textarea, button {outline: none !important;}
 
+// appearance: NONE
+input[type='submit'] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;  
+}
 // errors
 input, textarea {
 	&.form {
@@ -302,6 +308,9 @@ span {
 	}
 	.form {
 		width: 50%; margin: 30px 0 0 0;
+		@include respond-to(sm) {
+			width: 100%;
+		}
 		input {
 			letter-spacing: 0.7px;
 			margin-bottom: 23px;

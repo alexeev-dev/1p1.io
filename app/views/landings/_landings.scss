@@ -48,7 +48,7 @@
 		.select {
 			margin: 0 32px;
 			@include respond-to(md) {margin-bottom: 25px; margin-right: 0;}
-			sup {font-size: 11px; top: -0.6em; left: -5px;}
+			sup {font-size: 11px; top: -0.6em; left: -5px; position: relative;}
 
 			&:last-child {margin-bottom: 0}
 			& > a {
@@ -115,6 +115,9 @@
 				width: 100%; height: 100%;
 				transition: .4s ease;
 				@include respond-to(xs) {font-size: 14px;}
+				span {
+					color: inherit;
+				}
 			}
 		}
 	}
@@ -326,17 +329,19 @@
 				
 				a, i {transition: color 1s ease, padding .2s linear;}
 				a {
-					color: #4489FF; font-family: $title; font-size: 18px; line-height: 18px; text-align: center; letter-spacing: 0;
+					color: $brand; font-family: $title; font-size: 18px; line-height: 18px; text-align: center; letter-spacing: 0;
 					display: flex; justify-content: center; align-items: center;
 					width: 100%; height: 100%; padding-right: 50px; padding-left: 32px;
 					position: relative;
 					span {
+						color: $brand;
 						transition: color 0.4s ease;
 						.pet & {color: #96be46;}
 						.children & {color: #E8B194;}
+						.art &, .fashion & {color: #000;}
 					}
 					i {
-						color: #4489FF; font-size: 30px;
+						color: $brand; font-size: 30px;
 						position: absolute; right: 0; top: 16px;
 						transition: color 0.4s ease;
 						.pet & {color: #96be46;}
@@ -757,7 +762,7 @@
 
 .auction-wrapp {
 	padding: 27px 0;
-    background: #F3F6FA;
+    background: $bg-gray;
     .pagination-block {
     	padding: 10px 0 0 0;
     }
@@ -1476,12 +1481,35 @@
 
 .auction {
 	&-filter {
+		display: flex; align-items: baseline; justify-content: space-between;
+		@include respond-to(sm) {
+			flex-direction: column; align-items: flex-start;
+		}
 		h2 {
 			font-size: 24px; font-family: $title; line-height: 28px; letter-spacing: 0px;
 			margin-bottom: 0;
 			sup {
 				font-size: 15px;
 				position: relative; top: -11px; right: 4px;
+			}
+		}
+
+		section {
+			display: flex; align-items: baseline;
+			@include respond-to(sm) {
+				flex-direction: column; align-items: flex-start; padding-top: 20px;
+			}
+			.select {
+				margin-right: 40px;
+				@include respond-to(sm) {
+					margin-right: 0; margin-bottom: 10px;
+				}
+				&:last-child {
+					margin-right: 0;
+					@include respond-to(sm) {
+						margin-bottom: 0;
+					}
+				}
 			}
 		}
 	}

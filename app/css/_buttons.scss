@@ -1,5 +1,5 @@
 .btn {
-	display: inline-flex;
+	display: inline-block;
 	border: none; outline: none; vertical-align: baseline; color: $white; @extend .title-bold-primary; 
 	margin: 0; padding: $size-base $size-l/2; 
 	background: $brand; border: solid 1px $brand; border-radius: $size-xl;

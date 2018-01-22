@@ -5,7 +5,7 @@
 	}
 }
 .alert {
-	font-family: Cormac-Book, sans-serif; line-height: 20px;
+	font-size: 14px; font-family: $title; line-height: 20px;
 	width: 100%; margin-bottom: 20px; margin-top: 20px; padding: 15px 30px;
 	border: 1px solid transparent; border-radius: 10px;
 	&:first-child {
@@ -178,6 +178,13 @@
 					@include respond-to(lg) {right: -15px;}
 				}
 
+				p {
+					color: $brand; font-family: Cormac-Book; font-size: 14px; line-height: 18px; letter-spacing: 0.2px;
+					display: inline-block; padding: 5px 10px; margin-bottom: 20px;
+					border: solid 1px #4489ff; border-radius: 100px;
+					cursor: default;
+				}
+
 				ul.info {
 					display: flex;
 					margin-bottom: 40px;
@@ -199,6 +206,36 @@
 			}
 
 			& > section {
+				.product-color {
+					margin-bottom: 25px;
+					p {
+						color: #79879e; font-size: 14px; line-height: 18px;
+						margin-bottom: 10px;
+					}
+					ul {
+						display: flex;
+						li {
+							margin-right: 5px;
+							&:last-child {
+								margin-right: 0;
+							}
+							span {
+								display: block; width: 40px; height: 40px; position: relative;
+								border: solid 1px #d9deea; border-radius: 50%;
+								cursor: pointer;
+								&.active {
+									pointer-events: none;
+									&:after {
+										content: '';
+										display: block; width: 25px; height: 25px; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+										background: rgba(255,255,255,0.85) url('../img/svg/checked.svg') center center no-repeat; background-size: 60%; border-radius: 50%;
+									}
+								}
+							}
+						}
+					}
+				}
+
 				ul.price {
 					display: flex; align-items: center;
 					margin-bottom: 36px;
@@ -304,7 +341,7 @@
 						
 						.btn {
 							@include font-type($title, 16px, 1, 0.2px); text-align: center;
-							width: 218px; padding: 20px 30px; margin-right: 57px; margin-bottom: 20px; display: inline-block;
+							padding: 20px 30px; margin-right: 57px; margin-bottom: 20px; display: inline-block;
 							outline: none;
 							@include respond-to(md) {
 								margin-bottom: 25px; width: 250px; margin-right: 0;
@@ -322,9 +359,21 @@
 							i {font-size: 22px; margin-right: 5px;}
 						}
 
+						span {
+							display: inline-block;
+							@include respond-to(xs) {
+								width: 100%;
+							}
+						}
+
 						& > * {
 							&:last-child {
 								margin-bottom: 24px;
+								& > * {
+									&:last-child {
+										margin-bottom: 0;
+									}
+								}
 							}
 						}
 					}
@@ -379,7 +428,7 @@
 						padding: 15px 0 20px;
 					}
 					@include respond-to(sm) {
-						display: inline-block; width: 100%; padding: 0 15px; left: 0;
+						display: inline-block; width: 100%; padding: 10px 15px 25px; left: 0;
 						border: 1px solid #edf3f6; border-radius: 5px;
 					}
 					& > div {
@@ -485,7 +534,12 @@
 						&:last-child {
 							margin-bottom: 0;
 						}
-						strong {@include font-type($title, 22px, 24px, 0);}
+						strong {
+							@include font-type($title, 22px, 24px, 0); font-weight: 700;
+						}
+						a {
+							font-family: $text; letter-spacing: 0.2px;
+						}
 					}
 				}
 
