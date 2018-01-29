@@ -193,7 +193,7 @@ nav.menu-open {
 		flex-wrap: wrap; height: 125px; padding: 15px 0;
 	}
 	a.logo {
-		height: 100%; @extend .column-center-center; margin-top: 0;
+		height: 100%; width: auto; @extend .column-center-center; margin-top: 0;
 		@extend .icon; @extend .logo-blue; position: relative;
 		@include respond-to(xs) {
 			order: 0; height: auto;
@@ -281,6 +281,9 @@ nav.menu-open {
 					&:hover {
 						color: $brand;
 					}
+					span {
+						color: inherit;
+					}
 				}
 			}
 		}
@@ -303,7 +306,7 @@ nav.menu-open {
 			}
 			span {
 				display: block; width: 19px; height: 2px; position: absolute; left: 50%; transform: translateX(-50%);
-				background: #b2b2b2;
+				background: $black;
 				&:first-child {
 					top: 4px;
 				}

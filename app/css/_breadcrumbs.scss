@@ -4,8 +4,8 @@
 	@include font-type($text, 12px, 1, 0.5px); color: #89a1b3;
 	display: flex; justify-content: space-between; padding: 7px 0px 2px; position: relative;
 	@include respond-to(sm) {
-		flex-direction: column; align-items: flex-start; width: calc(100% + 30px); margin-left: -15px;
-		padding: 7px 15px 2px;
+		flex-direction: column; align-items: flex-start;
+		padding: 7px 0 2px;
 		background: #fff;
 	}
 	&:after {
@@ -21,25 +21,27 @@
 		}
 
 		&.navigation {
-			@include respond-to(sm) {margin-left: -10px;}
 
 			li {
 				line-height: 28px;
-				position: relative; padding: 0 10px;
+				position: relative; padding: 0 10px 0 0; margin-right: 10px;
+				@include respond-to(sm) {
+					line-height: 18px;
+				}
 
 				&:after {content: '/'; position: absolute; right: -5px;}
 
-				&:first-child {
-					padding-left: 0;
-					@include respond-to(sm) {padding-left: 10px;}
-				}
 				&:last-child {
-					padding-right: 0; 
+					padding-right: 0; margin-right: 0;
 					&:after {display: none;}
 				}
 				
 				a {
 					color: #4b5769; font-size: 9px; font-family: $text; line-height: 24px; text-transform: uppercase; letter-spacing: 1.3px;
+					display: inline-block;
+					@include respond-to(sm) {
+						line-height: 16px;
+					}
 					&:after {
 						content: '';
 						position: absolute;

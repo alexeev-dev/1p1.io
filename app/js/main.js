@@ -419,25 +419,23 @@ var app = function ($) {
        */
 
       selectBox: function selectBox() {
-        $('.js-selectToogle, .js-selectLists').removeClass('active');
+        $('.js-selectToogle').parent().removeClass('active');
 
         function initSelectBox(selectToggle) {
           var selectList = selectToggle.next();
 
           selectToggle.click(function toggleSelect(event) {
-            if (!selectToggle.hasClass('active')) {
-              $('.js-selectToogle, .js-selectLists').removeClass('active');
+            if (!selectToggle.parent().hasClass('active')) {
+              $('.js-selectToogle').parent().removeClass('active');
             }
             event.preventDefault();
-            selectToggle.toggleClass('active');
-            selectList.toggleClass('active');
+            selectToggle.parent().toggleClass('active');
           });
 
           selectList.find('a').click(function selectValue(event) {
             event.preventDefault();
             selectToggle.text($(this).text()).append('<i>');
-            selectToggle.toggleClass('active');
-            selectList.toggleClass('active');
+            selectToggle.parent().toggleClass('active');
           });
         }
 
@@ -560,10 +558,16 @@ $(document).mouseup(function (e) {
   }
 
   var selectBlock = $(".js-selectLists"),
-      selectButton = $('.js-selectToogle');
-  if (selectBlock.has(e.target).length === 0 && !selectBlock.siblings('.js-selectToogle').is(e.target)) {
-    $(selectBlock).removeClass('active');
-    $(selectButton).removeClass('active');
+      selectButton = $('.js-selectToogle'),
+      catalogCategoryDropdown = $('.wr-catalog-dropdown'),
+      catalogCategoryButton = $('.js-catalog-dropdown li a.active');
+  if (selectBlock.has(e.target).length === 0 && !selectBlock.is(e.target) && selectButton.has(e.target).length === 0 && !selectButton.is(e.target)) {
+    $(selectButton).parent().removeClass('active');
+  }
+  if (catalogCategoryDropdown.has(e.target).length === 0 && !catalogCategoryDropdown.is(e.target) && catalogCategoryButton.has(e.target).length === 0 && !catalogCategoryButton.is(e.target)) {
+    $(catalogCategoryDropdown).removeClass('active');
+    $('.js-catalog-dropdown li a.active').removeClass('active');
+    $('.wr-catalog-header').removeClass('layout');
   }
 });
 
@@ -805,7 +809,8 @@ $(document).ready(function () {
     $(catalogDrop).toggleClass('active');
     $('.wr-catalog-dropdown').hasClass('active') ? $('.wr-catalog-header').addClass('layout') : $('.wr-catalog-header').removeClass('layout');
   });
-  $('.wr-catalog-dropdown .catalog-category a, .wr-catalog-dropdown .sellers span').click(function(e) {
+  //$('.wr-catalog-dropdown .catalog-category a, .wr-catalog-dropdown .sellers span').click(function (e) {
+  $('.wr-catalog-dropdown .catalog-category a').click(function (e) {
     e.preventDefault();
 
     catalogHideDropdown();

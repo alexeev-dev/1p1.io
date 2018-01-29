@@ -7,6 +7,12 @@
 		@include respond-to(xs) {
 			flex-wrap: nowrap; flex-direction: column; align-items: flex-start; padding-top: 25px;
 		}
+		&.fund {
+			figure {
+				border: none; border-radius: 0;
+				overflow: visible;
+			}
+		}
 		figure {
 			width: 119px; height: 119px; flex-shrink: 0; margin-right: 40px;
 			border: 1px solid #dae2ea; border-radius: 50%;
@@ -165,11 +171,17 @@
 				font-size: 18px; line-height: 26px; letter-spacing: 0;
 				margin-bottom: 25px;
 				@include respond-to(xs) {
-					font-size: 16px; line-height: 12px;
+					font-size: 16px; line-height: 22px;
 					margin-bottom: 15px;
 				}
-
 				&:last-child {margin-bottom: 0;}
+
+				a {
+					color: $brand; font-size: inherit; font-family: inherit; line-height: inherit; letter-spacing: inherit; text-decoration: none;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
 
 			& > * {

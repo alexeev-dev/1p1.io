@@ -295,16 +295,21 @@ span {
 	}
 	 
 	.selectstyle {
-		position: relative; padding-right: 10px; margin-right: 25px; height: 23px; display: inline-block;
+		position: relative; margin-right: 25px; height: 23px; display: inline-block;
 		&:last-child {margin-right: 0;}
 		&:after {
 			content: '\203A'; 
 			color: $link-color; font-size: 24px; text-align: center;
-			width: 23px; height: 31px; position: absolute; right: -4px; top: -4px;
+			width: 23px; height: 31px; position: absolute; right: 4px; top: -4px;
 			background: #fff; 
 			transform: rotate(90deg); pointer-events: none;
 		}
-		select {border: none; cursor: pointer; outline:none; height: 23px;}
+		select {
+			width: auto !important;
+			border: none; cursor: pointer; outline:none; height: 23px; padding: 0 31px 0 10px;
+			background: #ffffff;
+			appearance: none;
+		}
 	}
 	.form {
 		width: 50%; margin: 30px 0 0 0;

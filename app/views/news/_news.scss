@@ -12,7 +12,7 @@
 			margin-bottom: 10px;
 		}
 
-		h3 {
+		h3, h4, h5, h6 {
 			font-family: $title; font-size: 18px; line-height: 20px; letter-spacing: 0px;
 			margin-bottom: 10px;
 		}
@@ -78,8 +78,17 @@
 
 		figure {
 			margin-bottom: 30px; max-width: 600px; width: 100%;
+			img {
+				margin-bottom: 15px;
+			}
 			figcaption {
 				color: #4b5769; font-family: $text; font-size: 10px; line-height: 18px; letter-spacing: 1.1px; text-transform: uppercase;
+			}
+
+			& > * {
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 	}

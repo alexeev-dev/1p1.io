@@ -95,7 +95,7 @@
 				background: #fff;
 				a {color: #000;}
 			}
-			&.next {
+			&.prev, &.next {
 				width: auto; padding: 0 20px;
 				background: #fff; 
 				@include respond-to(sm) {padding: 0; width: 50px;}
@@ -160,7 +160,7 @@
 			header {
 				padding-left: 102px; margin-top: 143px;
 				@include respond-to(md) {padding-left: 0;}
-				@include respond-to(xs) {margin-top: 110px;}
+				@include respond-to(xs) {margin-top: 160px;}
 
 				.dobro & {
 					padding-left: 199px; margin-top: 228px;
@@ -1481,33 +1481,48 @@
 
 .auction {
 	&-filter {
-		display: flex; align-items: baseline; justify-content: space-between;
-		@include respond-to(sm) {
-			flex-direction: column; align-items: flex-start;
-		}
-		h2 {
-			font-size: 24px; font-family: $title; line-height: 28px; letter-spacing: 0px;
-			margin-bottom: 0;
-			sup {
-				font-size: 15px;
-				position: relative; top: -11px; right: 4px;
-			}
-		}
-
-		section {
-			display: flex; align-items: baseline;
+		article {
+			display: flex; align-items: baseline; justify-content: space-between;
 			@include respond-to(sm) {
-				flex-direction: column; align-items: flex-start; padding-top: 20px;
+				flex-direction: column; align-items: flex-start;
 			}
-			.select {
-				margin-right: 40px;
-				@include respond-to(sm) {
-					margin-right: 0; margin-bottom: 10px;
+			h2 {
+				font-size: 24px; font-family: $title; line-height: 28px; letter-spacing: 0px;
+				margin-bottom: 0;
+				sup {
+					font-size: 15px;
+					position: relative; top: -11px; right: 4px;
 				}
-				&:last-child {
-					margin-right: 0;
+			}
+
+			section {
+				display: flex; align-items: baseline;
+				@include respond-to(sm) {
+					flex-wrap: wrap; align-items: flex-start; padding-top: 20px;
+				}
+				.select {
+					text-align: right;
+					margin-right: 20px; min-width: 170px;
 					@include respond-to(sm) {
-						margin-bottom: 0;
+						text-align: left;
+						margin-bottom: 10px;
+					}
+					&:last-child {
+						margin-right: 0;
+						@include respond-to(sm) {
+							margin-bottom: 0;
+						}
+					}
+					&.active {
+						& > div {
+							left: auto; right: -10px;
+							@include respond-to(sm) {
+								right: auto; left: -10px;
+							}
+						}
+					}
+					& > a {
+						display: inline-block;
 					}
 				}
 			}

@@ -6,7 +6,7 @@
       display: inline-block;
       background-image: url("../img/sprite.svg");
       background-repeat: no-repeat;
-      background-size: 13.7em 66.1em;
+      background-size: 13.7em 73.5em;
 
       .no-svg & {
         background-image: url("../img/sprite.png");
@@ -368,9 +368,35 @@
   }
 
 
-.icon.time {
+.icon.shops-small-black {
   &:before {
       background-position: 0em -63em;
+      width: 1.9em;
+      height: 1.9em;
+    }
+  }
+
+  @mixin icon-shops-small-black(){
+    @extend .shops-small-black;
+  }
+
+
+.icon.shops-small-blue {
+  &:before {
+      background-position: 0em -64.9em;
+      width: 1.9em;
+      height: 1.9em;
+    }
+  }
+
+  @mixin icon-shops-small-blue(){
+    @extend .shops-small-blue;
+  }
+
+
+.icon.time {
+  &:before {
+      background-position: 0em -66.8em;
       width: 1.3em;
       height: 1.3em;
     }
@@ -381,9 +407,35 @@
   }
 
 
+.icon.user-small-black {
+  &:before {
+      background-position: 0em -68.1em;
+      width: 1.6em;
+      height: 1.8em;
+    }
+  }
+
+  @mixin icon-user-small-black(){
+    @extend .user-small-black;
+  }
+
+
+.icon.user-small-blue {
+  &:before {
+      background-position: 0em -69.9em;
+      width: 1.6em;
+      height: 1.8em;
+    }
+  }
+
+  @mixin icon-user-small-blue(){
+    @extend .user-small-blue;
+  }
+
+
 .icon.users-small {
   &:before {
-      background-position: 0em -64.3em;
+      background-position: 0em -71.7em;
       width: 1.6em;
       height: 1.8em;
     }

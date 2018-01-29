@@ -4,7 +4,7 @@
 		@include respond-to(sm) {
 			display: flex; flex-direction: column;
 		}
-		span {
+		span, a {
 			font-family: inherit; letter-spacing: inherit; font-size: inherit;
 			@include respond-to(sm) {
 				float: none !important; order: 1; margin-top: 10px;
@@ -51,6 +51,9 @@
 	margin-bottom: 50px; padding-top: 50px;
 	@include respond-to(sm) {
 		padding-top: 30px;
+	}
+	@include respond-to(xs) {
+		padding-top: 90px;
 	}
 }
 

@@ -2,6 +2,20 @@
 .select {
 	position: relative; display: inline-block;
 
+	&.active {
+		z-index: 15;
+		& > a {
+			z-index: 101;
+			i {transform: rotate(180deg) translateY(50%);}
+		}
+
+		& > div {
+			padding-top: 45px; height: auto; 
+			left: -10px; top: -11px;
+			border-radius: 5px;
+		}
+	}
+
 	& > a {
 		display: block;
 		color: $black; @extend .title-bold-primary;
@@ -18,8 +32,7 @@
 		}
 		
 		&.active {
-			z-index: 101;
-			i {transform: rotate(180deg) translateY(50%);}
+			
 		}
 	}
 
@@ -27,14 +40,9 @@
 		height: 0; min-height: 0; overflow: hidden; width: calc(100% + 20px); min-width: 170px; position: absolute; z-index: 9;
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2); background: #fff;
 
-		&.active {
-			padding-top: 45px; height: auto; 
-			left: -10px; top: -11px;
-			border-radius: 5px;
-		}
-
 		& > ul {
-			min-width: 170px;
+			min-width: 170px; max-height: 250px;
+			overflow-y: auto;
 
 			& > li {
 				padding: 0; margin-bottom: 0;
