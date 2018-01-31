@@ -7,7 +7,7 @@
 			&-filter {
 				width: 280px; margin-right: 20px;
 				border-width: 1px;
-				transition: all 0.5s ease-out, border 0s linear;
+				transition: all 0.5s ease-out, border 0s linear, background 0s linear;
 			}
 			&-list {
 				& > ul {
@@ -95,7 +95,7 @@
 				ul {
 					li {
 						a {
-							font-family: $HelveticaR; font-size: 15px; letter-spacing: 0; text-align: right;
+							font-family: $HelveticaR; font-size: 15px; letter-spacing: 0;
 						}
 					}
 				}
@@ -147,7 +147,11 @@
 				@extend .column-center-center; width: 100%; height: 230px;
 				cursor: pointer;
 				&:hover {
-					background: $bg-gray;
+					background: #f7fafd;
+				}
+				&.active {
+					background: #f7fafd;
+					cursor: default;
 					em {
 						color: $brand;
 					}
@@ -164,10 +168,6 @@
 						}
 					}
 				}
-				&.active {
-					background: $bg-gray;
-					cursor: default;
-				}
 				i {
 					margin-bottom: 16px;
 				}
@@ -178,11 +178,11 @@
 			}
 		}
 		& > div:not(.sellers):not(.info):not(.promo) {
-			display: flex;
+			display: flex; max-height: 100%;
 		}
 		& > div:not(.sellers):not(.info):not(.promo) > ul,
 		& > ul {
-			width: 270px; flex-shrink: 0; height: 100%;
+			width: 270px; flex-shrink: 0; max-height: 100%;
 			overflow-y: auto;
 			@include respond-to(lg) {
 				width: 225px;
@@ -195,11 +195,16 @@
 				background: #c4d1da; border-radius: 50px;
 			}
 			& > li {
+				&.category_is_active {
+					a {
+						color: $brand;
+						background: #f7fafd;
+					}
+				}
 				a {
 					color: $black; font-family: $HelveticaR; font-size: 14px; line-height: 22px; letter-spacing: 0.2px;
 					display: block; padding: 16px 21px 13px;
-					&.active, &:hover {
-						color: $brand;
+					&:hover {
 						background: #f7fafd;
 					}
 				}
@@ -389,19 +394,17 @@
 	&-filter {
 		width: 0; margin-right: 0; flex-shrink: 0;
 		background: $white; border: 0px solid #e4e4e4;
-		overflow: hidden; transition: all 0.5s ease-out, border 0s 0.5s linear;
+		overflow: hidden; transition: all 0.5s ease-out, border 0s 0.5s linear, background 0s linear;
 		@include respond-to(md) {
 			display: none;
 		}
-
-		&.loading {
-			min-height: 200px;
-			background: #fff url('../img/market-preloader.svg') center center no-repeat;
-			& > * {
-				opacity: 0; pointer-events: none;
+		& > * {
+			border-bottom: 1px solid #e4e4e4;
+			transition: 0.5s ease-out;
+			&:last-child {
+				border-bottom: none;
 			}
 		}
-
 		& > ul {
 			& > li {
 				@extend .column-start-start; width: 278px;
@@ -457,7 +460,7 @@
 					}
 				}
 				label {
-					color: #79879e; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.4px;
+					color: #636F81; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.4px;
 					display: inline-block; margin-bottom: 22px; padding-left: 24px; position: relative;
 					cursor: pointer;
 				}
@@ -512,7 +515,7 @@
 							margin-bottom: 0;
 						}
 						a {
-							color: $black;
+							color: $black; font-family: $HelveticaR; font-size: 15px; line-height: 18px; letter-spacing: 0.2px;
 							&:hover {
 								color: $brand;
 							}
@@ -538,13 +541,6 @@
 			margin: -10px;
 			@include respond-to(580px) {
 				margin: -10px 0;
-			}
-
-			&.loading {
-				background: url('../img/market-preloader.svg') center 150px no-repeat;
-				& > li {
-					opacity: 0; pointer-events: none;
-				}
 			}
 
 			& > li {
@@ -764,4 +760,26 @@
 	}
 }
 
-
+.wrap-market {
+	position: relative;
+	& > * {
+		opacity: 1;
+		transition: opacity 0.3s ease-out;
+	}
+	&:after {
+		content: '';
+		display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0;
+		background: url(../img/market-preloader.svg) center 250px no-repeat;
+		opacity: 0; pointer-events: none;
+		transition: opacity 0.3s ease-out;
+	}
+	&.loading {
+		& > * {
+			opacity: 0.5; pointer-events: none;
+		}
+		&:after {
+			opacity: 1;
+			transition: opacity 0s ease-out;
+		}
+	}
+}

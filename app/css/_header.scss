@@ -110,7 +110,7 @@ $header-height: 65px;
 
 nav.menu-open {
 	width: 430px; height: 100vh; margin-right: -24px;
-	position: fixed; top: 0; right: 0; z-index: 5000;
+	position: fixed; top: 0; right: 0; z-index: 10001;
 	background: $bg-gray;
 
 	transition: transform 0.3s ease-out; 

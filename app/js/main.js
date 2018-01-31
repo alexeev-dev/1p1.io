@@ -435,7 +435,7 @@ var app = function ($) {
           selectList.find('a').click(function selectValue(event) {
             event.preventDefault();
             selectToggle.text($(this).text()).append('<i>');
-            selectToggle.parent().toggleClass('active');
+            selectToggle.parent().removeClass('active');
           });
         }
 
@@ -930,5 +930,5 @@ function catalogHideDropdown() {
     $('.wr-catalog-dropdown').removeClass('active');
 }
 function catalogHideCity() {
-  $('.js-selectToogle, .js-selectLists').toggleClass('active');
+  $('.js-selectToogle').parent().toggleClass('active');
 }

@@ -125,6 +125,10 @@
 
 // INTRO LANDING - http://prntscr.com/h2bdli
 .intro {
+	margin-top: 66px;
+	@include respond-to(xs) {
+		margin-top: 126px;
+	}
 	section {
 		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,rgba(5,171,224,0) 100%);
 		height: 547px; position: relative; overflow: hidden;
@@ -160,7 +164,7 @@
 			header {
 				padding-left: 102px; margin-top: 143px;
 				@include respond-to(md) {padding-left: 0;}
-				@include respond-to(xs) {margin-top: 160px;}
+				@include respond-to(xs) {margin-top: 100px;}
 
 				.dobro & {
 					padding-left: 199px; margin-top: 228px;
@@ -182,7 +186,7 @@
 					@include respond-to(xs) {font-size: 28px; line-height: 38px;}
 
 					.stars & {
-						font-size: 46px; letter-spacing: 0;
+						font-size: 46px; line-height: 46px; letter-spacing: 0;
 					}
 				}
 				h1 + ul {margin-top: 86px; @include respond-to(sm) {margin-bottom: 42px;}}
@@ -401,6 +405,10 @@
 }
 
 .intro-new {
+	margin-top: 66px;
+	@include respond-to(xs) {
+		margin-top: 126px;
+	}
 	& > section {
 		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.3) 40%,rgba(5,171,224,0) 100%);
 		height: 750px; position: relative; overflow: hidden;
@@ -835,7 +843,7 @@
 	@include respond-to(md) {flex-direction: column; height: auto; overflow: visible;}
 
 	div {
-		width: 50%;
+		width: 50%; position: relative;
 		@include respond-to(md) {
 			width: 100%;
 		}
@@ -1502,7 +1510,7 @@
 				}
 				.select {
 					text-align: right;
-					margin-right: 20px; min-width: 170px;
+					margin-right: 20px; min-width: 150px;
 					@include respond-to(sm) {
 						text-align: left;
 						margin-bottom: 10px;
@@ -1523,6 +1531,15 @@
 					}
 					& > a {
 						display: inline-block;
+					}
+					& > div {
+						ul {
+							li {
+								a {
+									text-align: left;
+								}
+							}
+						}
 					}
 				}
 			}

@@ -33,6 +33,9 @@ a:hover {text-decoration: none;}
 	&-big {
 		@include font-type($title, 34px, 40px, 0px); text-align: left; 
 		margin-bottom: 36px;
+		@include respond-to(sm) {
+			font-size: 24px; line-height: 30px;
+		}
 		&.left {text-align: left;}
 		&.center {text-align: center;}
 	}

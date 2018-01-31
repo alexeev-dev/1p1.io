@@ -17,15 +17,15 @@
 	ul {
 		li {
 			display: inline-block;
-			@include respond-to(sm) {&:first-child {margin-left: 0;}}
+			@include respond-to(md) {&:first-child {margin-left: 0;}}
 		}
 
 		&.navigation {
 
 			li {
-				line-height: 28px;
+				line-height: 20px;
 				position: relative; padding: 0 10px 0 0; margin-right: 10px;
-				@include respond-to(sm) {
+				@include respond-to(md) {
 					line-height: 18px;
 				}
 
@@ -37,10 +37,10 @@
 				}
 				
 				a {
-					color: #4b5769; font-size: 9px; font-family: $text; line-height: 24px; text-transform: uppercase; letter-spacing: 1.3px;
+					color: #4b5769; font-size: 9px; font-family: $text; line-height: 20px; text-transform: uppercase; letter-spacing: 1.3px;
 					display: inline-block;
-					@include respond-to(sm) {
-						line-height: 16px;
+					@include respond-to(md) {
+						line-height: 18px;
 					}
 					&:after {
 						content: '';

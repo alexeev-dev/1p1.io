@@ -199,6 +199,14 @@
 			}
 		}
 
+		.info-block {
+			div {
+				img {
+					width: 100%;
+				}
+			}
+		}
+
 		.btn {
 			color: #ffffff !important;  text-decoration: none !important; font-size: 16px !important; line-height: 24px !important; white-space: normal;
 			padding: 10px;
@@ -208,6 +216,10 @@
 		.people-container,
 		.projects-container {
 			text-align: center;
+			a:not(.btn) {
+				color: $brand !important; font-size: 16px !important; line-height: 24px !important; font-family: $title !important;
+				display: inline-block !important;
+			}
 		}
 
 		#funds .fund,
@@ -278,7 +290,16 @@
 		#fund-description,
 		#project-description,
 		#person-description {
-			margin: 10px 0 0 0;
+			margin: 10px 0 0;
+			@include respond-to(sm) {
+				font-size: 14px !important; font-family: $helv !important; line-height: 1.42857143 !important;
+			}
+			p {
+				margin-top: 10px;
+				@include respond-to(sm) {
+					font-size: 14px !important; font-family: $helv !important; line-height: 1.42857143 !important;
+				}
+			}
 		}
 
 		#fund-specialization {
